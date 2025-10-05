@@ -4,10 +4,13 @@
 
 ## תמונות נדרשות:
 
-### רבנים:
-- `chief-rabbi.jpg` - תמונה של הרב הראשי (Rav Moshe Ben David)
-- `field-supervisor.jpg` - תמונה של מפקח השטח (Rav Avraham Cohen)  
-- `technical-advisor.jpg` - תמונה של היועץ הטכני (Rav Yitzchak Goldberg)
+### רבנים אמיתיים מהאתר:
+- `Goelman.jpg` - Rabbi Israel Goelman (נשיא)
+- `zvi1.jpg` - Rabbi Zvi Bringer (מנכ"ל)  
+- `ShemuelZalman.png` - Rabbi Shemuel Zalman (מתמחה במשקאות אלכוהוליים)
+- `Michael.png` - Rabbi Michael Moshe Grinberg (אחראי חומרי גלם)
+- `EliahuBilis.png` - Rabbi Eliahu Bayles (מנהל שירותי לקוחות)
+- `ElishaSallas.jpg` - Rabbi Elisha Salas (יועץ רבני)
 - `default-rabbi.jpg` - תמונת ברירת מחדל במקרה של שגיאה
 
 ## דרישות טכניות:
@@ -23,3 +26,4 @@
 - רצוי עם רקע נקי או מטושטש
 - התמונות יוצגו בגודל 280px גובה בדף הבית
 - במקרה של שגיאה בטעינה, תוצג התמונה default-rabbi.jpg
+- השמות בדיוק כמו ברשימה - זה חשוב לתצוגה נכונה!
