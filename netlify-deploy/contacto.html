@@ -677,12 +677,12 @@
                         <span id="current-lang">Português</span>
                         ▼
                         <div id="languageDropdown" class="language-dropdown">
-                            <div class="language-option active" onclick="changeLanguage('pt', '🇵🇹', 'Português')">🇵🇹 Português</div>
-                            <div class="language-option" onclick="changeLanguage('en', '🇬🇧', 'English')">🇬🇧 English</div>
-                            <div class="language-option" onclick="changeLanguage('he', '🇮🇱', 'עברית')">🇮🇱 עברית</div>
-                            <div class="language-option" onclick="changeLanguage('es', '🇪🇸', 'Español')">🇪🇸 Español</div>
-                            <div class="language-option" onclick="changeLanguage('ru', '🇷🇺', 'Русский')">🇷🇺 Русский</div>
-                            <div class="language-option" onclick="changeLanguage('it', '🇮🇹', 'Italiano')">🇮🇹 Italiano</div>
+                            <div class="language-option active" onclick="selectLanguage('🇵🇹', 'Português')">🇵🇹 <span>Português</span></div>
+                            <div class="language-option" onclick="selectLanguage('🇬🇧', 'English')">🇬🇧 <span>English</span></div>
+                            <div class="language-option" onclick="selectLanguage('🇮🇱', 'עברית')">🇮🇱 <span>עברית</span></div>
+                            <div class="language-option" onclick="selectLanguage('🇪🇸', 'Español')">🇪🇸 <span>Español</span></div>
+                            <div class="language-option" onclick="selectLanguage('🇷🇺', 'Русский')">🇷🇺 <span>Русский</span></div>
+                            <div class="language-option" onclick="selectLanguage('🇮🇹', 'Italiano')">🇮🇹 <span>Italiano</span></div>
                         </div>
                     </div>
                     <a href="https://www.facebook.com/profile.php?id=61575501917315" target="_blank" rel="noopener">📘 Facebook</a>
@@ -1005,54 +1005,142 @@
     </footer>
 
     <script>
+        // Global language variable
+        let currentLanguage = 'pt';
+        
+        // Multilingual Content
+        const translations = {
+            'pt': {
+                // Navigation
+                'nav-home': '🏠 Início',
+                'nav-certification': '📋 Certificação',
+                'nav-companies': '🏢 Empresas',
+                'nav-about': 'ℹ️ Sobre Nós',
+                'nav-contact': '📞 Contacto'
+            },
+            'en': {
+                // Navigation
+                'nav-home': '🏠 Home',
+                'nav-certification': '📋 Certification',
+                'nav-companies': '🏢 Companies',
+                'nav-about': 'ℹ️ About Us',
+                'nav-contact': '📞 Contact'
+            },
+            'he': {
+                // Navigation
+                'nav-home': '🏠 דף הבית',
+                'nav-certification': '📋 הכשרה',
+                'nav-companies': '🏢 חברות',
+                'nav-about': 'ℹ️ אודות',
+                'nav-contact': '📞 צור קשר'
+            }
+        };
+        
         // Language selector functionality
         function toggleLanguageDropdown() {
             const dropdown = document.getElementById('languageDropdown');
-            dropdown.style.display = dropdown.style.display === 'none' || dropdown.style.display === '' ? 'block' : 'none';
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
         }
 
-        function changeLanguage(langCode, flag, langName) {
+        function selectLanguage(flag, lang) {
+            // Update flag and language display
             document.getElementById('current-flag').textContent = flag;
-            document.getElementById('current-lang').textContent = langName;
-            
-            // Remove active class from all options
-            document.querySelectorAll('.language-option').forEach(option => {
-                option.classList.remove('active');
-            });
-            
-            // Add active class to selected option
-            event.target.classList.add('active');
-            
-            // Hide dropdown
+            document.getElementById('current-lang').textContent = lang;
             document.getElementById('languageDropdown').style.display = 'none';
             
-            // Store language preference
-            localStorage.setItem('selectedLanguage', langCode);
+            // Update active state
+            document.querySelectorAll('.language-option').forEach(opt => opt.classList.remove('active'));
+            event.target.closest('.language-option').classList.add('active');
             
-            console.log('Language changed to:', langCode);
+            // Map language names to codes
+            const languageMap = {
+                'Português': 'pt',
+                'English': 'en',
+                'עברית': 'he',
+                'Español': 'es',
+                'Русский': 'ru',
+                'Italiano': 'it'
+            };
+            
+            const langCode = languageMap[lang] || 'pt';
+            
+            // Change page content
+            changeLanguage(langCode);
+        }
+
+        function changeLanguage(langCode) {
+            // If translation doesn't exist, fallback to Portuguese
+            if (!translations[langCode]) {
+                langCode = 'pt';
+            }
+            
+            currentLanguage = langCode;
+            const t = translations[langCode];
+            
+            // Update all translatable elements
+            Object.keys(t).forEach(key => {
+                const element = document.querySelector(`[data-translate="${key}"]`);
+                if (element) {
+                    element.textContent = t[key];
+                }
+            });
+            
+            // Update HTML direction for Hebrew
+            if (langCode === 'he') {
+                document.documentElement.dir = 'rtl';
+                document.documentElement.lang = 'he';
+            } else {
+                document.documentElement.dir = 'ltr';
+                document.documentElement.lang = langCode;
+            }
+            
+            // Store language preference globally
+            localStorage.setItem('preferred-language', langCode);
+            localStorage.setItem('world-kosher-language', langCode);
         }
 
         // Close dropdown when clicking outside
         document.addEventListener('click', function(event) {
-            const languageSelector = document.querySelector('.language-selector');
-            const dropdown = document.getElementById('languageDropdown');
-            
-            if (!languageSelector.contains(event.target)) {
-                dropdown.style.display = 'none';
+            const selector = document.querySelector('.language-selector');
+            if (!selector.contains(event.target)) {
+                document.getElementById('languageDropdown').style.display = 'none';
             }
         });
 
-        // Load saved language preference
+        // Initialize language on page load
         document.addEventListener('DOMContentLoaded', function() {
-            const savedLanguage = localStorage.getItem('selectedLanguage');
-            if (savedLanguage) {
-                console.log('Loaded saved language:', savedLanguage);
+            // Check for saved language preference
+            const savedLang = localStorage.getItem('preferred-language') || 'pt';
+            
+            // Apply saved language if not Portuguese
+            if (savedLang !== 'pt') {
+                // Find the language option and update display
+                const langNames = {
+                    'en': { flag: '🇬🇧', name: 'English' },
+                    'he': { flag: '🇮🇱', name: 'עברית' },
+                    'es': { flag: '🇪🇸', name: 'Español' },
+                    'ru': { flag: '🇷🇺', name: 'Русский' },
+                    'it': { flag: '🇮🇹', name: 'Italiano' }
+                };
+                
+                if (langNames[savedLang]) {
+                    document.getElementById('current-flag').textContent = langNames[savedLang].flag;
+                    document.getElementById('current-lang').textContent = langNames[savedLang].name;
+                    
+                    // Update active state in dropdown
+                    document.querySelectorAll('.language-option').forEach(opt => {
+                        opt.classList.remove('active');
+                        if (opt.textContent.includes(langNames[savedLang].name)) {
+                            opt.classList.add('active');
+                        }
+                    });
+                }
+                
+                changeLanguage(savedLang);
             }
         });
 
-        // Redirect to certification form based on language
-        let currentLanguage = 'pt'; // Default language
-        
+        // Redirect to certification form based on language        
         // Initialize language from localStorage
         document.addEventListener('DOMContentLoaded', function() {
             const savedLanguage = localStorage.getItem('preferred-language') || localStorage.getItem('world-kosher-language');
