@@ -1098,12 +1098,12 @@
                         <span>▼</span>
                     </div>
                     <div id="languageDropdown" class="language-dropdown">
-                        <div class="language-option active" onclick="changeLanguage('pt')">🇵🇹 Português</div>
-                        <div class="language-option" onclick="changeLanguage('en')">🇬🇧 English</div>
-                        <div class="language-option" onclick="changeLanguage('he')">🇮🇱 עברית</div>
-                        <div class="language-option" onclick="changeLanguage('es')">🇪🇸 Español</div>
-                        <div class="language-option" onclick="changeLanguage('ru')">🇷🇺 Русский</div>
-                        <div class="language-option" onclick="changeLanguage('it')">🇮🇹 Italiano</div>
+                        <div class="language-option active" onclick="selectLanguage('🇵🇹', 'Português')">🇵🇹 <span>Português</span></div>
+                        <div class="language-option" onclick="selectLanguage('🇬🇧', 'English')">🇬🇧 <span>English</span></div>
+                        <div class="language-option" onclick="selectLanguage('🇮🇱', 'עברית')">🇮🇱 <span>עברית</span></div>
+                        <div class="language-option" onclick="selectLanguage('🇪🇸', 'Español')">🇪🇸 <span>Español</span></div>
+                        <div class="language-option" onclick="selectLanguage('🇷🇺', 'Русский')">🇷🇺 <span>Русский</span></div>
+                        <div class="language-option" onclick="selectLanguage('🇮🇹', 'Italiano')">🇮🇹 <span>Italiano</span></div>
                     </div>
                 </div>
                 <div>
@@ -1802,6 +1802,32 @@
         function toggleLanguageDropdown() {
             const dropdown = document.getElementById('languageDropdown');
             dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function selectLanguage(flag, lang) {
+            // Update flag and language display
+            document.getElementById('current-flag').textContent = flag;
+            document.getElementById('current-lang').textContent = lang;
+            document.getElementById('languageDropdown').style.display = 'none';
+            
+            // Update active state
+            document.querySelectorAll('.language-option').forEach(opt => opt.classList.remove('active'));
+            event.target.closest('.language-option').classList.add('active');
+            
+            // Map language names to codes
+            const languageMap = {
+                'Português': 'pt',
+                'English': 'en',
+                'עברית': 'he',
+                'Español': 'es',
+                'Русский': 'ru',
+                'Italiano': 'it'
+            };
+            
+            const langCode = languageMap[lang] || 'pt';
+            
+            // Change page content
+            changeLanguage(langCode);
         }
 
         function changeLanguage(lang) {
