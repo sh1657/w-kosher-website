@@ -547,6 +547,17 @@
         
         /* Responsive Design */
         @media (max-width: 768px) {
+            /* Fix sticky header issue on mobile */
+            .header {
+                position: relative;
+                top: 0;
+            }
+            
+            .top-bar {
+                position: relative;
+                top: 0;
+            }
+            
             .hero-content h1 {
                 font-size: 2.5rem;
                 flex-direction: column;
