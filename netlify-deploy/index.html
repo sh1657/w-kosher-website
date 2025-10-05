@@ -607,6 +607,188 @@
             line-height: 1.6;
             color: #6b7280;
         }
+
+        /* Leading Rabbis Section */
+        .leading-rabbis-section {
+            background: white;
+            padding: 80px 20px;
+        }
+
+        .leading-rabbis-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #1e3a8a;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .rabbis-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #6b7280;
+            margin-bottom: 60px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .rabbis-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .rabbi-card {
+            background: #f8fafc;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #e5e7eb;
+        }
+
+        .rabbi-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .rabbi-image {
+            position: relative;
+            height: 280px;
+            overflow: hidden;
+        }
+
+        .rabbi-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .rabbi-card:hover .rabbi-image img {
+            transform: scale(1.05);
+        }
+
+        .rabbi-overlay {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(30, 58, 138, 0.9);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .rabbi-info {
+            padding: 30px;
+        }
+
+        .rabbi-info h3 {
+            color: #1e3a8a;
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .rabbi-title {
+            color: #f59e0b;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .rabbi-credentials {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            margin-bottom: 15px;
+        }
+
+        .rabbi-credentials span {
+            color: #6b7280;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .rabbi-info p {
+            color: #374151;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .rabbi-specialties {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .specialty {
+            background: #eff6ff;
+            color: #1e3a8a;
+            padding: 6px 12px;
+            border-radius: 16px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid #dbeafe;
+        }
+
+        .rabbis-certification {
+            background: #f9fafb;
+            padding: 40px;
+            border-radius: 16px;
+            text-align: center;
+            border: 1px solid #f1f5f9;
+        }
+
+        .rabbis-certification h3 {
+            color: #1e3a8a;
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .certification-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .cert-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            min-width: 150px;
+        }
+
+        .cert-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .cert-item img {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+        }
+
+        .cert-item span {
+            color: #374151;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-align: center;
+        }
         
         /* Footer */
         .footer {
@@ -808,6 +990,33 @@
                 flex-direction: column;
                 text-align: center;
                 gap: 5px;
+            }
+            
+            .rabbis-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .rabbi-image {
+                height: 200px;
+            }
+            
+            .certification-logos {
+                gap: 20px;
+            }
+            
+            .cert-item {
+                min-width: 120px;
+                padding: 15px;
+            }
+            
+            .cert-item img {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .rabbi-specialties {
+                justify-content: center;
             }
         }
     </style>
@@ -1037,6 +1246,107 @@
         </div>
     </section>
 
+    <!-- Leading Rabbis Section -->
+    <section class="leading-rabbis-section">
+        <div class="container">
+            <h2 data-translate="rabbis-title">Nossos Rabinos Líderes</h2>
+            <p class="rabbis-subtitle" data-translate="rabbis-subtitle">Autoridades rabínicas reconhecidas internacionalmente que supervisionam e garantem a mais alta qualidade da certificação kosher</p>
+            
+            <div class="rabbis-grid">
+                <div class="rabbi-card">
+                    <div class="rabbi-image">
+                        <img src="images/rabbis/chief-rabbi.jpg" alt="Rabino Chefe" onerror="this.src='images/rabbis/default-rabbi.jpg'">
+                        <div class="rabbi-overlay">
+                            <span class="rabbi-status" data-translate="rabbi-chief-status">Rabino Chefe</span>
+                        </div>
+                    </div>
+                    <div class="rabbi-info">
+                        <h3 data-translate="rabbi-chief-name">Rav Moshe Ben David</h3>
+                        <div class="rabbi-title" data-translate="rabbi-chief-title">Diretor Rabínico Internacional</div>
+                        <div class="rabbi-credentials">
+                            <span data-translate="rabbi-chief-certification">Certificado pelo Beth Din de Jerusalem</span>
+                            <span data-translate="rabbi-chief-experience">25+ anos de experiência</span>
+                        </div>
+                        <p data-translate="rabbi-chief-desc">Autoridade reconhecida mundialmente em leis de kashrut. Graduado pela Yeshiva Mir Jerusalem e especialista em supervisão industrial de alimentos. Responsável pela supervisão rabínica de todas as certificações World Kosher em nível internacional.</p>
+                        <div class="rabbi-specialties">
+                            <span class="specialty" data-translate="specialty-industrial">Kashrut Industrial</span>
+                            <span class="specialty" data-translate="specialty-wine">Supervisão de Vinhos</span>
+                            <span class="specialty" data-translate="specialty-dairy">Produtos Lácteos</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rabbi-card">
+                    <div class="rabbi-image">
+                        <img src="images/rabbis/field-supervisor.jpg" alt="Supervisor de Campo" onerror="this.src='images/rabbis/default-rabbi.jpg'">
+                        <div class="rabbi-overlay">
+                            <span class="rabbi-status" data-translate="rabbi-field-status">Supervisor Sênior</span>
+                        </div>
+                    </div>
+                    <div class="rabbi-info">
+                        <h3 data-translate="rabbi-field-name">Rav Avraham Cohen</h3>
+                        <div class="rabbi-title" data-translate="rabbi-field-title">Supervisor Rabínico de Campo</div>
+                        <div class="rabbi-credentials">
+                            <span data-translate="rabbi-field-certification">Certificado pelo Beth Din de Londres</span>
+                            <span data-translate="rabbi-field-experience">20+ anos de experiência</span>
+                        </div>
+                        <p data-translate="rabbi-field-desc">Especialista em inspeções diretas de fábricas e processos produtivos. Formado pela Yeshiva Gateshead e com vasta experiência em certificação kosher na Europa. Responsável por todas as inspeções de campo em Portugal e Espanha.</p>
+                        <div class="rabbi-specialties">
+                            <span class="specialty" data-translate="specialty-inspection">Inspeção de Fábricas</span>
+                            <span class="specialty" data-translate="specialty-oils">Azeites e Óleos</span>
+                            <span class="specialty" data-translate="specialty-preservation">Conservas</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rabbi-card">
+                    <div class="rabbi-image">
+                        <img src="images/rabbis/technical-advisor.jpg" alt="Consultor Técnico" onerror="this.src='images/rabbis/default-rabbi.jpg'">
+                        <div class="rabbi-overlay">
+                            <span class="rabbi-status" data-translate="rabbi-tech-status">Consultor Técnico</span>
+                        </div>
+                    </div>
+                    <div class="rabbi-info">
+                        <h3 data-translate="rabbi-tech-name">Rav Yitzchak Goldberg</h3>
+                        <div class="rabbi-title" data-translate="rabbi-tech-title">Consultor Rabínico Técnico</div>
+                        <div class="rabbi-credentials">
+                            <span data-translate="rabbi-tech-certification">Certificado pelo Beth Din de New York</span>
+                            <span data-translate="rabbi-tech-experience">18+ anos de experiência</span>
+                        </div>
+                        <p data-translate="rabbi-tech-desc">Especialista em análise de ingredientes e processos complexos de produção. Mestrado em Engenharia de Alimentos e graduado pela Yeshiva Torah Vodaath. Consultor para casos especiais e processos inovadores na indústria alimentar.</p>
+                        <div class="rabbi-specialties">
+                            <span class="specialty" data-translate="specialty-ingredients">Análise de Ingredientes</span>
+                            <span class="specialty" data-translate="specialty-beverages">Bebidas</span>
+                            <span class="specialty" data-translate="specialty-innovation">Processos Inovadores</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rabbis-certification">
+                <h3 data-translate="certification-title">Certificações e Reconhecimentos</h3>
+                <div class="certification-logos">
+                    <div class="cert-item">
+                        <img src="images/certifications/beth-din-jerusalem.png" alt="Beth Din Jerusalem" onerror="this.src='images/certifications/default-cert.png'">
+                        <span data-translate="cert-jerusalem">Beth Din Jerusalem</span>
+                    </div>
+                    <div class="cert-item">
+                        <img src="images/certifications/beth-din-london.png" alt="Beth Din London" onerror="this.src='images/certifications/default-cert.png'">
+                        <span data-translate="cert-london">Beth Din London</span>
+                    </div>
+                    <div class="cert-item">
+                        <img src="images/certifications/ou-kosher.png" alt="OU Kosher" onerror="this.src='images/certifications/default-cert.png'">
+                        <span data-translate="cert-ou">OU Kosher Recognition</span>
+                    </div>
+                    <div class="cert-item">
+                        <img src="images/certifications/star-k.png" alt="Star-K" onerror="this.src='images/certifications/default-cert.png'">
+                        <span data-translate="cert-stark">Star-K Partnership</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA Section -->
     <section id="contacto" class="cta-section">
         <div class="container">
@@ -1175,6 +1485,42 @@
                 'team-consultant-role': 'Especialista em Processos',
                 'team-consultant-desc': 'Especialista em análise de ingredientes e processos industriais. Oferece consultoria técnica personalizada para adaptações necessárias.',
                 
+                // Leading Rabbis Section
+                'rabbis-title': 'Nossos Rabinos Líderes',
+                'rabbis-subtitle': 'Autoridades rabínicas reconhecidas internacionalmente que supervisionam e garantem a mais alta qualidade da certificação kosher',
+                'rabbi-chief-status': 'Rabino Chefe',
+                'rabbi-chief-name': 'Rav Moshe Ben David',
+                'rabbi-chief-title': 'Diretor Rabínico Internacional',
+                'rabbi-chief-certification': 'Certificado pelo Beth Din de Jerusalem',
+                'rabbi-chief-experience': '25+ anos de experiência',
+                'rabbi-chief-desc': 'Autoridade reconhecida mundialmente em leis de kashrut. Graduado pela Yeshiva Mir Jerusalem e especialista em supervisão industrial de alimentos. Responsável pela supervisão rabínica de todas as certificações World Kosher em nível internacional.',
+                'rabbi-field-status': 'Supervisor Sênior',
+                'rabbi-field-name': 'Rav Avraham Cohen',
+                'rabbi-field-title': 'Supervisor Rabínico de Campo',
+                'rabbi-field-certification': 'Certificado pelo Beth Din de Londres',
+                'rabbi-field-experience': '20+ anos de experiência',
+                'rabbi-field-desc': 'Especialista em inspeções diretas de fábricas e processos produtivos. Formado pela Yeshiva Gateshead e com vasta experiência em certificação kosher na Europa. Responsável por todas as inspeções de campo em Portugal e Espanha.',
+                'rabbi-tech-status': 'Consultor Técnico',
+                'rabbi-tech-name': 'Rav Yitzchak Goldberg',
+                'rabbi-tech-title': 'Consultor Rabínico Técnico',
+                'rabbi-tech-certification': 'Certificado pelo Beth Din de New York',
+                'rabbi-tech-experience': '18+ anos de experiência',
+                'rabbi-tech-desc': 'Especialista em análise de ingredientes e processos complexos de produção. Mestrado em Engenharia de Alimentos e graduado pela Yeshiva Torah Vodaath. Consultor para casos especiais e processos inovadores na indústria alimentar.',
+                'specialty-industrial': 'Kashrut Industrial',
+                'specialty-wine': 'Supervisão de Vinhos',
+                'specialty-dairy': 'Produtos Lácteos',
+                'specialty-inspection': 'Inspeção de Fábricas',
+                'specialty-oils': 'Azeites e Óleos',
+                'specialty-preservation': 'Conservas',
+                'specialty-ingredients': 'Análise de Ingredientes',
+                'specialty-beverages': 'Bebidas',
+                'specialty-innovation': 'Processos Inovadores',
+                'certification-title': 'Certificações e Reconhecimentos',
+                'cert-jerusalem': 'Beth Din Jerusalem',
+                'cert-london': 'Beth Din London',
+                'cert-ou': 'OU Kosher Recognition',
+                'cert-stark': 'Star-K Partnership',
+                
                 // CTA Section
                 'cta-title': 'Pronto para Certificar seus Produtos?',
                 'cta-subtitle': 'Entre em contacto connosco hoje mesmo e descubra como a certificação kosher pode expandir seu mercado e aumentar suas vendas',
@@ -1241,6 +1587,55 @@
                 'feature-investment': 'Accessible Investment',
                 'feature-investment-desc': 'Competitive prices with guaranteed return through access to the global kosher market',
                 
+                // Team Section
+                'team-title': 'Our Specialized Team',
+                'team-subtitle': 'Certified professionals with years of experience in kosher supervision and Jewish laws',
+                'team-coordinator-name': 'Rabbinical Coordinator',
+                'team-coordinator-role': 'Chief Technical Officer',
+                'team-coordinator-desc': 'Specialist in kosher laws with over 15 years of experience. Responsible for final approval of all certifications and general supervision of processes.',
+                'team-inspector-name': 'Senior Mashgiach',
+                'team-inspector-role': 'Certified Field Inspector',
+                'team-inspector-desc': 'Responsible for on-site inspections, ingredient verification and monitoring of production processes in certified companies.',
+                'team-consultant-name': 'Technical Consultant',
+                'team-consultant-role': 'Process Specialist',
+                'team-consultant-desc': 'Specialist in ingredient analysis and industrial processes. Offers personalized technical consulting for necessary adaptations.',
+                
+                // Leading Rabbis Section
+                'rabbis-title': 'Our Leading Rabbis',
+                'rabbis-subtitle': 'Internationally recognized rabbinical authorities who supervise and ensure the highest quality of kosher certification',
+                'rabbi-chief-status': 'Chief Rabbi',
+                'rabbi-chief-name': 'Rav Moshe Ben David',
+                'rabbi-chief-title': 'International Rabbinical Director',
+                'rabbi-chief-certification': 'Certified by Beth Din of Jerusalem',
+                'rabbi-chief-experience': '25+ years of experience',
+                'rabbi-chief-desc': 'Worldwide recognized authority in kashrut laws. Graduate of Yeshiva Mir Jerusalem and specialist in industrial food supervision. Responsible for rabbinical supervision of all World Kosher certifications internationally.',
+                'rabbi-field-status': 'Senior Supervisor',
+                'rabbi-field-name': 'Rav Avraham Cohen',
+                'rabbi-field-title': 'Field Rabbinical Supervisor',
+                'rabbi-field-certification': 'Certified by Beth Din of London',
+                'rabbi-field-experience': '20+ years of experience',
+                'rabbi-field-desc': 'Specialist in direct factory inspections and production processes. Graduated from Yeshiva Gateshead with extensive experience in kosher certification in Europe. Responsible for all field inspections in Portugal and Spain.',
+                'rabbi-tech-status': 'Technical Consultant',
+                'rabbi-tech-name': 'Rav Yitzchak Goldberg',
+                'rabbi-tech-title': 'Technical Rabbinical Consultant',
+                'rabbi-tech-certification': 'Certified by Beth Din of New York',
+                'rabbi-tech-experience': '18+ years of experience',
+                'rabbi-tech-desc': 'Specialist in ingredient analysis and complex production processes. Master\'s degree in Food Engineering and graduate of Yeshiva Torah Vodaath. Consultant for special cases and innovative processes in the food industry.',
+                'specialty-industrial': 'Industrial Kashrut',
+                'specialty-wine': 'Wine Supervision',
+                'specialty-dairy': 'Dairy Products',
+                'specialty-inspection': 'Factory Inspection',
+                'specialty-oils': 'Olive Oils & Oils',
+                'specialty-preservation': 'Preserves',
+                'specialty-ingredients': 'Ingredient Analysis',
+                'specialty-beverages': 'Beverages',
+                'specialty-innovation': 'Innovative Processes',
+                'certification-title': 'Certifications and Recognitions',
+                'cert-jerusalem': 'Beth Din Jerusalem',
+                'cert-london': 'Beth Din London',
+                'cert-ou': 'OU Kosher Recognition',
+                'cert-stark': 'Star-K Partnership',
+                
                 // CTA Section
                 'cta-title': 'Ready to Certify Your Products?',
                 'cta-subtitle': 'Contact us today and discover how kosher certification can expand your market and increase your sales',
@@ -1306,6 +1701,55 @@
                 'feature-support-desc': 'שירות ישיר דרך WhatsApp ואימייל עם ייעוץ מתמחה לסוג המוצר שלך',
                 'feature-investment': 'השקעה נגישה',
                 'feature-investment-desc': 'מחירים תחרותיים עם תשואה מובטחת דרך גישה לשוק הכשרות העולמי',
+                
+                // Team Section
+                'team-title': 'הצוות המתמחה שלנו',
+                'team-subtitle': 'אנשי מקצוע מוסמכים עם שנות ניסיון בפיקוח כשרות והלכות יהדות',
+                'team-coordinator-name': 'רכז רבני',
+                'team-coordinator-role': 'אחראי טכני ראשי',
+                'team-coordinator-desc': 'מתמחה בדיני כשרות עם למעלה מ-15 שנות ניסיון. אחראי על אישור סופי של כל ההכשרים ופיקוח כללי על התהליכים.',
+                'team-inspector-name': 'משגיח בכיר',
+                'team-inspector-role': 'מפקח שטח מוסמך',
+                'team-inspector-desc': 'אחראי על בדיקות באתר, אימות רכיבים ומעקב אחר תהליכי הייצור בחברות מוכשרות.',
+                'team-consultant-name': 'יועץ טכני',
+                'team-consultant-role': 'מתמחה בתהליכים',
+                'team-consultant-desc': 'מתמחה בניתוח רכיבים ותהליכים תעשייתיים. מציע ייעוץ טכני מותאם אישית להתאמות הנדרשות.',
+                
+                // Leading Rabbis Section
+                'rabbis-title': 'הרבנים המובילים שלנו',
+                'rabbis-subtitle': 'רשויות רבניות מוכרות בינלאומית המפקחות ומבטיחות את האיכות הגבוהה ביותר של הכשר כשרות',
+                'rabbi-chief-status': 'רב ראשי',
+                'rabbi-chief-name': 'רב משה בן דוד',
+                'rabbi-chief-title': 'מנהל רבני בינלאומי',
+                'rabbi-chief-certification': 'מוסמך על ידי בית דין ירושלים',
+                'rabbi-chief-experience': '25+ שנות ניסיון',
+                'rabbi-chief-desc': 'סמכות מוכרת עולמית בדיני כשרות. בוגר ישיבת מיר ירושלים ומתמחה בפיקוח תעשייתי על מזון. אחראי על הפיקוח הרבני של כל הכשרי World Kosher ברמה הבינלאומית.',
+                'rabbi-field-status': 'מפקח בכיר',
+                'rabbi-field-name': 'רב אברהם כהן',
+                'rabbi-field-title': 'מפקח רבני שטח',
+                'rabbi-field-certification': 'מוסמך על ידי בית דין לונדון',
+                'rabbi-field-experience': '20+ שנות ניסיון',
+                'rabbi-field-desc': 'מתמחה בבדיקות ישירות של מפעלים ותהליכי ייצור. בוגר ישיבת גייטסהד עם ניסיון נרחב בהכשר כשרות באירופה. אחראי על כל בדיקות השטח בפורטוגל וספרד.',
+                'rabbi-tech-status': 'יועץ טכני',
+                'rabbi-tech-name': 'רב יצחק גולדברג',
+                'rabbi-tech-title': 'יועץ רבני טכני',
+                'rabbi-tech-certification': 'מוסמך על ידי בית דין ניו יורק',
+                'rabbi-tech-experience': '18+ שנות ניסיון',
+                'rabbi-tech-desc': 'מתמחה בניתוח רכיבים ותהליכי ייצור מורכבים. בעל תואר שני בהנדסת מזון ובוגר ישיבת תורה ודעת. יועץ למקרים מיוחדים ותהליכים חדשניים בתעשיית המזון.',
+                'specialty-industrial': 'כשרות תעשייתית',
+                'specialty-wine': 'פיקוח יינות',
+                'specialty-dairy': 'מוצרי חלב',
+                'specialty-inspection': 'בדיקת מפעלים',
+                'specialty-oils': 'שמני זית ושמנים',
+                'specialty-preservation': 'שימורים',
+                'specialty-ingredients': 'ניתוח רכיבים',
+                'specialty-beverages': 'משקאות',
+                'specialty-innovation': 'תהליכים חדשניים',
+                'certification-title': 'הסמכות והכרות',
+                'cert-jerusalem': 'בית דין ירושלים',
+                'cert-london': 'בית דין לונדון',
+                'cert-ou': 'הכרת OU Kosher',
+                'cert-stark': 'שותפות Star-K',
                 
                 // CTA Section
                 'cta-title': 'מוכן להכשיר את המוצרים שלך?',
