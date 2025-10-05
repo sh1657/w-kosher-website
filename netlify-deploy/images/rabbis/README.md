@@ -5,13 +5,45 @@
 ## תמונות נדרשות:
 
 ### רבנים אמיתיים מהאתר:
-- `Goelman.jpg` - Rabbi Israel Goelman (נשיא)
-- `zvi1.jpg` - Rabbi Zvi Bringer (מנכ"ל)  
-- `ShemuelZalman.png` - Rabbi Shemuel Zalman (מתמחה במשקאות אלכוהוליים)
-- `Michael.png` - Rabbi Michael Moshe Grinberg (אחראי חומרי גלם)
-- `EliahuBilis.png` - Rabbi Eliahu Bayles (מנהל שירותי לקוחות)
-- `ElishaSallas.jpg` - Rabbi Elisha Salas (יועץ רבני)
+- `Goelman.jpg` - Rabbi Israel Goelman (נשיא) - 40+ שנות ניסיון
+- `zvi1.jpg` - Rabbi Zvi Bringer (מנכ"ל) - 35+ שנות ניסיון
+- `ShemuelZalman.png` - Rabbi Shemuel Zalman (מתמחה במשקאות אלכוהוליים) - 50+ שנות ניסיון
+- `Michael.png` - Rabbi Michael Moshe Grinberg (אחראי חומרי גלם) - 40+ שנות ניסיון
+- `EliahuBilis.png` - Rabbi Eliahu Bayles (מנהל שירותי לקוחות) - 28+ שנות ניסיון
+- `ElishaSallas.jpg` - Rabbi Elisha Salas (יועץ רבני) - 45+ שנות ניסיון
 - `default-rabbi.jpg` - תמונת ברירת מחדל במקרה של שגיאה
+
+## התמחויות מעודכנות:
+
+### Rabbi Israel Goelman:
+- מנהיגות ארגונית
+- הכשרה בינלאומית  
+- תקני כשרות
+
+### Rabbi Zvi Bringer:
+- ניהול תפעולי
+- אסטרטגיה עסקית
+- תיאום גלובלי
+
+### Rabbi Shemuel Zalman:
+- יינות כשרים
+- בירות
+- משקאות חריפים
+
+### Rabbi Michael Moshe Grinberg:
+- ניתוח רכיבים
+- חומרי גלם
+- תוספי מזון
+
+### Rabbi Eliahu Bayles:
+- בדיקת היתכנות
+- התאמת חומרי גלם
+- פתרונות כשרותיים
+
+### Rabbi Elisha Salas:
+- ייעוץ מתמחה
+- מקרים מורכבים
+- התאמת תהליכים
 
 ## דרישות טכניות:
 - **גודל:** 400x400 פיקסלים מינימום
