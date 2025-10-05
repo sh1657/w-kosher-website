@@ -1,0 +1,96 @@
+/* W-Kosher Multilingual Website CSS - WordPress Compatible Version */
+
+/* Language Selector Dropdown Menu */
+.wk-lang-dd {
+  position: relative;
+  cursor: pointer;
+}
+
+.wk-lang-dd summary {
+  list-style: none;
+  padding: 6px 10px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.wk-lang-dd summary::-webkit-details-marker {
+  display: none;
+}
+
+.wk-lang-dd__menu {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  min-width: 150px;
+  z-index: 1000;
+  margin-top: 5px;
+}
+
+.wk-lang-dd__item {
+  display: block;
+  padding: 10px 15px;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  border-radius: 6px;
+  margin: 3px;
+}
+
+.wk-lang-dd__item:hover {
+  background-color: #f3f4f6;
+}
+
+/* Hide all language-specific texts by default */
+.wk-pt-text, .wk-en-text, .wk-he-text, .wk-es-text {
+  display: none;
+}
+
+/* Language Selection and Text Display - Using :has() */
+.wk-site-wrapper:has(#wk-lang-pt:checked) .wk-pt-text { display: block; }
+.wk-site-wrapper:has(#wk-lang-en:checked) .wk-en-text { display: block; }
+.wk-site-wrapper:has(#wk-lang-he:checked) .wk-he-text { display: block; }
+.wk-site-wrapper:has(#wk-lang-es:checked) .wk-es-text { display: block; }
+
+.wk-site-wrapper:has(#wk-lang-pt:checked) .wk-lang-label[for="wk-lang-pt"] { background-color: #017FC0; color: white; }
+.wk-site-wrapper:has(#wk-lang-en:checked) .wk-lang-label[for="wk-lang-en"] { background-color: #017FC0; color: white; }
+.wk-site-wrapper:has(#wk-lang-he:checked) .wk-lang-label[for="wk-lang-he"] { background-color: #017FC0; color: white; }
+.wk-site-wrapper:has(#wk-lang-es:checked) .wk-lang-label[for="wk-lang-es"] { background-color: #017FC0; color: white; }
+
+.wk-site-wrapper:has(#wk-lang-pt:checked) .wk-lang-dd__item[for="wk-lang-pt"] { background-color: #017FC0; color: white; }
+.wk-site-wrapper:has(#wk-lang-en:checked) .wk-lang-dd__item[for="wk-lang-en"] { background-color: #017FC0; color: white; }
+.wk-site-wrapper:has(#wk-lang-he:checked) .wk-lang-dd__item[for="wk-lang-he"] { background-color: #017FC0; color: white; }
+.wk-site-wrapper:has(#wk-lang-es:checked) .wk-lang-dd__item[for="wk-lang-es"] { background-color: #017FC0; color: white; }
+
+/* Hide radio inputs */
+input[name="wk-lang"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* WordPress-specific fix - If WordPress wraps inputs in paragraphs */
+.wp-block-html p:has(> input[name="wk-lang"]) {
+  display: contents !important;
+  margin: 0 !important;
+}
+
+/* Right-to-left support for Hebrew */
+.wk-site-wrapper:has(#wk-lang-he:checked) {
+  direction: rtl;
+}
+
+/* Reset direction for specific elements in Hebrew */
+.wk-site-wrapper:has(#wk-lang-he:checked) .wk-keep-ltr {
+  direction: ltr;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .wk-lang-dd {
+    margin-bottom: 10px;
+  }
+}

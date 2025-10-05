@@ -1,0 +1,308 @@
+/* =================================
+   WORLD KOSHER MULTI-LANGUAGE CSS
+   WordPress.com Ready Version
+   ================================= */
+
+/* הסתרת כל השפות כברירת מחדל */
+.text-en, .text-he, .text-es, .text-ru, .text-it {
+    display: none !important;
+}
+
+/* הצגת פורטוגזית כברירת מחדל */
+.text-pt {
+    display: inline !important;
+}
+
+/* כאשר האנגלית פעילה */
+body.lang-en .text-en {
+    display: inline !important;
+}
+
+body.lang-en .text-pt {
+    display: none !important;
+}
+
+/* כאשר העברית פעילה + RTL */
+body.lang-he .text-he {
+    display: inline !important;
+}
+
+body.lang-he .text-pt {
+    display: none !important;
+}
+
+body.lang-he {
+    direction: rtl !important;
+    text-align: right !important;
+}
+
+body.lang-he nav {
+    direction: rtl !important;
+}
+
+body.lang-he .language-buttons {
+    direction: ltr !important;
+}
+
+/* כאשר הספרדית פעילה */
+body.lang-es .text-es {
+    display: inline !important;
+}
+
+body.lang-es .text-pt {
+    display: none !important;
+}
+
+/* כאשר הרוסית פעילה */
+body.lang-ru .text-ru {
+    display: inline !important;
+}
+
+body.lang-ru .text-pt {
+    display: none !important;
+}
+
+/* כאשר האיטלקית פעילה */
+body.lang-it .text-it {
+    display: inline !important;
+}
+
+body.lang-it .text-pt {
+    display: none !important;
+}
+
+/* עיצוב כפתורי השפה */
+.language-buttons {
+    display: flex !important;
+    gap: 8px !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    margin: 15px 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+}
+
+.lang-btn {
+    padding: 10px 15px !important;
+    border: 2px solid rgba(30, 58, 138, 0.3) !important;
+    background: rgba(30, 58, 138, 0.1) !important;
+    color: #1e3a8a !important;
+    border-radius: 8px !important;
+    cursor: pointer !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+    min-width: 80px !important;
+    text-align: center !important;
+}
+
+.lang-btn:hover {
+    background: rgba(30, 58, 138, 0.2) !important;
+    border-color: #1e3a8a !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1) !important;
+    color: #1e3a8a !important;
+    text-decoration: none !important;
+}
+
+.lang-btn.active {
+    background: #1e3a8a !important;
+    color: white !important;
+    border-color: #1e3a8a !important;
+    box-shadow: 0 4px 12px rgba(30, 58, 138, 0.4) !important;
+}
+
+/* עיצוב אזור כפתורי השפה */
+.language-selector-area {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%) !important;
+    padding: 25px !important;
+    border-radius: 15px !important;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08) !important;
+    margin: 25px auto !important;
+    text-align: center !important;
+    border: 2px solid #e2e8f0 !important;
+    max-width: 800px !important;
+}
+
+.language-selector-title {
+    color: #1e3a8a !important;
+    font-size: 1.3rem !important;
+    font-weight: 700 !important;
+    margin-bottom: 20px !important;
+    text-align: center !important;
+}
+
+/* תיקוני Responsive מתקדמים לדפים משניים */
+@media (min-width: 1024px) {
+    /* תיקון לדפים משניים - הצגה במחשב */
+    body.secondary-page,
+    body:not(.home) {
+        font-size: 16px !important;
+        line-height: 1.6 !important;
+    }
+    
+    body.secondary-page .site-main,
+    body.secondary-page .content-area,
+    body.secondary-page .entry-content,
+    body:not(.home) .site-main,
+    body:not(.home) .content-area,
+    body:not(.home) .entry-content {
+        max-width: 1200px !important;
+        margin: 0 auto !important;
+        padding: 40px 30px !important;
+        font-size: 16px !important;
+        line-height: 1.7 !important;
+    }
+    
+    /* כותרות בדפים משניים */
+    body.secondary-page h1,
+    body:not(.home) h1 {
+        font-size: 2.8rem !important;
+        text-align: center !important;
+        margin-bottom: 2rem !important;
+        color: #1e3a8a !important;
+    }
+    
+    body.secondary-page h2,
+    body:not(.home) h2 {
+        font-size: 2.2rem !important;
+        margin: 2rem 0 1.2rem 0 !important;
+        color: #1f2937 !important;
+    }
+    
+    body.secondary-page h3,
+    body:not(.home) h3 {
+        font-size: 1.6rem !important;
+        margin: 1.5rem 0 1rem 0 !important;
+    }
+    
+    /* פסקאות בדפים משניים */
+    body.secondary-page p,
+    body:not(.home) p {
+        font-size: 1.1rem !important;
+        line-height: 1.8 !important;
+        margin-bottom: 1.5rem !important;
+    }
+    
+    /* תיקון לקונטיינרים של WordPress.com */
+    body.secondary-page .wp-site-blocks,
+    body.secondary-page .wp-block-group,
+    body:not(.home) .wp-site-blocks,
+    body:not(.home) .wp-block-group {
+        max-width: 1200px !important;
+        margin: 0 auto !important;
+        padding: 0 30px !important;
+    }
+}
+
+/* תיקונים למובייל */
+@media (max-width: 767px) {
+    .language-buttons {
+        gap: 6px !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+    }
+    
+    .lang-btn {
+        padding: 8px 12px !important;
+        font-size: 12px !important;
+        min-width: 60px !important;
+    }
+    
+    .language-selector-area {
+        padding: 20px 15px !important;
+        margin: 20px 10px !important;
+    }
+    
+    .language-selector-title {
+        font-size: 1.1rem !important;
+    }
+    
+    /* תיקונים למובייל בדפים משניים */
+    body.secondary-page .site-main,
+    body:not(.home) .site-main {
+        padding: 20px 15px !important;
+    }
+}
+
+/* תיקונים לטאבלט */
+@media (min-width: 768px) and (max-width: 1023px) {
+    body.secondary-page .site-main,
+    body:not(.home) .site-main {
+        max-width: 100% !important;
+        padding: 30px 25px !important;
+    }
+    
+    body.secondary-page h1,
+    body:not(.home) h1 {
+        font-size: 2.4rem !important;
+    }
+}
+
+/* תיקונים נוספים לתאימות WordPress.com */
+.entry-content .language-buttons {
+    list-style: none !important;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+}
+
+.entry-content .lang-btn {
+    display: inline-block !important;
+    margin-bottom: 0 !important;
+}
+
+/* תיקון לתמות WordPress.com */
+article .language-buttons,
+.post .language-buttons {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    list-style: none !important;
+}
+
+/* הבטחת תצוגה נכונה */
+.text-pt, .text-en, .text-he, .text-es, .text-ru, .text-it {
+    font-family: inherit !important;
+    font-size: inherit !important;
+    line-height: inherit !important;
+    color: inherit !important;
+}
+
+/* תיקונים ספציפיים לנושאי WordPress.com */
+.wp-block-group .language-buttons {
+    margin: 20px 0 !important;
+}
+
+.entry-header .language-buttons {
+    margin-top: 15px !important;
+}
+
+/* תיקון לכפתורי השפה בתפריט */
+.main-navigation .language-buttons {
+    margin: 0 !important;
+    gap: 5px !important;
+}
+
+.main-navigation .lang-btn {
+    padding: 6px 10px !important;
+    font-size: 12px !important;
+    min-width: 50px !important;
+}
+
+/* אנימציות חלקות */
+.lang-btn {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.lang-btn:focus {
+    outline: 2px solid #f59e0b !important;
+    outline-offset: 2px !important;
+}
+
+/* נגישות */
+@media (prefers-reduced-motion: reduce) {
+    .lang-btn {
+        transition: none !important;
+    }
+}

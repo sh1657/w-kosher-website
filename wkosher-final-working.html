@@ -1,0 +1,570 @@
+<!-- ===== SITE WRAPPER WITH LANGUAGE RADIOS ===== -->
+<div class="wk-site-wrapper">
+  <!-- RADIO INPUTS FOR LANGUAGE SELECTOR (HIDDEN) -->
+  <input type="radio" name="wk-lang" id="wk-lang-pt" checked>
+  <input type="radio" name="wk-lang" id="wk-lang-en">
+  <input type="radio" name="wk-lang" id="wk-lang-he">
+  <input type="radio" name="wk-lang" id="wk-lang-es">
+
+<!-- Top Bar -->
+<div style="background: #1e3a8a;color: white;padding: 10px 0;font-size: 0.9rem;position: sticky;top: 0;z-index: 1001">
+    <div style="max-width: 1200px;margin: 0 auto;padding: 0 20px;display: flex;justify-content: space-between;align-items: center;flex-wrap: wrap;gap: 10px">
+        <div>
+            <span style="margin-right: 20px">📞 
+                <span class="wk-text wk-pt-text">LINHA KOSHER:</span>
+                <span class="wk-text wk-en-text">KOSHER LINE:</span>
+                <span class="wk-text wk-he-text">קו כשרות:</span>
+                <span class="wk-text wk-es-text">LÍNEA KOSHER:</span>
+                <a href="tel:+972543080390" style="color: white;text-decoration: none">(+972) 54 308 0390</a>
+            </span>
+            <span>📧 <a href="mailto:Portugal@w-kosher.com" style="color: white;text-decoration: none">Portugal@w-kosher.com</a></span>
+        </div>
+        <div style="display: flex;align-items: center;gap: 15px">
+            <!-- No-JS language dropdown -->
+            <details class="wk-lang-dd">
+              <summary>🇵🇹 Português ▾</summary>
+              <div class="wk-lang-dd__menu">
+                <label for="wk-lang-pt" class="wk-lang-dd__item">🇵🇹 Português</label>
+                <label for="wk-lang-en" class="wk-lang-dd__item">🇬🇧 English</label>
+                <label for="wk-lang-he" class="wk-lang-dd__item">🇮🇱 עברית</label>
+                <label for="wk-lang-es" class="wk-lang-dd__item">🇪🇸 Español</label>
+              </div>
+            </details>
+            
+            <a href="https://www.facebook.com/profile.php?id=61575501917315" target="_blank" style="color: white;text-decoration: none">📘 Facebook</a>
+            <a href="https://wa.me/972543080390" target="_blank" style="color: white;text-decoration: none">📱 WhatsApp</a>
+        </div>
+    </div>
+</div>
+
+<!-- Main Header -->
+<header style="background: white;box-shadow: 0 2px 10px rgba(0,0,0,0.1);position: sticky;top: 44px;z-index: 1000">
+    <div style="max-width: 1200px;margin: 0 auto;padding: 15px 20px;display: flex;align-items: center;justify-content: space-between;flex-wrap: wrap;gap: 20px">
+        <div style="display: flex;align-items: center;gap: 15px">
+            <img src="https://wkoshercom.wordpress.com/wp-content/uploads/2024/06/4-removebg-preview.png" alt="Logo" style="width: 50px;height: 50px;border-radius: 12px;object-fit: contain">
+            <div>
+                <h1 style="font-size: 1.8rem;font-weight: 700;color: #1e3a8a;margin: 0">World Kosher</h1>
+                <span style="font-size: 0.9rem;color: #6b7280;font-weight: 500">B.M.MASHGICHIM</span>
+            </div>
+        </div>
+    </div>
+    <div style="display: flex;gap: 20px;justify-content: center;flex-wrap: wrap;margin: 0;padding: 15px 0">
+        <a href="/" style="padding: 10px 15px;color: #f59e0b;text-decoration: none;font-weight: 600;border-radius: 8px;background: #f9fafb">
+            🏠 <span class="wk-text wk-pt-text">Início</span>
+            <span class="wk-text wk-en-text">Home</span>
+            <span class="wk-text wk-he-text">ראשי</span>
+            <span class="wk-text wk-es-text">Inicio</span>
+        </a>
+        <a href="/certificacao" style="padding: 10px 15px;color: #1e3a8a;text-decoration: none;font-weight: 500;border-radius: 8px">
+            📋 <span class="wk-text wk-pt-text">Certificação</span>
+            <span class="wk-text wk-en-text">Certification</span>
+            <span class="wk-text wk-he-text">אישורים</span>
+            <span class="wk-text wk-es-text">Certificación</span>
+        </a>
+        <a href="/empresas" style="padding: 10px 15px;color: #1e3a8a;text-decoration: none;font-weight: 500;border-radius: 8px">
+            🏢 <span class="wk-text wk-pt-text">Empresas</span>
+            <span class="wk-text wk-en-text">Companies</span>
+            <span class="wk-text wk-he-text">חברות</span>
+            <span class="wk-text wk-es-text">Empresas</span>
+        </a>
+        <a href="/about" style="padding: 10px 15px;color: #1e3a8a;text-decoration: none;font-weight: 500;border-radius: 8px">
+            ℹ️ <span class="wk-text wk-pt-text">Sobre Nós</span>
+            <span class="wk-text wk-en-text">About Us</span>
+            <span class="wk-text wk-he-text">אודות</span>
+            <span class="wk-text wk-es-text">Sobre Nosotros</span>
+        </a>
+        <a href="/contacto" style="padding: 10px 15px;color: #1e3a8a;text-decoration: none;font-weight: 500;border-radius: 8px">
+            📞 <span class="wk-text wk-pt-text">Contacto</span>
+            <span class="wk-text wk-en-text">Contact</span>
+            <span class="wk-text wk-he-text">צור קשר</span>
+            <span class="wk-text wk-es-text">Contacto</span>
+        </a>
+    </div>
+    <div style="text-align: center;padding-bottom: 15px">
+        <a href="https://wa.me/972543080390" target="_blank" style="background: #f59e0b;color: white;padding: 12px 20px;border-radius: 8px;text-decoration: none;font-weight: 600;display: inline-block">
+            🚀 <span class="wk-text wk-pt-text">Solicitar Certificação</span>
+            <span class="wk-text wk-en-text">Request Certification</span>
+            <span class="wk-text wk-he-text">בקש אישור כשרות</span>
+            <span class="wk-text wk-es-text">Solicitar Certificación</span>
+        </a>
+    </div>
+</header>
+
+<!-- Hero Section -->
+<section style="background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);color: white;padding: 80px 20px;text-align: center">
+    <div style="max-width: 1000px;margin: 0 auto">
+        <h1 style="font-size: 3.5rem;font-weight: 800;line-height: 1.1;margin-bottom: 25px">
+            <span class="wk-text wk-pt-text">Certificação Kosher</span>
+            <span class="wk-text wk-en-text">Kosher Certification</span>
+            <span class="wk-text wk-he-text">אישור כשרות</span>
+            <span class="wk-text wk-es-text">Certificación Kosher</span>
+            <br>
+            <span style="color: #f59e0b">
+                <span class="wk-text wk-pt-text">Oficial em Portugal</span>
+                <span class="wk-text wk-en-text">Official in Portugal</span>
+                <span class="wk-text wk-he-text">רשמי בפורטוגל</span>
+                <span class="wk-text wk-es-text">Oficial en Portugal</span>
+            </span>
+        </h1>
+        <p style="font-size: 1.3rem;opacity: 0.9;margin-bottom: 40px;max-width: 600px;margin-left: auto;margin-right: auto">
+            <span class="wk-text wk-pt-text">A principal autoridade em certificação kosher com mais de 1.000 produtos certificados em 15+ países</span>
+            <span class="wk-text wk-en-text">The leading authority in kosher certification with over 1,000 certified products in 15+ countries</span>
+            <span class="wk-text wk-he-text">הרשות המובילה באישורי כשרות עם למעלה מ-1,000 מוצרים מאושרים ב-15+ מדינות</span>
+            <span class="wk-text wk-es-text">La principal autoridad en certificación kosher con más de 1.000 productos certificados en 15+ países</span>
+        </p>
+        <div style="display: flex;gap: 40px;margin-bottom: 50px;justify-content: center;flex-wrap: wrap">
+            <div style="text-align: center">
+                <span style="display: block;font-size: 2.5rem;font-weight: 800;color: #f59e0b">8+</span>
+                <span style="font-size: 0.9rem;opacity: 0.8">
+                    <span class="wk-text wk-pt-text">Empresas Certificadas</span>
+                    <span class="wk-text wk-en-text">Certified Companies</span>
+                    <span class="wk-text wk-he-text">חברות מאושרות</span>
+                    <span class="wk-text wk-es-text">Empresas Certificadas</span>
+                </span>
+            </div>
+            <div style="text-align: center">
+                <span style="display: block;font-size: 2.5rem;font-weight: 800;color: #f59e0b">15+</span>
+                <span style="font-size: 0.9rem;opacity: 0.8">
+                    <span class="wk-text wk-pt-text">Países Atendidos</span>
+                    <span class="wk-text wk-en-text">Countries Served</span>
+                    <span class="wk-text wk-he-text">מדינות בשירות</span>
+                    <span class="wk-text wk-es-text">Países Atendidos</span>
+                </span>
+            </div>
+            <div style="text-align: center">
+                <span style="display: block;font-size: 2.5rem;font-weight: 800;color: #f59e0b">100%</span>
+                <span style="font-size: 0.9rem;opacity: 0.8">
+                    <span class="wk-text wk-pt-text">Taxa de Aprovação</span>
+                    <span class="wk-text wk-en-text">Approval Rate</span>
+                    <span class="wk-text wk-he-text">שיעור אישור</span>
+                    <span class="wk-text wk-es-text">Tasa de Aprobación</span>
+                </span>
+            </div>
+        </div>
+        <div style="display: flex;gap: 20px;justify-content: center;flex-wrap: wrap">
+            <a href="https://wa.me/972543080390" target="_blank" style="background: #f59e0b;color: white;padding: 15px 30px;border-radius: 8px;text-decoration: none;font-weight: 600;font-size: 1.1rem">
+                🚀 <span class="wk-text wk-pt-text">Solicitar Certificação</span>
+                <span class="wk-text wk-en-text">Request Certification</span>
+                <span class="wk-text wk-he-text">בקש אישור</span>
+                <span class="wk-text wk-es-text">Solicitar Certificación</span>
+            </a>
+            <a href="/empresas" style="background: transparent;color: white;padding: 15px 30px;border: 2px solid white;border-radius: 8px;text-decoration: none;font-weight: 600;font-size: 1.1rem">
+                🔍 <span class="wk-text wk-pt-text">Ver Empresas</span>
+                <span class="wk-text wk-en-text">View Companies</span>
+                <span class="wk-text wk-he-text">צפה בחברות</span>
+                <span class="wk-text wk-es-text">Ver Empresas</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Why Choose Section -->
+<section style="padding: 80px 20px;background: white">
+    <div style="max-width: 1200px;margin: 0 auto">
+        <div style="text-align: center;margin-bottom: 60px">
+            <h2 style="font-size: 2.5rem;color: #1f2937;margin-bottom: 15px">
+                <span class="wk-text wk-pt-text">Por que Escolher a World Kosher?</span>
+                <span class="wk-text wk-en-text">Why Choose World Kosher?</span>
+                <span class="wk-text wk-he-text">למה לבחור ב-World Kosher?</span>
+                <span class="wk-text wk-es-text">¿Por qué Elegir World Kosher?</span>
+            </h2>
+            <p style="font-size: 1.2rem;color: #6b7280;max-width: 600px;margin: 0 auto">
+                <span class="wk-text wk-pt-text">Somos a autoridade líder em certificação kosher em Portugal e Europa</span>
+                <span class="wk-text wk-en-text">We are the leading authority in kosher certification in Portugal and Europe</span>
+                <span class="wk-text wk-he-text">אנחנו הרשות המובילה באישורי כשרות בפורטוגל ואירופה</span>
+                <span class="wk-text wk-es-text">Somos la autoridad líder en certificación kosher en Portugal y Europa</span>
+            </p>
+        </div>
+        <div style="display: grid;grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));gap: 30px">
+            <div style="text-align: center;padding: 40px 30px;background: white;border-radius: 16px;box-shadow: 0 5px 20px rgba(0,0,0,0.1)">
+                <div style="width: 80px;height: 80px;background: linear-gradient(135deg, #1e3a8a, #059669);border-radius: 50%;display: flex;align-items: center;justify-content: center;margin: 0 auto 25px;color: white;font-size: 2rem">🌍</div>
+                <h3 style="font-size: 1.3rem;color: #1f2937;margin-bottom: 15px">
+                    <span class="wk-text wk-pt-text">Reconhecimento Internacional</span>
+                    <span class="wk-text wk-en-text">International Recognition</span>
+                    <span class="wk-text wk-he-text">הכרה בינלאומית</span>
+                    <span class="wk-text wk-es-text">Reconocimiento Internacional</span>
+                </h3>
+                <p style="color: #6b7280;line-height: 1.6">
+                    <span class="wk-text wk-pt-text">Certificação reconhecida em mais de 15 países ao redor do mundo, incluindo Estados Unidos, Canadá e toda a Europa.</span>
+                    <span class="wk-text wk-en-text">Certification recognized in over 15 countries worldwide, including the United States, Canada, and all of Europe.</span>
+                    <span class="wk-text wk-he-text">אישור מוכר בלמעלה מ-15 מדינות ברחבי העולם, כולל ארצות הברית, קנדה וכל אירופה.</span>
+                    <span class="wk-text wk-es-text">Certificación reconocida en más de 15 países en todo el mundo, incluyendo Estados Unidos, Canadá y toda Europa.</span>
+                </p>
+            </div>
+            <div style="text-align: center;padding: 40px 30px;background: white;border-radius: 16px;box-shadow: 0 5px 20px rgba(0,0,0,0.1)">
+                <div style="width: 80px;height: 80px;background: linear-gradient(135deg, #1e3a8a, #059669);border-radius: 50%;display: flex;align-items: center;justify-content: center;margin: 0 auto 25px;color: white;font-size: 2rem">🛡️</div>
+                <h3 style="font-size: 1.3rem;color: #1f2937;margin-bottom: 15px">
+                    <span class="wk-text wk-pt-text">Rigor e Qualidade</span>
+                    <span class="wk-text wk-en-text">Rigor and Quality</span>
+                    <span class="wk-text wk-he-text">קפדנות ואיכות</span>
+                    <span class="wk-text wk-es-text">Rigor y Calidad</span>
+                </h3>
+                <p style="color: #6b7280;line-height: 1.6">
+                    <span class="wk-text wk-pt-text">Processo rigoroso de certificação com 100% de taxa de aprovação e conformidade com os mais altos padrões internacionais.</span>
+                    <span class="wk-text wk-en-text">Rigorous certification process with 100% approval rate and compliance with the highest international standards.</span>
+                    <span class="wk-text wk-he-text">תהליך אישור קפדני עם שיעור אישור של 100% ועמידה בסטנדרטים הבינלאומיים הגבוהים ביותר.</span>
+                    <span class="wk-text wk-es-text">Proceso riguroso de certificación con tasa de aprobación del 100% y cumplimiento de los más altos estándares internacionales.</span>
+                </p>
+            </div>
+            <div style="text-align: center;padding: 40px 30px;background: white;border-radius: 16px;box-shadow: 0 5px 20px rgba(0,0,0,0.1)">
+                <div style="width: 80px;height: 80px;background: linear-gradient(135deg, #1e3a8a, #059669);border-radius: 50%;display: flex;align-items: center;justify-content: center;margin: 0 auto 25px;color: white;font-size: 2rem">👥</div>
+                <h3 style="font-size: 1.3rem;color: #1f2937;margin-bottom: 15px">
+                    <span class="wk-text wk-pt-text">Equipa Especializada</span>
+                    <span class="wk-text wk-en-text">Specialized Team</span>
+                    <span class="wk-text wk-he-text">צוות מומחים</span>
+                    <span class="wk-text wk-es-text">Equipo Especializado</span>
+                </h3>
+                <p style="color: #6b7280;line-height: 1.6">
+                    <span class="wk-text wk-pt-text">Mashgichim qualificados e experientes em todas as áreas: azeites, concentrados, pescados, bebidas e muito mais.</span>
+                    <span class="wk-text wk-en-text">Qualified and experienced Mashgichim in all areas: oils, concentrates, fish, beverages, and much more.</span>
+                    <span class="wk-text wk-he-text">משגיחים מוסמכים ומנוסים בכל התחומים: שמנים, תרכיזים, דגים, משקאות ועוד.</span>
+                    <span class="wk-text wk-es-text">Mashgichim calificados y experimentados en todas las áreas: aceites, concentrados, pescados, bebidas y mucho más.</span>
+                </p>
+            </div>
+            <div style="text-align: center;padding: 40px 30px;background: white;border-radius: 16px;box-shadow: 0 5px 20px rgba(0,0,0,0.1)">
+                <div style="width: 80px;height: 80px;background: linear-gradient(135deg, #1e3a8a, #059669);border-radius: 50%;display: flex;align-items: center;justify-content: center;margin: 0 auto 25px;color: white;font-size: 2rem">⏰</div>
+                <h3 style="font-size: 1.3rem;color: #1f2937;margin-bottom: 15px">
+                    <span class="wk-text wk-pt-text">Suporte 24/6</span>
+                    <span class="wk-text wk-en-text">24/6 Support</span>
+                    <span class="wk-text wk-he-text">תמיכה 24/6</span>
+                    <span class="wk-text wk-es-text">Soporte 24/6</span>
+                </h3>
+                <p style="color: #6b7280;line-height: 1.6">
+                    <span class="wk-text wk-pt-text">Atendimento contínuo via WhatsApp e telefone para todas as suas necessidades de certificação kosher.</span>
+                    <span class="wk-text wk-en-text">Continuous support via WhatsApp and phone for all your kosher certification needs.</span>
+                    <span class="wk-text wk-he-text">תמיכה רציפה דרך WhatsApp וטלפון לכל צרכי אישורי הכשרות שלכם.</span>
+                    <span class="wk-text wk-es-text">Atención continua vía WhatsApp y teléfono para todas sus necesidades de certificación kosher.</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Quick Links -->
+<section style="padding: 80px 20px;background: #f9fafb">
+    <div style="max-width: 1200px;margin: 0 auto">
+        <div style="text-align: center;margin-bottom: 60px">
+            <h2 style="font-size: 2.5rem;color: #1f2937;margin-bottom: 15px">
+                🚀 <span class="wk-text wk-pt-text">Acesso Rápido</span>
+                <span class="wk-text wk-en-text">Quick Access</span>
+                <span class="wk-text wk-he-text">גישה מהירה</span>
+                <span class="wk-text wk-es-text">Acceso Rápido</span>
+            </h2>
+            <p style="font-size: 1.2rem;color: #6b7280">
+                <span class="wk-text wk-pt-text">Navegue rapidamente pelas principais seções do nosso site</span>
+                <span class="wk-text wk-en-text">Navigate quickly through the main sections of our site</span>
+                <span class="wk-text wk-he-text">נווט במהירות בין הסעיפים העיקריים באתר שלנו</span>
+                <span class="wk-text wk-es-text">Navegue rápidamente por las secciones principales de nuestro sitio</span>
+            </p>
+        </div>
+        <div style="display: grid;grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));gap: 30px">
+            <div style="background: white;padding: 40px;border-radius: 16px;box-shadow: 0 5px 20px rgba(0,0,0,0.1);text-align: center">
+                <div style="font-size: 3rem;margin-bottom: 20px">🏢</div>
+                <h3 style="color: #1f2937;margin-bottom: 15px;font-size: 1.3rem">
+                    <span class="wk-text wk-pt-text">Empresas Certificadas</span>
+                    <span class="wk-text wk-en-text">Certified Companies</span>
+                    <span class="wk-text wk-he-text">חברות מאושרות</span>
+                    <span class="wk-text wk-es-text">Empresas Certificadas</span>
+                </h3>
+                <p style="color: #6b7280;margin-bottom: 30px;line-height: 1.6">
+                    <span class="wk-text wk-pt-text">Veja todas as empresas portuguesas que possuem certificação kosher oficial</span>
+                    <span class="wk-text wk-en-text">See all Portuguese companies with official kosher certification</span>
+                    <span class="wk-text wk-he-text">צפה בכל החברות הפורטוגליות עם אישור כשרות רשמי</span>
+                    <span class="wk-text wk-es-text">Vea todas las empresas portuguesas con certificación kosher oficial</span>
+                </p>
+                <a href="/empresas" style="background: #f59e0b;color: white;padding: 12px 24px;border-radius: 8px;text-decoration: none;font-weight: 600">
+                    <span class="wk-text wk-pt-text">Ver Empresas</span>
+                    <span class="wk-text wk-en-text">View Companies</span>
+                    <span class="wk-text wk-he-text">צפה בחברות</span>
+                    <span class="wk-text wk-es-text">Ver Empresas</span>
+                </a>
+            </div>
+            <div style="background: white;padding: 40px;border-radius: 16px;box-shadow: 0 5px 20px rgba(0,0,0,0.1);text-align: center">
+                <div style="font-size: 3rem;margin-bottom: 20px">📋</div>
+                <h3 style="color: #1f2937;margin-bottom: 15px;font-size: 1.3rem">
+                    <span class="wk-text wk-pt-text">Processo de Certificação</span>
+                    <span class="wk-text wk-en-text">Certification Process</span>
+                    <span class="wk-text wk-he-text">תהליך אישור</span>
+                    <span class="wk-text wk-es-text">Proceso de Certificación</span>
+                </h3>
+                <p style="color: #6b7280;margin-bottom: 30px;line-height: 1.6">
+                    <span class="wk-text wk-pt-text">Conheça os 6 passos simples para certificar seus produtos</span>
+                    <span class="wk-text wk-en-text">Learn the 6 simple steps to certify your products</span>
+                    <span class="wk-text wk-he-text">למד על 6 השלבים הפשוטים לאישור המוצרים שלך</span>
+                    <span class="wk-text wk-es-text">Conozca los 6 pasos simples para certificar sus productos</span>
+                </p>
+                <a href="/certificacao" style="background: #f59e0b;color: white;padding: 12px 24px;border-radius: 8px;text-decoration: none;font-weight: 600">
+                    <span class="wk-text wk-pt-text">Ver Processo</span>
+                    <span class="wk-text wk-en-text">View Process</span>
+                    <span class="wk-text wk-he-text">צפה בתהליך</span>
+                    <span class="wk-text wk-es-text">Ver Proceso</span>
+                </a>
+            </div>
+            <div style="background: white;padding: 40px;border-radius: 16px;box-shadow: 0 5px 20px rgba(0,0,0,0.1);text-align: center">
+                <div style="font-size: 3rem;margin-bottom: 20px">📞</div>
+                <h3 style="color: #1f2937;margin-bottom: 15px;font-size: 1.3rem">
+                    <span class="wk-text wk-pt-text">Entre em Contacto</span>
+                    <span class="wk-text wk-en-text">Get in Touch</span>
+                    <span class="wk-text wk-he-text">צור קשר</span>
+                    <span class="wk-text wk-es-text">Póngase en Contacto</span>
+                </h3>
+                <p style="color: #6b7280;margin-bottom: 30px;line-height: 1.6">
+                    <span class="wk-text wk-pt-text">Fale conosco via WhatsApp, telefone ou email para mais informações</span>
+                    <span class="wk-text wk-en-text">Contact us via WhatsApp, phone, or email for more information</span>
+                    <span class="wk-text wk-he-text">צור קשר דרך WhatsApp, טלפון או אימייל למידע נוסף</span>
+                    <span class="wk-text wk-es-text">Contáctenos vía WhatsApp, teléfono o correo electrónico para más información</span>
+                </p>
+                <a href="/contacto" style="background: #f59e0b;color: white;padding: 12px 24px;border-radius: 8px;text-decoration: none;font-weight: 600">
+                    <span class="wk-text wk-pt-text">Contactar</span>
+                    <span class="wk-text wk-en-text">Contact</span>
+                    <span class="wk-text wk-he-text">צור קשר</span>
+                    <span class="wk-text wk-es-text">Contactar</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Companies Preview -->
+<section style="padding: 80px 20px;background: white">
+    <div style="max-width: 1200px;margin: 0 auto">
+        <div style="text-align: center;margin-bottom: 60px">
+            <h2 style="font-size: 2.5rem;color: #1f2937;margin-bottom: 15px">
+                🏢 <span class="wk-text wk-pt-text">Empresas Certificadas</span>
+                <span class="wk-text wk-en-text">Certified Companies</span>
+                <span class="wk-text wk-he-text">חברות מאושרות</span>
+                <span class="wk-text wk-es-text">Empresas Certificadas</span>
+            </h2>
+            <p style="font-size: 1.2rem;color: #6b7280;margin-bottom: 30px">
+                <span class="wk-text wk-pt-text">Conheça algumas das empresas portuguesas com certificação kosher oficial</span>
+                <span class="wk-text wk-en-text">Meet some of the Portuguese companies with official kosher certification</span>
+                <span class="wk-text wk-he-text">הכר כמה מהחברות הפורטוגליות עם אישור כשרות רשמי</span>
+                <span class="wk-text wk-es-text">Conozca algunas de las empresas portuguesas con certificación kosher oficial</span>
+            </p>
+        </div>
+        <div style="display: grid;grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));gap: 25px;margin-bottom: 40px">
+            <div style="background: white;border: 2px solid #e5e7eb;border-radius: 12px;padding: 25px;text-align: center">
+                <div style="width: 60px;height: 60px;background: #f59e0b;border-radius: 8px;display: flex;align-items: center;justify-content: center;margin: 0 auto 15px;color: white;font-weight: bold">ATL</div>
+                <h4 style="color: #1f2937;margin-bottom: 8px">Atlantic</h4>
+                <p style="color: #6b7280;font-size: 0.9rem">
+                    <span class="wk-text wk-pt-text">Conservas e Produtos do Mar</span>
+                    <span class="wk-text wk-en-text">Canned Goods and Seafood</span>
+                    <span class="wk-text wk-he-text">שימורים ומוצרי ים</span>
+                    <span class="wk-text wk-es-text">Conservas y Productos del Mar</span>
+                </p>
+            </div>
+            <div style="background: white;border: 2px solid #e5e7eb;border-radius: 12px;padding: 25px;text-align: center">
+                <div style="width: 60px;height: 60px;background: #059669;border-radius: 8px;display: flex;align-items: center;justify-content: center;margin: 0 auto 15px;color: white;font-weight: bold">FRT</div>
+                <h4 style="color: #1f2937;margin-bottom: 8px">Frutíssima</h4>
+                <p style="color: #6b7280;font-size: 0.9rem">
+                    <span class="wk-text wk-pt-text">Frutas e Concentrados</span>
+                    <span class="wk-text wk-en-text">Fruits and Concentrates</span>
+                    <span class="wk-text wk-he-text">פירות ותרכיזים</span>
+                    <span class="wk-text wk-es-text">Frutas y Concentrados</span>
+                </p>
+            </div>
+            <div style="background: white;border: 2px solid #e5e7eb;border-radius: 12px;padding: 25px;text-align: center">
+                <div style="width: 60px;height: 60px;background: #1e3a8a;border-radius: 8px;display: flex;align-items: center;justify-content: center;margin: 0 auto 15px;color: white;font-weight: bold">SBG</div>
+                <h4 style="color: #1f2937;margin-bottom: 8px">Super Bock Group</h4>
+                <p style="color: #6b7280;font-size: 0.9rem">
+                    <span class="wk-text wk-pt-text">Bebidas e Cervejas</span>
+                    <span class="wk-text wk-en-text">Beverages and Beers</span>
+                    <span class="wk-text wk-he-text">משקאות ובירות</span>
+                    <span class="wk-text wk-es-text">Bebidas y Cervezas</span>
+                </p>
+            </div>
+            <div style="background: white;border: 2px solid #e5e7eb;border-radius: 12px;padding: 25px;text-align: center">
+                <div style="width: 60px;height: 60px;background: #7c3aed;border-radius: 8px;display: flex;align-items: center;justify-content: center;margin: 0 auto 15px;color: white;font-weight: bold">INN</div>
+                <h4 style="color: #1f2937;margin-bottom: 8px">Innoliva</h4>
+                <p style="color: #6b7280;font-size: 0.9rem">
+                    <span class="wk-text wk-pt-text">Azeites Premium</span>
+                    <span class="wk-text wk-en-text">Premium Olive Oils</span>
+                    <span class="wk-text wk-he-text">שמני זית פרימיום</span>
+                    <span class="wk-text wk-es-text">Aceites Premium</span>
+                </p>
+            </div>
+        </div>
+        <div style="text-align: center">
+            <a href="/empresas" style="background: #1e3a8a;color: white;padding: 15px 30px;border-radius: 8px;text-decoration: none;font-weight: 600;font-size: 1.1rem">
+                <span class="wk-text wk-pt-text">Ver Todas as Empresas →</span>
+                <span class="wk-text wk-en-text">View All Companies →</span>
+                <span class="wk-text wk-he-text">צפה בכל החברות ←</span>
+                <span class="wk-text wk-es-text">Ver Todas las Empresas →</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section style="background: linear-gradient(135deg, #059669, #065f46);color: white;padding: 80px 20px;text-align: center">
+    <div style="max-width: 800px;margin: 0 auto">
+        <h2 style="font-size: 2.5rem;margin-bottom: 20px">
+            <span class="wk-text wk-pt-text">Pronto para Certificar seus Produtos?</span>
+            <span class="wk-text wk-en-text">Ready to Certify Your Products?</span>
+            <span class="wk-text wk-he-text">מוכן לאשר את המוצרים שלך?</span>
+            <span class="wk-text wk-es-text">¿Listo para Certificar sus Productos?</span>
+        </h2>
+        <p style="font-size: 1.2rem;margin-bottom: 40px;opacity: 0.9">
+            <span class="wk-text wk-pt-text">Entre em contacto connosco hoje mesmo e inicie o processo de certificação kosher</span>
+            <span class="wk-text wk-en-text">Contact us today and start the kosher certification process</span>
+            <span class="wk-text wk-he-text">צור קשר היום והתחל את תהליך אישור הכשרות</span>
+            <span class="wk-text wk-es-text">Contáctenos hoy mismo e inicie el proceso de certificación kosher</span>
+        </p>
+        <div style="display: flex;gap: 20px;justify-content: center;flex-wrap: wrap;margin-bottom: 40px">
+            <div style="text-align: center">
+                <h3 style="margin-bottom: 10px">💬 WhatsApp 24/6</h3>
+                <a href="https://wa.me/972543080390" target="_blank" style="color: white;font-size: 1.2rem;text-decoration: none;font-weight: bold">(+972) 54 308 0390</a>
+            </div>
+            <div style="text-align: center">
+                <h3 style="margin-bottom: 10px">
+                    📧 <span class="wk-text wk-pt-text">Email Oficial</span>
+                    <span class="wk-text wk-en-text">Official Email</span>
+                    <span class="wk-text wk-he-text">אימייל רשמי</span>
+                    <span class="wk-text wk-es-text">Email Oficial</span>
+                </h3>
+                <a href="mailto:Portugal@w-kosher.com" style="color: white;font-size: 1.2rem;text-decoration: none;font-weight: bold">Portugal@w-kosher.com</a>
+            </div>
+        </div>
+        <a href="https://wa.me/972543080390" target="_blank" style="background: #f59e0b;color: white;padding: 20px 40px;border-radius: 8px;text-decoration: none;font-weight: bold;font-size: 1.3rem">
+            🚀 <span class="wk-text wk-pt-text">Solicitar Certificação Agora</span>
+            <span class="wk-text wk-en-text">Request Certification Now</span>
+            <span class="wk-text wk-he-text">בקש אישור עכשיו</span>
+            <span class="wk-text wk-es-text">Solicitar Certificación Ahora</span>
+        </a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer style="background: #1f2937;color: white;padding: 60px 20px 30px">
+    <div style="max-width: 1200px;margin: 0 auto">
+        <div style="display: grid;grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));gap: 40px;margin-bottom: 40px">
+            <div>
+                <h3 style="color: #f59e0b;margin-bottom: 20px;font-size: 1.5rem">🏆 World Kosher</h3>
+                <span style="color: #f59e0b">B.M.MASHGICHIM</span>
+                <p style="color: rgba(255,255,255,0.8);line-height: 1.6;margin: 20px 0">
+                    <span class="wk-text wk-pt-text">A principal autoridade em certificação kosher em Portugal, oferecendo serviços de qualidade internacional com reconhecimento em mais de 15 países.</span>
+                    <span class="wk-text wk-en-text">The leading authority in kosher certification in Portugal, offering international quality services with recognition in over 15 countries.</span>
+                    <span class="wk-text wk-he-text">הרשות המובילה באישורי כשרות בפורטוגל, המציעה שירותי איכות בינלאומית עם הכרה בלמעלה מ-15 מדינות.</span>
+                    <span class="wk-text wk-es-text">La principal autoridad en certificación kosher en Portugal, ofreciendo servicios de calidad internacional con reconocimiento en más de 15 países.</span>
+                </p>
+                <div style="margin-top: 20px">
+                    <a href="https://www.facebook.com/profile.php?id=61575501917315" target="_blank" style="color: white;margin-right: 15px;text-decoration: none">📘 Facebook</a>
+                    <a href="https://wa.me/972543080390" target="_blank" style="color: white;margin-right: 15px;text-decoration: none">📱 WhatsApp</a>
+                    <a href="mailto:Portugal@w-kosher.com" style="color: white;text-decoration: none">📧 Email</a>
+                </div>
+            </div>
+            <div>
+                <h4 style="margin-bottom: 20px">
+                    🛒 <span class="wk-text wk-pt-text">Recursos do Consumidor</span>
+                    <span class="wk-text wk-en-text">Consumer Resources</span>
+                    <span class="wk-text wk-he-text">משאבי צרכן</span>
+                    <span class="wk-text wk-es-text">Recursos del Consumidor</span>
+                </h4>
+                <ul style="margin: 0;padding: 0;list-style: none">
+                    <li style="margin-bottom: 10px">
+                        <a href="/empresas" style="color: rgba(255,255,255,0.8);text-decoration: none">
+                            🔍 <span class="wk-text wk-pt-text">Busca de Produtos</span>
+                            <span class="wk-text wk-en-text">Product Search</span>
+                            <span class="wk-text wk-he-text">חיפוש מוצרים</span>
+                            <span class="wk-text wk-es-text">Búsqueda de Productos</span>
+                        </a>
+                    </li>
+                    <li style="margin-bottom: 10px">
+                        <a href="/certificacao" style="color: rgba(255,255,255,0.8);text-decoration: none">
+                            ❓ <span class="wk-text wk-pt-text">Perguntas Frequentes</span>
+                            <span class="wk-text wk-en-text">FAQ</span>
+                            <span class="wk-text wk-he-text">שאלות נפוצות</span>
+                            <span class="wk-text wk-es-text">Preguntas Frecuentes</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="margin-bottom: 20px">
+                    🏭 <span class="wk-text wk-pt-text">Recursos Industriais</span>
+                    <span class="wk-text wk-en-text">Industrial Resources</span>
+                    <span class="wk-text wk-he-text">משאבי תעשייה</span>
+                    <span class="wk-text wk-es-text">Recursos Industriales</span>
+                </h4>
+                <ul style="margin: 0;padding: 0;list-style: none">
+                    <li style="margin-bottom: 10px">
+                        <a href="/certificacao" style="color: rgba(255,255,255,0.8);text-decoration: none">
+                            📋 <span class="wk-text wk-pt-text">Processo de Certificação</span>
+                            <span class="wk-text wk-en-text">Certification Process</span>
+                            <span class="wk-text wk-he-text">תהליך אישור</span>
+                            <span class="wk-text wk-es-text">Proceso de Certificación</span>
+                        </a>
+                    </li>
+                    <li style="margin-bottom: 10px">
+                        <a href="https://wa.me/972543080390" target="_blank" style="color: rgba(255,255,255,0.8);text-decoration: none">
+                            🚀 <span class="wk-text wk-pt-text">Solicitar Certificação</span>
+                            <span class="wk-text wk-en-text">Request Certification</span>
+                            <span class="wk-text wk-he-text">בקש אישור</span>
+                            <span class="wk-text wk-es-text">Solicitar Certificación</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="margin-bottom: 20px">
+                    📞 <span class="wk-text wk-pt-text">Contacto</span>
+                    <span class="wk-text wk-en-text">Contact</span>
+                    <span class="wk-text wk-he-text">צור קשר</span>
+                    <span class="wk-text wk-es-text">Contacto</span>
+                </h4>
+                <div>
+                    <p style="color: rgba(255,255,255,0.8);margin-bottom: 10px">
+                        <strong>
+                            <span class="wk-text wk-pt-text">📞 Linha Kosher 24/6:</span>
+                            <span class="wk-text wk-en-text">📞 Kosher Line 24/6:</span>
+                            <span class="wk-text wk-he-text">📞 קו כשרות 24/6:</span>
+                            <span class="wk-text wk-es-text">📞 Línea Kosher 24/6:</span>
+                        </strong><br>
+                        <a href="tel:+972543080390" style="color: white;text-decoration: none">(+972) 54 308 0390</a>
+                    </p>
+                    <p style="color: rgba(255,255,255,0.8);margin-bottom: 10px">
+                        <strong>
+                            <span class="wk-text wk-pt-text">📧 Email Oficial:</span>
+                            <span class="wk-text wk-en-text">📧 Official Email:</span>
+                            <span class="wk-text wk-he-text">📧 אימייל רשמי:</span>
+                            <span class="wk-text wk-es-text">📧 Email Oficial:</span>
+                        </strong><br>
+                        <a href="mailto:Portugal@w-kosher.com" style="color: white;text-decoration: none">Portugal@w-kosher.com</a>
+                    </p>
+                    <p style="color: rgba(255,255,255,0.8);margin-bottom: 20px"><strong>🌐 Website:</strong><br>www.w-kosher.com</p>
+                    <a href="https://wa.me/972543080390" target="_blank" style="background: #25d366;color: white;padding: 12px 20px;border-radius: 8px;text-decoration: none;font-weight: 600;display: inline-block">
+                        📱 <span class="wk-text wk-pt-text">WhatsApp Direto</span>
+                        <span class="wk-text wk-en-text">Direct WhatsApp</span>
+                        <span class="wk-text wk-he-text">WhatsApp ישיר</span>
+                        <span class="wk-text wk-es-text">WhatsApp Directo</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div style="border-top: 1px solid rgba(255,255,255,0.1);padding-top: 30px;display: flex;justify-content: space-between;align-items: center;flex-wrap: wrap;gap: 20px">
+            <p style="color: rgba(255,255,255,0.6);margin: 0">&copy; 2024 World Kosher B.M.MASHGICHIM. 
+                <span class="wk-text wk-pt-text">Todos os direitos reservados.</span>
+                <span class="wk-text wk-en-text">All rights reserved.</span>
+                <span class="wk-text wk-he-text">כל הזכויות שמורות.</span>
+                <span class="wk-text wk-es-text">Todos los derechos reservados.</span>
+            </p>
+            <div style="display: flex;gap: 20px;flex-wrap: wrap">
+                <a href="/contacto" style="color: rgba(255,255,255,0.8);text-decoration: none;font-size: 0.9rem">
+                    📜 <span class="wk-text wk-pt-text">Política de Privacidade</span>
+                    <span class="wk-text wk-en-text">Privacy Policy</span>
+                    <span class="wk-text wk-he-text">מדיניות פרטיות</span>
+                    <span class="wk-text wk-es-text">Política de Privacidad</span>
+                </a>
+                <a href="/contacto" style="color: rgba(255,255,255,0.8);text-decoration: none;font-size: 0.9rem">
+                    📋 <span class="wk-text wk-pt-text">Termos de Uso</span>
+                    <span class="wk-text wk-en-text">Terms of Use</span>
+                    <span class="wk-text wk-he-text">תנאי שימוש</span>
+                    <span class="wk-text wk-es-text">Términos de Uso</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</div>
+<!-- END SITE WRAPPER -->

@@ -1,0 +1,293 @@
+/* ===== WORLD KOSHER - ADDITIONAL CSS FOR WORDPRESS ===== */
+
+/* Language System - Pure CSS */
+input[name="wk-lang"] {
+    display: none !important;
+}
+
+/* Text visibility based on selected language */
+.wk-text {
+    display: none !important;
+}
+
+#wk-lang-pt:checked ~ .wk-site .wk-pt-text,
+#wk-lang-en:checked ~ .wk-site .wk-en-text,
+#wk-lang-he:checked ~ .wk-site .wk-he-text,
+#wk-lang-es:checked ~ .wk-site .wk-es-text {
+    display: inline !important;
+}
+
+/* Language bar styling */
+.wk-lang-bar label {
+    transition: all 0.3s ease !important;
+    cursor: pointer !important;
+}
+
+.wk-lang-bar label:hover {
+    background: rgba(255,255,255,0.2) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2) !important;
+}
+
+/* Active language highlight */
+#wk-lang-pt:checked ~ .wk-lang-bar label[for="wk-lang-pt"],
+#wk-lang-en:checked ~ .wk-lang-bar label[for="wk-lang-en"],
+#wk-lang-he:checked ~ .wk-lang-bar label[for="wk-lang-he"],
+#wk-lang-es:checked ~ .wk-lang-bar label[for="wk-lang-es"] {
+    background: #f59e0b !important;
+    border-color: #fbbf24 !important;
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 25px rgba(245,158,11,0.4) !important;
+}
+
+/* Hebrew RTL direction */
+#wk-lang-he:checked ~ .wk-site {
+    direction: rtl !important;
+}
+
+/* Hero Animations */
+@keyframes wk-fadeInUp {
+    0% {
+        opacity: 0 !important;
+        transform: translateY(50px) !important;
+    }
+    100% {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+    }
+}
+
+@keyframes wk-float1 {
+    0% {
+        transform: translateY(0) scale(0) !important;
+        opacity: 0 !important;
+    }
+    10% {
+        opacity: 1 !important;
+        transform: scale(1) !important;
+    }
+    100% {
+        transform: translateY(-100vh) scale(0.5) !important;
+        opacity: 0 !important;
+    }
+}
+
+@keyframes wk-float2 {
+    0% {
+        transform: translateY(0) scale(0) rotate(0deg) !important;
+        opacity: 0 !important;
+    }
+    15% {
+        opacity: 1 !important;
+        transform: scale(1.2) !important;
+    }
+    100% {
+        transform: translateY(-100vh) scale(0.3) rotate(360deg) !important;
+        opacity: 0 !important;
+    }
+}
+
+@keyframes wk-float3 {
+    0% {
+        transform: translateY(0) scale(0) !important;
+        opacity: 0 !important;
+    }
+    20% {
+        opacity: 1 !important;
+        transform: scale(0.8) !important;
+    }
+    100% {
+        transform: translateY(-100vh) scale(1.5) !important;
+        opacity: 0 !important;
+    }
+}
+
+@keyframes wk-rotate {
+    0% {
+        transform: rotate(0deg) scale(0.8) !important;
+        opacity: 0.3 !important;
+    }
+    50% {
+        opacity: 0.1 !important;
+        transform: scale(1.2) !important;
+    }
+    100% {
+        transform: rotate(360deg) scale(0.8) !important;
+        opacity: 0.3 !important;
+    }
+}
+
+@keyframes wk-rotate-reverse {
+    0% {
+        transform: rotate(360deg) scale(1) !important;
+        opacity: 0.2 !important;
+    }
+    50% {
+        opacity: 0.05 !important;
+        transform: scale(0.7) !important;
+    }
+    100% {
+        transform: rotate(0deg) scale(1) !important;
+        opacity: 0.2 !important;
+    }
+}
+
+/* Hero background gradient animation */
+.wk-hero {
+    background-size: 400% 400% !important;
+    animation: wk-gradient 8s ease infinite !important;
+}
+
+@keyframes wk-gradient {
+    0% {
+        background-position: 0% 50% !important;
+    }
+    50% {
+        background-position: 100% 50% !important;
+    }
+    100% {
+        background-position: 0% 50% !important;
+    }
+}
+
+/* Feature cards hover effects */
+.wk-feature-card {
+    transition: all 0.4s ease !important;
+}
+
+.wk-feature-card:hover {
+    transform: translateY(-15px) !important;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.15) !important;
+    border-color: #f59e0b !important;
+}
+
+.wk-feature-card:hover div[style*="background: linear-gradient"] {
+    transform: scale(1.1) !important;
+    box-shadow: 0 20px 50px rgba(30,58,138,0.5) !important;
+}
+
+/* Company cards hover effects */
+.wk-company-card {
+    transition: all 0.4s ease !important;
+}
+
+.wk-company-card:hover {
+    transform: translateY(-10px) scale(1.02) !important;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.15) !important;
+    border-color: #f59e0b !important;
+}
+
+.wk-company-card:hover div[style*="background: linear-gradient"] {
+    transform: scale(1.15) rotate(5deg) !important;
+}
+
+/* Button hover effects */
+a[style*="background: linear-gradient"]:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 15px 40px rgba(245,158,11,0.6) !important;
+}
+
+/* Navigation hover effects */
+nav a:hover {
+    background: linear-gradient(135deg, #e0e7ff, #c7d2fe) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 5px 15px rgba(30,58,138,0.2) !important;
+}
+
+/* Header scroll effect */
+@media (min-width: 768px) {
+    header {
+        backdrop-filter: blur(20px) !important;
+        background: rgba(255,255,255,0.95) !important;
+    }
+}
+
+/* Responsive fixes */
+@media (max-width: 768px) {
+    .wk-lang-bar {
+        padding: 8px 15px !important;
+    }
+    
+    .wk-lang-bar div {
+        gap: 8px !important;
+    }
+    
+    .wk-lang-bar label {
+        padding: 6px 12px !important;
+        font-size: 0.9rem !important;
+    }
+    
+    h1.wk-title {
+        font-size: 2.5rem !important;
+    }
+    
+    .wk-feature-card,
+    .wk-company-card {
+        padding: 30px 25px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    h1.wk-title {
+        font-size: 2rem !important;
+    }
+    
+    .wk-lang-bar {
+        text-align: left !important;
+        overflow-x: auto !important;
+    }
+    
+    .wk-lang-bar div {
+        flex-wrap: nowrap !important;
+        min-width: max-content !important;
+    }
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth !important;
+}
+
+/* Loading animation for elements */
+.wk-title,
+.wk-stat {
+    animation-fill-mode: forwards !important;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px !important;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f5f9 !important;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #1e3a8a, #059669) !important;
+    border-radius: 10px !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #f59e0b, #ea580c) !important;
+}
+
+/* Focus states for accessibility */
+.wk-lang-bar label:focus,
+a:focus {
+    outline: 3px solid #fbbf24 !important;
+    outline-offset: 2px !important;
+}
+
+/* Print styles */
+@media print {
+    .wk-lang-bar,
+    footer {
+        display: none !important;
+    }
+    
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}

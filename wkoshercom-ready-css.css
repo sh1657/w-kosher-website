@@ -1,0 +1,426 @@
+/* ===== CSS מותאם ל-wkoshercom.wordpress.com ===== */
+
+/* תיקון הנושא הקיים */
+.site-header {
+    background: linear-gradient(135deg, #1e3a8a, #059669) !important;
+    color: white !important;
+    padding: 20px 0 !important;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1) !important;
+}
+
+.site-title {
+    font-size: 2.5rem !important;
+    color: white !important;
+    text-decoration: none !important;
+    font-weight: 800 !important;
+}
+
+.site-title:hover {
+    color: #fbbf24 !important;
+}
+
+.site-description {
+    color: rgba(255,255,255,0.9) !important;
+    font-size: 1.1rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 1px !important;
+}
+
+/* תיקון התפריט */
+.main-navigation {
+    background: transparent !important;
+}
+
+.main-navigation a {
+    color: white !important;
+    font-weight: 600 !important;
+    padding: 10px 15px !important;
+    border-radius: 8px !important;
+    transition: all 0.3s ease !important;
+    text-decoration: none !important;
+}
+
+.main-navigation a:hover {
+    background: rgba(255,255,255,0.2) !important;
+    transform: translateY(-2px) !important;
+    color: #fbbf24 !important;
+}
+
+.main-navigation .current-menu-item a {
+    background: #f59e0b !important;
+    color: white !important;
+}
+
+/* תיקון התוכן הראשי */
+.site-main {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 40px 20px !important;
+}
+
+.site-content {
+    background: #f8fafc !important;
+    min-height: 70vh !important;
+}
+
+.entry-header {
+    text-align: center !important;
+    margin-bottom: 40px !important;
+    padding: 40px 20px !important;
+    background: white !important;
+    border-radius: 20px !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1) !important;
+}
+
+.entry-title {
+    font-size: 3rem !important;
+    background: linear-gradient(135deg, #1e3a8a, #059669) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    margin-bottom: 20px !important;
+    font-weight: 900 !important;
+}
+
+.entry-content {
+    background: white !important;
+    padding: 40px !important;
+    border-radius: 20px !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1) !important;
+    margin-bottom: 30px !important;
+}
+
+/* כפתורי שפה בסיסיים */
+.wk-lang-simple {
+    text-align: center !important;
+    margin: 30px 0 !important;
+    padding: 20px !important;
+    background: linear-gradient(135deg, #1e3a8a, #1e40af) !important;
+    border-radius: 15px !important;
+    box-shadow: 0 10px 30px rgba(30,58,138,0.3) !important;
+}
+
+.wk-lang-btn {
+    background: rgba(255,255,255,0.1) !important;
+    color: white !important;
+    border: 2px solid rgba(255,255,255,0.2) !important;
+    padding: 12px 24px !important;
+    margin: 5px 10px !important;
+    border-radius: 25px !important;
+    cursor: pointer !important;
+    font-weight: 600 !important;
+    font-size: 1rem !important;
+    transition: all 0.3s ease !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+.wk-lang-btn:hover {
+    background: #f59e0b !important;
+    border-color: #fbbf24 !important;
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 25px rgba(245,158,11,0.4) !important;
+}
+
+.wk-lang-btn.active {
+    background: #f59e0b !important;
+    border-color: #fbbf24 !important;
+    box-shadow: 0 8px 25px rgba(245,158,11,0.4) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* הסתרה/הצגה של טקסטים */
+.wk-text {
+    display: none !important;
+}
+
+.wk-pt .wk-pt-text,
+.wk-en .wk-en-text,
+.wk-he .wk-he-text,
+.wk-es .wk-es-text {
+    display: inline !important;
+}
+
+/* התאמה לעברית */
+.wk-he {
+    direction: rtl !important;
+}
+
+.wk-he .wk-lang-simple {
+    direction: ltr !important;
+}
+
+/* עיצוב כרטיסים */
+.wk-card {
+    background: white !important;
+    border-radius: 20px !important;
+    padding: 40px !important;
+    margin: 30px 0 !important;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1) !important;
+    transition: all 0.4s ease !important;
+    border: 1px solid rgba(255,255,255,0.2) !important;
+}
+
+.wk-card:hover {
+    transform: translateY(-8px) !important;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.15) !important;
+    border-color: #f59e0b !important;
+}
+
+.wk-card h2 {
+    color: #1e293b !important;
+    margin-bottom: 20px !important;
+    font-size: 2rem !important;
+    font-weight: 700 !important;
+}
+
+.wk-card h3 {
+    color: #1e293b !important;
+    margin-bottom: 20px !important;
+    font-size: 1.5rem !important;
+    font-weight: 700 !important;
+    border-bottom: 3px solid #f59e0b !important;
+    padding-bottom: 10px !important;
+}
+
+.wk-card p {
+    color: #64748b !important;
+    line-height: 1.7 !important;
+    font-size: 1.1rem !important;
+    margin-bottom: 20px !important;
+}
+
+.wk-card ul {
+    list-style: none !important;
+    padding: 0 !important;
+}
+
+.wk-card li {
+    color: #64748b !important;
+    font-size: 1.1rem !important;
+    line-height: 1.8 !important;
+    margin-bottom: 15px !important;
+    padding: 15px !important;
+    background: #f8fafc !important;
+    border-radius: 10px !important;
+    border-left: 4px solid #f59e0b !important;
+    transition: all 0.3s ease !important;
+}
+
+.wk-card li:hover {
+    background: #e0f2fe !important;
+    transform: translateX(5px) !important;
+}
+
+/* כפתור CTA */
+.wk-cta {
+    background: linear-gradient(135deg, #f59e0b, #ea580c) !important;
+    color: white !important;
+    padding: 18px 35px !important;
+    border-radius: 15px !important;
+    text-decoration: none !important;
+    font-weight: 700 !important;
+    font-size: 1.1rem !important;
+    display: inline-block !important;
+    margin: 15px 10px !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 8px 25px rgba(245,158,11,0.3) !important;
+    border: none !important;
+}
+
+.wk-cta:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 15px 40px rgba(245,158,11,0.5) !important;
+    color: white !important;
+    text-decoration: none !important;
+}
+
+.wk-cta:visited {
+    color: white !important;
+}
+
+/* קישורים בתוכן */
+.wk-card a {
+    color: #1e3a8a !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    transition: color 0.3s ease !important;
+}
+
+.wk-card a:hover {
+    color: #f59e0b !important;
+}
+
+/* Footer */
+.site-footer {
+    background: #0f172a !important;
+    color: white !important;
+    padding: 40px 20px !important;
+    margin-top: 60px !important;
+}
+
+.site-footer a {
+    color: #fbbf24 !important;
+}
+
+.site-footer a:hover {
+    color: white !important;
+}
+
+/* תיקון responsive */
+@media (max-width: 768px) {
+    .site-title {
+        font-size: 2rem !important;
+    }
+    
+    .entry-title {
+        font-size: 2.2rem !important;
+    }
+    
+    .wk-lang-btn {
+        margin: 5px !important;
+        padding: 10px 18px !important;
+        font-size: 0.9rem !important;
+    }
+    
+    .site-main {
+        padding: 20px 15px !important;
+    }
+    
+    .wk-card {
+        padding: 25px !important;
+        margin: 20px 0 !important;
+    }
+    
+    .wk-card h2 {
+        font-size: 1.6rem !important;
+    }
+    
+    .wk-card h3 {
+        font-size: 1.3rem !important;
+    }
+    
+    .wk-cta {
+        padding: 15px 25px !important;
+        margin: 10px 5px !important;
+        font-size: 1rem !important;
+    }
+    
+    .entry-header {
+        padding: 25px 15px !important;
+    }
+    
+    .entry-content {
+        padding: 25px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .site-title {
+        font-size: 1.6rem !important;
+    }
+    
+    .entry-title {
+        font-size: 1.8rem !important;
+    }
+    
+    .wk-lang-simple {
+        padding: 15px !important;
+        margin: 20px 0 !important;
+    }
+    
+    .wk-lang-btn {
+        display: block !important;
+        width: 80% !important;
+        margin: 8px auto !important;
+    }
+    
+    .wk-card {
+        padding: 20px !important;
+        margin: 15px 0 !important;
+    }
+    
+    .wk-cta {
+        display: block !important;
+        text-align: center !important;
+        width: 90% !important;
+        margin: 15px auto !important;
+    }
+}
+
+/* אנימציות חלקות */
+@keyframes wk-fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.wk-card {
+    animation: wk-fadeIn 0.6s ease forwards !important;
+}
+
+.wk-card:nth-child(2) {
+    animation-delay: 0.2s !important;
+}
+
+.wk-card:nth-child(3) {
+    animation-delay: 0.4s !important;
+}
+
+.wk-card:nth-child(4) {
+    animation-delay: 0.6s !important;
+}
+
+/* תיקונים ספציפיים ל-WordPress.com */
+.wp-block-group .wk-card {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.entry-content .wk-lang-simple {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* Scroll חלק */
+html {
+    scroll-behavior: smooth !important;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px !important;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f5f9 !important;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #1e3a8a, #059669) !important;
+    border-radius: 10px !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #f59e0b, #ea580c) !important;
+}
+
+/* Print styles */
+@media print {
+    .wk-lang-simple {
+        display: none !important;
+    }
+    
+    .wk-text {
+        display: inline !important;
+    }
+    
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}

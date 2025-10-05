@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="pt" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Kosher - Certificação Kosher Oficial em Portugal</title>
+    <meta name="description" content="A principal autoridade em certificação kosher em Portugal com reconhecimento internacional em mais de 15 países.">
+    <link rel="stylesheet" href="src/scss/language.scss">
+    <script src="src/js/language.js"></script>
+</head>
+<body class="lang-pt">
+    <!-- Top Bar -->
+    <div style="background: #1e3a8a;color: white;padding: 10px 0;font-size: 0.9rem;position: sticky;top: 0;z-index: 1001">
+        <div style="max-width: 1200px;margin: 0 auto;padding: 0 20px;display: flex;justify-content: space-between;align-items: center;flex-wrap: wrap;gap: 10px">
+            <div>
+                <span style="margin-right: 20px">
+                    <span class="text-pt">📞 LINHA KOSHER:</span>
+                    <span class="text-en">📞 KOSHER LINE:</span>
+                    <span class="text-es">📞 LÍNEA KOSHER:</span>
+                    <a href="tel:+972543080390" style="color: white;text-decoration: none">(+972) 54 308 0390</a>
+                </span>
+                <span>📧 <a href="mailto:Portugal@w-kosher.com" style="color: white;text-decoration: none">Portugal@w-kosher.com</a></span>
+            </div>
+            <div style="display: flex;align-items: center;gap: 15px">
+                <!-- Language Selector -->
+                <div class="language-selector" style="position: relative;display: inline-block">
+                    <span id="current-flag">🇵🇹</span>
+                    <span id="current-lang">Português</span>
+                    <span>▼</span>
+                    
+                    <div class="language-dropdown" id="languageDropdown" style="position: absolute;top: 100%;right: 0;background: white;border: 1px solid #e5e7eb;border-radius: 8px;box-shadow: 0 10px 25px rgba(0,0,0,0.15);min-width: 200px;z-index: 2000;display: none">
+                        <div class="language-option active" style="padding: 12px 16px;cursor: pointer;border-bottom: 1px solid #f3f4f6;color: #1f2937;display: flex;align-items: center;gap: 10px;background: #eff6ff">🇵🇹 <span>Português</span></div>
+                        <div class="language-option" style="padding: 12px 16px;cursor: pointer;border-bottom: 1px solid #f3f4f6;color: #1f2937;display: flex;align-items: center;gap: 10px">🇬🇧 <span>English</span></div>
+                        <div class="language-option" style="padding: 12px 16px;cursor: pointer;border-bottom: 1px solid #f3f4f6;color: #1f2937;display: flex;align-items: center;gap: 10px">🇪🇸 <span>Español</span></div>
+                        <div class="language-option" style="padding: 12px 16px;cursor: pointer;border-bottom: 1px solid #f3f4f6;color: #1f2937;display: flex;align-items: center;gap: 10px">🇮🇱 <span>עברית</span></div>
+                        <div class="language-option" style="padding: 12px 16px;cursor: pointer;border-bottom: 1px solid #f3f4f6;color: #1f2937;display: flex;align-items: center;gap: 10px">🇷🇺 <span>Русский</span></div>
+                        <div class="language-option" style="padding: 12px 16px;cursor: pointer;border-bottom: 1px solid #f3f4f6;color: #1f2937;display: flex;align-items: center;gap: 10px">🇮🇹 <span>Italiano</span></div>
+                    </div>
+                </div>
+                
+                <a href="https://www.facebook.com/profile.php?id=61575501917315" target="_blank" style="color: white;margin-left: 15px;text-decoration: none">📘 Facebook</a>
+                <a href="https://wa.me/972543080390" target="_blank" style="color: white;margin-left: 15px;text-decoration: none">📱 WhatsApp</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header style="background: white;box-shadow: 0 2px 10px rgba(0,0,0,0.1);position: sticky;top: 44px;z-index: 1000">
+        <div style="max-width: 1200px;margin: 0 auto;padding: 15px 20px;display: flex;align-items: center;justify-content: space-between;flex-wrap: wrap;gap: 20px">
+            <!-- Logo -->
+            <div style="display: flex;align-items: center;gap: 15px">
+                <img src="https://wkoshercom.wordpress.com/wp-content/uploads/2024/06/4-removebg-preview.png" alt="Logo" style="width: 50px;height: 50px;border-radius: 12px;object-fit: contain">
+                <div>
+                    <h1 style="font-size: 1.8rem;font-weight: 700;color: #1e3a8a;margin: 0">World Kosher</h1>
+                    <span style="font-size: 0.9rem;color: #6b7280;font-weight: 500">B.M.MASHGICHIM</span>
+                </div>
+            </div>
+            
+            <!-- Navigation -->
+            <div style="display: flex;gap: 20px;justify-content: center;flex-wrap: wrap;margin: 0;padding: 0">
+                <a href="/" style="padding: 10px 15px;color: #f59e0b;text-decoration: none;font-weight: 600;border-radius: 8px;background: #f9fafb">
+                    <span class="text-pt">🏠 Início</span>
+                    <span class="text-en">🏠 Home</span>
+                    <span class="text-es">🏠 Inicio</span>
+                </a>
+                <a href="/certificacao" style="padding: 10px 15px;color: #1e3a8a;text-decoration: none;font-weight: 500;border-radius: 8px">
+                    <span class="text-pt">📋 Certificação</span>
+                    <span class="text-en">📋 Certification</span>
+                    <span class="text-es">📋 Certificación</span>
+                </a>
+                <a href="/empresas" style="padding: 10px 15px;color: #1e3a8a;text-decoration: none;font-weight: 500;border-radius: 8px">
+                    <span class="text-pt">🏢 Empresas</span>
+                    <span class="text-en">🏢 Companies</span>
+                    <span class="text-es">🏢 Empresas</span>
+                </a>
+                <a href="/about" style="padding: 10px 15px;color: #1e3a8a;text-decoration: none;font-weight: 500;border-radius: 8px">
+                    <span class="text-pt">ℹ️ Sobre Nós</span>
+                    <span class="text-en">ℹ️ About Us</span>
+                    <span class="text-es">ℹ️ Sobre Nosotros</span>
+                </a>
+                <a href="/contacto" style="padding: 10px 15px;color: #1e3a8a;text-decoration: none;font-weight: 500;border-radius: 8px">
+                    <span class="text-pt">📞 Contacto</span>
+                    <span class="text-en">📞 Contact</span>
+                    <span class="text-es">📞 Contacto</span>
+                </a>
+            </div>
+            
+            <!-- CTA Button -->
+            <div>
+                <a href="https://wa.me/972543080390" target="_blank" style="background: #f59e0b;color: white;padding: 12px 20px;border-radius: 8px;text-decoration: none;font-weight: 600;display: inline-block">
+                    <span class="text-pt">🚀 Solicitar Certificação</span>
+                    <span class="text-en">🚀 Request Certification</span>
+                    <span class="text-es">🚀 Solicitar Certificación</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Alternative Language Buttons (for WordPress compatibility) -->
+    <div class="language-selector-area" style="background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);padding: 20px;border-radius: 12px;box-shadow: 0 4px 15px rgba(0,0,0,0.05);margin: 20px auto;text-align: center;border: 1px solid #e2e8f0;max-width: 1200px;">
+        <div class="language-selector-title" style="color: #1e3a8a;font-size: 1.2rem;font-weight: 700;margin-bottom: 15px;">
+            <span class="text-pt">🌍 Escolha o seu idioma</span>
+            <span class="text-en">🌍 Choose your language</span>
+            <span class="text-es">🌍 Elige tu idioma</span>
+        </div>
+        <div class="language-buttons">
+            <button class="lang-btn active" onclick="changeLanguage('pt')">🇵🇹 Português</button>
+            <button class="lang-btn" onclick="changeLanguage('en')">🇬🇧 English</button>
+            <button class="lang-btn" onclick="changeLanguage('es')">🇪🇸 Español</button>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section style="background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);color: white;padding: 80px 20px;text-align: center">
+        <div style="max-width: 1000px;margin: 0 auto">
+            <h1 style="font-size: 3.5rem;font-weight: 800;line-height: 1.1;margin-bottom: 25px">
+                <span class="text-pt">Certificação Kosher<br><span style="color: #f59e0b">Oficial em Portugal</span></span>
+                <span class="text-en">Kosher Certification<br><span style="color: #f59e0b">Official in Portugal</span></span>
+                <span class="text-es">Certificación Kosher<br><span style="color: #f59e0b">Oficial en Portugal</span></span>
+            </h1>
+            <p style="font-size: 1.3rem;opacity: 0.9;margin-bottom: 40px;max-width: 600px;margin-left: auto;margin-right: auto">
+                <span class="text-pt">A principal autoridade em certificação kosher com mais de 1.000 produtos certificados em 15+ países</span>
+                <span class="text-en">The leading authority in kosher certification with over 1,000 certified products in 15+ countries</span>
+                <span class="text-es">La principal autoridad en certificación kosher con más de 1.000 productos certificados en 15+ países</span>
+            </p>
+            
+            <!-- Stats -->
+            <div style="display: flex;gap: 40px;margin-bottom: 50px;justify-content: center;flex-wrap: wrap">
+                <div style="text-align: center">
+                    <span style="display: block;font-size: 2.5rem;font-weight: 800;color: #f59e0b">8+</span>
+                    <span style="font-size: 0.9rem;opacity: 0.8">
+                        <span class="text-pt">Empresas Certificadas</span>
+                        <span class="text-en">Certified Companies</span>
+                        <span class="text-es">Empresas Certificadas</span>
+                    </span>
+                </div>
+                <div style="text-align: center">
+                    <span style="display: block;font-size: 2.5rem;font-weight: 800;color: #f59e0b">15+</span>
+                    <span style="font-size: 0.9rem;opacity: 0.8">
+                        <span class="text-pt">Países Atendidos</span>
+                        <span class="text-en">Countries Served</span>
+                        <span class="text-es">Países Atendidos</span>
+                    </span>
+                </div>
+                <div style="text-align: center">
+                    <span style="display: block;font-size: 2.5rem;font-weight: 800;color: #f59e0b">100%</span>
+                    <span style="font-size: 0.9rem;opacity: 0.8">
+                        <span class="text-pt">Taxa de Aprovação</span>
+                        <span class="text-en">Approval Rate</span>
+                        <span class="text-es">Tasa de Aprobación</span>
+                    </span>
+                </div>
+            </div>
+            
+            <!-- Buttons -->
+            <div style="display: flex;gap: 20px;justify-content: center;flex-wrap: wrap">
+                <a href="https://wa.me/972543080390" target="_blank" style="background: #f59e0b;color: white;padding: 15px 30px;border-radius: 8px;text-decoration: none;font-weight: 600;font-size: 1.1rem">
+                    <span class="text-pt">🚀 Solicitar Certificação</span>
+                    <span class="text-en">🚀 Request Certification</span>
+                    <span class="text-es">🚀 Solicitar Certificación</span>
+                </a>
+                <a href="/empresas" style="background: transparent;color: white;padding: 15px 30px;border: 2px solid white;border-radius: 8px;text-decoration: none;font-weight: 600;font-size: 1.1rem">
+                    <span class="text-pt">🔍 Ver Empresas</span>
+                    <span class="text-en">🔍 View Companies</span>
+                    <span class="text-es">🔍 Ver Empresas</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Section -->
+    <section style="padding: 80px 20px;background: white">
+        <div style="max-width: 1200px;margin: 0 auto">
+            <div style="text-align: center;margin-bottom: 60px">
+                <h2 style="font-size: 2.5rem;color: #1f2937;margin-bottom: 15px">
+                    <span class="text-pt">Por que Escolher a World Kosher?</span>
+                    <span class="text-en">Why Choose World Kosher?</span>
+                    <span class="text-es">¿Por qué Elegir World Kosher?</span>
+                </h2>
+                <p style="font-size: 1.2rem;color: #6b7280;max-width: 600px;margin: 0 auto">
+                    <span class="text-pt">Somos a autoridade líder em certificação kosher em Portugal e Europa</span>
+                    <span class="text-en">We are the leading authority in kosher certification in Portugal and Europe</span>
+                    <span class="text-es">Somos la autoridad líder en certificación kosher en Portugal y Europa</span>
+                </p>
+            </div>
+            
+            <!-- Features Grid -->
+            <div style="display: grid;grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));gap: 30px">
+                <div style="text-align: center;padding: 40px 30px;background: white;border-radius: 16px;box-shadow: 0 5px 20px rgba(0,0,0,0.1)">
+                    <div style="width: 80px;height: 80px;background: linear-gradient(135deg, #1e3a8a, #059669);border-radius: 50%;display: flex;align-items: center;justify-content: center;margin: 0 auto 25px;color: white;font-size: 2rem">
+                        🌍
+                    </div>
+                    <h3 style="font-size: 1.3rem;color: #1f2937;margin-bottom: 15px">
+                        <span class="text-pt">Reconhecimento Internacional</span>
+                        <span class="text-en">International Recognition</span>
+                        <span class="text-es">Reconocimiento Internacional</span>
+                    </h3>
+                    <p style="color: #6b7280;line-height: 1.6">
+                        <span class="text-pt">Certificação reconhecida em mais de 15 países ao redor do mundo, incluindo Estados Unidos, Canadá e toda a Europa.</span>
+                        <span class="text-en">Certification recognized in over 15 countries worldwide, including the United States, Canada and all of Europe.</span>
+                        <span class="text-es">Certificación reconocida en más de 15 países alrededor del mundo, incluyendo Estados Unidos, Canadá y toda Europa.</span>
+                    </p>
+                </div>
+                
+                <div style="text-align: center;padding: 40px 30px;background: white;border-radius: 16px;box-shadow: 0 5px 20px rgba(0,0,0,0.1)">
+                    <div style="width: 80px;height: 80px;background: linear-gradient(135deg, #1e3a8a, #059669);border-radius: 50%;display: flex;align-items: center;justify-content: center;margin: 0 auto 25px;color: white;font-size: 2rem">
+                        🛡️
+                    </div>
+                    <h3 style="font-size: 1.3rem;color: #1f2937;margin-bottom: 15px">
+                        <span class="text-pt">Rigor e Qualidade</span>
+                        <span class="text-en">Rigor and Quality</span>
+                        <span class="text-es">Rigor y Calidad</span>
+                    </h3>
+                    <p style="color: #6b7280;line-height: 1.6">
+                        <span class="text-pt">Processo rigoroso de certificação com 100% de taxa de aprovação e conformidade com os mais altos padrões internacionais.</span>
+                        <span class="text-en">Rigorous certification process with 100% approval rate and compliance with the highest international standards.</span>
+                        <span class="text-es">Proceso riguroso de certificación con 100% de tasa de aprobación y conformidad con los más altos estándares internacionales.</span>
+                    </p>
+                </div>
+                
+                <div style="text-align: center;padding: 40px 30px;background: white;border-radius: 16px;box-shadow: 0 5px 20px rgba(0,0,0,0.1)">
+                    <div style="width: 80px;height: 80px;background: linear-gradient(135deg, #1e3a8a, #059669);border-radius: 50%;display: flex;align-items: center;justify-content: center;margin: 0 auto 25px;color: white;font-size: 2rem">
+                        👥
+                    </div>
+                    <h3 style="font-size: 1.3rem;color: #1f2937;margin-bottom: 15px">
+                        <span class="text-pt">Equipa Especializada</span>
+                        <span class="text-en">Specialized Team</span>
+                        <span class="text-es">Equipo Especializado</span>
+                    </h3>
+                    <p style="color: #6b7280;line-height: 1.6">
+                        <span class="text-pt">Mashgichim qualificados e experientes em todas as áreas: azeites, concentrados, pescados, bebidas e muito mais.</span>
+                        <span class="text-en">Qualified and experienced Mashgichim in all areas: oils, concentrates, fish, beverages and much more.</span>
+                        <span class="text-es">Mashgichim calificados y experimentados en todas las áreas: aceites, concentrados, pescados, bebidas y mucho más.</span>
+                    </p>
+                </div>
+                
+                <div style="text-align: center;padding: 40px 30px;background: white;border-radius: 16px;box-shadow: 0 5px 20px rgba(0,0,0,0.1)">
+                    <div style="width: 80px;height: 80px;background: linear-gradient(135deg, #1e3a8a, #059669);border-radius: 50%;display: flex;align-items: center;justify-content: center;margin: 0 auto 25px;color: white;font-size: 2rem">
+                        ⏰
+                    </div>
+                    <h3 style="font-size: 1.3rem;color: #1f2937;margin-bottom: 15px">
+                        <span class="text-pt">Suporte 24/7</span>
+                        <span class="text-en">24/7 Support</span>
+                        <span class="text-es">Soporte 24/7</span>
+                    </h3>
+                    <p style="color: #6b7280;line-height: 1.6">
+                        <span class="text-pt">Atendimento contínuo via WhatsApp e telefone para todas as suas necessidades de certificação kosher.</span>
+                        <span class="text-en">Continuous service via WhatsApp and phone for all your kosher certification needs.</span>
+                        <span class="text-es">Atención continua vía WhatsApp y teléfono para todas sus necesidades de certificación kosher.</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Links -->
+    <section style="padding: 80px 20px;background: #f9fafb">
+        <div style="max-width: 1200px;margin: 0 auto">
+            <div style="text-align: center;margin-bottom: 60px">
+                <h2 style="font-size: 2.5rem;color: #1f2937;margin-bottom: 15px">
+                    <span class="text-pt">🚀 Acesso Rápido</span>
+                    <span class="text-en">🚀 Quick Access</span>
+                    <span class="text-es">🚀 Acceso Rápido</span>
+                </h2>
+                <p style="font-size: 1.2rem;color: #6b7280">
+                    <span class="text-pt">Navegue rapidamente pelas principais seções do nosso site</span>
+                    <span class="text-en">Navigate quickly through the main sections of our site</span>
+                    <span class="text-es">Navegue rápidamente por las principales secciones de nuestro sitio</span>
+                </p>
+            </div>
+            
+            <!-- Links Grid -->
+            <div style="display: grid;grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));gap: 30px">
+                <div style="background: white;padding: 40px;border-radius: 16px;box-shadow: 0 5px 20px rgba(0,0,0,0.1);text-align: center">
+                    <div style="font-size: 3rem;margin-bottom: 20px">🏢</div>
+                    <h3 style="color: #1f2937;margin-bottom: 15px;font-size: 1.3rem">
+                        <span class="text-pt">Empresas Certificadas</span>
+                        <span class="text-en">Certified Companies</span>
+                        <span class="text-es">Empresas Certificadas</span>
+                    </h3>
+                    <p style="color: #6b7280;margin-bottom: 30px;line-height: 1.6">
+                        <span class="text-pt">Veja todas as empresas portuguesas que possuem certificação kosher oficial</span>
+                        <span class="text-en">See all Portuguese companies that have official kosher certification</span>
+                        <span class="text-es">Vea todas las empresas portuguesas que poseen certificación kosher oficial</span>
+                    </p>
+                    <a href="/empresas" style="background: #f59e0b;color: white;padding: 12px 24px;border-radius: 8px;text-decoration: none;font-weight: 600">
+                        <span class="text-pt">Ver Empresas</span>
+                        <span class="text-en">View Companies</span>
+                        <span class="text-es">Ver Empresas</span>
+                    </a>
+                </div>
+                
+                <div style="background: white;padding: 40px;border-radius: 16px;box-shadow: 0 5px 20px rgba(0,0,0,0.1);text-align: center">
+                    <div style="font-size: 3rem;margin-bottom: 20px">📋</div>
+                    <h3 style="color: #1f2937;margin-bottom: 15px;font-size: 1.3rem">
+                        <span class="text-pt">Processo de Certificação</span>
+                        <span class="text-en">Certification Process</span>
+                        <span class="text-es">Proceso de Certificación</span>
+                    </h3>
+                    <p style="color: #6b7280;margin-bottom: 30px;line-height: 1.6">
+                        <span class="text-pt">Conheça os 6 passos simples para certificar seus produtos</span>
+                        <span class="text-en">Learn about the 6 simple steps to certify your products</span>
+                        <span class="text-es">Conozca los 6 pasos simples para certificar sus productos</span>
+                    </p>
+                    <a href="/certificacao" style="background: #f59e0b;color: white;padding: 12px 24px;border-radius: 8px;text-decoration: none;font-weight: 600">
+                        <span class="text-pt">Ver Processo</span>
+                        <span class="text-en">View Process</span>
+                        <span class="text-es">Ver Proceso</span>
+                    </a>
+                </div>
+                
+                <div style="background: white;padding: 40px;border-radius: 16px;box-shadow: 0 5px 20px rgba(0,0,0,0.1);text-align: center">
+                    <div style="font-size: 3rem;margin-bottom: 20px">📞</div>
+                    <h3 style="color: #1f2937;margin-bottom: 15px;font-size: 1.3rem">
+                        <span class="text-pt">Entre em Contacto</span>
+                        <span class="text-en">Get in Touch</span>
+                        <span class="text-es">Póngase en Contacto</span>
+                    </h3>
+                    <p style="color: #6b7280;margin-bottom: 30px;line-height: 1.6">
+                        <span class="text-pt">Fale conosco via WhatsApp, telefone ou email para mais informações</span>
+                        <span class="text-en">Contact us via WhatsApp, phone or email for more information</span>
+                        <span class="text-es">Háblenos vía WhatsApp, teléfono o email para más información</span>
+                    </p>
+                    <a href="/contacto" style="background: #f59e0b;color: white;padding: 12px 24px;border-radius: 8px;text-decoration: none;font-weight: 600">
+                        <span class="text-pt">Contactar</span>
+                        <span class="text-en">Contact</span>
+                        <span class="text-es">Contactar</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Companies Preview -->
+    <section style="padding: 80px 20px;background: white">
+        <div style="max-width: 1200px;margin: 0 auto">
+            <div style="text-align: center;margin-bottom: 60px">
+                <h2 style="font-size: 2.5rem;color: #1f2937;margin-bottom: 15px">
+                    <span class="text-pt">🏢 Empresas Certificadas</span>
+                    <span class="text-en">🏢 Certified Companies</span>
+                    <span class="text-es">🏢 Empresas Certificadas</span>
+                </h2>
+                <p style="font-size: 1.2rem;color: #6b7280;margin-bottom: 30px">
+                    <span class="text-pt">Conheça algumas das empresas portuguesas com certificação kosher oficial</span>
+                    <span class="text-en">Meet some of the Portuguese companies with official kosher certification</span>
+                    <span class="text-es">Conozca algunas de las empresas portuguesas con certificación kosher oficial</span>
+                </p>
+            </div>
+            
+            <!-- Companies Grid -->
+            <div style="display: grid;grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));gap: 25px;margin-bottom: 40px">
+                <div style="background: white;border: 2px solid #e5e7eb;border-radius: 12px;padding: 25px;text-align: center">
+                    <div style="width: 60px;height: 60px;background: #f59e0b;border-radius: 8px;display: flex;align-items: center;justify-content: center;margin: 0 auto 15px;color: white;font-weight: bold">ATL</div>
+                    <h4 style="color: #1f2937;margin-bottom: 8px">Atlantic</h4>
+                    <p style="color: #6b7280;font-size: 0.9rem">
+                        <span class="text-pt">Conservas e Produtos do Mar</span>
+                        <span class="text-en">Canned Goods and Seafood</span>
+                        <span class="text-es">Conservas y Productos del Mar</span>
+                    </p>
+                </div>
+                
+                <div style="background: white;border: 2px solid #e5e7eb;border-radius: 12px;padding: 25px;text-align: center">
+                    <div style="width: 60px;height: 60px;background: #059669;border-radius: 8px;display: flex;align-items: center;justify-content: center;margin: 0 auto 15px;color: white;font-weight: bold">FRT</div>
+                    <h4 style="color: #1f2937;margin-bottom: 8px">Frutíssima</h4>
+                    <p style="color: #6b7280;font-size: 0.9rem">
+                        <span class="text-pt">Frutas e Concentrados</span>
+                        <span class="text-en">Fruits and Concentrates</span>
+                        <span class="text-es">Frutas y Concentrados</span>
+                    </p>
+                </div>
+                
+                <div style="background: white;border: 2px solid #e5e7eb;border-radius: 12px;padding: 25px;text-align: center">
+                    <div style="width: 60px;height: 60px;background: #1e3a8a;border-radius: 8px;display: flex;align-items: center;justify-content: center;margin: 0 auto 15px;color: white;font-weight: bold">SBG</div>
+                    <h4 style="color: #1f2937;margin-bottom: 8px">Super Bock Group</h4>
+                    <p style="color: #6b7280;font-size: 0.9rem">
+                        <span class="text-pt">Bebidas e Cervejas</span>
+                        <span class="text-en">Beverages and Beers</span>
+                        <span class="text-es">Bebidas y Cervezas</span>
+                    </p>
+                </div>
+                
+                <div style="background: white;border: 2px solid #e5e7eb;border-radius: 12px;padding: 25px;text-align: center">
+                    <div style="width: 60px;height: 60px;background: #7c3aed;border-radius: 8px;display: flex;align-items: center;justify-content: center;margin: 0 auto 15px;color: white;font-weight: bold">INN</div>
+                    <h4 style="color: #1f2937;margin-bottom: 8px">Innoliva</h4>
+                    <p style="color: #6b7280;font-size: 0.9rem">
+                        <span class="text-pt">Azeites Premium</span>
+                        <span class="text-en">Premium Olive Oils</span>
+                        <span class="text-es">Aceites de Oliva Premium</span>
+                    </p>
+                </div>
+            </div>
+            
+            <div style="text-align: center">
+                <a href="/empresas" style="background: #1e3a8a;color: white;padding: 15px 30px;border-radius: 8px;text-decoration: none;font-weight: 600;font-size: 1.1rem">
+                    <span class="text-pt">Ver Todas as Empresas →</span>
+                    <span class="text-en">View All Companies →</span>
+                    <span class="text-es">Ver Todas las Empresas →</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section style="background: linear-gradient(135deg, #059669, #065f46);color: white;padding: 80px 20px;text-align: center">
+        <div style="max-width: 800px;margin: 0 auto">
+            <h2 style="font-size: 2.5rem;margin-bottom: 20px">
+                <span class="text-pt">Pronto para Certificar seus Produtos?</span>
+                <span class="text-en">Ready to Certify Your Products?</span>
+                <span class="text-es">¿Listo para Certificar sus Productos?</span>
+            </h2>
+            <p style="font-size: 1.2rem;margin-bottom: 40px;opacity: 0.9">
+                <span class="text-pt">Entre em contacto connosco hoje mesmo e inicie o processo de certificação kosher</span>
+                <span class="text-en">Contact us today and start the kosher certification process</span>
+                <span class="text-es">Contáctenos hoy mismo e inicie el proceso de certificación kosher</span>
+            </p>
+            
+            <div style="display: flex;gap: 20px;justify-content: center;flex-wrap: wrap;margin-bottom: 40px">
+                <div style="text-align: center">
+                    <h3 style="margin-bottom: 10px">💬 WhatsApp 24/7</h3>
+                    <a href="https://wa.me/972543080390" target="_blank" style="color: white;font-size: 1.2rem;text-decoration: none;font-weight: bold">(+972) 54 308 0390</a>
+                </div>
+                
+                <div style="text-align: center">
+                    <h3 style="margin-bottom: 10px">
+                        <span class="text-pt">📧 Email Oficial</span>
+                        <span class="text-en">📧 Official Email</span>
+                        <span class="text-es">📧 Email Oficial</span>
+                    </h3>
+                    <a href="mailto:Portugal@w-kosher.com" style="color: white;font-size: 1.2rem;text-decoration: none;font-weight: bold">Portugal@w-kosher.com</a>
+                </div>
+            </div>
+            
+            <a href="https://wa.me/972543080390" target="_blank" style="background: #f59e0b;color: white;padding: 20px 40px;border-radius: 8px;text-decoration: none;font-weight: bold;font-size: 1.3rem">
+                <span class="text-pt">🚀 Solicitar Certificação Agora</span>
+                <span class="text-en">🚀 Request Certification Now</span>
+                <span class="text-es">🚀 Solicitar Certificación Ahora</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: #1f2937;color: white;padding: 60px 20px 30px">
+        <div style="max-width: 1200px;margin: 0 auto">
+            <!-- Footer Content -->
+            <div style="display: grid;grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));gap: 40px;margin-bottom: 40px">
+                <div>
+                    <h3 style="color: #f59e0b;margin-bottom: 20px;font-size: 1.5rem">🏆 World Kosher</h3>
+                    <span style="color: #f59e0b">B.M.MASHGICHIM</span>
+                    <p style="color: rgba(255,255,255,0.8);line-height: 1.6;margin: 20px 0">
+                        <span class="text-pt">A principal autoridade em certificação kosher em Portugal, oferecendo serviços de qualidade internacional com reconhecimento em mais de 15 países.</span>
+                        <span class="text-en">The leading authority in kosher certification in Portugal, offering international quality services with recognition in over 15 countries.</span>
+                        <span class="text-es">La principal autoridad en certificación kosher en Portugal, ofreciendo servicios de calidad internacional con reconocimiento en más de 15 países.</span>
+                    </p>
+                    <div style="margin-top: 20px">
+                        <a href="https://www.facebook.com/profile.php?id=61575501917315" target="_blank" style="color: white;margin-right: 15px;text-decoration: none">📘 Facebook</a>
+                        <a href="https://wa.me/972543080390" target="_blank" style="color: white;margin-right: 15px;text-decoration: none">📱 WhatsApp</a>
+                        <a href="mailto:Portugal@w-kosher.com" style="color: white;text-decoration: none">📧 Email</a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 style="margin-bottom: 20px">
+                        <span class="text-pt">🛒 Recursos do Consumidor</span>
+                        <span class="text-en">🛒 Consumer Resources</span>
+                        <span class="text-es">🛒 Recursos del Consumidor</span>
+                    </h4>
+                    <ul style="margin: 0;padding: 0">
+                        <li style="margin-bottom: 10px"><a href="/empresas" style="color: rgba(255,255,255,0.8);text-decoration: none">
+                            <span class="text-pt">🔍 Busca de Produtos</span>
+                            <span class="text-en">🔍 Product Search</span>
+                            <span class="text-es">🔍 Búsqueda de Productos</span>
+                        </a></li>
+                        <li style="margin-bottom: 10px"><a href="/certificacao" style="color: rgba(255,255,255,0.8);text-decoration: none">
+                            <span class="text-pt">❓ Perguntas Frequentes</span>
+                            <span class="text-en">❓ Frequently Asked Questions</span>
+                            <span class="text-es">❓ Preguntas Frecuentes</span>
+                        </a></li>
+                        <li style="margin-bottom: 10px"><a href="/contacto" style="color: rgba(255,255,255,0.8);text-decoration: none">
+                            <span class="text-pt">🍳 Receitas Kosher</span>
+                            <span class="text-en">🍳 Kosher Recipes</span>
+                            <span class="text-es">🍳 Recetas Kosher</span>
+                        </a></li>
+                        <li style="margin-bottom: 10px"><a href="/contacto" style="color: rgba(255,255,255,0.8);text-decoration: none">
+                            <span class="text-pt">🍽️ Restaurantes Kosher</span>
+                            <span class="text-en">🍽️ Kosher Restaurants</span>
+                            <span class="text-es">🍽️ Restaurantes Kosher</span>
+                        </a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 style="margin-bottom: 20px">
+                        <span class="text-pt">🏭 Recursos Industriais</span>
+                        <span class="text-en">🏭 Industrial Resources</span>
+                        <span class="text-es">🏭 Recursos Industriales</span>
+                    </h4>
+                    <ul style="margin: 0;padding: 0">
+                        <li style="margin-bottom: 10px"><a href="/certificacao" style="color: rgba(255,255,255,0.8);text-decoration: none">
+                            <span class="text-pt">Processo de Certificação</span>
+                            <span class="text-en">Certification Process</span>
+                            <span class="text-es">Proceso de Certificación</span>
+                        </a></li>
+                        <li style="margin-bottom: 10px"><a href="https://wa.me/972543080390" target="_blank" style="color: rgba(255,255,255,0.8);text-decoration: none">
+                            <span class="text-pt">Solicitar Certificação</span>
+                            <span class="text-en">Request Certification</span>
+                            <span class="text-es">Solicitar Certificación</span>
+                        </a></li>
+                        <li style="margin-bottom: 10px"><a href="/certificacao" style="color: rgba(255,255,255,0.8);text-decoration: none">
+                            <span class="text-pt">Requisitos Kosher</span>
+                            <span class="text-en">Kosher Requirements</span>
+                            <span class="text-es">Requisitos Kosher</span>
+                        </a></li>
+                        <li style="margin-bottom: 10px"><a href="/contacto" style="color: rgba(255,255,255,0.8);text-decoration: none">
+                            <span class="text-pt">Serviços Mashgiach</span>
+                            <span class="text-en">Mashgiach Services</span>
+                            <span class="text-es">Servicios Mashgiach</span>
+                        </a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 style="margin-bottom: 20px">
+                        <span class="text-pt">Contacto</span>
+                        <span class="text-en">Contact</span>
+                        <span class="text-es">Contacto</span>
+                    </h4>
+                    <div>
+                        <p style="color: rgba(255,255,255,0.8);margin-bottom: 10px"><strong>
+                            <span class="text-pt">Linha Kosher 24/7:</span>
+                            <span class="text-en">Kosher Line 24/7:</span>
+                            <span class="text-es">Línea Kosher 24/7:</span>
+                        </strong><br><a href="tel:+972543080390" style="color: white;text-decoration: none">(+972) 54 308 0390</a></p>
+                        <p style="color: rgba(255,255,255,0.8);margin-bottom: 10px"><strong>
+                            <span class="text-pt">Email Oficial:</span>
+                            <span class="text-en">Official Email:</span>
+                            <span class="text-es">Email Oficial:</span>
+                        </strong><br><a href="mailto:Portugal@w-kosher.com" style="color: white;text-decoration: none">Portugal@w-kosher.com</a></p>
+                        <p style="color: rgba(255,255,255,0.8);margin-bottom: 20px"><strong>
+                            <span class="text-pt">Website:</span>
+                            <span class="text-en">Website:</span>
+                            <span class="text-es">Sitio Web:</span>
+                        </strong><br>www.w-kosher.com</p>
+                        <a href="https://wa.me/972543080390" target="_blank" style="background: #25d366;color: white;padding: 12px 20px;border-radius: 8px;text-decoration: none;font-weight: 600;display: inline-block">
+                            <span class="text-pt">WhatsApp Direto</span>
+                            <span class="text-en">Direct WhatsApp</span>
+                            <span class="text-es">WhatsApp Directo</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer Bottom -->
+            <div style="border-top: 1px solid rgba(255,255,255,0.1);padding-top: 30px;display: flex;justify-content: space-between;align-items: center;flex-wrap: wrap;gap: 20px">
+                <p style="color: rgba(255,255,255,0.6);margin: 0">
+                    <span class="text-pt">© 2024 World Kosher B.M.MASHGICHIM. Todos os direitos reservados.</span>
+                    <span class="text-en">© 2024 World Kosher B.M.MASHGICHIM. All rights reserved.</span>
+                    <span class="text-es">© 2024 World Kosher B.M.MASHGICHIM. Todos los derechos reservados.</span>
+                </p>
+                <div style="display: flex;gap: 20px;flex-wrap: wrap">
+                    <a href="/contacto" style="color: rgba(255,255,255,0.8);text-decoration: none;font-size: 0.9rem">
+                        <span class="text-pt">Política de Privacidade</span>
+                        <span class="text-en">Privacy Policy</span>
+                        <span class="text-es">Política de Privacidad</span>
+                    </a>
+                    <a href="/contacto" style="color: rgba(255,255,255,0.8);text-decoration: none;font-size: 0.9rem">
+                        <span class="text-pt">Termos de Uso</span>
+                        <span class="text-en">Terms of Use</span>
+                        <span class="text-es">Términos de Uso</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple language switching functionality for WordPress compatibility
+        function changeLanguage(lang) {
+            // Remove all language classes
+            document.body.classList.remove('lang-pt', 'lang-en', 'lang-es', 'lang-he', 'lang-ru', 'lang-it');
+            
+            // Add new language class
+            document.body.classList.add('lang-' + lang);
+            
+            // Save to localStorage
+            localStorage.setItem('w-kosher-language', lang);
+            
+            // Update active button
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Update HTML lang attribute
+            document.documentElement.lang = lang;
+            
+            // Update direction for Hebrew
+            if (lang === 'he') {
+                document.documentElement.dir = 'rtl';
+            } else {
+                document.documentElement.dir = 'ltr';
+            }
+        }
+        
+        // Load saved language on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('w-kosher-language') || 'pt';
+            changeLanguage(savedLang);
+            
+            // Update active button
+            document.querySelector(`[onclick="changeLanguage('${savedLang}')"]`)?.classList.add('active');
+        });
+    </script>
+</body>
+</html>

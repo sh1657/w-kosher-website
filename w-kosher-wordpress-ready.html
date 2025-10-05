@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="pt" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Kosher - Certificação Kosher Oficial em Portugal</title>
+    
+
+</head>
+<body class="lang-pt">
+
+<!-- Top Bar -->
+<div style="background: #1e3a8a;color: white;padding: 10px 0;font-size: 0.9rem;position: sticky;top: 0;z-index: 1001">
+    <div style="max-width: 1200px;margin: 0 auto;padding: 0 20px;display: flex;justify-content: space-between;align-items: center;flex-wrap: wrap;gap: 10px">
+        <div>
+            <span style="margin-right: 20px">📞 
+                <span class="text-pt">LINHA KOSHER:</span>
+                <span class="text-en">KOSHER LINE:</span>
+                <span class="text-he">קו כשרות:</span>
+                <span class="text-es">LÍNEA KOSHER:</span>
+                <a href="tel:+972543080390" style="color: white;text-decoration: none">(+972) 54 308 0390</a>
+            </span>
+            <span>📧 <a href="mailto:Portugal@w-kosher.com" style="color: white;text-decoration: none">Portugal@w-kosher.com</a></span>
+        </div>
+        <div style="display: flex;align-items: center;gap: 15px">
+            <!-- Language Selector -->
+            <div class="language-selector" style="position: relative;display: inline-block;cursor:pointer">
+                <span id="current-flag">🇵🇹</span>
+                <span id="current-lang">Português</span>
+                <span>▼</span>
+                
+                <div class="language-dropdown" id="languageDropdown" style="position: absolute;top: 100%;right: 0;background: white;border: 1px solid #e5e7eb;border-radius: 8px;box-shadow: 0 10px 25px rgba(0,0,0,0.15);min-width: 220px;z-index: 2000;display: none">
+                    <div class="language-option" onclick="wkChangeLanguage('pt')" style="padding: 12px 16px;cursor: pointer;border-bottom: 1px solid #f3f4f6;color: #1f2937;display: flex;align-items: center;gap: 10px">🇵🇹 <span>Português</span></div>
+                    <div class="language-option" onclick="wkChangeLanguage('en')" style="padding: 12px 16px;cursor: pointer;border-bottom: 1px solid #f3f4f6;color: #1f2937;display: flex;align-items: center;gap: 10px">🇬🇧 <span>English</span></div>
+                    <div class="language-option" onclick="wkChangeLanguage('he')" style="padding: 12px 16px;cursor: pointer;border-bottom: 1px solid #f3f4f6;color: #1f2937;display: flex;align-items: center;gap: 10px">🇮🇱 <span>עברית</span></div>
+                    <div class="language-option" onclick="wkChangeLanguage('es')" style="padding: 12px 16px;cursor: pointer;color: #1f2937;display: flex;align-items: center;gap: 10px">🇪🇸 <span>Español</span></div>
+                </div>
+            </div>
+            
+            <a href="https://www.facebook.com/profile.php?id=61575501917315" target="_blank" style="color: white;margin-left: 15px;text-decoration: none">📘 Facebook</a>
+            <a href="https://wa.me/972543080390" target="_blank" style="color: white;margin-left: 15px;text-decoration: none">📱 WhatsApp</a>
+        </div>
+    </div>
+</div>
+
+<!-- Main Header -->
+<header style="background: white;box-shadow: 0 2px 10px rgba(0,0,0,0.1);position: sticky;top: 44px;z-index: 1000">
+    <div style="max-width: 1200px;margin: 0 auto;padding: 15px 20px;display: flex;align-items: center;justify-content: space-between;flex-wrap: wrap;gap: 20px">
+        <!-- Logo -->
+        <div style="display: flex;align-items: center;gap: 15px">
+            <img src="https://wkoshercom.wordpress.com/wp-content/uploads/2024/06/4-removebg-preview.png" alt="Logo" style="width: 50px;height: 50px;border-radius: 12px;object-fit: contain">
+            <div>
+                <h1 style="font-size: 1.8rem;font-weight: 700;color: #1e3a8a;margin: 0">World Kosher</h1>
+                <span style="font-size: 0.9rem;color: #6b7280;font-weight: 500">B.M.MASHGICHIM</span>
+            </div>
+        </div>
+        
+        <!-- Navigation -->
+        <div style="display: flex;gap: 20px;justify-content: center;flex-wrap: wrap;margin: 0;padding: 0">
+            <a href="/" style="padding: 10px 15px;color: #f59e0b;text-decoration: none;font-weight: 600;border-radius: 8px;background: #f9fafb">
+                <span class="text-pt">🏠 Início</span>
+                <span class="text-en">🏠 Home</span>
+                <span class="text-he">🏠 דף הבית</span>
+                <span class="text-es">🏠 Inicio</span>
+            </a>
+            <a href="/certificacao" style="padding: 10px 15px;color: #1e3a8a;text-decoration: none;font-weight: 500;border-radius: 8px">
+                <span class="text-pt">📋 Certificação</span>
+                <span class="text-en">📋 Certification</span>
+                <span class="text-he">📋 הסמכה</span>
+                <span class="text-es">📋 Certificación</span>
+            </a>
+            <a href="/empresas" style="padding: 10px 15px;color: #1e3a8a;text-decoration: none;font-weight: 500;border-radius: 8px">
+                <span class="text-pt">🏢 Empresas</span>
+                <span class="text-en">🏢 Companies</span>
+                <span class="text-he">🏢 חברות</span>
+                <span class="text-es">🏢 Empresas</span>
+            </a>
+            <a href="/about" style="padding: 10px 15px;color: #1e3a8a;text-decoration: none;font-weight: 500;border-radius: 8px">
+                <span class="text-pt">ℹ️ Sobre Nós</span>
+                <span class="text-en">ℹ️ About Us</span>
+                <span class="text-he">ℹ️ אודות</span>
+                <span class="text-es">ℹ️ Sobre Nosotros</span>
+            </a>
+            <a href="/contacto" style="padding: 10px 15px;color: #1e3a8a;text-decoration: none;font-weight: 500;border-radius: 8px">
+                <span class="text-pt">📞 Contacto</span>
+                <span class="text-en">📞 Contact</span>
+                <span class="text-he">📞 צור קשר</span>
+                <span class="text-es">📞 Contacto</span>
+            </a>
+        </div>
+        
+        <!-- CTA Button -->
+        <div>
+            <a href="https://wa.me/972543080390" target="_blank" style="background: #f59e0b;color: white;padding: 12px 20px;border-radius: 8px;text-decoration: none;font-weight: 600;display: inline-block">
+                <span class="text-pt">🚀 Solicitar Certificação</span>
+                <span class="text-en">🚀 Request Certification</span>
+                <span class="text-he">🚀 בקשת הסמכה</span>
+                <span class="text-es">🚀 Solicitar Certificación</span>
+            </a>
+        </div>
+    </div>
+</header>
+
+<!-- Hero Section with Animation -->
+<section style="background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);color: white;padding: 80px 20px;text-align: center;position:relative;overflow:hidden;background-size: 200% 200%;animation: wg-gradient 12s ease infinite;">
+    
+    <!-- WordPress-Safe CSS -->
+    <style>
+    /* Language System - WordPress Safe */
+    span.text-pt, span.text-en, span.text-he, span.text-es, 
+    .text-pt, .text-en, .text-he, .text-es { 
+        display: none !important; 
+        visibility: hidden !important;
+    }
+    
+    /* Portuguese Active */
+    body.lang-pt span.text-pt, body.lang-pt .text-pt,
+    html.lang-pt span.text-pt, html.lang-pt .text-pt { 
+        display: inline !important; 
+        visibility: visible !important;
+    }
+    
+    /* English Active */
+    body.lang-en span.text-en, body.lang-en .text-en,
+    html.lang-en span.text-en, html.lang-en .text-en { 
+        display: inline !important; 
+        visibility: visible !important;
+    }
+    
+    /* Hebrew Active */
+    body.lang-he span.text-he, body.lang-he .text-he,
+    html.lang-he span.text-he, html.lang-he .text-he { 
+        display: inline !important; 
+        visibility: visible !important;
+    }
+    
+    /* Spanish Active */
+    body.lang-es span.text-es, body.lang-es .text-es,
+    html.lang-es span.text-es, html.lang-es .text-es { 
+        display: inline !important; 
+        visibility: visible !important;
+    }
+    
+    /* Dropdown Hover */
+    .language-option:hover {
+        background-color: #f3f4f6 !important;
+        background: #f3f4f6 !important;
+    }
+    
+    /* Background Animation */
+    @keyframes wg-gradient {
+        0% { background-position: 0% 50% !important; }
+        50% { background-position: 100% 50% !important; }
+        100% { background-position: 0% 50% !important; }
+    }
+    
+    /* Floating Particles */
+    .hero-anim { 
+        position: absolute !important; 
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        pointer-events: none !important; 
+        z-index: 1 !important;
+    }
+    
+    .spark {
+        position: absolute !important;
+        width: 8px !important;
+        height: 8px !important;
+        border-radius: 50% !important;
+        background: rgba(255,255,255,0.6) !important;
+        animation: sparkFloat 12s linear infinite !important;
+        top: 100% !important;
+    }
+    
+    .spark:nth-child(1) { left: 10% !important; animation-duration: 13s !important; animation-delay: 0s !important; }
+    .spark:nth-child(2) { left: 25% !important; animation-duration: 15s !important; animation-delay: 1s !important; }
+    .spark:nth-child(3) { left: 40% !important; animation-duration: 12s !important; animation-delay: 2s !important; }
+    .spark:nth-child(4) { left: 55% !important; animation-duration: 16s !important; animation-delay: 0.5s !important; }
+    .spark:nth-child(5) { left: 70% !important; animation-duration: 14s !important; animation-delay: 1.5s !important; }
+    .spark:nth-child(6) { left: 82% !important; animation-duration: 18s !important; animation-delay: 0.8s !important; }
+    .spark:nth-child(7) { left: 90% !important; animation-duration: 17s !important; animation-delay: 2.2s !important; }
+    .spark:nth-child(8) { left: 15% !important; animation-duration: 19s !important; animation-delay: 3s !important; }
+    
+    @keyframes sparkFloat {
+        0% { transform: translateY(0) scale(0.9) !important; opacity: 0 !important; }
+        10% { opacity: 0.5 !important; }
+        100% { transform: translateY(-120vh) scale(1.2) !important; opacity: 0.7 !important; }
+    }
+    
+    /* Fade In Animation */
+    .fade-in-up { 
+        opacity: 0 !important; 
+        transform: translateY(10px) !important; 
+        animation: fadeReveal 0.9s ease forwards !important; 
+    }
+    .fade-in-up.delay-1 { animation-delay: 0.2s !important; }
+    .fade-in-up.delay-2 { animation-delay: 0.4s !important; }
+    
+    @keyframes fadeReveal {
+        to { 
+            opacity: 1 !important; 
+            transform: translateY(0) !important; 
+        }
+    }
+    </style>
+    <!-- Floating Sparks -->
+    <div class="hero-anim">
+        <div class="spark"></div><div class="spark"></div><div class="spark"></div><div class="spark"></div>
+        <div class="spark"></div><div class="spark"></div><div class="spark"></div><div class="spark"></div>
+    </div>
+    
+    <div style="max-width: 1000px;margin: 0 auto">
+        <h1 class="fade-in-up" style="font-size: 3.5rem;font-weight: 800;line-height: 1.1;margin-bottom: 25px">
+            <span class="text-pt">Certificação Kosher</span>
+            <span class="text-en">Kosher Certification</span>
+            <span class="text-he">תעודת כשרות</span>
+            <span class="text-es">Certificación Kosher</span>
+            <br>
+            <span style="color: #f59e0b">
+                <span class="text-pt">Oficial em Portugal</span>
+                <span class="text-en">Official in Portugal</span>
+                <span class="text-he">רשמי בפורטוגל</span>
+                <span class="text-es">Oficial en Portugal</span>
+            </span>
+        </h1>
+        
+        <p class="fade-in-up delay-1" style="font-size: 1.3rem;opacity: 0.9;margin-bottom: 40px;max-width: 700px;margin-left: auto;margin-right: auto">
+            <span class="text-pt">A principal autoridade em certificação kosher com mais de 1.000 produtos certificados em 15+ países</span>
+            <span class="text-en">The leading kosher certification authority with 1,000+ certified products in 15+ countries</span>
+            <span class="text-he">הסמכת כשרות מובילה עם יותר מ־1,000 מוצרים מוסמכים ב־15+ מדינות</span>
+            <span class="text-es">La autoridad líder en certificación kosher con más de 1.000 productos en 15+ países</span>
+        </p>
+        
+        <!-- Stats -->
+        <div class="fade-in-up delay-1" style="display: flex;gap: 40px;margin-bottom: 50px;justify-content: center;flex-wrap: wrap">
+            <div style="text-align: center">
+                <span style="display: block;font-size: 2.5rem;font-weight: 800;color: #f59e0b">8+</span>
+                <span style="font-size: 0.9rem;opacity: 0.8">
+                    <span class="text-pt">Empresas Certificadas</span>
+                    <span class="text-en">Certified Companies</span>
+                    <span class="text-he">חברות מוסמכות</span>
+                    <span class="text-es">Empresas Certificadas</span>
+                </span>
+            </div>
+            <div style="text-align: center">
+                <span style="display: block;font-size: 2.5rem;font-weight: 800;color: #f59e0b">15+</span>
+                <span style="font-size: 0.9rem;opacity: 0.8">
+                    <span class="text-pt">Países Atendidos</span>
+                    <span class="text-en">Countries Served</span>
+                    <span class="text-he">מדינות פעילות</span>
+                    <span class="text-es">Países Atendidos</span>
+                </span>
+            </div>
+            <div style="text-align: center">
+                <span style="display: block;font-size: 2.5rem;font-weight: 800;color: #f59e0b">100%</span>
+                <span style="font-size: 0.9rem;opacity: 0.8">
+                    <span class="text-pt">Taxa de Aprovação</span>
+                    <span class="text-en">Approval Rate</span>
+                    <span class="text-he">שיעור אישור</span>
+                    <span class="text-es">Tasa de Aprobación</span>
+                </span>
+            </div>
+        </div>
+        
+        <!-- Buttons -->
+        <div class="fade-in-up delay-2" style="display: flex;gap: 20px;justify-content: center;flex-wrap: wrap">
+            <a href="https://wa.me/972543080390" target="_blank" style="background: #f59e0b;color: white;padding: 15px 30px;border-radius: 8px;text-decoration: none;font-weight: 600;font-size: 1.1rem">
+                <span class="text-pt">🚀 Solicitar Certificação</span>
+                <span class="text-en">🚀 Request Certification</span>
+                <span class="text-he">🚀 בקשת הסמכה</span>
+                <span class="text-es">🚀 Solicitar Certificación</span>
+            </a>
+            <a href="/empresas" style="background: transparent;color: white;padding: 15px 30px;border: 2px solid white;border-radius: 8px;text-decoration: none;font-weight: 600;font-size: 1.1rem">
+                <span class="text-pt">🔍 Ver Empresas</span>
+                <span class="text-en">🔍 View Companies</span>
+                <span class="text-he">🔍 צפה בחברות</span>
+                <span class="text-es">🔍 Ver Empresas</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Why Choose Section -->
+<section style="padding: 80px 20px;background: white">
+    <div style="max-width: 1200px;margin: 0 auto">
+        <div style="text-align: center;margin-bottom: 60px">
+            <h2 style="font-size: 2.5rem;color: #1f2937;margin-bottom: 15px">
+                <span class="text-pt">Por que Escolher a World Kosher?</span>
+                <span class="text-en">Why Choose World Kosher?</span>
+                <span class="text-he">למה לבחור ב-World Kosher?</span>
+                <span class="text-es">¿Por qué elegir World Kosher?</span>
+            </h2>
+            <p style="font-size: 1.2rem;color: #6b7280;max-width: 600px;margin: 0 auto">
+                <span class="text-pt">Somos a autoridade líder em certificação kosher em Portugal e Europa</span>
+                <span class="text-en">We are the leading kosher certification authority in Portugal and Europe</span>
+                <span class="text-he">אנחנו הרשות המובילה להסמכת כשרות בפורטוגל ובאירופה</span>
+                <span class="text-es">Somos la autoridad líder en certificación kosher en Portugal y Europa</span>
+            </p>
+        </div>
+        
+        <!-- Features Grid -->
+        <div style="display: grid;grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));gap: 30px">
+            <div style="text-align: center;padding: 40px 30px;background: white;border-radius: 16px;box-shadow: 0 5px 20px rgba(0,0,0,0.1)">
+                <div style="width: 80px;height: 80px;background: linear-gradient(135deg, #1e3a8a, #059669);border-radius: 50%;display: flex;align-items: center;justify-content: center;margin: 0 auto 25px;color: white;font-size: 2rem">
+                    🌍
+                </div>
+                <h3 style="font-size: 1.3rem;color: #1f2937;margin-bottom: 15px">
+                    <span class="text-pt">Reconhecimento Internacional</span>
+                    <span class="text-en">International Recognition</span>
+                    <span class="text-he">הכרה בינלאומית</span>
+                    <span class="text-es">Reconocimiento Internacional</span>
+                </h3>
+                <p style="color: #6b7280;line-height: 1.6">
+                    <span class="text-pt">Certificação reconhecida em mais de 15 países ao redor do mundo, incluindo Estados Unidos, Canadá e toda a Europa.</span>
+                    <span class="text-en">Certification recognized in over 15 countries worldwide, including the United States, Canada and all of Europe.</span>
+                    <span class="text-he">הסמכה המוכרת ביותר מ-15 מדינות ברחבי העולם, כולל ארצות הברית, קנדה וכל אירופה.</span>
+                    <span class="text-es">Certificación reconocida en más de 15 países de todo el mundo, incluyendo Estados Unidos, Canadá y toda Europa.</span>
+                </p>
+            </div>
+            
+            <div style="text-align: center;padding: 40px 30px;background: white;border-radius: 16px;box-shadow: 0 5px 20px rgba(0,0,0,0.1)">
+                <div style="width: 80px;height: 80px;background: linear-gradient(135deg, #1e3a8a, #059669);border-radius: 50%;display: flex;align-items: center;justify-content: center;margin: 0 auto 25px;color: white;font-size: 2rem">
+                    🛡️
+                </div>
+                <h3 style="font-size: 1.3rem;color: #1f2937;margin-bottom: 15px">
+                    <span class="text-pt">Rigor e Qualidade</span>
+                    <span class="text-en">Rigor and Quality</span>
+                    <span class="text-he">קפדנות ואיכות</span>
+                    <span class="text-es">Rigor y Calidad</span>
+                </h3>
+                <p style="color: #6b7280;line-height: 1.6">
+                    <span class="text-pt">Processo rigoroso de certificação com 100% de taxa de aprovação e conformidade com os mais altos padrões internacionais.</span>
+                    <span class="text-en">Rigorous certification process with 100% approval rate and compliance with the highest international standards.</span>
+                    <span class="text-he">תהליך הסמכה קפדני עם 100% שיעור אישור והתאמה לסטנדרטים הבינלאומיים הגבוהים ביותר.</span>
+                    <span class="text-es">Proceso riguroso de certificación con 100% de tasa de aprobación y cumplimiento de los más altos estándares internacionales.</span>
+                </p>
+            </div>
+            
+            <div style="text-align: center;padding: 40px 30px;background: white;border-radius: 16px;box-shadow: 0 5px 20px rgba(0,0,0,0.1)">
+                <div style="width: 80px;height: 80px;background: linear-gradient(135deg, #1e3a8a, #059669);border-radius: 50%;display: flex;align-items: center;justify-content: center;margin: 0 auto 25px;color: white;font-size: 2rem">
+                    👥
+                </div>
+                <h3 style="font-size: 1.3rem;color: #1f2937;margin-bottom: 15px">
+                    <span class="text-pt">Equipa Especializada</span>
+                    <span class="text-en">Specialized Team</span>
+                    <span class="text-he">צוות מתמחה</span>
+                    <span class="text-es">Equipo Especializado</span>
+                </h3>
+                <p style="color: #6b7280;line-height: 1.6">
+                    <span class="text-pt">Mashgichim qualificados e experientes em todas as áreas: azeites, concentrados, pescados, bebidas e muito mais.</span>
+                    <span class="text-en">Qualified and experienced Mashgichim in all areas: oils, concentrates, fish, beverages and much more.</span>
+                    <span class="text-he">משגיחים מיומנים ומנוסים בכל התחומים: שמנים, תרכיזים, דגים, משקאות ועוד הרבה.</span>
+                    <span class="text-es">Mashgichim calificados y experimentados en todas las áreas: aceites, concentrados, pescados, bebidas y mucho más.</span>
+                </p>
+            </div>
+            
+            <div style="text-align: center;padding: 40px 30px;background: white;border-radius: 16px;box-shadow: 0 5px 20px rgba(0,0,0,0.1)">
+                <div style="width: 80px;height: 80px;background: linear-gradient(135deg, #1e3a8a, #059669);border-radius: 50%;display: flex;align-items: center;justify-content: center;margin: 0 auto 25px;color: white;font-size: 2rem">
+                    ⏰
+                </div>
+                <h3 style="font-size: 1.3rem;color: #1f2937;margin-bottom: 15px">
+                    <span class="text-pt">Suporte 24/7</span>
+                    <span class="text-en">24/7 Support</span>
+                    <span class="text-he">תמיכה 24/7</span>
+                    <span class="text-es">Soporte 24/7</span>
+                </h3>
+                <p style="color: #6b7280;line-height: 1.6">
+                    <span class="text-pt">Atendimento contínuo via WhatsApp e telefone para todas as suas necessidades de certificação kosher.</span>
+                    <span class="text-en">Continuous support via WhatsApp and phone for all your kosher certification needs.</span>
+                    <span class="text-he">תמיכה רציפה דרך WhatsApp וטלפון לכל הצרכים שלכם בהסמכת כשרות.</span>
+                    <span class="text-es">Atención continua vía WhatsApp y teléfono para todas sus necesidades de certificación kosher.</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section style="background: linear-gradient(135deg, #059669, #065f46);color: white;padding: 80px 20px;text-align: center">
+    <div style="max-width: 800px;margin: 0 auto">
+        <h2 style="font-size: 2.5rem;margin-bottom: 20px">
+            <span class="text-pt">Pronto para Certificar seus Produtos?</span>
+            <span class="text-en">Ready to Certify Your Products?</span>
+            <span class="text-he">מוכנים להסמיך את המוצרים שלכם?</span>
+            <span class="text-es">¿Listo para Certificar sus Productos?</span>
+        </h2>
+        <p style="font-size: 1.2rem;margin-bottom: 40px;opacity: 0.9">
+            <span class="text-pt">Entre em contacto connosco hoje mesmo e inicie o processo de certificação kosher</span>
+            <span class="text-en">Contact us today and start the kosher certification process</span>
+            <span class="text-he">צרו קשר איתנו היום והתחילו את תהליך הסמכת הכשרות</span>
+            <span class="text-es">Contáctenos hoy y comience el proceso de certificación kosher</span>
+        </p>
+        
+        <a href="https://wa.me/972543080390" target="_blank" style="background: #f59e0b;color: white;padding: 20px 40px;border-radius: 8px;text-decoration: none;font-weight: bold;font-size: 1.3rem">
+            <span class="text-pt">🚀 Solicitar Certificação Agora</span>
+            <span class="text-en">🚀 Request Certification Now</span>
+            <span class="text-he">🚀 בקש הסמכה עכשיו</span>
+            <span class="text-es">🚀 Solicitar Certificación Ahora</span>
+        </a>
+    </div>
+</section>
+
+<!-- JavaScript - WordPress Resistant -->
+<script type="text/javascript">
+// Namespace to avoid conflicts
+var WKosher = WKosher || {};
+
+WKosher.languages = {
+    pt: {label: 'Português', flag: '🇵🇹'},
+    en: {label: 'English', flag: '🇬🇧'},
+    he: {label: 'עברית', flag: '🇮🇱'},
+    es: {label: 'Español', flag: '🇪🇸'}
+};
+
+WKosher.changeLanguage = function(lang) {
+    var body = document.body;
+    var html = document.documentElement;
+    
+    // Remove all language classes from both body and html
+    body.className = body.className.replace(/\blang-[a-z]+\b/g, '');
+    html.className = html.className.replace(/\blang-[a-z]+\b/g, '');
+    
+    // Add new language class to both
+    body.className += ' lang-' + lang;
+    html.className += ' lang-' + lang;
+    
+    // Save language preference
+    try {
+        if(typeof(Storage) !== "undefined") {
+            localStorage.setItem('w-kosher-language', lang);
+        }
+    } catch(e) {
+        // Ignore storage errors
+    }
+    
+    // Set direction for Hebrew
+    if(lang === 'he') {
+        html.setAttribute('dir', 'rtl');
+        html.setAttribute('lang', 'he');
+        body.style.direction = 'rtl';
+    } else {
+        html.setAttribute('dir', 'ltr');
+        html.setAttribute('lang', lang);
+        body.style.direction = 'ltr';
+    }
+    
+    // Update flag and language display
+    var flagEl = document.getElementById('current-flag');
+    var langEl = document.getElementById('current-lang');
+    
+    if(flagEl && langEl && WKosher.languages[lang]) {
+        flagEl.innerHTML = WKosher.languages[lang].flag;
+        langEl.innerHTML = WKosher.languages[lang].label;
+    }
+    
+    // Hide dropdown
+    var dropdown = document.getElementById('languageDropdown');
+    if(dropdown) {
+        dropdown.style.display = 'none';
+    }
+    
+    // Force redraw
+    setTimeout(function() {
+        body.style.display = 'none';
+        body.offsetHeight; // Trigger reflow
+        body.style.display = '';
+    }, 10);
+};
+
+// Global function for onclick
+function wkChangeLanguage(lang) {
+    WKosher.changeLanguage(lang);
+}
+
+// Initialize when ready
+function initWKosher() {
+    // Load saved language
+    var savedLang = 'pt';
+    try {
+        if(typeof(Storage) !== "undefined") {
+            savedLang = localStorage.getItem('w-kosher-language') || 'pt';
+        }
+    } catch(e) {
+        // Use default
+    }
+    
+    WKosher.changeLanguage(savedLang);
+    
+    // Setup dropdown toggle
+    var selector = document.querySelector('.language-selector');
+    var dropdown = document.getElementById('languageDropdown');
+    
+    if(selector && dropdown) {
+        selector.onclick = function(e) {
+            // Don't toggle if clicking on language option
+            if(e.target.closest('.language-option')) {
+                return;
+            }
+            
+            var isVisible = dropdown.style.display === 'block';
+            dropdown.style.display = isVisible ? 'none' : 'block';
+        };
+        
+        // Close dropdown on outside click
+        document.onclick = function(e) {
+            if(selector && !selector.contains(e.target)) {
+                dropdown.style.display = 'none';
+            }
+        };
+    }
+}
+
+// Multiple initialization methods for WordPress compatibility
+if(document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initWKosher);
+} else {
+    initWKosher();
+}
+
+// Backup initialization
+setTimeout(initWKosher, 1000);
+
+// jQuery compatibility if available
+if(typeof jQuery !== 'undefined') {
+    jQuery(document).ready(initWKosher);
+}
+</script>
+
+</body>
+</html>

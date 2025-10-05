@@ -1,0 +1,102 @@
+/* ===== CSS FOR ADDITIONAL CSS IN WORDPRESS ===== */
+/* Copy this ENTIRE file to: Appearance → Customize → Additional CSS */
+
+/* הסתרת radio inputs */
+input[name="wk-lang"] {
+    display: none !important;
+}
+
+/* הסתרת כל הטקסטים כברירת מחדל */
+.wk-text {
+    display: none !important;
+}
+
+/* הצגת טקסטים בהתאם לשפה שנבחרה */
+#wk-lang-pt:checked ~ .wk-site-wrapper .wk-pt-text,
+#wk-lang-en:checked ~ .wk-site-wrapper .wk-en-text,
+#wk-lang-he:checked ~ .wk-site-wrapper .wk-he-text,
+#wk-lang-es:checked ~ .wk-site-wrapper .wk-es-text {
+    display: inline !important;
+}
+
+/* התאמה לעברית */
+#wk-lang-he:checked ~ .wk-site-wrapper {
+    direction: rtl !important;
+    text-align: right !important;
+}
+
+/* שורת כפתורי השפה */
+.wk-lang-bar {
+    background: linear-gradient(135deg, #1e3a8a, #1e40af) !important;
+    padding: 20px !important;
+    text-align: center !important;
+    margin: 0 0 30px 0 !important;
+    border-radius: 15px !important;
+    box-shadow: 0 10px 30px rgba(30,58,138,0.3) !important;
+}
+
+.wk-lang-label {
+    background: rgba(255,255,255,0.1) !important;
+    color: white !important;
+    border: 2px solid rgba(255,255,255,0.2) !important;
+    padding: 12px 24px !important;
+    margin: 5px 8px !important;
+    border-radius: 25px !important;
+    cursor: pointer !important;
+    font-weight: 600 !important;
+    font-size: 1rem !important;
+    transition: all 0.3s ease !important;
+    display: inline-block !important;
+}
+
+.wk-lang-label:hover {
+    background: rgba(245,158,11,0.8) !important;
+    border-color: #fbbf24 !important;
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 25px rgba(245,158,11,0.4) !important;
+}
+
+/* כפתור פעיל */
+#wk-lang-pt:checked ~ .wk-lang-bar label[for="wk-lang-pt"],
+#wk-lang-en:checked ~ .wk-lang-bar label[for="wk-lang-en"],
+#wk-lang-he:checked ~ .wk-lang-bar label[for="wk-lang-he"],
+#wk-lang-es:checked ~ .wk-lang-bar label[for="wk-lang-es"] {
+    background: #f59e0b !important;
+    border-color: #fbbf24 !important;
+    box-shadow: 0 8px 25px rgba(245,158,11,0.4) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* responsive */
+@media (max-width: 768px) {
+    .wk-lang-label {
+        padding: 10px 18px !important;
+        margin: 3px 5px !important;
+        font-size: 0.9rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .wk-lang-bar {
+        padding: 15px !important;
+    }
+    
+    .wk-lang-label {
+        display: block !important;
+        margin: 5px auto !important;
+        width: 85% !important;
+    }
+}
+
+/* === No-JS Language Dropdown (Top Bar) === */
+.wk-lang-dd{ position:relative; display:inline-block; z-index:2000; }
+.wk-lang-dd > summary{ list-style:none; cursor:pointer; display:flex; align-items:center; gap:8px; border:1px solid rgba(255,255,255,.35); padding:6px 10px; border-radius:20px; color:#fff; background:transparent; }
+.wk-lang-dd > summary::-webkit-details-marker{ display:none; }
+.wk-lang-dd[open] > summary{ background:rgba(255,255,255,.08); }
+.wk-lang-dd__menu{ position:absolute; top:calc(100% + 6px); right:0; min-width:200px; background:#fff; border:1px solid #e5e7eb; border-radius:8px; box-shadow:0 10px 25px rgba(0,0,0,.15); padding:6px; }
+.wk-lang-dd__item{ display:flex; align-items:center; gap:10px; padding:10px 12px; cursor:pointer; border-radius:8px; color:#1f2937; }
+.wk-lang-dd__item:hover{ background:#eff6ff; }
+
+/* Optional responsive behavior: hide old bar on desktop, show on mobile */
+@media (min-width: 769px){ .wk-lang-bar{ display:none !important; } }
+@media (max-width: 768px){ .wk-lang-dd{ display:none !important; } .wk-lang-bar{ display:block !important; } }

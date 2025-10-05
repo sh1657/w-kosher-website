@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Kosher - Certificação Kosher Oficial em Portugal</title>
+    <meta name="description" content="A principal autoridade em certificação kosher em Portugal com reconhecimento internacional em mais de 15 países.">
+    <link rel="stylesheet" href="src/scss/language.scss">
+    <style>
+        /* Inline critical styles for better loading */
+        body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+        .text-en, .text-he, .text-es, .text-ru, .text-it { display: none !important; }
+        .text-pt { display: inline !important; }
+        body.lang-en .text-en { display: inline !important; }
+        body.lang-en .text-pt { display: none !important; }
+        body.lang-es .text-es { display: inline !important; }
+        body.lang-es .text-pt { display: none !important; }
+    </style>
+</head>
+<body class="lang-pt">
+    <!-- Load the full template content -->
+    <div id="main-content">
+        <!-- This will be loaded from the template -->
+    </div>
+
+    <!-- Scripts -->
+    <script src="src/js/language.js"></script>
+    <script>
+        // Load the main template content
+        fetch('src/templates/index.html')
+            .then(response => response.text())
+            .then(html => {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+                const content = doc.body.innerHTML;
+                document.getElementById('main-content').innerHTML = content;
+                
+                // Initialize language system after content is loaded
+                const savedLang = localStorage.getItem('w-kosher-language') || 'pt';
+                if (window.changeLanguage) {
+                    changeLanguage(savedLang);
+                }
+            })
+            .catch(error => {
+                console.error('Error loading template:', error);
+                // Fallback content
+                document.getElementById('main-content').innerHTML = `
+                    <div style="text-align: center; padding: 50px; font-family: Arial, sans-serif;">
+                        <h1>🏆 World Kosher</h1>
+                        <p>Certificação Kosher Oficial em Portugal</p>
+                        <p>Loading...</p>
+                    </div>
+                `;
+            });
+    </script>
+</body>
+</html>
