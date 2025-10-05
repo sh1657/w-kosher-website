@@ -145,15 +145,21 @@
             flex-wrap: wrap;
         }
         
-        .nav-link {
+        .nav a {
             padding: 10px 15px;
             text-decoration: none;
             font-weight: 500;
             border-radius: 8px;
             color: #1e3a8a;
+            transition: all 0.3s ease;
         }
         
-        .nav-link.active {
+        .nav a:hover {
+            background: #f3f4f6;
+            transform: translateY(-1px);
+        }
+        
+        .nav a.active {
             color: #f59e0b;
             font-weight: 600;
             background: #f9fafb;
@@ -809,6 +815,37 @@
     </div>
 
     <script>
+        // Global language variable
+        let currentLanguage = 'pt';
+        
+        // Multilingual Content
+        const translations = {
+            'pt': {
+                // Navigation
+                'nav-home': '🏠 Início',
+                'nav-certification': '📋 Certificação',
+                'nav-companies': '🏢 Empresas',
+                'nav-about': 'ℹ️ Sobre Nós',
+                'nav-contact': '📞 Contacto'
+            },
+            'en': {
+                // Navigation
+                'nav-home': '🏠 Home',
+                'nav-certification': '📋 Certification',
+                'nav-companies': '🏢 Companies',
+                'nav-about': 'ℹ️ About Us',
+                'nav-contact': '📞 Contact'
+            },
+            'he': {
+                // Navigation
+                'nav-home': '🏠 דף הבית',
+                'nav-certification': '📋 הכשרה',
+                'nav-companies': '🏢 חברות',
+                'nav-about': 'ℹ️ אודות',
+                'nav-contact': '📞 צור קשר'
+            }
+        };
+        
         function toggleLanguageDropdown() {
             const dropdown = document.getElementById('languageDropdown');
             dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
@@ -824,6 +861,37 @@
             event.target.closest('.language-option').classList.add('active');
         }
 
+        function changeLanguage(langCode) {
+            // If translation doesn't exist, fallback to Portuguese
+            if (!translations[langCode]) {
+                langCode = 'pt';
+            }
+            
+            currentLanguage = langCode;
+            const t = translations[langCode];
+            
+            // Update all translatable elements
+            Object.keys(t).forEach(key => {
+                const element = document.querySelector(`[data-translate="${key}"]`);
+                if (element) {
+                    element.textContent = t[key];
+                }
+            });
+            
+            // Update HTML direction for Hebrew
+            if (langCode === 'he') {
+                document.documentElement.dir = 'rtl';
+                document.documentElement.lang = 'he';
+            } else {
+                document.documentElement.dir = 'ltr';
+                document.documentElement.lang = langCode;
+            }
+            
+            // Store language preference globally
+            localStorage.setItem('preferred-language', langCode);
+            localStorage.setItem('world-kosher-language', langCode);
+        }
+
         // Close dropdown when clicking outside
         document.addEventListener('click', function(event) {
             const selector = document.querySelector('.language-selector');
@@ -832,9 +900,7 @@
             }
         });
 
-        // Redirect to certification form based on language
-        let currentLanguage = 'pt'; // Default language
-        
+        // Redirect to certification form based on language        
         // Initialize language from localStorage
         document.addEventListener('DOMContentLoaded', function() {
             const savedLanguage = localStorage.getItem('preferred-language') || localStorage.getItem('world-kosher-language');
