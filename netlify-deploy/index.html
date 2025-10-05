@@ -153,14 +153,14 @@
         }
         
         /* Navigation */
-        .navigation {
+        .nav {
             display: flex;
             gap: 20px;
             justify-content: center;
             flex-wrap: wrap;
         }
         
-        .nav-link {
+        .nav a {
             padding: 10px 15px;
             text-decoration: none;
             font-weight: 500;
@@ -169,12 +169,12 @@
             transition: all 0.3s ease;
         }
         
-        .nav-link:hover {
+        .nav a:hover {
             background: #f3f4f6;
             transform: translateY(-1px);
         }
         
-        .nav-link.active {
+        .nav a.active {
             color: #f59e0b;
             font-weight: 600;
             background: #f9fafb;
@@ -727,7 +727,7 @@
                 text-align: center;
             }
             
-            .navigation {
+            .nav {
                 order: 3;
                 width: 100%;
                 justify-content: center;
@@ -853,31 +853,31 @@
             <div class="companies-slider">
                 <div class="company-logos">
                     <div class="company-logo">
-                        <img src="images/company-logos/dacasa logo webp.webp" alt="Atlantic" style="border-radius: 8px;" onerror="this.src='images/companies/atlantic.jpg'">
+                        <img src="images/company-logos/dacasa logo webp.webp" alt="Atlantic" style="border-radius: 8px;" onerror="this.src='images/company-logos/dacasa logo webp.webp'">
                         <h4>Atlantic</h4>
                     </div>
                     <div class="company-logo">
-                        <img src="images/company-logos/frutissima logo.png" alt="Frutíssima" style="border-radius: 8px;" onerror="this.src='images/companies/frutissima.jpg'">
+                        <img src="images/company-logos/frutissima logo.png" alt="Frutíssima" style="border-radius: 8px;" onerror="this.src='images/company-logos/frutissima logo.png'">
                         <h4>Frutíssima</h4>
                     </div>
                     <div class="company-logo">
-                        <img src="images/company-logos/INNOLIVA logo png.png" alt="Innoliva" style="border-radius: 8px;" onerror="this.src='images/companies/innoliva.jpg'">
+                        <img src="images/company-logos/INNOLIVA logo png.png" alt="Innoliva" style="border-radius: 8px;" onerror="this.src='images/company-logos/INNOLIVA logo png.png'">
                         <h4>Innoliva</h4>
                     </div>
                     <div class="company-logo">
-                        <img src="images/company-logos/Superbock logo.png" alt="Super Bock" style="border-radius: 8px;" onerror="this.src='images/companies/superbock.jpg'">
+                        <img src="images/company-logos/Superbock logo.png" alt="Super Bock" style="border-radius: 8px;" onerror="this.src='images/company-logos/Superbock logo.png'">
                         <h4>Super Bock</h4>
                     </div>
                     <div class="company-logo">
-                        <img src="images/company-logos/friopesca logo.png" alt="Friopesca" style="border-radius: 8px;" onerror="this.src='images/companies/friopesca.jpg'">
+                        <img src="images/company-logos/friopesca logo.png" alt="Friopesca" style="border-radius: 8px;" onerror="this.src='images/company-logos/friopesca logo.png'">
                         <h4>Friopesca</h4>
                     </div>
                     <div class="company-logo">
-                        <img src="images/company-logos/Soguima logo.png" alt="Soguima" style="border-radius: 8px;" onerror="this.src='images/companies/soguima.jpg'">
+                        <img src="images/company-logos/Soguima logo.png" alt="Soguima" style="border-radius: 8px;" onerror="this.src='images/company-logos/Soguima logo.png'">
                         <h4>Soguima</h4>
                     </div>
                     <div class="company-logo">
-                        <img src="images/company-logos/SAOV logo.jpg" alt="SAOV" style="border-radius: 8px;" onerror="this.src='images/companies/saov.jpg'">
+                        <img src="images/company-logos/SAOV logo.jpg" alt="SAOV" style="border-radius: 8px;" onerror="this.src='images/company-logos/SAOV logo.jpg'">
                         <h4>SAOV</h4>
                     </div>
                 </div>
@@ -1016,6 +1016,9 @@
     </footer>
 
     <script>
+        // Global language variable
+        let currentLanguage = 'pt';
+        
         // Multilingual Content
         const translations = {
             'pt': {
@@ -1217,8 +1220,6 @@
                 'footer-terms': '📄 תנאי שימוש'
             }
         };
-
-        let currentLanguage = 'pt';
 
         // Language Selector Functions
         function toggleLanguageDropdown() {
