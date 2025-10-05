@@ -1,0 +1,2092 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Kosher Portugal - Certificação Kosher Oficial</title>
+    <meta name="description" content="A principal autoridade em certificação kosher em Portugal. Mais de 1.000 produtos certificados em 25+ países.">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #6b7280;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Top Bar */
+        .top-bar {
+            background: #1e3a8a;
+            color: white;
+            padding: 10px 0;
+            font-size: 0.9rem;
+            position: sticky;
+            top: 0;
+            z-index: 1001;
+        }
+        
+        .top-bar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .top-bar a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .top-bar-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        /* Language Selector */
+        .language-selector {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+        
+        .language-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            min-width: 200px;
+            z-index: 2000;
+            display: none;
+        }
+        
+        @media (max-width: 768px) {
+            .language-dropdown {
+                right: -20px;
+                min-width: 180px;
+            }
+        }
+        
+        .language-option {
+            padding: 12px 16px;
+            cursor: pointer;
+            border-bottom: 1px solid #f3f4f6;
+            color: #1f2937;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .language-option:hover {
+            background: #f3f4f6;
+        }
+        
+        .language-option.active {
+            background: #eff6ff;
+        }
+        
+        /* Main Header */
+        .main-header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 44px;
+            z-index: 1000;
+        }
+        
+        @media (max-width: 768px) {
+            .main-header {
+                position: relative;
+                top: 0;
+            }
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 15px 0;
+        }
+        
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-section img {
+            width: 120px;
+            height: 120px;
+            border-radius: 12px;
+            object-fit: contain;
+            background: transparent;
+        }
+        
+        .logo-text h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #1e3a8a;
+            margin: 0;
+        }
+        
+        .logo-text span {
+            font-size: 0.9rem;
+            color: #6b7280;
+            font-weight: 500;
+        }
+        
+        /* Navigation */
+        .nav {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .nav a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-weight: 500;
+            border-radius: 8px;
+            color: #1e3a8a;
+            transition: all 0.3s ease;
+        }
+        
+        .nav a:hover {
+            background: #f3f4f6;
+            transform: translateY(-1px);
+        }
+        
+        .nav a.active {
+            color: #f59e0b;
+            font-weight: 600;
+            background: #f9fafb;
+        }
+        
+        .cta-button {
+            background: #f59e0b;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background: #d97706;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(245, 158, 11, 0.3);
+        }
+        
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            overflow: hidden;
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+        }
+
+        .hero-image-slider {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .hero-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0;
+            transition: opacity 2s ease-in-out;
+        }
+
+        .hero-slide.active {
+            opacity: 1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.8) 0%, rgba(59, 130, 246, 0.6) 100%);
+            z-index: -1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Companies Showcase */
+        .companies-showcase {
+            background: #f8fafc;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .companies-showcase h2 {
+            font-size: 2.5rem;
+            color: #1f2937;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .companies-showcase p {
+            font-size: 1.2rem;
+            color: #6b7280;
+            margin-bottom: 50px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .companies-slider {
+            margin-bottom: 40px;
+        }
+
+        .company-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .company-logo {
+            background: white;
+            padding: 20px;
+            border-radius: 16px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+            min-width: 150px;
+        }
+
+        .company-logo:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .company-logo img {
+            width: 100px;
+            height: 60px;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        .company-logo h4 {
+            color: #1f2937;
+            font-size: 0.9rem;
+            margin: 0;
+            font-weight: 600;
+        }
+
+        .companies-cta {
+            margin-top: 40px;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #1e3a8a;
+            border: 2px solid #1e3a8a;
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-outline:hover {
+            background: #1e3a8a;
+            color: white;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 25px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .hero .orange-text {
+            color: #f59e0b;
+        }
+        
+        .hero p {
+            font-size: 1.4rem;
+            opacity: 0.95;
+            margin-bottom: 50px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Stats */
+        .stats {
+            display: flex;
+            gap: 50px;
+            margin-bottom: 60px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+            min-width: 150px;
+        }
+        
+        .stat-number {
+            display: block;
+            font-size: 3rem;
+            font-weight: 800;
+            color: #f59e0b;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+        
+        /* Hero Buttons */
+        .hero-buttons {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn-primary {
+            background: #f59e0b;
+            color: white;
+            padding: 18px 35px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+        }
+        
+        .btn-primary:hover {
+            background: #d97706;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(245, 158, 11, 0.4);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            padding: 18px 35px;
+            border: 2px solid white;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background: white;
+            color: #1e3a8a;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255,255,255,0.2);
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 100px 20px;
+            background: #f9fafb;
+        }
+        
+        .features h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #1e3a8a;
+            margin-bottom: 20px;
+        }
+        
+        .features-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #6b7280;
+            margin-bottom: 60px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 16px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid #f1f5f9;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .feature-card h3 {
+            color: #1e3a8a;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+        
+        .feature-card p {
+            line-height: 1.6;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #059669, #065f46);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        /* Team Section */
+        .team-section {
+            background: #f8fafc;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .team-section h2 {
+            font-size: 2.5rem;
+            color: #1e3a8a;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .team-subtitle {
+            font-size: 1.2rem;
+            color: #6b7280;
+            margin-bottom: 60px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .team-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 16px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid #f1f5f9;
+        }
+        
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .team-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .team-card h3 {
+            color: #1e3a8a;
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .team-card .role {
+            color: #f59e0b;
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+        
+        .team-card p {
+            line-height: 1.6;
+            color: #6b7280;
+        }
+
+        /* Leading Rabbis Section */
+        .leading-rabbis-section {
+            background: white;
+            padding: 80px 20px;
+        }
+
+        .leading-rabbis-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #1e3a8a;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .rabbis-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #6b7280;
+            margin-bottom: 60px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .rabbis-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .rabbi-card {
+            background: #f8fafc;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #e5e7eb;
+        }
+
+        .rabbi-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .rabbi-image {
+            position: relative;
+            height: 280px;
+            overflow: hidden;
+        }
+
+        .rabbi-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .rabbi-card:hover .rabbi-image img {
+            transform: scale(1.05);
+        }
+
+        .rabbi-overlay {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(30, 58, 138, 0.9);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .rabbi-info {
+            padding: 30px;
+        }
+
+        .rabbi-info h3 {
+            color: #1e3a8a;
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .rabbi-title {
+            color: #f59e0b;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .rabbi-credentials {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            margin-bottom: 15px;
+        }
+
+        .rabbi-credentials span {
+            color: #6b7280;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .rabbi-info p {
+            color: #374151;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .rabbi-specialties {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .specialty {
+            background: #eff6ff;
+            color: #1e3a8a;
+            padding: 6px 12px;
+            border-radius: 16px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid #dbeafe;
+        }
+
+        .rabbis-certification {
+            background: #f9fafb;
+            padding: 40px;
+            border-radius: 16px;
+            text-align: center;
+            border: 1px solid #f1f5f9;
+        }
+
+        .rabbis-certification h3 {
+            color: #1e3a8a;
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .certification-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .cert-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            min-width: 150px;
+        }
+
+        .cert-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .cert-item img {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+        }
+
+        .cert-item span {
+            color: #374151;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-align: center;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #1f2937;
+            color: white;
+            padding: 60px 20px 30px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h3 {
+            color: #f59e0b;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+        }
+        
+        .footer-section h4 {
+            color: #e5e7eb;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .footer-section p {
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .footer-nav {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-nav li {
+            margin-bottom: 8px;
+        }
+        
+        .footer-nav a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 0.9rem;
+        }
+        
+        .footer-nav a:hover {
+            color: #f59e0b;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            transform: scale(1.2);
+        }
+        
+        .contact-info p {
+            margin-bottom: 15px;
+        }
+        
+        .contact-info a {
+            color: #f59e0b;
+            text-decoration: none;
+        }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 30px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .footer-bottom-left p {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+        
+        .footer-bottom-right {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .footer-bottom-right a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-bottom-right a:hover {
+            color: #f59e0b;
+        }
+        
+        @media (max-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .social-links {
+                justify-content: center;
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .main-header {
+                position: relative;
+                top: 0;
+            }
+            
+            .language-dropdown {
+                right: -20px;
+                min-width: 180px;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .companies-showcase h2 {
+                font-size: 2rem;
+            }
+            
+            .company-logos {
+                gap: 20px;
+            }
+            
+            .company-logo {
+                min-width: 120px;
+            }
+            
+            .company-logo img {
+                width: 80px;
+                height: 50px;
+            }
+            
+            .stats {
+                gap: 20px;
+            }
+            
+            .stat-item {
+                min-width: 120px;
+                padding: 15px;
+            }
+            
+            .stat-number {
+                font-size: 2.2rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .nav {
+                order: 3;
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .top-bar-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 5px;
+            }
+            
+            .rabbis-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .rabbi-image {
+                height: 200px;
+            }
+            
+            .certification-logos {
+                gap: 20px;
+            }
+            
+            .cert-item {
+                min-width: 120px;
+                padding: 15px;
+            }
+            
+            .cert-item img {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .rabbi-specialties {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div>
+                    <span style="margin-right: 20px;">📞 LINHA KOSHER: <a href="tel:+972543080390">(+972) 54 308 0390</a></span>
+                    <span>📧 <a href="mailto:portugal@w-kosher.com">portugal@w-kosher.com</a></span>
+                </div>
+                <div class="top-bar-right">
+                    <!-- Language Selector -->
+                    <div class="language-selector" onclick="toggleLanguageDropdown()">
+                        <span id="current-flag">🇵🇹</span>
+                        <span id="current-lang">Português</span>
+                        <span>▼</span>
+                        <div id="languageDropdown" class="language-dropdown">
+                            <div class="language-option active" onclick="selectLanguage('🇵🇹', 'Português')">🇵🇹 <span>Português</span></div>
+                            <div class="language-option" onclick="selectLanguage('🇬🇧', 'English')">🇬🇧 <span>English</span></div>
+                            <div class="language-option" onclick="selectLanguage('🇮🇱', 'עברית')">🇮🇱 <span>עברית</span></div>
+                            <div class="language-option" onclick="selectLanguage('🇪🇸', 'Español')">🇪🇸 <span>Español</span></div>
+                            <div class="language-option" onclick="selectLanguage('🇷🇺', 'Русский')">🇷🇺 <span>Русский</span></div>
+                            <div class="language-option" onclick="selectLanguage('🇮🇹', 'Italiano')">🇮🇹 <span>Italiano</span></div>
+                        </div>
+                    </div>
+                    
+                    <a href="https://www.facebook.com/profile.php?id=61575501917315" target="_blank">📘 Facebook</a>
+                    <a href="https://wa.me/972543080390" target="_blank">📱 WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo -->
+                <div class="logo-section">
+                    <img src="images/logo.png" alt="World Kosher Logo" onerror="this.src='images/logo.jpg'">
+                    <div class="logo-text">
+                        <h1>World Kosher</h1>
+                        <span>B.M.MASHGICHIM</span>
+                    </div>
+                </div>
+                
+                <!-- Navigation -->
+                <nav class="nav">
+                    <a href="index.html" class="active" data-translate="nav-home">🏠 Início</a>
+                    <a href="certificacao.html" data-translate="nav-certification">📋 Certificação</a>
+                    <a href="empresas.html" data-translate="nav-companies">🏢 Empresas</a>
+                    <a href="sobre-nos.html" data-translate="nav-about">ℹ️ Sobre Nós</a>
+                    <a href="contacto.html" data-translate="nav-contact">📞 Contacto</a>
+                </nav>
+                
+                <!-- CTA Button -->
+                <a href="#" onclick="redirectToCertificationForm()" class="cta-button" data-translate="cta-button">🚀 Solicitar Certificação</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="hero-image-slider">
+                <div class="hero-slide active" style="background-image: url('images/hero/418f46f5-29d1-4da8-b13f-3c6cdba636b2.png'), url('images/hero-generic/hero1.jpg')"></div>
+                <div class="hero-slide" style="background-image: url('images/hero/53abdfaa-2fb2-4cf4-84b2-6c075413f7df.png'), url('images/hero-generic/hero2.jpg')"></div>
+                <div class="hero-slide" style="background-image: url('images/hero/6beb0281-1c0f-428e-b86e-3dd5f0296412.png'), url('images/hero-generic/hero3.jpg')"></div>
+                <div class="hero-slide" style="background-image: url('images/hero/82b870fe-72df-4cf5-8dd4-6e992ccb753d.png'), url('images/hero-generic/hero4.jpg')"></div>
+                <div class="hero-slide" style="background-image: url('images/hero/ad5f297c-1f9e-4285-bb75-ac5a02af102d.png'), url('images/hero-generic/hero5.jpg')"></div>
+                <div class="hero-slide" style="background-image: url('images/hero/d9b9d93d-3e26-4fb8-9b27-1d2f2cab42f4.png'), url('images/hero-generic/hero6.jpg')"></div>
+                <div class="hero-slide" style="background-image: url('images/hero/e776bd8a-6656-4871-9d82-5fa8c9b757f5.png'), url('images/hero-generic/hero7.jpg')"></div>
+                <div class="hero-slide" style="background-image: url('images/hero/hero4.jpg'), url('images/hero-generic/hero8.jpg')"></div>
+            </div>
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="container hero-content">
+            <h1 data-translate="hero-title">🏆 Certificação Kosher<br><span class="orange-text">Oficial em Portugal</span></h1>
+            <p data-translate="hero-subtitle">A principal autoridade em certificação kosher com mais de 1.000 produtos certificados em 25+ países ao redor do mundo</p>
+            
+            <!-- Stats -->
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-number">100+</span>
+                    <span class="stat-label" data-translate="stat-companies">Empresas Certificadas</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">25+</span>
+                    <span class="stat-label" data-translate="stat-countries">Países Atendidos</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">1000+</span>
+                    <span class="stat-label" data-translate="stat-rate">Produtos Aprovados</span>
+                </div>
+            </div>
+            
+            <!-- Buttons -->
+            <div class="hero-buttons">
+                <a href="#" onclick="redirectToCertificationForm()" class="btn-primary" data-translate="btn-request">🚀 Solicitar Certificação</a>
+                <a href="certificacao.html" class="btn-secondary" data-translate="btn-learn">📋 Saiba Mais</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certified Companies Showcase -->
+    <section class="companies-showcase">
+        <div class="container">
+            <h2 data-translate="companies-title">Empresas Certificadas de Confiança</h2>
+            <p data-translate="companies-subtitle">Junte-se a marcas reconhecidas mundialmente que confiam na nossa certificação kosher</p>
+            
+            <div class="companies-slider">
+                <div class="company-logos">
+                    <div class="company-logo">
+                        <img src="images/company-logos/dacasa logo webp.webp" alt="Atlantic" style="border-radius: 8px;" onerror="this.src='images/company-logos/dacasa logo webp.webp'">
+                        <h4>Atlantic</h4>
+                    </div>
+                    <div class="company-logo">
+                        <img src="images/company-logos/frutissima logo.png" alt="Frutíssima" style="border-radius: 8px;" onerror="this.src='images/company-logos/frutissima logo.png'">
+                        <h4>Frutíssima</h4>
+                    </div>
+                    <div class="company-logo">
+                        <img src="images/company-logos/INNOLIVA logo png.png" alt="Innoliva" style="border-radius: 8px;" onerror="this.src='images/company-logos/INNOLIVA logo png.png'">
+                        <h4>Innoliva</h4>
+                    </div>
+                    <div class="company-logo">
+                        <img src="images/company-logos/Superbock logo.png" alt="Super Bock" style="border-radius: 8px;" onerror="this.src='images/company-logos/Superbock logo.png'">
+                        <h4>Super Bock</h4>
+                    </div>
+                    <div class="company-logo">
+                        <img src="images/company-logos/friopesca logo.png" alt="Friopesca" style="border-radius: 8px;" onerror="this.src='images/company-logos/friopesca logo.png'">
+                        <h4>Friopesca</h4>
+                    </div>
+                    <div class="company-logo">
+                        <img src="images/company-logos/Soguima logo.png" alt="Soguima" style="border-radius: 8px;" onerror="this.src='images/company-logos/Soguima logo.png'">
+                        <h4>Soguima</h4>
+                    </div>
+                    <div class="company-logo">
+                        <img src="images/company-logos/SAOV logo.jpg" alt="SAOV" style="border-radius: 8px;" onerror="this.src='images/company-logos/SAOV logo.jpg'">
+                        <h4>SAOV</h4>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="companies-cta">
+                <a href="empresas.html" class="btn-outline" data-translate="btn-view-companies">🔍 Ver Todas as Empresas</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 data-translate="features-title">Por que Escolher a World Kosher?</h2>
+            <p class="features-subtitle" data-translate="features-subtitle">Somos a autoridade líder em certificação kosher com reconhecimento internacional e processos rigorosos de qualidade</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <span class="feature-icon">🌍</span>
+                    <h3 data-translate="feature-international">Reconhecimento Internacional</h3>
+                    <p data-translate="feature-international-desc">Certificação aceita em mais de 25 países, incluindo Israel, Estados Unidos, Europa e América Latina</p>
+                </div>
+                
+                <div class="feature-card">
+                    <span class="feature-icon">⚡</span>
+                    <h3 data-translate="feature-agile">Processo Ágil</h3>
+                    <p data-translate="feature-agile-desc">Certificação em 4-8 semanas com acompanhamento 24/6 e suporte especializado em português</p>
+                </div>
+                
+                <div class="feature-card">
+                    <span class="feature-icon">🔒</span>
+                    <h3 data-translate="feature-reliable">Máxima Confiabilidade</h3>
+                    <p data-translate="feature-reliable-desc">Mashgichim qualificados com supervisão rigorosa e relatórios detalhados de conformidade</p>
+                </div>
+                
+                <div class="feature-card">
+                    <span class="feature-icon">💼</span>
+                    <h3 data-translate="feature-expertise">Expertise Comprovada</h3>
+                    <p data-translate="feature-expertise-desc">Mais de 1.000 produtos certificados em diversos setores: azeites, conservas, bebidas e muito mais</p>
+                </div>
+                
+                <div class="feature-card">
+                    <span class="feature-icon">📞</span>
+                    <h3 data-translate="feature-support">Suporte Personalizado</h3>
+                    <p data-translate="feature-support-desc">Atendimento direto via WhatsApp e email com consultoria especializada para seu tipo de produto</p>
+                </div>
+                
+                <div class="feature-card">
+                    <span class="feature-icon">💰</span>
+                    <h3 data-translate="feature-investment">Investimento Acessível</h3>
+                    <p data-translate="feature-investment-desc">Preços competitivos com retorno garantido através do acesso ao mercado kosher mundial</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="container">
+            <h2 data-translate="team-title">Nossa Equipe Especializada</h2>
+            <p class="team-subtitle" data-translate="team-subtitle">Profissionais certificados com anos de experiência em supervisão kosher e leis judaicas</p>
+            
+            <div class="team-grid">
+                <div class="team-card">
+                    <span class="team-icon">👨‍🎓</span>
+                    <h3 data-translate="team-coordinator-name">Coordenador Rabínico</h3>
+                    <div class="role" data-translate="team-coordinator-role">Responsável Técnico Principal</div>
+                    <p data-translate="team-coordinator-desc">Especialista em leis kosher com mais de 15 anos de experiência. Responsável pela aprovação final de todas as certificações e supervisão geral dos processos.</p>
+                </div>
+                
+                <div class="team-card">
+                    <span class="team-icon">🔍</span>
+                    <h3 data-translate="team-inspector-name">Mashgiach Sênior</h3>
+                    <div class="role" data-translate="team-inspector-role">Inspetor de Campo Certificado</div>
+                    <p data-translate="team-inspector-desc">Responsável pelas inspeções in loco, verificação de ingredientes e acompanhamento dos processos produtivos nas empresas certificadas.</p>
+                </div>
+                
+                <div class="team-card">
+                    <span class="team-icon">📋</span>
+                    <h3 data-translate="team-consultant-name">Consultor Técnico</h3>
+                    <div class="role" data-translate="team-consultant-role">Especialista em Processos</div>
+                    <p data-translate="team-consultant-desc">Especialista em análise de ingredientes e processos industriais. Oferece consultoria técnica personalizada para adaptações necessárias.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leading Rabbis Section -->
+    <section class="leading-rabbis-section">
+        <div class="container">
+            <h2 data-translate="rabbis-title">Nossos Rabinos Líderes</h2>
+            <p class="rabbis-subtitle" data-translate="rabbis-subtitle">Autoridades rabínicas reconhecidas internacionalmente que supervisionam e garantem a mais alta qualidade da certificação kosher</p>
+            
+            <div class="rabbis-grid">
+                <div class="rabbi-card">
+                    <div class="rabbi-image">
+                        <img src="images/rabbis/Goelman.jpg" alt="Rabbi Israel Goelman" onerror="this.src='images/rabbis/default-rabbi.jpg'">
+                        <div class="rabbi-overlay">
+                            <span class="rabbi-status" data-translate="rabbi-president-status">Presidente</span>
+                        </div>
+                    </div>
+                    <div class="rabbi-info">
+                        <h3 data-translate="rabbi-president-name">Rabbi Israel Goelman</h3>
+                        <div class="rabbi-title" data-translate="rabbi-president-title">Presidente da World Kosher</div>
+                        <div class="rabbi-credentials">
+                            <span data-translate="rabbi-president-certification">Autoridade Rabínica Internacional</span>
+                            <span data-translate="rabbi-president-experience">30+ anos de experiência</span>
+                        </div>
+                        <p data-translate="rabbi-president-desc">Presidente e autoridade rabínica máxima da World Kosher. Lidera a organização com vasta experiência em supervisão kosher internacional e estabelecimento de padrões de certificação em todo o mundo.</p>
+                        <div class="rabbi-specialties">
+                            <span class="specialty" data-translate="specialty-leadership">Liderança Organizacional</span>
+                            <span class="specialty" data-translate="specialty-international">Certificação Internacional</span>
+                            <span class="specialty" data-translate="specialty-standards">Padrões Kosher</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rabbi-card">
+                    <div class="rabbi-image">
+                        <img src="images/rabbis/zvi1.jpg" alt="Rabbi Zvi Bringer" onerror="this.src='images/rabbis/default-rabbi.jpg'">
+                        <div class="rabbi-overlay">
+                            <span class="rabbi-status" data-translate="rabbi-ceo-status">Diretor Geral</span>
+                        </div>
+                    </div>
+                    <div class="rabbi-info">
+                        <h3 data-translate="rabbi-ceo-name">Rabbi Zvi Bringer</h3>
+                        <div class="rabbi-title" data-translate="rabbi-ceo-title">Diretor Geral</div>
+                        <div class="rabbi-credentials">
+                            <span data-translate="rabbi-ceo-certification">Gestão Rabínica Executiva</span>
+                            <span data-translate="rabbi-ceo-experience">25+ anos de experiência</span>
+                        </div>
+                        <p data-translate="rabbi-ceo-desc">Diretor Geral responsável pela gestão operacional e estratégica da World Kosher. Coordena todas as atividades de certificação e supervisiona a implementação dos padrões kosher globais.</p>
+                        <div class="rabbi-specialties">
+                            <span class="specialty" data-translate="specialty-management">Gestão Operacional</span>
+                            <span class="specialty" data-translate="specialty-strategy">Estratégia Empresarial</span>
+                            <span class="specialty" data-translate="specialty-coordination">Coordenação Global</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rabbi-card">
+                    <div class="rabbi-image">
+                        <img src="images/rabbis/ShemuelZalman.png" alt="Rabbi Shemuel Zalman" onerror="this.src='images/rabbis/default-rabbi.jpg'">
+                        <div class="rabbi-overlay">
+                            <span class="rabbi-status" data-translate="rabbi-beverages-status">Especialista</span>
+                        </div>
+                    </div>
+                    <div class="rabbi-info">
+                        <h3 data-translate="rabbi-beverages-name">Rabbi Shemuel Zalman</h3>
+                        <div class="rabbi-title" data-translate="rabbi-beverages-title">Especialista em Bebidas Alcoólicas</div>
+                        <div class="rabbi-credentials">
+                            <span data-translate="rabbi-beverages-certification">Especialista em Kashrut de Bebidas</span>
+                            <span data-translate="rabbi-beverages-experience">20+ anos de experiência</span>
+                        </div>
+                        <p data-translate="rabbi-beverages-desc">Especialista reconhecido internacionalmente em certificação kosher de bebidas alcoólicas. Responsável pela supervisão de vinhos, cervejas, destilados e outras bebidas alcoólicas em conformidade com as leis de kashrut.</p>
+                        <div class="rabbi-specialties">
+                            <span class="specialty" data-translate="specialty-wine">Vinhos Kosher</span>
+                            <span class="specialty" data-translate="specialty-beer">Cervejas</span>
+                            <span class="specialty" data-translate="specialty-spirits">Destilados</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rabbi-card">
+                    <div class="rabbi-image">
+                        <img src="images/rabbis/Michael.png" alt="Rabbi Michael Moshe Grinberg" onerror="this.src='images/rabbis/default-rabbi.jpg'">
+                        <div class="rabbi-overlay">
+                            <span class="rabbi-status" data-translate="rabbi-materials-status">Responsável</span>
+                        </div>
+                    </div>
+                    <div class="rabbi-info">
+                        <h3 data-translate="rabbi-materials-name">Rabbi Michael Moshe Grinberg</h3>
+                        <div class="rabbi-title" data-translate="rabbi-materials-title">Responsável por Matérias-Primas</div>
+                        <div class="rabbi-credentials">
+                            <span data-translate="rabbi-materials-certification">Especialista em Ingredientes Kosher</span>
+                            <span data-translate="rabbi-materials-experience">22+ anos de experiência</span>
+                        </div>
+                        <p data-translate="rabbi-materials-desc">Responsável pela análise e aprovação de todas as matérias-primas utilizadas nos produtos certificados. Especialista em identificação de ingredientes kosher e não-kosher, garantindo a conformidade total dos insumos.</p>
+                        <div class="rabbi-specialties">
+                            <span class="specialty" data-translate="specialty-ingredients">Análise de Ingredientes</span>
+                            <span class="specialty" data-translate="specialty-raw-materials">Matérias-Primas</span>
+                            <span class="specialty" data-translate="specialty-additives">Aditivos Alimentares</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rabbi-card">
+                    <div class="rabbi-image">
+                        <img src="images/rabbis/EliahuBilis.png" alt="Rabbi Eliahu Bayles" onerror="this.src='images/rabbis/default-rabbi.jpg'">
+                        <div class="rabbi-overlay">
+                            <span class="rabbi-status" data-translate="rabbi-services-status">Diretor</span>
+                        </div>
+                    </div>
+                    <div class="rabbi-info">
+                        <h3 data-translate="rabbi-services-name">Rabbi Eliahu Bayles</h3>
+                        <div class="rabbi-title" data-translate="rabbi-services-title">Diretor de Serviços ao Cliente</div>
+                        <div class="rabbi-credentials">
+                            <span data-translate="rabbi-services-certification">Especialista em Atendimento Kosher</span>
+                            <span data-translate="rabbi-services-experience">18+ anos de experiência</span>
+                        </div>
+                        <p data-translate="rabbi-services-desc">Diretor responsável pelo atendimento e suporte aos clientes da World Kosher. Garante que todas as necessidades dos clientes sejam atendidas com excelência e de acordo com os mais altos padrões de serviço.</p>
+                        <div class="rabbi-specialties">
+                            <span class="specialty" data-translate="specialty-customer-service">Atendimento ao Cliente</span>
+                            <span class="specialty" data-translate="specialty-support">Suporte Técnico</span>
+                            <span class="specialty" data-translate="specialty-relations">Relações Comerciais</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rabbi-card">
+                    <div class="rabbi-image">
+                        <img src="images/rabbis/ElishaSallas.jpg" alt="Rabbi Elisha Salas" onerror="this.src='images/rabbis/default-rabbi.jpg'">
+                        <div class="rabbi-overlay">
+                            <span class="rabbi-status" data-translate="rabbi-consultant-status">Consultor</span>
+                        </div>
+                    </div>
+                    <div class="rabbi-info">
+                        <h3 data-translate="rabbi-consultant-name">Rabbi Elisha Salas</h3>
+                        <div class="rabbi-title" data-translate="rabbi-consultant-title">Consultor Rabínico</div>
+                        <div class="rabbi-credentials">
+                            <span data-translate="rabbi-consultant-certification">Consultor Especializado em Kashrut</span>
+                            <span data-translate="rabbi-consultant-experience">16+ anos de experiência</span>
+                        </div>
+                        <p data-translate="rabbi-consultant-desc">Consultor rabínico especializado em casos complexos e processos especiais de certificação. Oferece orientação especializada para empresas com necessidades específicas de adaptação aos padrões kosher.</p>
+                        <div class="rabbi-specialties">
+                            <span class="specialty" data-translate="specialty-consulting">Consultoria Especializada</span>
+                            <span class="specialty" data-translate="specialty-complex-cases">Casos Complexos</span>
+                            <span class="specialty" data-translate="specialty-adaptation">Adaptação de Processos</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rabbis-certification">
+                <h3 data-translate="certification-title">Certificações e Reconhecimentos</h3>
+                <div class="certification-logos">
+                    <div class="cert-item">
+                        <img src="images/certifications/beth-din-jerusalem.png" alt="Beth Din Jerusalem" onerror="this.src='images/certifications/default-cert.png'">
+                        <span data-translate="cert-jerusalem">Beth Din Jerusalem</span>
+                    </div>
+                    <div class="cert-item">
+                        <img src="images/certifications/beth-din-london.png" alt="Beth Din London" onerror="this.src='images/certifications/default-cert.png'">
+                        <span data-translate="cert-london">Beth Din London</span>
+                    </div>
+                    <div class="cert-item">
+                        <img src="images/certifications/ou-kosher.png" alt="OU Kosher" onerror="this.src='images/certifications/default-cert.png'">
+                        <span data-translate="cert-ou">OU Kosher Recognition</span>
+                    </div>
+                    <div class="cert-item">
+                        <img src="images/certifications/star-k.png" alt="Star-K" onerror="this.src='images/certifications/default-cert.png'">
+                        <span data-translate="cert-stark">Star-K Partnership</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contacto" class="cta-section">
+        <div class="container">
+            <h2 data-translate="cta-title">Pronto para Certificar seus Produtos?</h2>
+            <p data-translate="cta-subtitle">Entre em contacto connosco hoje mesmo e descubra como a certificação kosher pode expandir seu mercado e aumentar suas vendas</p>
+            
+            <div class="cta-buttons">
+                <a href="https://wa.me/972543080390" target="_blank" class="btn-primary" data-translate="btn-whatsapp">💬 WhatsApp Direto</a>
+                <a href="mailto:portugal@w-kosher.com" class="btn-secondary" data-translate="btn-email">📧 Enviar Email</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Company Info -->
+                <div class="footer-section">
+                    <h3 data-translate="footer-company-title">World Kosher Portugal</h3>
+                    <p data-translate="footer-company-desc">A principal autoridade em certificação kosher em Portugal, oferecendo serviços de qualidade internacional com reconhecimento mundial.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=61575501917315" target="_blank" aria-label="Facebook">📘</a>
+                        <a href="https://wa.me/972543080390" target="_blank" aria-label="WhatsApp">📱</a>
+                        <a href="mailto:portugal@w-kosher.com" aria-label="Email">📧</a>
+                    </div>
+                </div>
+
+                <!-- Consumer Resources -->
+                <div class="footer-section">
+                    <h4 data-translate="footer-consumer-title">Recursos do Consumidor</h4>
+                    <ul class="footer-nav">
+                        <li><a href="index.html" data-translate="footer-home">🏠 Página Inicial</a></li>
+                        <li><a href="empresas.html" data-translate="footer-companies">🏢 Empresas Certificadas</a></li>
+                        <li><a href="sobre-nos.html" data-translate="footer-about">ℹ️ Sobre Nós</a></li>
+                        <li><a href="certificacao.html" data-translate="footer-certification-info">📋 Informações de Certificação</a></li>
+                    </ul>
+                </div>
+
+                <!-- Industrial Resources -->
+                <div class="footer-section">
+                    <h4 data-translate="footer-industrial-title">Recursos Industriais</h4>
+                    <ul class="footer-nav">
+                        <li><a href="javascript:void(0)" onclick="redirectToCertificationForm()" data-translate="footer-request-cert">📝 Solicitar Certificação</a></li>
+                        <li><a href="contacto.html" data-translate="footer-contact">📞 Contacto</a></li>
+                        <li><a href="empresas.html" data-translate="footer-gallery">🖼️ Galeria de Empresas</a></li>
+                        <li><a href="certificacao.html" data-translate="footer-process">⚙️ Processo de Certificação</a></li>
+                    </ul>
+                </div>
+
+                <!-- Direct Contact -->
+                <div class="footer-section">
+                    <h4 data-translate="footer-contact-title">Contacto Direto</h4>
+                    <div class="contact-info">
+                        <p><strong data-translate="footer-whatsapp-label">📱 WhatsApp:</strong><br>
+                        <a href="https://wa.me/972543080390" target="_blank">(+972) 54 308 0390</a></p>
+                        
+                        <p><strong data-translate="footer-email-label">📧 Email:</strong><br>
+                        <a href="mailto:portugal@w-kosher.com">portugal@w-kosher.com</a></p>
+                        
+                        <p><strong data-translate="footer-website-label">🌐 Website:</strong><br>
+                        <a href="https://w-kosher.com" target="_blank">w-kosher.com</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="footer-bottom-left">
+                    <p data-translate="footer-copyright">© 2024 World Kosher B.M.MASHGICHIM. Todos os direitos reservados.</p>
+                </div>
+                <div class="footer-bottom-right">
+                    <a href="politica-privacidade.html" data-translate="footer-privacy">🔒 Política de Privacidade</a>
+                    <span> | </span>
+                    <a href="termos-uso.html" data-translate="footer-terms">📄 Termos de Uso</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Global language variable
+        let currentLanguage = 'pt';
+        
+        // Multilingual Content
+        const translations = {
+            'pt': {
+                // Navigation
+                'nav-home': '🏠 Início',
+                'nav-certification': '📋 Certificação',
+                'nav-companies': '🏢 Empresas',
+                'nav-about': 'ℹ️ Sobre Nós',
+                'nav-contact': '📞 Contacto',
+                'cta-button': '🚀 Solicitar Certificação',
+                
+                // Hero Section
+                'hero-title': '🏆 Certificação Kosher<br><span class="orange-text">Oficial em Portugal</span>',
+                'hero-subtitle': 'A principal autoridade em certificação kosher com mais de 1.000 produtos certificados em 25+ países ao redor do mundo',
+                'stat-companies': 'Empresas Certificadas',
+                'stat-countries': 'Países Atendidos',
+                'stat-rate': 'Produtos Aprovados',
+                'btn-request': '🚀 Solicitar Certificação',
+                'btn-learn': '📋 Saiba Mais',
+                
+                // Companies Showcase
+                'companies-title': 'Empresas Certificadas de Confiança',
+                'companies-subtitle': 'Junte-se a marcas reconhecidas mundialmente que confiam na nossa certificação kosher',
+                'btn-view-companies': '🔍 Ver Todas as Empresas',
+                
+                // Features
+                'features-title': 'Por que Escolher a World Kosher?',
+                'features-subtitle': 'Somos a autoridade líder em certificação kosher com reconhecimento internacional e processos rigorosos de qualidade',
+                'feature-international': 'Reconhecimento Internacional',
+                'feature-international-desc': 'Certificação aceita em mais de 25 países, incluindo Israel, Estados Unidos, Europa e América Latina',
+                'feature-agile': 'Processo Ágil',
+                'feature-agile-desc': 'Certificação em 4-8 semanas com acompanhamento 24/6 e suporte especializado em português',
+                'feature-reliable': 'Máxima Confiabilidade',
+                'feature-reliable-desc': 'Mashgichim qualificados com supervisão rigorosa e relatórios detalhados de conformidade',
+                'feature-expertise': 'Expertise Comprovada',
+                'feature-expertise-desc': 'Mais de 1.000 produtos certificados em diversos setores: azeites, conservas, bebidas e muito mais',
+                'feature-support': 'Suporte Personalizado',
+                'feature-support-desc': 'Atendimento direto via WhatsApp e email com consultoria especializada para seu tipo de produto',
+                'feature-investment': 'Investimento Acessível',
+                'feature-investment-desc': 'Preços competitivos com retorno garantido através do acesso ao mercado kosher mundial',
+                
+                // Team Section
+                'team-title': 'Nossa Equipe Especializada',
+                'team-subtitle': 'Profissionais certificados com anos de experiência em supervisão kosher e leis judaicas',
+                'team-coordinator-name': 'Coordenador Rabínico',
+                'team-coordinator-role': 'Responsável Técnico Principal',
+                'team-coordinator-desc': 'Especialista em leis kosher com mais de 15 anos de experiência. Responsável pela aprovação final de todas as certificações e supervisão geral dos processos.',
+                'team-inspector-name': 'Mashgiach Sênior',
+                'team-inspector-role': 'Inspetor de Campo Certificado',
+                'team-inspector-desc': 'Responsável pelas inspeções in loco, verificação de ingredientes e acompanhamento dos processos produtivos nas empresas certificadas.',
+                'team-consultant-name': 'Consultor Técnico',
+                'team-consultant-role': 'Especialista em Processos',
+                'team-consultant-desc': 'Especialista em análise de ingredientes e processos industriais. Oferece consultoria técnica personalizada para adaptações necessárias.',
+                
+                // Leading Rabbis Section
+                'rabbis-title': 'Nossos Rabinos Líderes',
+                'rabbis-subtitle': 'Autoridades rabínicas reconhecidas internacionalmente que supervisionam e garantem a mais alta qualidade da certificação kosher',
+                'rabbi-president-status': 'Presidente',
+                'rabbi-president-name': 'Rabbi Israel Goelman',
+                'rabbi-president-title': 'Presidente da World Kosher',
+                'rabbi-president-certification': 'Autoridade Rabínica Internacional',
+                'rabbi-president-experience': '40+ anos de experiência',
+                'rabbi-president-desc': 'Presidente e autoridade rabínica máxima da World Kosher. Lidera a organização com vasta experiência em supervisão kosher internacional e estabelecimento de padrões de certificação em todo o mundo.',
+                'rabbi-ceo-status': 'Diretor Geral',
+                'rabbi-ceo-name': 'Rabbi Zvi Bringer',
+                'rabbi-ceo-title': 'Diretor Geral',
+                'rabbi-ceo-certification': 'Gestão Rabínica Executiva',
+                'rabbi-ceo-experience': '35+ anos de experiência',
+                'rabbi-ceo-desc': 'Diretor Geral responsável pela gestão operacional e estratégica da World Kosher. Coordena todas as atividades de certificação e supervisiona a implementação dos padrões kosher globais.',
+                'rabbi-beverages-status': 'Especialista',
+                'rabbi-beverages-name': 'Rabbi Shemuel Zalman',
+                'rabbi-beverages-title': 'Especialista em Bebidas Alcoólicas',
+                'rabbi-beverages-certification': 'Especialista em Kashrut de Bebidas',
+                'rabbi-beverages-experience': '50+ anos de experiência',
+                'rabbi-beverages-desc': 'Especialista reconhecido internacionalmente em certificação kosher de bebidas alcoólicas. Responsável pela supervisão de vinhos, cervejas, destilados e outras bebidas alcoólicas em conformidade com as leis de kashrut.',
+                'rabbi-materials-status': 'Responsável',
+                'rabbi-materials-name': 'Rabbi Michael Moshe Grinberg',
+                'rabbi-materials-title': 'Responsável por Matérias-Primas',
+                'rabbi-materials-certification': 'Especialista em Ingredientes Kosher',
+                'rabbi-materials-experience': '40+ anos de experiência',
+                'rabbi-materials-desc': 'Responsável pela análise e aprovação de todas as matérias-primas utilizadas nos produtos certificados. Especialista em identificação de ingredientes kosher e não-kosher, garantindo a conformidade total dos insumos.',
+                'rabbi-services-status': 'Diretor',
+                'rabbi-services-name': 'Rabbi Eliahu Bayles',
+                'rabbi-services-title': 'Diretor de Serviços ao Cliente',
+                'rabbi-services-certification': 'Especialista em Atendimento Kosher',
+                'rabbi-services-experience': '28+ anos de experiência',
+                'rabbi-services-desc': 'Diretor responsável pelo atendimento e suporte aos clientes da World Kosher. Especialista em análise de viabilidade, adaptação de matérias-primas e soluções de kashrut. Garante que todas as necessidades dos clientes sejam atendidas com excelência.',
+                'rabbi-consultant-status': 'Consultor',
+                'rabbi-consultant-name': 'Rabbi Elisha Salas',
+                'rabbi-consultant-title': 'Consultor Rabínico',
+                'rabbi-consultant-certification': 'Consultor Especializado em Kashrut',
+                'rabbi-consultant-experience': '45+ anos de experiência',
+                'rabbi-consultant-desc': 'Consultor rabínico especializado em casos complexos e processos especiais de certificação. Oferece orientação especializada para empresas com necessidades específicas de adaptação aos padrões kosher.',
+                'specialty-leadership': 'Liderança Organizacional',
+                'specialty-international': 'Certificação Internacional',
+                'specialty-standards': 'Padrões Kosher',
+                'specialty-management': 'Gestão Operacional',
+                'specialty-strategy': 'Estratégia Empresarial',
+                'specialty-coordination': 'Coordenação Global',
+                'specialty-wine': 'Vinhos Kosher',
+                'specialty-beer': 'Cervejas',
+                'specialty-spirits': 'Destilados',
+                'specialty-ingredients': 'Análise de Ingredientes',
+                'specialty-raw-materials': 'Matérias-Primas',
+                'specialty-additives': 'Aditivos Alimentares',
+                'specialty-customer-service': 'Análise de Viabilidade',
+                'specialty-support': 'Adaptação de Matérias-Primas',
+                'specialty-relations': 'Soluções de Kashrut',
+                'specialty-consulting': 'Consultoria Especializada',
+                'specialty-complex-cases': 'Casos Complexos',
+                'specialty-adaptation': 'Adaptação de Processos',
+                'certification-title': 'Certificações e Reconhecimentos',
+                'cert-jerusalem': 'Beth Din Jerusalem',
+                'cert-london': 'Beth Din London',
+                'cert-ou': 'OU Kosher Recognition',
+                'cert-stark': 'Star-K Partnership',
+                
+                // CTA Section
+                'cta-title': 'Pronto para Certificar seus Produtos?',
+                'cta-subtitle': 'Entre em contacto connosco hoje mesmo e descubra como a certificação kosher pode expandir seu mercado e aumentar suas vendas',
+                'btn-whatsapp': '💬 WhatsApp Direto',
+                'btn-email': '📧 Enviar Email',
+                
+                // Footer
+                'footer-company-title': 'World Kosher Portugal',
+                'footer-company-desc': 'A principal autoridade em certificação kosher em Portugal, oferecendo serviços de qualidade internacional com reconhecimento mundial.',
+                'footer-consumer-title': 'Recursos do Consumidor',
+                'footer-home': '🏠 Página Inicial',
+                'footer-companies': '🏢 Empresas Certificadas',
+                'footer-about': 'ℹ️ Sobre Nós',
+                'footer-certification-info': '📋 Informações de Certificação',
+                'footer-industrial-title': 'Recursos Industriais',
+                'footer-request-cert': '📝 Solicitar Certificação',
+                'footer-contact': '📞 Contacto',
+                'footer-gallery': '🖼️ Galeria de Empresas',
+                'footer-process': '⚙️ Processo de Certificação',
+                'footer-contact-title': 'Contacto Direto',
+                'footer-whatsapp-label': '📱 WhatsApp:',
+                'footer-email-label': '📧 Email:',
+                'footer-website-label': '🌐 Website:',
+                'footer-copyright': '© 2024 World Kosher B.M.MASHGICHIM. Todos os direitos reservados.',
+                'footer-privacy': '🔒 Política de Privacidade',
+                'footer-terms': '📄 Termos de Uso'
+            },
+            'en': {
+                // Navigation
+                'nav-home': '🏠 Home',
+                'nav-certification': '📋 Certification',
+                'nav-companies': '🏢 Companies',
+                'nav-about': 'ℹ️ About Us',
+                'nav-contact': '📞 Contact',
+                'cta-button': '🚀 Request Certification',
+                
+                // Hero Section
+                'hero-title': '🏆 Official Kosher<br><span class="orange-text">Certification in Portugal</span>',
+                'hero-subtitle': 'The leading authority in kosher certification with over 1,000 certified products in 25+ countries worldwide',
+                'stat-companies': 'Certified Companies',
+                'stat-countries': 'Countries Served',
+                'stat-rate': 'Approved Products',
+                'btn-request': '🚀 Request Certification',
+                'btn-learn': '📋 Learn More',
+                
+                // Companies Showcase
+                'companies-title': 'Trusted Certified Companies',
+                'companies-subtitle': 'Join globally recognized brands that trust our kosher certification',
+                'btn-view-companies': '🔍 View All Companies',
+                
+                // Features
+                'features-title': 'Why Choose World Kosher?',
+                'features-subtitle': 'We are the leading authority in kosher certification with international recognition and rigorous quality processes',
+                'feature-international': 'International Recognition',
+                'feature-international-desc': 'Certification accepted in over 25 countries, including Israel, United States, Europe and Latin America',
+                'feature-agile': 'Agile Process',
+                'feature-agile-desc': 'Certification in 4-8 weeks with 24/6 monitoring and specialized support in Portuguese',
+                'feature-reliable': 'Maximum Reliability',
+                'feature-reliable-desc': 'Qualified mashgichim with rigorous supervision and detailed compliance reports',
+                'feature-expertise': 'Proven Expertise',
+                'feature-expertise-desc': 'Over 1,000 certified products in various sectors: olive oils, preserves, beverages and much more',
+                'feature-support': 'Personalized Support',
+                'feature-support-desc': 'Direct service via WhatsApp and email with specialized consulting for your product type',
+                'feature-investment': 'Accessible Investment',
+                'feature-investment-desc': 'Competitive prices with guaranteed return through access to the global kosher market',
+                
+                // Team Section
+                'team-title': 'Our Specialized Team',
+                'team-subtitle': 'Certified professionals with years of experience in kosher supervision and Jewish laws',
+                'team-coordinator-name': 'Rabbinical Coordinator',
+                'team-coordinator-role': 'Chief Technical Officer',
+                'team-coordinator-desc': 'Specialist in kosher laws with over 15 years of experience. Responsible for final approval of all certifications and general supervision of processes.',
+                'team-inspector-name': 'Senior Mashgiach',
+                'team-inspector-role': 'Certified Field Inspector',
+                'team-inspector-desc': 'Responsible for on-site inspections, ingredient verification and monitoring of production processes in certified companies.',
+                'team-consultant-name': 'Technical Consultant',
+                'team-consultant-role': 'Process Specialist',
+                'team-consultant-desc': 'Specialist in ingredient analysis and industrial processes. Offers personalized technical consulting for necessary adaptations.',
+                
+                // Leading Rabbis Section
+                'rabbis-title': 'Our Leading Rabbis',
+                'rabbis-subtitle': 'Internationally recognized rabbinical authorities who supervise and ensure the highest quality of kosher certification',
+                'rabbi-president-status': 'President',
+                'rabbi-president-name': 'Rabbi Israel Goelman',
+                'rabbi-president-title': 'President of World Kosher',
+                'rabbi-president-certification': 'International Rabbinical Authority',
+                'rabbi-president-experience': '40+ years of experience',
+                'rabbi-president-desc': 'President and supreme rabbinical authority of World Kosher. Leads the organization with extensive experience in international kosher supervision and establishment of certification standards worldwide.',
+                'rabbi-ceo-status': 'Chief Executive',
+                'rabbi-ceo-name': 'Rabbi Zvi Bringer',
+                'rabbi-ceo-title': 'Chief Executive Officer',
+                'rabbi-ceo-certification': 'Executive Rabbinical Management',
+                'rabbi-ceo-experience': '35+ years of experience',
+                'rabbi-ceo-desc': 'Chief Executive Officer responsible for operational and strategic management of World Kosher. Coordinates all certification activities and oversees the implementation of global kosher standards.',
+                'rabbi-beverages-status': 'Specialist',
+                'rabbi-beverages-name': 'Rabbi Shemuel Zalman',
+                'rabbi-beverages-title': 'Alcoholic Beverages Specialist',
+                'rabbi-beverages-certification': 'Beverages Kashrut Specialist',
+                'rabbi-beverages-experience': '50+ years of experience',
+                'rabbi-beverages-desc': 'Internationally recognized specialist in kosher certification of alcoholic beverages. Responsible for supervision of wines, beers, spirits and other alcoholic beverages in compliance with kashrut laws.',
+                'rabbi-materials-status': 'Manager',
+                'rabbi-materials-name': 'Rabbi Michael Moshe Grinberg',
+                'rabbi-materials-title': 'Raw Materials Manager',
+                'rabbi-materials-certification': 'Kosher Ingredients Specialist',
+                'rabbi-materials-experience': '40+ years of experience',
+                'rabbi-materials-desc': 'Responsible for analysis and approval of all raw materials used in certified products. Specialist in identification of kosher and non-kosher ingredients, ensuring total compliance of inputs.',
+                'rabbi-services-status': 'Director',
+                'rabbi-services-name': 'Rabbi Eliahu Bayles',
+                'rabbi-services-title': 'Customer Services Director',
+                'rabbi-services-certification': 'Kosher Customer Service Specialist',
+                'rabbi-services-experience': '28+ years of experience',
+                'rabbi-services-desc': 'Director responsible for customer service and support at World Kosher. Specialist in feasibility analysis, raw material adaptation and kashrut solutions. Ensures that all customer needs are met with excellence.',
+                'rabbi-consultant-status': 'Consultant',
+                'rabbi-consultant-name': 'Rabbi Elisha Salas',
+                'rabbi-consultant-title': 'Rabbinical Consultant',
+                'rabbi-consultant-certification': 'Specialized Kashrut Consultant',
+                'rabbi-consultant-experience': '45+ years of experience',
+                'rabbi-consultant-desc': 'Rabbinical consultant specialized in complex cases and special certification processes. Offers specialized guidance for companies with specific needs for adaptation to kosher standards.',
+                'specialty-leadership': 'Organizational Leadership',
+                'specialty-international': 'International Certification',
+                'specialty-standards': 'Kosher Standards',
+                'specialty-management': 'Operational Management',
+                'specialty-strategy': 'Business Strategy',
+                'specialty-coordination': 'Global Coordination',
+                'specialty-wine': 'Kosher Wines',
+                'specialty-beer': 'Beers',
+                'specialty-spirits': 'Spirits',
+                'specialty-ingredients': 'Ingredient Analysis',
+                'specialty-raw-materials': 'Raw Materials',
+                'specialty-additives': 'Food Additives',
+                'specialty-customer-service': 'Feasibility Analysis',
+                'specialty-support': 'Raw Material Adaptation',
+                'specialty-relations': 'Kashrut Solutions',
+                'specialty-consulting': 'Specialized Consulting',
+                'specialty-complex-cases': 'Complex Cases',
+                'specialty-adaptation': 'Process Adaptation',
+                'certification-title': 'Certifications and Recognitions',
+                'cert-jerusalem': 'Beth Din Jerusalem',
+                'cert-london': 'Beth Din London',
+                'cert-ou': 'OU Kosher Recognition',
+                'cert-stark': 'Star-K Partnership',
+                
+                // CTA Section
+                'cta-title': 'Ready to Certify Your Products?',
+                'cta-subtitle': 'Contact us today and discover how kosher certification can expand your market and increase your sales',
+                'btn-whatsapp': '💬 Direct WhatsApp',
+                'btn-email': '📧 Send Email',
+                
+                // Footer
+                'footer-company-title': 'World Kosher Portugal',
+                'footer-company-desc': 'The leading authority in kosher certification in Portugal, offering international quality services with worldwide recognition.',
+                'footer-consumer-title': 'Consumer Resources',
+                'footer-home': '🏠 Home Page',
+                'footer-companies': '🏢 Certified Companies',
+                'footer-about': 'ℹ️ About Us',
+                'footer-certification-info': '📋 Certification Information',
+                'footer-industrial-title': 'Industrial Resources',
+                'footer-request-cert': '📝 Request Certification',
+                'footer-contact': '📞 Contact',
+                'footer-gallery': '🖼️ Company Gallery',
+                'footer-process': '⚙️ Certification Process',
+                'footer-contact-title': 'Direct Contact',
+                'footer-whatsapp-label': '📱 WhatsApp:',
+                'footer-email-label': '📧 Email:',
+                'footer-website-label': '🌐 Website:',
+                'footer-copyright': '© 2024 World Kosher B.M.MASHGICHIM. All rights reserved.',
+                'footer-privacy': '🔒 Privacy Policy',
+                'footer-terms': '📄 Terms of Use'
+            },
+            'he': {
+                // Navigation
+                'nav-home': '🏠 דף הבית',
+                'nav-certification': '📋 הכשרה',
+                'nav-companies': '🏢 חברות',
+                'nav-about': 'ℹ️ אודות',
+                'nav-contact': '📞 צור קשר',
+                'cta-button': '🚀 בקש הכשר',
+                
+                // Hero Section
+                'hero-title': '🏆 הכשר כשרות<br><span class="orange-text">רשמי בפורטוגל</span>',
+                'hero-subtitle': 'הרשות המובילה בהכשר כשרות עם למעלה מ-1,000 מוצרים מוכשרים ב-25+ מדינות ברחבי העולם',
+                'stat-companies': 'חברות מוכשרות',
+                'stat-countries': 'מדינות מוגשות',
+                'stat-rate': 'מוצרים מאושרים',
+                'btn-request': '🚀 בקש הכשרה',
+                'btn-learn': '📋 למד עוד',
+                
+                // Companies Showcase
+                'companies-title': 'חברות מוכשרות מהימנות',
+                'companies-subtitle': 'הצטרפו למותגים מוכרים עולמית הסומכים על ההכשר שלנו',
+                'btn-view-companies': '🔍 צפה בכל החברות',
+                
+                // Features
+                'features-title': 'למה לבחור בWorld Kosher?',
+                'features-subtitle': 'אנחנו הרשות המובילה בהכשר כשרות עם הכרה בינלאומית ותהליכי איכות קפדניים',
+                'feature-international': 'הכרה בינלאומית',
+                'feature-international-desc': 'הכשר מקובל בלמעלה מ-25 מדינות, כולל ישראל, ארצות הברית, אירופה ואמריקה הלטינית',
+                'feature-agile': 'תהליך זריז',
+                'feature-agile-desc': 'הכשר תוך 4-8 שבועות עם מעקב 24/6 ותמיכה מתמחה בפורטוגזית',
+                'feature-reliable': 'אמינות מקסימלית',
+                'feature-reliable-desc': 'משגיחים מוסמכים עם פיקוח קפדני ודוחות ציות מפורטים',
+                'feature-expertise': 'מומחיות מוכחת',
+                'feature-expertise-desc': 'למעלה מ-1,000 מוצרים מוכשרים במגזרים שונים: שמני זית, שימורים, משקאות ועוד הרבה',
+                'feature-support': 'תמיכה אישית',
+                'feature-support-desc': 'שירות ישיר דרך WhatsApp ואימייל עם ייעוץ מתמחה לסוג המוצר שלך',
+                'feature-investment': 'השקעה נגישה',
+                'feature-investment-desc': 'מחירים תחרותיים עם תשואה מובטחת דרך גישה לשוק הכשרות העולמי',
+                
+                // Team Section
+                'team-title': 'הצוות המתמחה שלנו',
+                'team-subtitle': 'אנשי מקצוע מוסמכים עם שנות ניסיון בפיקוח כשרות והלכות יהדות',
+                'team-coordinator-name': 'רכז רבני',
+                'team-coordinator-role': 'אחראי טכני ראשי',
+                'team-coordinator-desc': 'מתמחה בדיני כשרות עם למעלה מ-15 שנות ניסיון. אחראי על אישור סופי של כל ההכשרים ופיקוח כללי על התהליכים.',
+                'team-inspector-name': 'משגיח בכיר',
+                'team-inspector-role': 'מפקח שטח מוסמך',
+                'team-inspector-desc': 'אחראי על בדיקות באתר, אימות רכיבים ומעקב אחר תהליכי הייצור בחברות מוכשרות.',
+                'team-consultant-name': 'יועץ טכני',
+                'team-consultant-role': 'מתמחה בתהליכים',
+                'team-consultant-desc': 'מתמחה בניתוח רכיבים ותהליכים תעשייתיים. מציע ייעוץ טכני מותאם אישית להתאמות הנדרשות.',
+                
+                // Leading Rabbis Section
+                'rabbis-title': 'הרבנים המובילים שלנו',
+                'rabbis-subtitle': 'רשויות רבניות מוכרות בינלאומית המפקחות ומבטיחות את האיכות הגבוהה ביותר של הכשר כשרות',
+                'rabbi-president-status': 'נשיא',
+                'rabbi-president-name': 'הרב ישראל גולמן',
+                'rabbi-president-title': 'נשיא World Kosher',
+                'rabbi-president-certification': 'סמכות רבנית בינלאומית',
+                'rabbi-president-experience': '40+ שנות ניסיון',
+                'rabbi-president-desc': 'נשיא וסמכות רבנית עליונה של World Kosher. מוביל את הארגון עם ניסיון נרחב בפיקוח כשרות בינלאומי והקמת תקני הכשרה ברחבי העולם.',
+                'rabbi-ceo-status': 'מנכ"ל',
+                'rabbi-ceo-name': 'הרב צבי ברינגר',
+                'rabbi-ceo-title': 'מנכ"ל',
+                'rabbi-ceo-certification': 'ניהול רבני ביצועי',
+                'rabbi-ceo-experience': '35+ שנות ניסיון',
+                'rabbi-ceo-desc': 'מנכ"ל האחראי על הניהול התפעולי והאסטרטגי של World Kosher. מתאם את כל פעילויות ההכשרה ומפקח על יישום תקני הכשרות הגלובליים.',
+                'rabbi-beverages-status': 'מתמחה',
+                'rabbi-beverages-name': 'הרב שמואל זלמן',
+                'rabbi-beverages-title': 'מתמחה במשקאות אלכוהוליים',
+                'rabbi-beverages-certification': 'מתמחה בכשרות משקאות',
+                'rabbi-beverages-experience': '50+ שנות ניסיון',
+                'rabbi-beverages-desc': 'מתמחה מוכר בינלאומית בהכשר כשרות של משקאות אלכוהוליים. אחראי על פיקוח יינות, בירות, משקאות חריפים ומשקאות אלכוהוליים אחרים בהתאם לדיני כשרות.',
+                'rabbi-materials-status': 'אחראי',
+                'rabbi-materials-name': 'הרב מיכאל משה גרינברג',
+                'rabbi-materials-title': 'אחראי חומרי גלם',
+                'rabbi-materials-certification': 'מתמחה ברכיבים כשרים',
+                'rabbi-materials-experience': '40+ שנות ניסיון',
+                'rabbi-materials-desc': 'אחראי על ניתוח ואישור כל חומרי הגלם המשמשים במוצרים מוכשרים. מתמחה בזיהוי רכיבים כשרים ולא כשרים, מבטיח התאמה מלאה של תשומות.',
+                'rabbi-services-status': 'מנהל',
+                'rabbi-services-name': 'הרב אליהו ביילס',
+                'rabbi-services-title': 'מנהל שירותי לקוחות',
+                'rabbi-services-certification': 'מתמחה בשירות לקוחות כשר',
+                'rabbi-services-experience': '28+ שנות ניסיון',
+                'rabbi-services-desc': 'מנהל האחראי על שירות ותמיכה בלקוחות של World Kosher. מתמחה בבדיקת היתכנות, התאמת חומרי גלם ופתרונות כשרותיים. מבטיח שכל צרכי הלקוחות ייענו במצוינות.',
+                'rabbi-consultant-status': 'יועץ',
+                'rabbi-consultant-name': 'הרב אלישע סאלאס',
+                'rabbi-consultant-title': 'יועץ רבני',
+                'rabbi-consultant-certification': 'יועץ מתמחה בכשרות',
+                'rabbi-consultant-experience': '45+ שנות ניסיון',
+                'rabbi-consultant-desc': 'יועץ רבני המתמחה במקרים מורכבים ותהליכי הכשרה מיוחדים. מציע הדרכה מותאמת לחברות עם צרכים ספציפיים להתאמה לתקני כשרות.',
+                'specialty-leadership': 'מנהיגות ארגונית',
+                'specialty-international': 'הכשרה בינלאומית',
+                'specialty-standards': 'תקני כשרות',
+                'specialty-management': 'ניהול תפעולי',
+                'specialty-strategy': 'אסטרטגיה עסקית',
+                'specialty-coordination': 'תיאום גלובלי',
+                'specialty-wine': 'יינות כשרים',
+                'specialty-beer': 'בירות',
+                'specialty-spirits': 'משקאות חריפים',
+                'specialty-ingredients': 'ניתוח רכיבים',
+                'specialty-raw-materials': 'חומרי גלם',
+                'specialty-additives': 'תוספי מזון',
+                'specialty-customer-service': 'בדיקת היתכנות',
+                'specialty-support': 'התאמת חומרי גלם',
+                'specialty-relations': 'פתרונות כשרותיים',
+                'specialty-consulting': 'ייעוץ מתמחה',
+                'specialty-complex-cases': 'מקרים מורכבים',
+                'specialty-adaptation': 'התאמת תהליכים',
+                'certification-title': 'הסמכות והכרות',
+                'cert-jerusalem': 'בית דין ירושלים',
+                'cert-london': 'בית דין לונדון',
+                'cert-ou': 'הכרת OU Kosher',
+                'cert-stark': 'שותפות Star-K',
+                
+                // CTA Section
+                'cta-title': 'מוכן להכשיר את המוצרים שלך?',
+                'cta-subtitle': 'צור איתנו קשר היום וגלה איך הכשר כשרות יכול להרחיב את השוק שלך ולהגדיל את המכירות',
+                'btn-whatsapp': '💬 WhatsApp ישיר',
+                'btn-email': '📧 שלח אימייל',
+                
+                // Footer
+                'footer-company-title': 'World Kosher פורטוגל',
+                'footer-company-desc': 'הרשות המובילה בהכשר כשרות בפורטוגל, המציעה שירותי איכות בינלאומיים עם הכרה עולמית.',
+                'footer-consumer-title': 'משאבים לצרכנים',
+                'footer-home': '🏠 דף הבית',
+                'footer-companies': '🏢 חברות מוכשרות',
+                'footer-about': 'ℹ️ אודותינו',
+                'footer-certification-info': '📋 מידע על הכשרה',
+                'footer-industrial-title': 'משאבים תעשייתיים',
+                'footer-request-cert': '📝 בקש הכשרה',
+                'footer-contact': '📞 צור קשר',
+                'footer-gallery': '🖼️ גלריית חברות',
+                'footer-process': '⚙️ תהליך הכשרה',
+                'footer-contact-title': 'יצירת קשר ישירה',
+                'footer-whatsapp-label': '📱 WhatsApp:',
+                'footer-email-label': '📧 אימייל:',
+                'footer-website-label': '🌐 אתר:',
+                'footer-copyright': '© 2024 World Kosher B.M.MASHGICHIM. כל הזכויות שמורות.',
+                'footer-privacy': '🔒 מדיניות פרטיות',
+                'footer-terms': '📄 תנאי שימוש'
+            }
+        };
+
+        // Language Selector Functions
+        function toggleLanguageDropdown() {
+            const dropdown = document.getElementById('languageDropdown');
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function selectLanguage(flag, lang) {
+            // Update flag and language display
+            document.getElementById('current-flag').textContent = flag;
+            document.getElementById('current-lang').textContent = lang;
+            document.getElementById('languageDropdown').style.display = 'none';
+            
+            // Update active state
+            document.querySelectorAll('.language-option').forEach(opt => opt.classList.remove('active'));
+            event.target.closest('.language-option').classList.add('active');
+            
+            // Map language names to codes
+            const languageMap = {
+                'Português': 'pt',
+                'English': 'en',
+                'עברית': 'he',
+                'Español': 'es',
+                'Русский': 'ru',
+                'Italiano': 'it'
+            };
+            
+            const langCode = languageMap[lang] || 'pt';
+            
+            // Change page content
+            changeLanguage(langCode);
+        }
+
+        function changeLanguage(langCode) {
+            // If translation doesn't exist, fallback to Portuguese
+            if (!translations[langCode]) {
+                langCode = 'pt';
+            }
+            
+            currentLanguage = langCode;
+            const t = translations[langCode];
+            
+            // Update all translatable elements
+            Object.keys(t).forEach(key => {
+                const element = document.querySelector(`[data-translate="${key}"]`);
+                if (element) {
+                    if (key.includes('title') && key.includes('hero')) {
+                        element.innerHTML = t[key]; // Allow HTML for hero title
+                    } else {
+                        element.textContent = t[key];
+                    }
+                }
+            });
+            
+            // Update HTML direction for Hebrew
+            if (langCode === 'he') {
+                document.documentElement.dir = 'rtl';
+                document.documentElement.lang = 'he';
+            } else {
+                document.documentElement.dir = 'ltr';
+                document.documentElement.lang = langCode;
+            }
+            
+            // Store language preference globally
+            localStorage.setItem('preferred-language', langCode);
+            localStorage.setItem('world-kosher-language', langCode);
+            
+            // Dispatch custom event for language change
+            window.dispatchEvent(new CustomEvent('languageChanged', { detail: { language: langCode } }));
+        }
+
+        // Initialize language on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check for saved language preference
+            const savedLang = localStorage.getItem('preferred-language') || 'pt';
+            
+            // Apply saved language if not Portuguese
+            if (savedLang !== 'pt') {
+                // Find the language option and update display
+                const langNames = {
+                    'en': { flag: '🇬🇧', name: 'English' },
+                    'he': { flag: '🇮🇱', name: 'עברית' },
+                    'es': { flag: '🇪🇸', name: 'Español' },
+                    'ru': { flag: '🇷🇺', name: 'Русский' },
+                    'it': { flag: '🇮🇹', name: 'Italiano' }
+                };
+                
+                if (langNames[savedLang]) {
+                    document.getElementById('current-flag').textContent = langNames[savedLang].flag;
+                    document.getElementById('current-lang').textContent = langNames[savedLang].name;
+                    
+                    // Update active state in dropdown
+                    document.querySelectorAll('.language-option').forEach(opt => {
+                        opt.classList.remove('active');
+                        if (opt.textContent.includes(langNames[savedLang].name)) {
+                            opt.classList.add('active');
+                        }
+                    });
+                }
+                
+                changeLanguage(savedLang);
+            }
+            
+            // Initialize hero image slider
+            initHeroSlider();
+        });
+
+        // Hero Image Slider
+        function initHeroSlider() {
+            const slides = document.querySelectorAll('.hero-slide');
+            let currentSlide = 0;
+            
+            function nextSlide() {
+                slides[currentSlide].classList.remove('active');
+                currentSlide = (currentSlide + 1) % slides.length;
+                slides[currentSlide].classList.add('active');
+            }
+            
+            // Change slide every 4 seconds (faster for more images)
+            setInterval(nextSlide, 4000);
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const selector = document.querySelector('.language-selector');
+            if (!selector.contains(event.target)) {
+                document.getElementById('languageDropdown').style.display = 'none';
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Redirect to certification form based on language
+        function redirectToCertificationForm() {
+            const languageMap = {
+                'pt': 'solicitar-certificacao-pt.html',
+                'en': 'solicitar-certificacao-en.html', 
+                'he': 'solicitar-certificacao-he.html',
+                'es': 'solicitar-certificacao-pt.html', // Use Portuguese for Spanish
+                'ru': 'solicitar-certificacao-en.html', // Use English for Russian
+                'it': 'solicitar-certificacao-en.html'  // Use English for Italian
+            };
+            
+            const targetPage = languageMap[currentLanguage] || 'solicitar-certificacao-pt.html';
+            window.open(targetPage, '_blank');
+        }
+    </script>
+</body>
+</html>

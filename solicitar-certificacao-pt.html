@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitar Certificação Kosher - World Kosher Portugal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8fafc;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .logo {
+            max-width: 150px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: #1e3a8a;
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #f59e0b;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .form-section {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #1e3a8a;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+            border-color: #f59e0b;
+            box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .btn-submit {
+            background: #f59e0b;
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .btn-submit:hover {
+            background: #d97706;
+            transform: translateY(-2px);
+        }
+
+        .contact-info {
+            background: #1e3a8a;
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .contact-info h3 {
+            color: #f59e0b;
+            margin-bottom: 20px;
+        }
+
+        .contact-method {
+            margin: 15px 0;
+            font-size: 1.1rem;
+        }
+
+        .contact-method a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .contact-method a:hover {
+            color: #f59e0b;
+        }
+
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 15px;
+            }
+            
+            .form-section {
+                padding: 25px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <img src="images/logo.png" alt="World Kosher Logo" class="logo" onerror="this.src='images/logo.jpg'">
+            <h1>🚀 Solicitar Certificação Kosher</h1>
+            <p class="subtitle">Preencha o formulário e receba um orçamento personalizado em 24 horas</p>
+        </div>
+
+        <!-- Form Section -->
+        <div class="form-section">
+            <form id="certificationForm" onsubmit="submitForm(event)">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="company">📢 Nome da Empresa *</label>
+                        <input type="text" id="company" name="company" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact">👤 Pessoa de Contacto *</label>
+                        <input type="text" id="contact" name="contact" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">📧 E-mail *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">📞 Telefone *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="location">📍 Localização da Empresa</label>
+                    <input type="text" id="location" name="location" placeholder="Cidade, País">
+                </div>
+
+                <div class="form-group">
+                    <label for="productType">🏭 Tipo de Produto *</label>
+                    <select id="productType" name="productType" required>
+                        <option value="">Selecione o tipo de produto</option>
+                        <option value="azeites">🫒 Azeites e Óleos</option>
+                        <option value="conservas">🥫 Conservas e Enlatados</option>
+                        <option value="bebidas">🍷 Bebidas (Vinhos, Cervejas, Sumos)</option>
+                        <option value="frutas">🍎 Frutas e Concentrados</option>
+                        <option value="congelados">🐟 Produtos Congelados</option>
+                        <option value="condimentos">🧂 Sal e Condimentos</option>
+                        <option value="fermentos">🍞 Fermentos e Ingredientes</option>
+                        <option value="outros">📦 Outros</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="products">📝 Descrição Detalhada dos Produtos *</label>
+                    <textarea id="products" name="products" placeholder="Descreva os produtos que deseja certificar, ingredientes principais, processos de produção..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="production">🏭 Volume de Produção Mensal</label>
+                    <select id="production" name="production">
+                        <option value="">Selecione o volume aproximado</option>
+                        <option value="pequeno">🔹 Pequeno (até 1.000 unidades)</option>
+                        <option value="medio">🔹 Médio (1.000 - 10.000 unidades)</option>
+                        <option value="grande">🔹 Grande (10.000 - 100.000 unidades)</option>
+                        <option value="industrial">🔹 Industrial (mais de 100.000 unidades)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="timeline">⏰ Prazo Desejado para Certificação</label>
+                    <select id="timeline" name="timeline">
+                        <option value="">Selecione o prazo</option>
+                        <option value="urgente">🚨 Urgente (2-3 semanas)</option>
+                        <option value="normal">📅 Normal (4-6 semanas)</option>
+                        <option value="flexivel">⏳ Flexível (6-8 semanas)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">💬 Informações Adicionais</label>
+                    <textarea id="message" name="message" placeholder="Outras informações relevantes, experiência com certificações, mercados de destino..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">🚀 Enviar Solicitação</button>
+            </form>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="contact-info">
+            <h3>📞 Contacto Direto</h3>
+            <div class="contact-method">
+                <strong>WhatsApp:</strong> <a href="https://wa.me/972543080390" target="_blank">(+972) 54 308 0390</a>
+            </div>
+            <div class="contact-method">
+                <strong>E-mail:</strong> <a href="mailto:portugal@w-kosher.com">portugal@w-kosher.com</a>
+            </div>
+            <div class="contact-method">
+                <strong>Horário:</strong> Segunda a Quinta-feira, 8:00 - 18:00
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function submitForm(event) {
+            event.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData);
+            
+            // Create WhatsApp message
+            let message = `🚀 *SOLICITAÇÃO DE CERTIFICAÇÃO KOSHER*\n\n`;
+            message += `🏢 *Empresa:* ${data.company}\n`;
+            message += `👤 *Contacto:* ${data.contact}\n`;
+            message += `📧 *E-mail:* ${data.email}\n`;
+            message += `📞 *Telefone:* ${data.phone}\n`;
+            
+            if (data.location) {
+                message += `📍 *Localização:* ${data.location}\n`;
+            }
+            
+            message += `🏭 *Tipo de Produto:* ${data.productType}\n`;
+            message += `📝 *Descrição:* ${data.products}\n`;
+            
+            if (data.production) {
+                message += `🏭 *Volume Produção:* ${data.production}\n`;
+            }
+            
+            if (data.timeline) {
+                message += `⏰ *Prazo Desejado:* ${data.timeline}\n`;
+            }
+            
+            if (data.message) {
+                message += `💬 *Informações Adicionais:* ${data.message}\n`;
+            }
+            
+            // Encode for WhatsApp
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappURL = `https://wa.me/972543080390?text=${encodedMessage}`;
+            
+            // Open WhatsApp
+            window.open(whatsappURL, '_blank');
+            
+            // Show success message
+            alert('✅ Formulário preparado! Será redirecionado para o WhatsApp para enviar a sua solicitação.');
+        }
+    </script>
+</body>
+</html>
