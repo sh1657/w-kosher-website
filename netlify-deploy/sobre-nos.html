@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nós - World Kosher Portugal</title>
+    <meta name="description" content="Conheça a World Kosher Portugal - mais de 20 anos de experiência em certificação kosher. Liderança, credibilidade e excelência internacional.">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #6b7280;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Top Bar */
+        .top-bar {
+            background: #1e3a8a;
+            color: white;
+            padding: 10px 0;
+            font-size: 0.9rem;
+            position: sticky;
+            top: 0;
+            z-index: 1001;
+        }
+        
+        .top-bar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .top-bar a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .top-bar-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        /* Language Selector */
+        .language-selector {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+        
+        .language-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            min-width: 200px;
+            z-index: 2000;
+            display: none;
+        }
+        
+        @media (max-width: 768px) {
+            .language-dropdown {
+                right: -20px;
+                min-width: 180px;
+            }
+        }
+        
+        .language-option {
+            padding: 12px 16px;
+            cursor: pointer;
+            border-bottom: 1px solid #f3f4f6;
+            color: #1f2937;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .language-option:hover {
+            background: #f3f4f6;
+        }
+        
+        .language-option.active {
+            background: #eff6ff;
+        }
+        
+        /* Header */
+        .header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 44px;
+            z-index: 1000;
+            padding: 15px 0;
+        }
+        
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-section img {
+            width: 120px;
+            height: 120px;
+            border-radius: 12px;
+            object-fit: contain;
+            background: transparent;
+        }
+        
+        .logo-text h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #1e3a8a;
+            margin: 0;
+        }
+        
+        .logo-text span {
+            font-size: 0.9rem;
+            color: #6b7280;
+            font-weight: 500;
+        }
+        
+        /* Navigation */
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .nav {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .nav a {
+            padding: 10px 15px;
+            color: #1e3a8a;
+            text-decoration: none;
+            font-weight: 500;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav a:hover {
+            background: #f3f4f6;
+        }
+        
+        .nav a.active {
+            background: #f9fafb;
+            color: #f59e0b;
+            font-weight: 600;
+        }
+        
+        .cta-button {
+            background: #f59e0b;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background: #d97706;
+            transform: translateY(-2px);
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .hero-content h1 img {
+            width: 62px;
+            height: 62px;
+        }
+        
+        .hero-content p {
+            font-size: 1.4rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .hero-stats {
+            background: rgba(255,255,255,0.1);
+            padding: 20px 30px;
+            border-radius: 12px;
+            display: inline-block;
+        }
+        
+        .hero-stats p {
+            font-size: 1.1rem;
+            margin: 0;
+            opacity: 0.9;
+        }
+        
+        /* Content Sections */
+        .content-section {
+            padding: 80px 20px;
+        }
+        
+        .content-section.white {
+            background: white;
+        }
+        
+        .content-section.gray {
+            background: #f9fafb;
+        }
+        
+        .two-column-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .content-card {
+            background: linear-gradient(135deg, #1e3a8a, #059669);
+            padding: 40px;
+            border-radius: 20px;
+            color: white;
+            text-align: center;
+        }
+        
+        .content-card .icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+        
+        .content-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .content-card p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            opacity: 0.9;
+            margin-bottom: 25px;
+        }
+        
+        .highlight-box {
+            background: #f0f9ff;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #1e3a8a;
+        }
+        
+        .highlight-box p {
+            color: #1e3a8a;
+            font-weight: 600;
+            margin: 0;
+        }
+        
+        /* Grid Cards */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--card-color);
+        }
+        
+        .card .icon-circle {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--card-color), var(--card-color-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: white;
+            font-size: 2rem;
+        }
+        
+        .card h3 {
+            color: #1f2937;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .card p {
+            color: #6b7280;
+            line-height: 1.6;
+        }
+        
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 30px 20px;
+        }
+        
+        .stat-number {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+        
+        .stat-item h3 {
+            color: #1f2937;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        .stat-item p {
+            color: #6b7280;
+        }
+        
+        /* Process Grid */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .process-item {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+        
+        .process-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        .process-item h4 {
+            color: #1f2937;
+            margin-bottom: 15px;
+        }
+        
+        .process-item p {
+            color: #6b7280;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #059669, #065f46);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta-section > p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+        
+        .btn-primary {
+            background: #f59e0b;
+            color: white;
+            padding: 20px 40px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background: #d97706;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: #059669;
+            padding: 20px 40px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background: #f9fafb;
+            transform: translateY(-2px);
+        }
+        
+        /* Footer */
+        .footer {
+            background: #1f2937;
+            color: white;
+            padding: 60px 20px 30px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer h3, .footer h4 {
+            color: #f59e0b;
+            margin-bottom: 20px;
+        }
+        
+        .footer p {
+            color: rgba(255,255,255,0.8);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .footer a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer a:hover {
+            color: white;
+        }
+        
+        .footer ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .footer li {
+            margin-bottom: 10px;
+        }
+        
+        .whatsapp-btn {
+            background: #25d366;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-btn:hover {
+            background: #22c55e;
+            transform: translateY(-2px);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 30px;
+            text-align: center;
+        }
+        
+        .footer-bottom p {
+            color: rgba(255,255,255,0.6);
+            margin: 0;
+        }
+        
+        /* Section Headers */
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-header h2 {
+            font-size: 2.8rem;
+            color: #1f2937;
+            margin-bottom: 20px;
+        }
+        
+        .section-header p {
+            font-size: 1.2rem;
+            color: #6b7280;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .two-column-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .nav {
+                justify-content: center;
+                width: 100%;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .top-bar-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div>
+                    <span style="margin-right: 20px;">📞 LINHA KOSHER: <a href="tel:+972543080390">(+972) 54 308 0390</a></span>
+                    📧 <a href="mailto:portugal@w-kosher.com">portugal@w-kosher.com</a>
+                </div>
+                <div class="top-bar-right">
+                    <!-- Language Selector -->
+                    <div class="language-selector" onclick="toggleLanguageDropdown()">
+                        <span id="current-flag">🇵🇹</span>
+                        <span id="current-lang">Português</span>
+                        ▼
+                        <div id="languageDropdown" class="language-dropdown">
+                            <div class="language-option active" onclick="changeLanguage('pt', '🇵🇹', 'Português')">🇵🇹 Português</div>
+                            <div class="language-option" onclick="changeLanguage('en', '🇬🇧', 'English')">🇬🇧 English</div>
+                            <div class="language-option" onclick="changeLanguage('he', '🇮🇱', 'עברית')">🇮🇱 עברית</div>
+                            <div class="language-option" onclick="changeLanguage('es', '🇪🇸', 'Español')">🇪🇸 Español</div>
+                            <div class="language-option" onclick="changeLanguage('ru', '🇷🇺', 'Русский')">🇷🇺 Русский</div>
+                            <div class="language-option" onclick="changeLanguage('it', '🇮🇹', 'Italiano')">🇮🇹 Italiano</div>
+                        </div>
+                    </div>
+                    <a href="https://www.facebook.com/profile.php?id=61575501917315" target="_blank" rel="noopener">📘 Facebook</a>
+                    <a href="https://wa.me/972543080390" target="_blank" rel="noopener">📱 WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <img src="images/logo.png" alt="World Kosher Logo" onerror="this.src='images/logo.jpg'">
+                    <div class="logo-text">
+                        <h1>World Kosher</h1>
+                        <span>B.M.MASHGICHIM</span>
+                    </div>
+                </div>
+                <nav class="nav">
+                    <a href="index.html" data-translate="nav-home">🏠 Início</a>
+                    <a href="certificacao.html" data-translate="nav-certification">📋 Certificação</a>
+                    <a href="empresas.html" data-translate="nav-companies">🏢 Empresas</a>
+                    <a href="sobre-nos.html" class="active" data-translate="nav-about">ℹ️ Sobre Nós</a>
+                    <a href="contacto.html" data-translate="nav-contact">📞 Contacto</a>
+                </nav>
+                <a href="#" onclick="redirectToCertificationForm()" rel="noopener" class="cta-button">🚀 Solicitar Certificação</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1>
+                    <img src="images/logo.png" alt="World Kosher Logo" onerror="this.src='images/logo.jpg'">
+                    Sobre a World Kosher
+                </h1>
+                <p>Elevando o seu padrão alimentar com certificação kosher confiável</p>
+                <div class="hero-stats">
+                    <p>✅ Mais de 20 anos de experiência | 🌍 Reconhecimento mundial | 🏅 Padrão de excelência</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Overview -->
+    <section class="content-section white">
+        <div class="container">
+            <div class="two-column-grid">
+                <div>
+                    <h2 style="font-size: 2.5rem; color: #1f2937; margin-bottom: 30px;">🌟 Quem Somos</h2>
+                    <p style="font-size: 1.2rem; color: #6b7280; line-height: 1.8; margin-bottom: 25px;">A <strong>WORLD KOSHER / B.M.MASHGICHIM</strong> é uma referência em certificação kosher. Com uma equipe dedicada e focada na excelência, ajudamos fabricantes de alimentos a conquistar a confiança dos consumidores.</p>
+                    <p style="font-size: 1.1rem; color: #6b7280; line-height: 1.8; margin-bottom: 25px;">Nossa certificação é reconhecida mundialmente, garantindo que seus produtos atendam aos mais altos padrões de qualidade e segurança. Somos uma agência capacitada para atribuir às indústrias do setor de alimentação um selo de aprovação kosher.</p>
+                    <div class="highlight-box">
+                        <p>📜 Com mais de 20 anos de experiência em Portugal e credibilidade comprovada no mais alto nível dos padrões kosher.</p>
+                    </div>
+                </div>
+                <div class="content-card">
+                    <div class="icon">🎯</div>
+                    <h3>Nossa Especialidade</h3>
+                    <p>Analisamos ingredientes, métodos de produção, máquinas e todo o processo food service, garantindo conformidade com as leis de kashrut determinadas pelo Shulchan Aruch.</p>
+                    <div style="background: rgba(255,255,255,0.2); padding: 15px; border-radius: 8px;">
+                        <p style="font-size: 0.9rem; margin: 0; opacity: 0.9;">✨ Código de leis do judaísmo aplicado com precisão e excelência</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="content-section gray">
+        <div class="container">
+            <div class="section-header">
+                <h2>💎 Nossos Pilares</h2>
+                <p>Os valores que nos orientam em cada certificação e definem nossa excelência</p>
+            </div>
+            <div class="cards-grid">
+                <div class="card" style="--card-color: #1e3a8a; --card-color-light: #3b82f6;">
+                    <div class="icon-circle">⚖️</div>
+                    <h3>Nossos Valores</h3>
+                    <p>As leis kosher são parte crucial de uma vida abrangente de integridade. Essa crença nos orienta em tudo o que fazemos e é a base sobre a qual nossa organização está estabelecida.</p>
+                </div>
+                <div class="card" style="--card-color: #059669; --card-color-light: #10b981;">
+                    <div class="icon-circle">🎯</div>
+                    <h3>Nossa Missão</h3>
+                    <p>Autenticar e atestar com precisão a condição de kashrut nos alimentos industrializados, para que mais pessoas tenham acesso e possam cumprir as leis que regem a alimentação judaica.</p>
+                </div>
+                <div class="card" style="--card-color: #f59e0b; --card-color-light: #fbbf24;">
+                    <div class="icon-circle">📈</div>
+                    <h3>Impacto Positivo</h3>
+                    <p>Um selo da Kosher Certification irá impactar positivamente a sua marca! Seus produtos serão considerados de qualidade máxima de mercado, muito acima dos seus concorrentes.</p>
+                </div>
+                <div class="card" style="--card-color: #8b5cf6; --card-color-light: #a78bfa;">
+                    <div class="icon-circle">🤝</div>
+                    <h3>Credibilidade</h3>
+                    <p>O mais profundo nível de confiança entre fabricantes, produtores e consumidores é a essência do que somos. Construímos pontes de confiança duradouras.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience & Numbers -->
+    <section class="content-section white">
+        <div class="container">
+            <div class="section-header">
+                <h2>📊 Nossa Experiência em Números</h2>
+                <p>Mais de duas décadas de excelência e inovação em certificação kosher</p>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number" style="color: #1e3a8a;">20+</div>
+                    <h3>Anos de Experiência</h3>
+                    <p>Liderando o mercado português de certificação kosher</p>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" style="color: #059669;">15+</div>
+                    <h3>Países</h3>
+                    <p>Reconhecimento internacional dos nossos certificados</p>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" style="color: #f59e0b;">100+</div>
+                    <h3>Produtos Certificados</h3>
+                    <p>Diversidade de categorias e empresas atendidas</p>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" style="color: #8b5cf6;">24/6</div>
+                    <h3>Suporte</h3>
+                    <p>Atendimento dedicado em todas as etapas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="content-section gray">
+        <div class="container">
+            <div class="section-header">
+                <h2>🔍 Nossa Metodologia</h2>
+                <p>Como garantimos a máxima qualidade e conformidade kosher</p>
+            </div>
+            <div class="process-grid">
+                <div class="process-item">
+                    <div class="process-icon" style="background: #1e3a8a;">🔬</div>
+                    <h4>Análise de Ingredientes</h4>
+                    <p>Verificação minuciosa de todos os componentes utilizados na produção</p>
+                </div>
+                <div class="process-item">
+                    <div class="process-icon" style="background: #059669;">⚙️</div>
+                    <h4>Processo de Produção</h4>
+                    <p>Avaliação completa dos métodos e equipamentos utilizados</p>
+                </div>
+                <div class="process-item">
+                    <div class="process-icon" style="background: #f59e0b;">🏭</div>
+                    <h4>Instalações</h4>
+                    <p>Inspeção das instalações e conformidade com as leis kashrut</p>
+                </div>
+                <div class="process-item">
+                    <div class="process-icon" style="background: #8b5cf6;">📜</div>
+                    <h4>Shulchan Aruch</h4>
+                    <p>Conformidade rigorosa com o código de leis do judaísmo</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container" style="max-width: 800px;">
+            <h2>🤝 Faça Parte da Nossa História</h2>
+            <p>Junte-se às empresas que confiam na nossa experiência de mais de 20 anos</p>
+            <div class="cta-buttons">
+                <a href="https://wa.me/972543080390" target="_blank" rel="noopener" class="btn-primary">📱 Fale Connosco</a>
+                <a href="certificacao.html" class="btn-secondary">📋 Processo de Certificação</a>
+            </div>
+            <p style="font-size: 1rem; opacity: 0.8;">💬 Disponível 24/6 via WhatsApp: (+972) 54 308 0390</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3>🏆 World Kosher B.M.MASHGICHIM</h3>
+                    <p>A principal autoridade em certificação kosher em Portugal, oferecendo serviços de qualidade internacional há mais de 20 anos.</p>
+                    <div>
+                        <a href="https://www.facebook.com/profile.php?id=61575501917315" target="_blank" rel="noopener" style="margin-right: 15px;">📘 Facebook</a>
+                        <a href="https://wa.me/972543080390" target="_blank" rel="noopener" style="margin-right: 15px;">📱 WhatsApp</a>
+                        <a href="mailto:portugal@w-kosher.com">📧 Email</a>
+                    </div>
+                </div>
+                <div>
+                    <h4>🔗 Links Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">🏠 Início</a></li>
+                        <li><a href="certificacao.html">📋 Certificação</a></li>
+                        <li><a href="empresas.html">🏢 Empresas</a></li>
+                        <li><a href="sobre-nos.html">ℹ️ Sobre Nós</a></li>
+                        <li><a href="#contacto">📞 Contacto</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>📞 Contacto Direto</h4>
+                    <p><strong>WhatsApp 24/6:</strong><br>
+                    <a href="https://wa.me/972543080390" target="_blank" rel="noopener">(+972) 54 308 0390</a></p>
+                    <p><strong>Email:</strong><br>
+                    <a href="mailto:portugal@w-kosher.com">portugal@w-kosher.com</a></p>
+                    <a href="https://wa.me/972543080390" target="_blank" rel="noopener" class="whatsapp-btn">📱 WhatsApp</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 World Kosher B.M.MASHGICHIM. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Language selector functionality
+        function toggleLanguageDropdown() {
+            const dropdown = document.getElementById('languageDropdown');
+            dropdown.style.display = dropdown.style.display === 'none' || dropdown.style.display === '' ? 'block' : 'none';
+        }
+
+        function changeLanguage(langCode, flag, langName) {
+            document.getElementById('current-flag').textContent = flag;
+            document.getElementById('current-lang').textContent = langName;
+            
+            // Remove active class from all options
+            document.querySelectorAll('.language-option').forEach(option => {
+                option.classList.remove('active');
+            });
+            
+            // Add active class to selected option
+            event.target.classList.add('active');
+            
+            // Hide dropdown
+            document.getElementById('languageDropdown').style.display = 'none';
+            
+            // Store language preference
+            localStorage.setItem('selectedLanguage', langCode);
+            
+            // Here you can add actual language switching logic
+            console.log('Language changed to:', langCode);
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const languageSelector = document.querySelector('.language-selector');
+            const dropdown = document.getElementById('languageDropdown');
+            
+            if (!languageSelector.contains(event.target)) {
+                dropdown.style.display = 'none';
+            }
+        });
+
+        // Load saved language preference
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLanguage = localStorage.getItem('selectedLanguage');
+            if (savedLanguage) {
+                // Apply saved language settings
+                console.log('Loaded saved language:', savedLanguage);
+            }
+        });
+
+        // Redirect to certification form based on language
+        let currentLanguage = 'pt'; // Default language
+        
+        // Initialize language from localStorage
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLanguage = localStorage.getItem('preferred-language') || localStorage.getItem('world-kosher-language');
+            if (savedLanguage) {
+                currentLanguage = savedLanguage;
+            }
+            
+            const oldSavedLanguage = localStorage.getItem('selectedLanguage');
+            if (oldSavedLanguage) {
+                console.log('Loaded saved language:', oldSavedLanguage);
+            }
+        });
+        
+        function redirectToCertificationForm() {
+            const languageMap = {
+                'pt': 'solicitar-certificacao-pt.html',
+                'en': 'solicitar-certificacao-en.html', 
+                'he': 'solicitar-certificacao-he.html',
+                'es': 'solicitar-certificacao-pt.html',
+                'ru': 'solicitar-certificacao-en.html',
+                'it': 'solicitar-certificacao-en.html'
+            };
+            
+            const targetPage = languageMap[currentLanguage] || 'solicitar-certificacao-pt.html';
+            window.open(targetPage, '_blank');
+        }
+    </script>
+</body>
+</html>

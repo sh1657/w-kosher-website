@@ -132,10 +132,11 @@
         }
         
         .logo-section img {
-            width: 50px;
-            height: 50px;
+            width: 120px;
+            height: 120px;
             border-radius: 12px;
             object-fit: contain;
+            background: transparent;
         }
         
         .logo-text h1 {
@@ -541,45 +542,129 @@
             background: #1f2937;
             color: white;
             padding: 60px 20px 30px;
-            text-align: center;
         }
         
-        .footer h3 {
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h3 {
             color: #f59e0b;
             margin-bottom: 20px;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
         }
         
-        .footer p {
-            color: rgba(255,255,255,0.8);
-            margin-bottom: 30px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .footer-links {
-            margin-bottom: 30px;
-        }
-        
-        .footer-links a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
+        .footer-section h4 {
+            color: #e5e7eb;
+            margin-bottom: 15px;
             font-size: 1.1rem;
+        }
+        
+        .footer-section p {
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .footer-nav {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-nav li {
+            margin-bottom: 8px;
+        }
+        
+        .footer-nav a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 0.9rem;
+        }
+        
+        .footer-nav a:hover {
+            color: #f59e0b;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            transform: scale(1.2);
+        }
+        
+        .contact-info p {
+            margin-bottom: 15px;
+        }
+        
+        .contact-info a {
+            color: #f59e0b;
+            text-decoration: none;
+        }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 30px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .footer-bottom-left p {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+        
+        .footer-bottom-right {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .footer-bottom-right a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 0.9rem;
             transition: color 0.3s ease;
         }
         
-        .footer-links a:hover {
+        .footer-bottom-right a:hover {
             color: #f59e0b;
         }
         
-        .footer .copyright {
-            color: rgba(255,255,255,0.6);
-            font-size: 0.9rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 20px;
-            margin-top: 20px;
+        @media (max-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .social-links {
+                justify-content: center;
+            }
         }
         
         /* Responsive */
@@ -663,7 +748,7 @@
             <div class="top-bar-content">
                 <div>
                     <span style="margin-right: 20px;">📞 LINHA KOSHER: <a href="tel:+972543080390">(+972) 54 308 0390</a></span>
-                    <span>📧 <a href="mailto:Portugal@w-kosher.com">Portugal@w-kosher.com</a></span>
+                    <span>📧 <a href="mailto:portugal@w-kosher.com">portugal@w-kosher.com</a></span>
                 </div>
                 <div class="top-bar-right">
                     <!-- Language Selector -->
@@ -694,7 +779,7 @@
             <div class="header-content">
                 <!-- Logo -->
                 <div class="logo-section">
-                    <img src="images/logo.jpg" alt="World Kosher Logo">
+                    <img src="images/logo.png" alt="World Kosher Logo" onerror="this.src='images/logo.jpg'">
                     <div class="logo-text">
                         <h1>World Kosher</h1>
                         <span>B.M.MASHGICHIM</span>
@@ -703,16 +788,16 @@
                 
                 <!-- Navigation -->
                         <!-- Navigation -->
-        <nav class="nav">
-            <a href="index.html" data-translate="nav-home">🏠 Início</a>
-            <a href="certificacao.html" data-translate="nav-certification">📋 Certificação</a>
-            <a href="empresas.html" data-translate="nav-companies">🏢 Empresas</a>
-            <a href="#about" data-translate="nav-about">ℹ️ Sobre Nós</a>
-            <a href="#contact" data-translate="nav-contact">📞 Contacto</a>
-        </nav>
+                        <nav class="nav">
+                    <a href="index.html" class="active" data-translate="nav-home">🏠 Início</a>
+                    <a href="certificacao.html" data-translate="nav-certification">📋 Certificação</a>
+                    <a href="empresas.html" data-translate="nav-companies">🏢 Empresas</a>
+                    <a href="sobre-nos.html" data-translate="nav-about">ℹ️ Sobre Nós</a>
+                    <a href="contacto.html" data-translate="nav-contact">📞 Contacto</a>
+                </nav>
                 
                 <!-- CTA Button -->
-                <a href="https://wa.me/972543080390" target="_blank" class="cta-button" data-translate="cta-button">🚀 Solicitar Certificação</a>
+                <a href="#" onclick="redirectToCertificationForm()" class="cta-button" data-translate="cta-button">🚀 Solicitar Certificação</a>
             </div>
         </div>
     </header>
@@ -721,11 +806,14 @@
     <section id="home" class="hero">
         <div class="hero-background">
             <div class="hero-image-slider">
-                <div class="hero-slide active" style="background-image: url('images/hero/hero1.jpg')"></div>
-                <div class="hero-slide" style="background-image: url('images/hero/hero2.jpg')"></div>
-                <div class="hero-slide" style="background-image: url('images/hero/hero3.jpg')"></div>
-                <div class="hero-slide" style="background-image: url('images/hero/hero4.jpg')"></div>
-                <div class="hero-slide" style="background-image: url('images/hero/hero5.jpg')"></div>
+                <div class="hero-slide active" style="background-image: url('images/hero/418f46f5-29d1-4da8-b13f-3c6cdba636b2.png'), url('images/hero-generic/hero1.jpg')"></div>
+                <div class="hero-slide" style="background-image: url('images/hero/53abdfaa-2fb2-4cf4-84b2-6c075413f7df.png'), url('images/hero-generic/hero2.jpg')"></div>
+                <div class="hero-slide" style="background-image: url('images/hero/6beb0281-1c0f-428e-b86e-3dd5f0296412.png'), url('images/hero-generic/hero3.jpg')"></div>
+                <div class="hero-slide" style="background-image: url('images/hero/82b870fe-72df-4cf5-8dd4-6e992ccb753d.png'), url('images/hero-generic/hero4.jpg')"></div>
+                <div class="hero-slide" style="background-image: url('images/hero/ad5f297c-1f9e-4285-bb75-ac5a02af102d.png'), url('images/hero-generic/hero5.jpg')"></div>
+                <div class="hero-slide" style="background-image: url('images/hero/d9b9d93d-3e26-4fb8-9b27-1d2f2cab42f4.png'), url('images/hero-generic/hero6.jpg')"></div>
+                <div class="hero-slide" style="background-image: url('images/hero/e776bd8a-6656-4871-9d82-5fa8c9b757f5.png'), url('images/hero-generic/hero7.jpg')"></div>
+                <div class="hero-slide" style="background-image: url('images/hero/hero4.jpg'), url('images/hero-generic/hero8.jpg')"></div>
             </div>
             <div class="hero-overlay"></div>
         </div>
@@ -745,13 +833,13 @@
                 </div>
                 <div class="stat-item">
                     <span class="stat-number">100%</span>
-                    <span class="stat-label" data-translate="stat-rate">Taxa de Aprovação</span>
+                    <span class="stat-label" data-translate="stat-rate">Clientes Satisfeitos</span>
                 </div>
             </div>
             
             <!-- Buttons -->
             <div class="hero-buttons">
-                <a href="https://wa.me/972543080390" target="_blank" class="btn-primary" data-translate="btn-request">🚀 Solicitar Certificação</a>
+                <a href="#" onclick="redirectToCertificationForm()" class="btn-primary" data-translate="btn-request">🚀 Solicitar Certificação</a>
                 <a href="certificacao.html" class="btn-secondary" data-translate="btn-learn">📋 Saiba Mais</a>
             </div>
         </div>
@@ -766,20 +854,32 @@
             <div class="companies-slider">
                 <div class="company-logos">
                     <div class="company-logo">
-                        <img src="images/companies/atlantic.jpg" alt="Atlantic" style="border-radius: 8px;">
+                        <img src="images/company-logos/dacasa logo webp.webp" alt="Atlantic" style="border-radius: 8px;" onerror="this.src='images/companies/atlantic.jpg'">
                         <h4>Atlantic</h4>
                     </div>
                     <div class="company-logo">
-                        <img src="images/companies/frutissima.jpg" alt="Frutíssima" style="border-radius: 8px;">
+                        <img src="images/company-logos/frutissima logo.png" alt="Frutíssima" style="border-radius: 8px;" onerror="this.src='images/companies/frutissima.jpg'">
                         <h4>Frutíssima</h4>
                     </div>
                     <div class="company-logo">
-                        <img src="images/companies/innoliva.jpg" alt="Innoliva" style="border-radius: 8px;">
+                        <img src="images/company-logos/INNOLIVA logo png.png" alt="Innoliva" style="border-radius: 8px;" onerror="this.src='images/companies/innoliva.jpg'">
                         <h4>Innoliva</h4>
                     </div>
                     <div class="company-logo">
-                        <img src="images/companies/superbock.jpg" alt="Super Bock" style="border-radius: 8px;">
+                        <img src="images/company-logos/Superbock logo.png" alt="Super Bock" style="border-radius: 8px;" onerror="this.src='images/companies/superbock.jpg'">
                         <h4>Super Bock</h4>
+                    </div>
+                    <div class="company-logo">
+                        <img src="images/company-logos/friopesca logo.png" alt="Friopesca" style="border-radius: 8px;" onerror="this.src='images/companies/friopesca.jpg'">
+                        <h4>Friopesca</h4>
+                    </div>
+                    <div class="company-logo">
+                        <img src="images/company-logos/Soguima logo.png" alt="Soguima" style="border-radius: 8px;" onerror="this.src='images/companies/soguima.jpg'">
+                        <h4>Soguima</h4>
+                    </div>
+                    <div class="company-logo">
+                        <img src="images/company-logos/SAOV logo.jpg" alt="SAOV" style="border-radius: 8px;" onerror="this.src='images/companies/saov.jpg'">
+                        <h4>SAOV</h4>
                     </div>
                 </div>
             </div>
@@ -844,7 +944,7 @@
             
             <div class="cta-buttons">
                 <a href="https://wa.me/972543080390" target="_blank" class="btn-primary" data-translate="btn-whatsapp">💬 WhatsApp Direto</a>
-                <a href="mailto:Portugal@w-kosher.com" class="btn-secondary" data-translate="btn-email">📧 Enviar Email</a>
+                <a href="mailto:portugal@w-kosher.com" class="btn-secondary" data-translate="btn-email">📧 Enviar Email</a>
             </div>
         </div>
     </section>
@@ -852,16 +952,67 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <h3 data-translate="footer-title">World Kosher B.M.MASHGICHIM</h3>
-            <p data-translate="footer-desc">A principal autoridade em certificação kosher em Portugal, oferecendo serviços de qualidade internacional com reconhecimento em mais de 15 países ao redor do mundo.</p>
+            <div class="footer-grid">
+                <!-- Company Info -->
+                <div class="footer-section">
+                    <h3 data-translate="footer-company-title">World Kosher Portugal</h3>
+                    <p data-translate="footer-company-desc">A principal autoridade em certificação kosher em Portugal, oferecendo serviços de qualidade internacional com reconhecimento mundial.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=61575501917315" target="_blank" aria-label="Facebook">📘</a>
+                        <a href="https://wa.me/972543080390" target="_blank" aria-label="WhatsApp">📱</a>
+                        <a href="mailto:portugal@w-kosher.com" aria-label="Email">📧</a>
+                    </div>
+                </div>
 
-            <div class="footer-links">
-                <a href="https://www.facebook.com/profile.php?id=61575501917315" target="_blank">📘 Facebook</a>
-                <a href="https://wa.me/972543080390" target="_blank">📱 WhatsApp</a>
-                <a href="mailto:Portugal@w-kosher.com">📧 Email</a>
+                <!-- Consumer Resources -->
+                <div class="footer-section">
+                    <h4 data-translate="footer-consumer-title">Recursos do Consumidor</h4>
+                    <ul class="footer-nav">
+                        <li><a href="index.html" data-translate="footer-home">🏠 Página Inicial</a></li>
+                        <li><a href="empresas.html" data-translate="footer-companies">🏢 Empresas Certificadas</a></li>
+                        <li><a href="sobre-nos.html" data-translate="footer-about">ℹ️ Sobre Nós</a></li>
+                        <li><a href="certificacao.html" data-translate="footer-certification-info">📋 Informações de Certificação</a></li>
+                    </ul>
+                </div>
+
+                <!-- Industrial Resources -->
+                <div class="footer-section">
+                    <h4 data-translate="footer-industrial-title">Recursos Industriais</h4>
+                    <ul class="footer-nav">
+                        <li><a href="javascript:void(0)" onclick="redirectToCertificationForm()" data-translate="footer-request-cert">📝 Solicitar Certificação</a></li>
+                        <li><a href="contacto.html" data-translate="footer-contact">📞 Contacto</a></li>
+                        <li><a href="empresas.html" data-translate="footer-gallery">🖼️ Galeria de Empresas</a></li>
+                        <li><a href="certificacao.html" data-translate="footer-process">⚙️ Processo de Certificação</a></li>
+                    </ul>
+                </div>
+
+                <!-- Direct Contact -->
+                <div class="footer-section">
+                    <h4 data-translate="footer-contact-title">Contacto Direto</h4>
+                    <div class="contact-info">
+                        <p><strong data-translate="footer-whatsapp-label">📱 WhatsApp:</strong><br>
+                        <a href="https://wa.me/972543080390" target="_blank">(+972) 54 308 0390</a></p>
+                        
+                        <p><strong data-translate="footer-email-label">📧 Email:</strong><br>
+                        <a href="mailto:portugal@w-kosher.com">portugal@w-kosher.com</a></p>
+                        
+                        <p><strong data-translate="footer-website-label">🌐 Website:</strong><br>
+                        <a href="https://w-kosher.com" target="_blank">w-kosher.com</a></p>
+                    </div>
+                </div>
             </div>
-            
-            <p class="copyright" data-translate="footer-copyright">© 2024 World Kosher B.M.MASHGICHIM. Todos os direitos reservados.</p>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="footer-bottom-left">
+                    <p data-translate="footer-copyright">© 2024 World Kosher B.M.MASHGICHIM. Todos os direitos reservados.</p>
+                </div>
+                <div class="footer-bottom-right">
+                    <a href="politica-privacidade.html" data-translate="footer-privacy">🔒 Política de Privacidade</a>
+                    <span> | </span>
+                    <a href="termos-uso.html" data-translate="footer-terms">📄 Termos de Uso</a>
+                </div>
+            </div>
         </div>
     </footer>
 
@@ -882,7 +1033,7 @@
                 'hero-subtitle': 'A principal autoridade em certificação kosher com mais de 1.000 produtos certificados em 15+ países ao redor do mundo',
                 'stat-companies': 'Empresas Certificadas',
                 'stat-countries': 'Países Atendidos',
-                'stat-rate': 'Taxa de Aprovação',
+                'stat-rate': 'Clientes Satisfeitos',
                 'btn-request': '🚀 Solicitar Certificação',
                 'btn-learn': '📋 Saiba Mais',
                 
@@ -914,9 +1065,25 @@
                 'btn-email': '📧 Enviar Email',
                 
                 // Footer
-                'footer-title': 'World Kosher B.M.MASHGICHIM',
-                'footer-desc': 'A principal autoridade em certificação kosher em Portugal, oferecendo serviços de qualidade internacional com reconhecimento em mais de 15 países ao redor do mundo.',
-                'footer-copyright': '© 2024 World Kosher B.M.MASHGICHIM. Todos os direitos reservados.'
+                'footer-company-title': 'World Kosher Portugal',
+                'footer-company-desc': 'A principal autoridade em certificação kosher em Portugal, oferecendo serviços de qualidade internacional com reconhecimento mundial.',
+                'footer-consumer-title': 'Recursos do Consumidor',
+                'footer-home': '🏠 Página Inicial',
+                'footer-companies': '🏢 Empresas Certificadas',
+                'footer-about': 'ℹ️ Sobre Nós',
+                'footer-certification-info': '📋 Informações de Certificação',
+                'footer-industrial-title': 'Recursos Industriais',
+                'footer-request-cert': '📝 Solicitar Certificação',
+                'footer-contact': '📞 Contacto',
+                'footer-gallery': '🖼️ Galeria de Empresas',
+                'footer-process': '⚙️ Processo de Certificação',
+                'footer-contact-title': 'Contacto Direto',
+                'footer-whatsapp-label': '📱 WhatsApp:',
+                'footer-email-label': '📧 Email:',
+                'footer-website-label': '🌐 Website:',
+                'footer-copyright': '© 2024 World Kosher B.M.MASHGICHIM. Todos os direitos reservados.',
+                'footer-privacy': '🔒 Política de Privacidade',
+                'footer-terms': '📄 Termos de Uso'
             },
             'en': {
                 // Navigation
@@ -932,7 +1099,7 @@
                 'hero-subtitle': 'The leading authority in kosher certification with over 1,000 certified products in 15+ countries worldwide',
                 'stat-companies': 'Certified Companies',
                 'stat-countries': 'Countries Served',
-                'stat-rate': 'Approval Rate',
+                'stat-rate': 'Satisfied Clients',
                 'btn-request': '🚀 Request Certification',
                 'btn-learn': '📋 Learn More',
                 
@@ -964,9 +1131,25 @@
                 'btn-email': '📧 Send Email',
                 
                 // Footer
-                'footer-title': 'World Kosher B.M.MASHGICHIM',
-                'footer-desc': 'The leading authority in kosher certification in Portugal, offering international quality services with recognition in over 15 countries worldwide.',
-                'footer-copyright': '© 2024 World Kosher B.M.MASHGICHIM. All rights reserved.'
+                'footer-company-title': 'World Kosher Portugal',
+                'footer-company-desc': 'The leading authority in kosher certification in Portugal, offering international quality services with worldwide recognition.',
+                'footer-consumer-title': 'Consumer Resources',
+                'footer-home': '🏠 Home Page',
+                'footer-companies': '🏢 Certified Companies',
+                'footer-about': 'ℹ️ About Us',
+                'footer-certification-info': '📋 Certification Information',
+                'footer-industrial-title': 'Industrial Resources',
+                'footer-request-cert': '📝 Request Certification',
+                'footer-contact': '📞 Contact',
+                'footer-gallery': '🖼️ Company Gallery',
+                'footer-process': '⚙️ Certification Process',
+                'footer-contact-title': 'Direct Contact',
+                'footer-whatsapp-label': '📱 WhatsApp:',
+                'footer-email-label': '📧 Email:',
+                'footer-website-label': '🌐 Website:',
+                'footer-copyright': '© 2024 World Kosher B.M.MASHGICHIM. All rights reserved.',
+                'footer-privacy': '🔒 Privacy Policy',
+                'footer-terms': '📄 Terms of Use'
             },
             'he': {
                 // Navigation
@@ -982,7 +1165,7 @@
                 'hero-subtitle': 'הרשות המובילה בהכשר כשרות עם למעלה מ-1,000 מוצרים מוכשרים ב-15+ מדינות ברחבי העולם',
                 'stat-companies': 'חברות מוכשרות',
                 'stat-countries': 'מדינות מוגשות',
-                'stat-rate': 'שיעור אישור',
+                'stat-rate': 'לקוחות מרוצים',
                 'btn-request': '🚀 בקש הכשרה',
                 'btn-learn': '📋 למד עוד',
                 
@@ -1014,9 +1197,25 @@
                 'btn-email': '📧 שלח אימייל',
                 
                 // Footer
-                'footer-title': 'World Kosher B.M.MASHGICHIM',
-                'footer-desc': 'הרשות המובילה בהכשר כשרות בפורטוגל, המציעה שירותי איכות בינלאומיים עם הכרה בלמעלה מ-15 מדינות ברחבי העולם.',
-                'footer-copyright': '© 2024 World Kosher B.M.MASHGICHIM. כל הזכויות שמורות.'
+                'footer-company-title': 'World Kosher פורטוגל',
+                'footer-company-desc': 'הרשות המובילה בהכשר כשרות בפורטוגל, המציעה שירותי איכות בינלאומיים עם הכרה עולמית.',
+                'footer-consumer-title': 'משאבים לצרכנים',
+                'footer-home': '🏠 דף הבית',
+                'footer-companies': '🏢 חברות מוכשרות',
+                'footer-about': 'ℹ️ אודותינו',
+                'footer-certification-info': '📋 מידע על הכשרה',
+                'footer-industrial-title': 'משאבים תעשייתיים',
+                'footer-request-cert': '📝 בקש הכשרה',
+                'footer-contact': '📞 צור קשר',
+                'footer-gallery': '🖼️ גלריית חברות',
+                'footer-process': '⚙️ תהליך הכשרה',
+                'footer-contact-title': 'יצירת קשר ישירה',
+                'footer-whatsapp-label': '📱 WhatsApp:',
+                'footer-email-label': '📧 אימייל:',
+                'footer-website-label': '🌐 אתר:',
+                'footer-copyright': '© 2024 World Kosher B.M.MASHGICHIM. כל הזכויות שמורות.',
+                'footer-privacy': '🔒 מדיניות פרטיות',
+                'footer-terms': '📄 תנאי שימוש'
             }
         };
 
@@ -1084,8 +1283,12 @@
                 document.documentElement.lang = langCode;
             }
             
-            // Store language preference
+            // Store language preference globally
             localStorage.setItem('preferred-language', langCode);
+            localStorage.setItem('world-kosher-language', langCode);
+            
+            // Dispatch custom event for language change
+            window.dispatchEvent(new CustomEvent('languageChanged', { detail: { language: langCode } }));
         }
 
         // Initialize language on page load
@@ -1160,6 +1363,21 @@
                 }
             });
         });
+
+        // Redirect to certification form based on language
+        function redirectToCertificationForm() {
+            const languageMap = {
+                'pt': 'solicitar-certificacao-pt.html',
+                'en': 'solicitar-certificacao-en.html', 
+                'he': 'solicitar-certificacao-he.html',
+                'es': 'solicitar-certificacao-pt.html', // Use Portuguese for Spanish
+                'ru': 'solicitar-certificacao-en.html', // Use English for Russian
+                'it': 'solicitar-certificacao-en.html'  // Use English for Italian
+            };
+            
+            const targetPage = languageMap[currentLanguage] || 'solicitar-certificacao-pt.html';
+            window.open(targetPage, '_blank');
+        }
     </script>
 </body>
 </html>

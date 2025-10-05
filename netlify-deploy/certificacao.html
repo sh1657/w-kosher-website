@@ -456,7 +456,7 @@
             <div class="top-bar-content">
                 <div>
                     <span style="margin-right: 20px;">📞 LINHA KOSHER: <a href="tel:+972543080390">(+972) 54 308 0390</a></span>
-                    <span>📧 <a href="mailto:Portugal@w-kosher.com">Portugal@w-kosher.com</a></span>
+                    <span>📧 <a href="mailto:portugal@w-kosher.com">portugal@w-kosher.com</a></span>
                 </div>
                 <div class="top-bar-right">
                     <!-- Language Selector -->
@@ -487,7 +487,7 @@
             <div class="header-content">
                 <!-- Logo -->
                 <div class="logo-section">
-                    <img src="images/logo.jpg" alt="World Kosher Logo">
+                    <img src="images/logo.png" alt="World Kosher Logo" onerror="this.src='images/logo.jpg'">
                     <div class="logo-text">
                         <h1>World Kosher</h1>
                         <span>B.M.MASHGICHIM</span>
@@ -495,16 +495,16 @@
                 </div>
                 
                 <!-- Navigation -->
-                <nav class="navigation">
-                    <a href="/" class="nav-link">🏠 Início</a>
-                    <a href="/certificacao" class="nav-link active">📋 Certificação</a>
-                    <a href="empresas.html" class="nav-link">🏢 Empresas</a>
-                    <a href="/about" class="nav-link">ℹ️ Sobre Nós</a>
-                    <a href="/contacto" class="nav-link">📞 Contacto</a>
+                <nav class="nav">
+                    <a href="index.html" data-translate="nav-home">🏠 Início</a>
+                    <a href="certificacao.html" class="active" data-translate="nav-certification">📋 Certificação</a>
+                    <a href="empresas.html" data-translate="nav-companies">🏢 Empresas</a>
+                    <a href="sobre-nos.html" data-translate="nav-about">ℹ️ Sobre Nós</a>
+                    <a href="contacto.html" data-translate="nav-contact">📞 Contacto</a>
                 </nav>
                 
                 <!-- CTA Button -->
-                <a href="https://wa.me/972543080390" target="_blank" class="cta-button">🚀 Solicitar Certificação</a>
+                <a href="#" onclick="redirectToCertificationForm()" class="cta-button">🚀 Solicitar Certificação</a>
             </div>
         </div>
     </header>
@@ -518,22 +518,22 @@
             <!-- Stats -->
             <div class="stats">
                 <div class="stat-item">
-                    <span class="stat-number">8+</span>
-                    <span class="stat-label">Empresas Certificadas</span>
+                    <span class="stat-number">98%</span>
+                    <span class="stat-label">Taxa de Aprovação</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">1000+</span>
+                    <span class="stat-label">Produtos Certificados</span>
                 </div>
                 <div class="stat-item">
                     <span class="stat-number">15+</span>
                     <span class="stat-label">Países Atendidos</span>
                 </div>
-                <div class="stat-item">
-                    <span class="stat-number">100%</span>
-                    <span class="stat-label">Taxa de Aprovação</span>
-                </div>
             </div>
             
             <!-- Buttons -->
             <div class="hero-buttons">
-                <a href="https://wa.me/972543080390" target="_blank" class="btn-primary">🚀 Solicitar Certificação</a>
+                <a href="#" onclick="redirectToCertificationForm()" class="btn-primary">🚀 Solicitar Certificação</a>
                 <a href="empresas.html" class="btn-secondary">🔍 Ver Empresas</a>
             </div>
         </div>
@@ -545,7 +545,9 @@
             <!-- Section 1 -->
             <div class="content-section">
                 <h2>📋 O que é Certificação Kosher?</h2>
-                <p>A certificação kosher é um processo rigoroso que garante que os produtos alimentares foram preparados de acordo com as leis dietéticas judaicas (kashrut). A World Kosher B.M.MASHGICHIM é uma autoridade certificadora reconhecida internacionalmente.</p>
+                <p>A certificação kosher é um processo rigoroso que garante que os produtos alimentares foram preparados de acordo com as leis dietéticas judaicas (kashrut), determinadas pelo Shulchan Aruch - o código de leis do judaísmo. A World Kosher B.M.MASHGICHIM é uma autoridade certificadora reconhecida internacionalmente, com mais de 20 anos de experiência em Portugal.</p>
+
+                <p><strong>Somos uma agência capacitada para atribuir às indústrias do setor de alimentação um selo de aprovação kosher.</strong> O trabalho de aprovação para um certificado kosher analisa se os ingredientes utilizados, o método de produção incluindo as máquinas e todo o processo food service envolvido, estão em conformidade com as leis que regem a alimentação judaica.</p>
 
                 <h3>🛡️ Benefícios da Certificação</h3>
                 <ul>
@@ -554,16 +556,24 @@
                     <li>✓ Garantia de qualidade e pureza dos produtos</li>
                     <li>✓ Vantagem competitiva no mercado de alimentos premium</li>
                     <li>✓ Confiança do consumidor judeu ortodoxo</li>
+                    <li>✓ Credibilidade máxima no mercado internacional</li>
+                    <li>✓ Avaliação média de certificação: 9,7 em 10</li>
                 </ul>
                 
-                <h3>📋 Requisitos Básicos</h3>
+                <h3>📋 Requisitos Básicos para Kashrut</h3>
                 <ul>
                     <li>✓ Ingredientes devem ser kosher certificados</li>
                     <li>✓ Equipamentos devem ser kosherizados quando necessário</li>
-                    <li>✓ Supervisão contínua durante a produção</li>
-                    <li>✓ Separação de produtos lácteos e de carne</li>
+                    <li>✓ Supervisão contínua durante a produção por mashgichim qualificados</li>
+                    <li>✓ Separação rigorosa de produtos lácteos e de carne</li>
                     <li>✓ Documentação completa de todos os processos</li>
+                    <li>✓ Conformidade total com as leis de kashrut</li>
                 </ul>
+
+                <div style="background: #059669; color: white; padding: 20px; border-radius: 12px; margin-top: 25px;">
+                    <h4 style="color: white; margin-bottom: 15px;">🌟 Compromisso com a Qualidade</h4>
+                    <p style="margin: 0;">Com 98% de certificações aprovadas e avaliação média de 9,7 em 10, demonstramos nosso compromisso inabalável com a qualidade e segurança. Nossa experiência de mais de 20 anos em Portugal nos posiciona como líderes em certificação alimentar, segurança, saúde e necessidades especiais.</p>
+                </div>
             </div>
 
             <!-- Section 2 -->
@@ -604,8 +614,8 @@
                         <p>Certificação especializada para azeites extra virgem, óleos vegetais e produtos derivados.</p>
                     </div>
                     <div class="card-item">
-                        <h4>🐟 Produtos do Mar</h4>
-                        <p>Certificação de peixes kosher, conservas e produtos processados do mar.</p>
+                        <h4>🐟 Peixes Kosher</h4>
+                        <p>Certificação de peixes com escamas e barbatanas kosher, conservas de peixe conforme kashrut.</p>
                     </div>
                     <div class="card-item">
                         <h4>🍹 Bebidas</h4>
@@ -625,6 +635,50 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Nossa Equipa Section -->
+            <div class="content-section">
+                <h2>👥 Nossa Equipa de Especialistas</h2>
+                <p>A World Kosher B.M.MASHGICHIM conta com uma equipa dedicada e altamente qualificada, com mais de 20 anos de experiência em certificação kosher em Portugal. Nossa referência em excelência garante que seus produtos atendam aos mais altos padrões de qualidade e segurança.</p>
+
+                <h3>🎓 Qualificações da Equipa</h3>
+                <div class="grid-2">
+                    <div>
+                        <h4>🔍 Mashgichim Certificados</h4>
+                        <ul>
+                            <li>✓ Formação rabínica em leis de kashrut</li>
+                            <li>✓ Conhecimento profundo do Shulchan Aruch</li>
+                            <li>✓ Experiência em supervisão industrial</li>
+                            <li>✓ Especialização em diferentes tipos de produtos</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>⚖️ Expertise Técnica</h4>
+                        <ul>
+                            <li>✓ Análise de ingredientes e aditivos</li>
+                            <li>✓ Inspeção de equipamentos e instalações</li>
+                            <li>✓ Supervisão de processos produtivos</li>
+                            <li>✓ Controlo de qualidade kosher contínuo</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>🌍 Nossa Missão e Valores</h3>
+                <div class="grid-2">
+                    <div>
+                        <h4>🎯 Nossa Missão</h4>
+                        <p>Autenticar e atestar com precisão a condição de kashrut nos alimentos industrializados, para que mais pessoas tenham acesso e possam cumprir as leis que regem a alimentação judaica.</p>
+                    </div>
+                    <div>
+                        <h4>💎 Nossos Valores</h4>
+                        <p>As leis kosher são parte crucial de uma vida abrangente de integridade. Essa crença nos orienta em tudo o que fazemos e é a base sobre a qual nossa organização está estabelecida.</p>
+                    </div>
+                </div>
+
+                <div style="background: #1e3a8a; color: white; padding: 20px; border-radius: 12px; margin-top: 25px;">
+                    <h4 style="color: #f59e0b; margin-bottom: 15px;">🏆 Impacto Positivo da Certificação</h4>
+                    <p style="margin: 0;">Um selo da World Kosher irá impactar positivamente a sua marca! Seus produtos serão considerados de qualidade máxima de mercado, muito acima dos seus concorrentes. O mais profundo nível de confiança entre fabricantes, produtores e consumidores é a essência do que somos.</p>
+                </div>
 
             <!-- Section 4 -->
             <div class="content-section">
@@ -667,7 +721,7 @@
                     </div>
                     <div class="contact-item">
                         <h3>📧 Email Oficial</h3>
-                        <a href="mailto:Portugal@w-kosher.com">Portugal@w-kosher.com</a>
+                        <a href="mailto:portugal@w-kosher.com">portugal@w-kosher.com</a>
                     </div>
                 </div>
                 
@@ -682,22 +736,75 @@
                     </ul>
                 </div>
                 
-                <a href="https://wa.me/972543080390" target="_blank" class="btn-primary" style="font-size: 1.2rem;">🚀 Solicitar Certificação Agora</a>
+                <a href="#" onclick="redirectToCertificationForm()" class="btn-primary" style="font-size: 1.2rem;">🚀 Solicitar Certificação Agora</a>
             </div>
 
             <!-- Footer -->
-            <div class="footer">
-                <h3>World Kosher B.M.MASHGICHIM</h3>
-                <p>A principal autoridade em certificação kosher em Portugal, oferecendo serviços de qualidade internacional com reconhecimento em mais de 15 países.</p>
+            <footer class="footer">
+                <div class="container">
+                    <div class="footer-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; margin-bottom: 40px;">
+                        <!-- Company Info -->
+                        <div class="footer-section">
+                            <h3 style="color: #f59e0b; margin-bottom: 20px; font-size: 1.4rem;">World Kosher Portugal</h3>
+                            <p style="color: rgba(255,255,255,0.8); margin-bottom: 20px; line-height: 1.6;">A principal autoridade em certificação kosher em Portugal, oferecendo serviços de qualidade internacional com reconhecimento mundial.</p>
+                            <div style="display: flex; gap: 15px; margin-top: 20px;">
+                                <a href="https://www.facebook.com/profile.php?id=61575501917315" target="_blank" aria-label="Facebook" style="font-size: 1.5rem; transition: transform 0.3s ease;">📘</a>
+                                <a href="https://wa.me/972543080390" target="_blank" aria-label="WhatsApp" style="font-size: 1.5rem; transition: transform 0.3s ease;">📱</a>
+                                <a href="mailto:portugal@w-kosher.com" aria-label="Email" style="font-size: 1.5rem; transition: transform 0.3s ease;">📧</a>
+                            </div>
+                        </div>
 
-                <div class="footer-links">
-                    <a href="https://www.facebook.com/profile.php?id=61575501917315" target="_blank">📘 Facebook</a>
-                    <a href="https://wa.me/972543080390" target="_blank">📱 WhatsApp</a>
-                    <a href="mailto:Portugal@w-kosher.com">📧 Email</a>
+                        <!-- Consumer Resources -->
+                        <div class="footer-section">
+                            <h4 style="color: #e5e7eb; margin-bottom: 15px; font-size: 1.1rem;">Recursos do Consumidor</h4>
+                            <ul style="list-style: none; padding: 0;">
+                                <li style="margin-bottom: 8px;"><a href="index.html" style="color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.3s ease; font-size: 0.9rem;">🏠 Página Inicial</a></li>
+                                <li style="margin-bottom: 8px;"><a href="empresas.html" style="color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.3s ease; font-size: 0.9rem;">🏢 Empresas Certificadas</a></li>
+                                <li style="margin-bottom: 8px;"><a href="sobre-nos.html" style="color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.3s ease; font-size: 0.9rem;">ℹ️ Sobre Nós</a></li>
+                                <li style="margin-bottom: 8px;"><a href="certificacao.html" style="color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.3s ease; font-size: 0.9rem;">📋 Informações de Certificação</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Industrial Resources -->
+                        <div class="footer-section">
+                            <h4 style="color: #e5e7eb; margin-bottom: 15px; font-size: 1.1rem;">Recursos Industriais</h4>
+                            <ul style="list-style: none; padding: 0;">
+                                <li style="margin-bottom: 8px;"><a href="javascript:void(0)" onclick="redirectToCertificationForm()" style="color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.3s ease; font-size: 0.9rem;">📝 Solicitar Certificação</a></li>
+                                <li style="margin-bottom: 8px;"><a href="contacto.html" style="color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.3s ease; font-size: 0.9rem;">📞 Contacto</a></li>
+                                <li style="margin-bottom: 8px;"><a href="empresas.html" style="color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.3s ease; font-size: 0.9rem;">🖼️ Galeria de Empresas</a></li>
+                                <li style="margin-bottom: 8px;"><a href="certificacao.html" style="color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.3s ease; font-size: 0.9rem;">⚙️ Processo de Certificação</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Direct Contact -->
+                        <div class="footer-section">
+                            <h4 style="color: #e5e7eb; margin-bottom: 15px; font-size: 1.1rem;">Contacto Direto</h4>
+                            <div>
+                                <p style="color: rgba(255,255,255,0.8); margin-bottom: 15px;"><strong>📱 WhatsApp:</strong><br>
+                                <a href="https://wa.me/972543080390" target="_blank" style="color: #f59e0b; text-decoration: none;">(+972) 54 308 0390</a></p>
+                                
+                                <p style="color: rgba(255,255,255,0.8); margin-bottom: 15px;"><strong>📧 Email:</strong><br>
+                                <a href="mailto:portugal@w-kosher.com" style="color: #f59e0b; text-decoration: none;">portugal@w-kosher.com</a></p>
+                                
+                                <p style="color: rgba(255,255,255,0.8); margin-bottom: 15px;"><strong>🌐 Website:</strong><br>
+                                <a href="https://w-kosher.com" target="_blank" style="color: #f59e0b; text-decoration: none;">w-kosher.com</a></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Footer Bottom -->
+                    <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; margin-top: 40px; flex-wrap: wrap; gap: 20px;">
+                        <div>
+                            <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem; margin: 0;">© 2024 World Kosher B.M.MASHGICHIM. Todos os direitos reservados.</p>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <a href="politica-privacidade.html" style="color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.9rem; transition: color 0.3s ease;">🔒 Política de Privacidade</a>
+                            <span style="color: rgba(255,255,255,0.7);"> | </span>
+                            <a href="termos-uso.html" style="color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.9rem; transition: color 0.3s ease;">📄 Termos de Uso</a>
+                        </div>
+                    </div>
                 </div>
-                
-                <p class="copyright">© 2024 World Kosher B.M.MASHGICHIM. Todos os direitos reservados.</p>
-            </div>
+            </footer>
         </div>
     </div>
 
@@ -724,6 +831,31 @@
                 document.getElementById('languageDropdown').style.display = 'none';
             }
         });
+
+        // Redirect to certification form based on language
+        let currentLanguage = 'pt'; // Default language
+        
+        // Initialize language from localStorage
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLanguage = localStorage.getItem('preferred-language') || localStorage.getItem('world-kosher-language');
+            if (savedLanguage) {
+                currentLanguage = savedLanguage;
+            }
+        });
+        
+        function redirectToCertificationForm() {
+            const languageMap = {
+                'pt': 'solicitar-certificacao-pt.html',
+                'en': 'solicitar-certificacao-en.html', 
+                'he': 'solicitar-certificacao-he.html',
+                'es': 'solicitar-certificacao-pt.html',
+                'ru': 'solicitar-certificacao-en.html',
+                'it': 'solicitar-certificacao-en.html'
+            };
+            
+            const targetPage = languageMap[currentLanguage] || 'solicitar-certificacao-pt.html';
+            window.open(targetPage, '_blank');
+        }
     </script>
 </body>
 </html>

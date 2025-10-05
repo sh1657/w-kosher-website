@@ -10,7 +10,7 @@
 ## 📞 Contato
 
 - **WhatsApp**: [+972 54 308 0390](https://wa.me/972543080390)
-- **Email**: [Portugal@w-kosher.com](mailto:Portugal@w-kosher.com)
+- **Email**: [portugal@w-kosher.com](mailto:portugal@w-kosher.com)
 - **Facebook**: [World Kosher Facebook](https://www.facebook.com/profile.php?id=61575501917315)
 
 ## 🌍 Idiomas Suportados
