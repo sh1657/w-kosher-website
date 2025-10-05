@@ -75,6 +75,13 @@
             display: none;
         }
         
+        @media (max-width: 768px) {
+            .language-dropdown {
+                right: -20px;
+                min-width: 180px;
+            }
+        }
+        
         .language-option {
             padding: 12px 16px;
             cursor: pointer;
@@ -100,6 +107,13 @@
             position: sticky;
             top: 44px;
             z-index: 1000;
+        }
+        
+        @media (max-width: 768px) {
+            .main-header {
+                position: relative;
+                top: 0;
+            }
         }
         
         .header-content {
@@ -184,12 +198,148 @@
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
-            color: white;
-            padding: 100px 20px;
-            text-align: center;
             position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            color: white;
             overflow: hidden;
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+        }
+
+        .hero-image-slider {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .hero-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0;
+            transition: opacity 2s ease-in-out;
+        }
+
+        .hero-slide.active {
+            opacity: 1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.8) 0%, rgba(59, 130, 246, 0.6) 100%);
+            z-index: -1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Companies Showcase */
+        .companies-showcase {
+            background: #f8fafc;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .companies-showcase h2 {
+            font-size: 2.5rem;
+            color: #1f2937;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .companies-showcase p {
+            font-size: 1.2rem;
+            color: #6b7280;
+            margin-bottom: 50px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .companies-slider {
+            margin-bottom: 40px;
+        }
+
+        .company-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .company-logo {
+            background: white;
+            padding: 20px;
+            border-radius: 16px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+            min-width: 150px;
+        }
+
+        .company-logo:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .company-logo img {
+            width: 100px;
+            height: 60px;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        .company-logo h4 {
+            color: #1f2937;
+            font-size: 0.9rem;
+            margin: 0;
+            font-weight: 600;
+        }
+
+        .companies-cta {
+            margin-top: 40px;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #1e3a8a;
+            border: 2px solid #1e3a8a;
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-outline:hover {
+            background: #1e3a8a;
+            color: white;
         }
         
         .hero-content {
@@ -434,12 +584,39 @@
         
         /* Responsive */
         @media (max-width: 768px) {
+            .main-header {
+                position: relative;
+                top: 0;
+            }
+            
+            .language-dropdown {
+                right: -20px;
+                min-width: 180px;
+            }
+            
             .hero h1 {
                 font-size: 2.8rem;
             }
             
             .hero p {
                 font-size: 1.1rem;
+            }
+            
+            .companies-showcase h2 {
+                font-size: 2rem;
+            }
+            
+            .company-logos {
+                gap: 20px;
+            }
+            
+            .company-logo {
+                min-width: 120px;
+            }
+            
+            .company-logo img {
+                width: 80px;
+                height: 50px;
             }
             
             .stats {
@@ -517,7 +694,7 @@
             <div class="header-content">
                 <!-- Logo -->
                 <div class="logo-section">
-                    <img src="https://wkoshercom.wordpress.com/wp-content/uploads/2024/06/4-removebg-preview.png" alt="World Kosher Logo">
+                    <img src="images/logo.jpg" alt="World Kosher Logo">
                     <div class="logo-text">
                         <h1>World Kosher</h1>
                         <span>B.M.MASHGICHIM</span>
@@ -542,32 +719,73 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="hero-image-slider">
+                <div class="hero-slide active" style="background-image: url('images/hero/hero1.jpg')"></div>
+                <div class="hero-slide" style="background-image: url('images/hero/hero2.jpg')"></div>
+                <div class="hero-slide" style="background-image: url('images/hero/hero3.jpg')"></div>
+                <div class="hero-slide" style="background-image: url('images/hero/hero4.jpg')"></div>
+                <div class="hero-slide" style="background-image: url('images/hero/hero5.jpg')"></div>
+            </div>
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="container hero-content">
+            <h1 data-translate="hero-title">🏆 Certificação Kosher<br><span class="orange-text">Oficial em Portugal</span></h1>
+            <p data-translate="hero-subtitle">A principal autoridade em certificação kosher com mais de 1.000 produtos certificados em 15+ países ao redor do mundo</p>
+            
+            <!-- Stats -->
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-number">8+</span>
+                    <span class="stat-label" data-translate="stat-companies">Empresas Certificadas</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">15+</span>
+                    <span class="stat-label" data-translate="stat-countries">Países Atendidos</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label" data-translate="stat-rate">Taxa de Aprovação</span>
+                </div>
+            </div>
+            
+            <!-- Buttons -->
+            <div class="hero-buttons">
+                <a href="https://wa.me/972543080390" target="_blank" class="btn-primary" data-translate="btn-request">🚀 Solicitar Certificação</a>
+                <a href="certificacao.html" class="btn-secondary" data-translate="btn-learn">📋 Saiba Mais</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certified Companies Showcase -->
+    <section class="companies-showcase">
         <div class="container">
-            <div class="hero-content">
-                <h1 data-translate="hero-title">🏆 Certificação Kosher<br><span class="orange-text">Oficial em Portugal</span></h1>
-                <p data-translate="hero-subtitle">A principal autoridade em certificação kosher com mais de 1.000 produtos certificados em 15+ países ao redor do mundo</p>
-                
-                <!-- Stats -->
-                <div class="stats">
-                    <div class="stat-item">
-                        <span class="stat-number">8+</span>
-                        <span class="stat-label" data-translate="stat-companies">Empresas Certificadas</span>
+            <h2 data-translate="companies-title">Empresas Certificadas de Confiança</h2>
+            <p data-translate="companies-subtitle">Junte-se a marcas reconhecidas mundialmente que confiam na nossa certificação kosher</p>
+            
+            <div class="companies-slider">
+                <div class="company-logos">
+                    <div class="company-logo">
+                        <img src="images/companies/atlantic.jpg" alt="Atlantic" style="border-radius: 8px;">
+                        <h4>Atlantic</h4>
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-number">15+</span>
-                        <span class="stat-label" data-translate="stat-countries">Países Atendidos</span>
+                    <div class="company-logo">
+                        <img src="images/companies/frutissima.jpg" alt="Frutíssima" style="border-radius: 8px;">
+                        <h4>Frutíssima</h4>
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-number">100%</span>
-                        <span class="stat-label" data-translate="stat-rate">Taxa de Aprovação</span>
+                    <div class="company-logo">
+                        <img src="images/companies/innoliva.jpg" alt="Innoliva" style="border-radius: 8px;">
+                        <h4>Innoliva</h4>
+                    </div>
+                    <div class="company-logo">
+                        <img src="images/companies/superbock.jpg" alt="Super Bock" style="border-radius: 8px;">
+                        <h4>Super Bock</h4>
                     </div>
                 </div>
-                
-                <!-- Buttons -->
-                <div class="hero-buttons">
-                    <a href="https://wa.me/972543080390" target="_blank" class="btn-primary" data-translate="btn-request">🚀 Solicitar Certificação</a>
-                    <a href="certificacao.html" class="btn-secondary" data-translate="btn-learn">📋 Saiba Mais</a>
-                </div>
+            </div>
+            
+            <div class="companies-cta">
+                <a href="empresas.html" class="btn-outline" data-translate="btn-view-companies">🔍 Ver Todas as Empresas</a>
             </div>
         </div>
     </section>
@@ -668,6 +886,11 @@
                 'btn-request': '🚀 Solicitar Certificação',
                 'btn-learn': '📋 Saiba Mais',
                 
+                // Companies Showcase
+                'companies-title': 'Empresas Certificadas de Confiança',
+                'companies-subtitle': 'Junte-se a marcas reconhecidas mundialmente que confiam na nossa certificação kosher',
+                'btn-view-companies': '🔍 Ver Todas as Empresas',
+                
                 // Features
                 'features-title': 'Por que Escolher a World Kosher?',
                 'features-subtitle': 'Somos a autoridade líder em certificação kosher com reconhecimento internacional e processos rigorosos de qualidade',
@@ -713,6 +936,11 @@
                 'btn-request': '🚀 Request Certification',
                 'btn-learn': '📋 Learn More',
                 
+                // Companies Showcase
+                'companies-title': 'Trusted Certified Companies',
+                'companies-subtitle': 'Join globally recognized brands that trust our kosher certification',
+                'btn-view-companies': '🔍 View All Companies',
+                
                 // Features
                 'features-title': 'Why Choose World Kosher?',
                 'features-subtitle': 'We are the leading authority in kosher certification with international recognition and rigorous quality processes',
@@ -755,8 +983,13 @@
                 'stat-companies': 'חברות מוכשרות',
                 'stat-countries': 'מדינות מוגשות',
                 'stat-rate': 'שיעור אישור',
-                'btn-request': '🚀 בקש הכשר',
+                'btn-request': '🚀 בקש הכשרה',
                 'btn-learn': '📋 למד עוד',
+                
+                // Companies Showcase
+                'companies-title': 'חברות מוכשרות מהימנות',
+                'companies-subtitle': 'הצטרפו למותגים מוכרים עולמית הסומכים על ההכשר שלנו',
+                'btn-view-companies': '🔍 צפה בכל החברות',
                 
                 // Features
                 'features-title': 'למה לבחור בWorld Kosher?',
@@ -886,7 +1119,25 @@
                 
                 changeLanguage(savedLang);
             }
+            
+            // Initialize hero image slider
+            initHeroSlider();
         });
+
+        // Hero Image Slider
+        function initHeroSlider() {
+            const slides = document.querySelectorAll('.hero-slide');
+            let currentSlide = 0;
+            
+            function nextSlide() {
+                slides[currentSlide].classList.remove('active');
+                currentSlide = (currentSlide + 1) % slides.length;
+                slides[currentSlide].classList.add('active');
+            }
+            
+            // Change slide every 4 seconds (faster for more images)
+            setInterval(nextSlide, 4000);
+        }
 
         // Close dropdown when clicking outside
         document.addEventListener('click', function(event) {
