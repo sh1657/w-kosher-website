@@ -537,6 +537,77 @@
             flex-wrap: wrap;
         }
         
+        /* Team Section */
+        .team-section {
+            background: #f8fafc;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .team-section h2 {
+            font-size: 2.5rem;
+            color: #1e3a8a;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .team-subtitle {
+            font-size: 1.2rem;
+            color: #6b7280;
+            margin-bottom: 60px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .team-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 16px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid #f1f5f9;
+        }
+        
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .team-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .team-card h3 {
+            color: #1e3a8a;
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .team-card .role {
+            color: #f59e0b;
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+        
+        .team-card p {
+            line-height: 1.6;
+            color: #6b7280;
+        }
+        
         /* Footer */
         .footer {
             background: #1f2937;
@@ -823,11 +894,11 @@
             <!-- Stats -->
             <div class="stats">
                 <div class="stat-item">
-                    <span class="stat-number">8+</span>
+                    <span class="stat-number">100+</span>
                     <span class="stat-label" data-translate="stat-companies">Empresas Certificadas</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number">15+</span>
+                    <span class="stat-number">25+</span>
                     <span class="stat-label" data-translate="stat-countries">Países Atendidos</span>
                 </div>
                 <div class="stat-item">
@@ -930,6 +1001,37 @@
                     <span class="feature-icon">💰</span>
                     <h3 data-translate="feature-investment">Investimento Acessível</h3>
                     <p data-translate="feature-investment-desc">Preços competitivos com retorno garantido através do acesso ao mercado kosher mundial</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="container">
+            <h2 data-translate="team-title">Nossa Equipe Especializada</h2>
+            <p class="team-subtitle" data-translate="team-subtitle">Profissionais certificados com anos de experiência em supervisão kosher e leis judaicas</p>
+            
+            <div class="team-grid">
+                <div class="team-card">
+                    <span class="team-icon">👨‍🎓</span>
+                    <h3 data-translate="team-coordinator-name">Coordenador Rabínico</h3>
+                    <div class="role" data-translate="team-coordinator-role">Responsável Técnico Principal</div>
+                    <p data-translate="team-coordinator-desc">Especialista em leis kosher com mais de 15 anos de experiência. Responsável pela aprovação final de todas as certificações e supervisão geral dos processos.</p>
+                </div>
+                
+                <div class="team-card">
+                    <span class="team-icon">🔍</span>
+                    <h3 data-translate="team-inspector-name">Mashgiach Sênior</h3>
+                    <div class="role" data-translate="team-inspector-role">Inspetor de Campo Certificado</div>
+                    <p data-translate="team-inspector-desc">Responsável pelas inspeções in loco, verificação de ingredientes e acompanhamento dos processos produtivos nas empresas certificadas.</p>
+                </div>
+                
+                <div class="team-card">
+                    <span class="team-icon">📋</span>
+                    <h3 data-translate="team-consultant-name">Consultor Técnico</h3>
+                    <div class="role" data-translate="team-consultant-role">Especialista em Processos</div>
+                    <p data-translate="team-consultant-desc">Especialista em análise de ingredientes e processos industriais. Oferece consultoria técnica personalizada para adaptações necessárias.</p>
                 </div>
             </div>
         </div>
@@ -1060,6 +1162,19 @@
                 'feature-investment': 'Investimento Acessível',
                 'feature-investment-desc': 'Preços competitivos com retorno garantido através do acesso ao mercado kosher mundial',
                 
+                // Team Section
+                'team-title': 'Nossa Equipe Especializada',
+                'team-subtitle': 'Profissionais certificados com anos de experiência em supervisão kosher e leis judaicas',
+                'team-coordinator-name': 'Coordenador Rabínico',
+                'team-coordinator-role': 'Responsável Técnico Principal',
+                'team-coordinator-desc': 'Especialista em leis kosher com mais de 15 anos de experiência. Responsável pela aprovação final de todas as certificações e supervisão geral dos processos.',
+                'team-inspector-name': 'Mashgiach Sênior',
+                'team-inspector-role': 'Inspetor de Campo Certificado',
+                'team-inspector-desc': 'Responsável pelas inspeções in loco, verificação de ingredientes e acompanhamento dos processos produtivos nas empresas certificadas.',
+                'team-consultant-name': 'Consultor Técnico',
+                'team-consultant-role': 'Especialista em Processos',
+                'team-consultant-desc': 'Especialista em análise de ingredientes e processos industriais. Oferece consultoria técnica personalizada para adaptações necessárias.',
+                
                 // CTA Section
                 'cta-title': 'Pronto para Certificar seus Produtos?',
                 'cta-subtitle': 'Entre em contacto connosco hoje mesmo e descubra como a certificação kosher pode expandir seu mercado e aumentar suas vendas',
@@ -1098,7 +1213,7 @@
                 
                 // Hero Section
                 'hero-title': '🏆 Official Kosher<br><span class="orange-text">Certification in Portugal</span>',
-                'hero-subtitle': 'The leading authority in kosher certification with over 1,000 certified products in 15+ countries worldwide',
+                'hero-subtitle': 'The leading authority in kosher certification with over 1,000 certified products in 25+ countries worldwide',
                 'stat-companies': 'Certified Companies',
                 'stat-countries': 'Countries Served',
                 'stat-rate': 'Satisfied Clients',
@@ -1114,7 +1229,7 @@
                 'features-title': 'Why Choose World Kosher?',
                 'features-subtitle': 'We are the leading authority in kosher certification with international recognition and rigorous quality processes',
                 'feature-international': 'International Recognition',
-                'feature-international-desc': 'Certification accepted in over 15 countries, including Israel, United States, Europe and Latin America',
+                'feature-international-desc': 'Certification accepted in over 25 countries, including Israel, United States, Europe and Latin America',
                 'feature-agile': 'Agile Process',
                 'feature-agile-desc': 'Certification in 4-8 weeks with 24/6 monitoring and specialized support in Portuguese',
                 'feature-reliable': 'Maximum Reliability',
@@ -1164,7 +1279,7 @@
                 
                 // Hero Section
                 'hero-title': '🏆 הכשר כשרות<br><span class="orange-text">רשמי בפורטוגל</span>',
-                'hero-subtitle': 'הרשות המובילה בהכשר כשרות עם למעלה מ-1,000 מוצרים מוכשרים ב-15+ מדינות ברחבי העולם',
+                'hero-subtitle': 'הרשות המובילה בהכשר כשרות עם למעלה מ-1,000 מוצרים מוכשרים ב-25+ מדינות ברחבי העולם',
                 'stat-companies': 'חברות מוכשרות',
                 'stat-countries': 'מדינות מוגשות',
                 'stat-rate': 'לקוחות מרוצים',
@@ -1180,7 +1295,7 @@
                 'features-title': 'למה לבחור בWorld Kosher?',
                 'features-subtitle': 'אנחנו הרשות המובילה בהכשר כשרות עם הכרה בינלאומית ותהליכי איכות קפדניים',
                 'feature-international': 'הכרה בינלאומית',
-                'feature-international-desc': 'הכשר מקובל בלמעלה מ-15 מדינות, כולל ישראל, ארצות הברית, אירופה ואמריקה הלטינית',
+                'feature-international-desc': 'הכשר מקובל בלמעלה מ-25 מדינות, כולל ישראל, ארצות הברית, אירופה ואמריקה הלטינית',
                 'feature-agile': 'תהליך זריז',
                 'feature-agile-desc': 'הכשר תוך 4-8 שבועות עם מעקב 24/6 ותמיכה מתמחה בפורטוגזית',
                 'feature-reliable': 'אמינות מקסימלית',
