@@ -705,6 +705,21 @@
             // Update active state
             document.querySelectorAll('.language-option').forEach(opt => opt.classList.remove('active'));
             event.target.closest('.language-option').classList.add('active');
+            
+            // Map language names to codes
+            const languageMap = {
+                'Português': 'pt',
+                'English': 'en',
+                'עברית': 'he',
+                'Español': 'es',
+                'Русский': 'ru',
+                'Italiano': 'it'
+            };
+            
+            const langCode = languageMap[lang] || 'pt';
+            
+            // Change page content
+            changeLanguage(langCode);
         }
 
         // Close dropdown when clicking outside

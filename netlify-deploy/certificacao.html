@@ -518,29 +518,29 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1>📋 Certificação Kosher<br><span class="orange-text">Oficial em Portugal</span></h1>
-            <p>A principal autoridade em certificação kosher com mais de 1.000 produtos certificados em 25+ países</p>
+            <h1 data-translate="cert-hero-title">📋 Certificação Kosher<br><span class="orange-text">Oficial em Portugal</span></h1>
+            <p data-translate="cert-hero-subtitle">A principal autoridade em certificação kosher com mais de 1.000 produtos certificados em 25+ países</p>
             
             <!-- Stats -->
             <div class="stats">
                 <div class="stat-item">
                     <span class="stat-number">100%</span>
-                    <span class="stat-label">Taxa de Aprovação</span>
+                    <span class="stat-label" data-translate="cert-stat-approval">Taxa de Aprovação</span>
                 </div>
                 <div class="stat-item">
                     <span class="stat-number">1000+</span>
-                    <span class="stat-label">Produtos Certificados</span>
+                    <span class="stat-label" data-translate="cert-stat-products">Produtos Certificados</span>
                 </div>
                 <div class="stat-item">
                     <span class="stat-number">25+</span>
-                    <span class="stat-label">Países Atendidos</span>
+                    <span class="stat-label" data-translate="cert-stat-countries">Países Atendidos</span>
                 </div>
             </div>
             
             <!-- Buttons -->
             <div class="hero-buttons">
-                <a href="#" onclick="redirectToCertificationForm()" class="btn-primary">🚀 Solicitar Certificação</a>
-                <a href="empresas.html" class="btn-secondary">🔍 Ver Empresas</a>
+                <a href="#" onclick="redirectToCertificationForm()" class="btn-primary" data-translate="cert-btn-request">🚀 Solicitar Certificação</a>
+                <a href="empresas.html" class="btn-secondary" data-translate="cert-btn-companies">🔍 Ver Empresas</a>
             </div>
         </div>
     </section>
@@ -826,7 +826,15 @@
                 'nav-certification': '📋 Certificação',
                 'nav-companies': '🏢 Empresas',
                 'nav-about': 'ℹ️ Sobre Nós',
-                'nav-contact': '📞 Contacto'
+                'nav-contact': '📞 Contacto',
+                // Hero Section
+                'cert-hero-title': '📋 Certificação Kosher<br><span class="orange-text">Oficial em Portugal</span>',
+                'cert-hero-subtitle': 'A principal autoridade em certificação kosher com mais de 1.000 produtos certificados em 25+ países',
+                'cert-stat-approval': 'Taxa de Aprovação',
+                'cert-stat-products': 'Produtos Certificados',
+                'cert-stat-countries': 'Países Atendidos',
+                'cert-btn-request': '🚀 Solicitar Certificação',
+                'cert-btn-companies': '🔍 Ver Empresas'
             },
             'en': {
                 // Navigation
@@ -834,7 +842,15 @@
                 'nav-certification': '📋 Certification',
                 'nav-companies': '🏢 Companies',
                 'nav-about': 'ℹ️ About Us',
-                'nav-contact': '📞 Contact'
+                'nav-contact': '📞 Contact',
+                // Hero Section
+                'cert-hero-title': '📋 Kosher Certification<br><span class="orange-text">Official in Portugal</span>',
+                'cert-hero-subtitle': 'The leading authority in kosher certification with over 1,000 certified products in 25+ countries',
+                'cert-stat-approval': 'Approval Rate',
+                'cert-stat-products': 'Certified Products',
+                'cert-stat-countries': 'Countries Served',
+                'cert-btn-request': '🚀 Request Certification',
+                'cert-btn-companies': '🔍 View Companies'
             },
             'he': {
                 // Navigation
@@ -842,7 +858,15 @@
                 'nav-certification': '📋 הכשרה',
                 'nav-companies': '🏢 חברות',
                 'nav-about': 'ℹ️ אודות',
-                'nav-contact': '📞 צור קשר'
+                'nav-contact': '📞 צור קשר',
+                // Hero Section
+                'cert-hero-title': '📋 הכשר כשרות<br><span class="orange-text">רשמי בפורטוגל</span>',
+                'cert-hero-subtitle': 'הרשות המובילה בהכשר כשרות עם למעלה מ-1,000 מוצרים מוכשרים ב-25+ מדינות',
+                'cert-stat-approval': 'שיעור אישור',
+                'cert-stat-products': 'מוצרים מוכשרים',
+                'cert-stat-countries': 'מדינות מוגשות',
+                'cert-btn-request': '🚀 בקש הכשרה',
+                'cert-btn-companies': '🔍 צפה בחברות'
             }
         };
         
@@ -859,6 +883,21 @@
             // Update active state
             document.querySelectorAll('.language-option').forEach(opt => opt.classList.remove('active'));
             event.target.closest('.language-option').classList.add('active');
+            
+            // Map language names to codes
+            const languageMap = {
+                'Português': 'pt',
+                'English': 'en',
+                'עברית': 'he',
+                'Español': 'es',
+                'Русский': 'ru',
+                'Italiano': 'it'
+            };
+            
+            const langCode = languageMap[lang] || 'pt';
+            
+            // Change page content
+            changeLanguage(langCode);
         }
 
         function changeLanguage(langCode) {
@@ -874,7 +913,11 @@
             Object.keys(t).forEach(key => {
                 const element = document.querySelector(`[data-translate="${key}"]`);
                 if (element) {
-                    element.textContent = t[key];
+                    if (key.includes('title') && key.includes('hero')) {
+                        element.innerHTML = t[key]; // Allow HTML for hero title
+                    } else {
+                        element.textContent = t[key];
+                    }
                 }
             });
             
@@ -890,6 +933,9 @@
             // Store language preference globally
             localStorage.setItem('preferred-language', langCode);
             localStorage.setItem('world-kosher-language', langCode);
+            
+            // Dispatch custom event for language change
+            window.dispatchEvent(new CustomEvent('languageChanged', { detail: { language: langCode } }));
         }
 
         // Close dropdown when clicking outside
@@ -899,6 +945,54 @@
                 document.getElementById('languageDropdown').style.display = 'none';
             }
         });
+
+        // Initialize language on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check for saved language preference
+            const savedLang = localStorage.getItem('preferred-language') || 'pt';
+            
+            // Apply saved language if not Portuguese
+            if (savedLang !== 'pt') {
+                // Find the language option and update display
+                const langNames = {
+                    'en': { flag: '🇬🇧', name: 'English' },
+                    'he': { flag: '🇮🇱', name: 'עברית' },
+                    'es': { flag: '🇪🇸', name: 'Español' },
+                    'ru': { flag: '🇷🇺', name: 'Русский' },
+                    'it': { flag: '🇮🇹', name: 'Italiano' }
+                };
+                
+                if (langNames[savedLang]) {
+                    document.getElementById('current-flag').textContent = langNames[savedLang].flag;
+                    document.getElementById('current-lang').textContent = langNames[savedLang].name;
+                    
+                    // Update active state in dropdown
+                    document.querySelectorAll('.language-option').forEach(opt => {
+                        opt.classList.remove('active');
+                        if (opt.textContent.includes(langNames[savedLang].name)) {
+                            opt.classList.add('active');
+                        }
+                    });
+                }
+                
+                changeLanguage(savedLang);
+            }
+        });
+
+        // Redirect to certification form based on language
+        function redirectToCertificationForm() {
+            const languageMap = {
+                'pt': 'solicitar-certificacao-pt.html',
+                'en': 'solicitar-certificacao-en.html', 
+                'he': 'solicitar-certificacao-he.html',
+                'es': 'solicitar-certificacao-pt.html', // Use Portuguese for Spanish
+                'ru': 'solicitar-certificacao-en.html', // Use English for Russian
+                'it': 'solicitar-certificacao-en.html'  // Use English for Italian
+            };
+            
+            const targetPage = languageMap[currentLanguage] || 'solicitar-certificacao-pt.html';
+            window.open(targetPage, '_blank');
+        }
 
         // Redirect to certification form based on language        
         // Initialize language from localStorage
