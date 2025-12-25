@@ -300,7 +300,7 @@
             btn.textContent = '⏳ שולח...';
             
             // Send to company in Hebrew
-            emailjs.send('YOUR_SERVICE_ID', 'kosher_certification_he', {
+            emailjs.send('service_4g2vstc', 'template_7gzctyd', {
                 company: data.company,
                 contact: data.contact,
                 email: data.email,
@@ -319,7 +319,7 @@
                 
                 // Send auto-reply to customer in Hebrew
                 const questionnaireURL = `${location.origin}/documents/questionnaire.pdf`;
-                return emailjs.send('service_4g2vstc', 'kosher_autoreply_he', {
+                return emailjs.send('service_4g2vstc', 'template_as2wj6o', {
                     to_email: data.email,
                     to_name: data.contact,
                     company: data.company,
