@@ -319,6 +319,7 @@
             
             // Send notification to company
             emailjs.send('service_4g2vstc', 'template_as2wj6o', {
+                to_name: 'World Kosher Team',
                 company: data.company,
                 contact: data.contact,
                 email: data.email,
@@ -329,7 +330,6 @@
                 production: data.production || 'Not specified',
                 timeline: data.timeline || 'Not specified',
                 message: data.message || 'No additional information',
-                to_email: 'portugal@w-kosher.com',
                 language: 'English'
             })
             .then(function(response) {
