@@ -337,7 +337,7 @@
                 
                 // Send auto-reply to customer
                 return emailjs.send('service_4g2vstc', 'template_7gzctyd', {
-                    to_email: data.email,
+                    email: data.email,
                     to_name: data.contact,
                     company: data.company
                 });
