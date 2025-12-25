@@ -272,10 +272,10 @@
     <!-- EmailJS SDK -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script>
-        // Initialize EmailJS
+        // Initialize EmailJS - REPLACE WITH YOUR PUBLIC KEY
         (function() {
             emailjs.init({
-                publicKey: 'PJtOaU_p90apZ-wdy',
+                publicKey: 'YOUR_PUBLIC_KEY_HERE', // Replace with your EmailJS public key
             });
         })();
 
@@ -286,40 +286,13 @@
             const formData = new FormData(event.target);
             const data = Object.fromEntries(formData);
             
-            // Create WhatsApp message
-            let message = `🚀 *KOSHER CERTIFICATION REQUEST*\n\n`;
-            message += `🏢 *Company:* ${data.company}\n`;
-            message += `👤 *Contact:* ${data.contact}\n`;
-            message += `📧 *E-mail:* ${data.email}\n`;
-            message += `📞 *Phone:* ${data.phone}\n`;
-            
-            if (data.location) {
-                message += `📍 *Location:* ${data.location}\n`;
-            }
-            
-            message += `🏭 *Product Type:* ${data.productType}\n`;
-            message += `📝 *Description:* ${data.products}\n`;
-            
-            if (data.production) {
-                message += `🏭 *Production Volume:* ${data.production}\n`;
-            }
-            
-            if (data.timeline) {
-                message += `⏰ *Desired Timeline:* ${data.timeline}\n`;
-            }
-            
-            if (data.message) {
-                message += `💬 *Additional Information:* ${data.message}\n`;
-            }
-            
             // Send email via EmailJS
             const btn = event.target.querySelector('button[type="submit"]');
             btn.disabled = true;
             btn.textContent = '⏳ Sending...';
             
-            // Send notification to company
-            emailjs.send('service_4g2vstc', 'template_as2wj6o', {
-                to_name: 'World Kosher Team',
+            // Send to company in English
+            emailjs.send('YOUR_SERVICE_ID', 'kosher_certification_en', {
                 company: data.company,
                 contact: data.contact,
                 email: data.email,
@@ -330,46 +303,33 @@
                 production: data.production || 'Not specified',
                 timeline: data.timeline || 'Not specified',
                 message: data.message || 'No additional information',
+                to_email: 'portugal@w-kosher.com', // Your company email
                 language: 'English'
             })
             .then(function(response) {
                 console.log('Email sent successfully!', response);
                 
-                // Send auto-reply to customer
-                return emailjs.send('service_4g2vstc', 'template_7gzctyd', {
-                    email: data.email,
+                // Send auto-reply to customer in English
+                const questionnaireURL = `${location.origin}/documents/questionnaire.pdf`;
+                return emailjs.send('YOUR_SERVICE_ID', 'kosher_autoreply_en', {
+                    to_email: data.email,
                     to_name: data.contact,
-                    company: data.company
+                    company: data.company,
+                    questionnaire_link: questionnaireURL
                 });
             })
             .then(function(response) {
                 console.log('Auto-reply sent!', response);
                 
-                // Prepare WhatsApp as backup
-                const encodedMessage = encodeURIComponent(message);
-                const whatsappURL = `https://wa.me/972543080390?text=${encodedMessage}`;
-                
-                // Show success
-                alert('✅ Request sent successfully! You will receive a confirmation email shortly.\n\nYou can also contact us via WhatsApp.');
+                // Show success and reset form
+                alert('✅ Request sent successfully! You will receive a confirmation email shortly.');
                 event.target.reset();
                 btn.disabled = false;
                 btn.textContent = '🚀 Submit Request';
-                
-                // Optional WhatsApp
-                if (confirm('Would you also like to send via WhatsApp?')) {
-                    window.open(whatsappURL, '_blank');
-                }
             })
             .catch(function(error) {
                 console.error('Error:', error);
-                
-                // Fallback to WhatsApp
-                const encodedMessage = encodeURIComponent(message);
-                const whatsappURL = `https://wa.me/972543080390?text=${encodedMessage}`;
-                
-                alert('⚠️ Error sending email. Redirecting to WhatsApp.');
-                window.open(whatsappURL, '_blank');
-                
+                alert('⚠️ Error sending email. Please contact us directly through the "Contact" page.');
                 btn.disabled = false;
                 btn.textContent = '🚀 Submit Request';
             });

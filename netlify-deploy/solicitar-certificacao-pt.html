@@ -174,6 +174,12 @@
             <p class="subtitle">Preencha o formulário e receba um orçamento personalizado em 24 horas</p>
         </div>
 
+        <!-- Questionnaire download callout -->
+        <div style="margin-bottom:16px; text-align:center;">
+            <a href="/documents/questionnaire.pdf" target="_blank" class="btn-submit" style="display:inline-block; max-width:320px; padding:12px 20px; text-decoration:none;">📝 הורד שאלון לקוח (PDF)</a>
+            <p style="font-size:0.9rem;color:#6b7280; margin-top:8px;">מילוי השאלון יעזור לנו להכין הצעת מחיר מדויקת לפני שליחת הבקשה</p>
+        </div>
+
         <!-- Form Section -->
         <div class="form-section">
             <form id="certificationForm" onsubmit="submitForm(event)">
@@ -258,9 +264,6 @@
         <div class="contact-info">
             <h3>📞 Contacto Direto</h3>
             <div class="contact-method">
-                <strong>WhatsApp:</strong> <a href="https://wa.me/972543080390" target="_blank">(+972) 54 308 0390</a>
-            </div>
-            <div class="contact-method">
                 <strong>E-mail:</strong> <a href="mailto:portugal@w-kosher.com">portugal@w-kosher.com</a>
             </div>
             <div class="contact-method">
@@ -286,93 +289,57 @@
             const formData = new FormData(event.target);
             const data = Object.fromEntries(formData);
             
-            // Create WhatsApp message
-            let message = `🚀 *SOLICITAÇÃO DE CERTIFICAÇÃO KOSHER*\n\n`;
-            message += `🏢 *Empresa:* ${data.company}\n`;
-            message += `👤 *Contacto:* ${data.contact}\n`;
-            message += `📧 *E-mail:* ${data.email}\n`;
-            message += `📞 *Telefone:* ${data.phone}\n`;
-            
-            if (data.location) {
-                message += `📍 *Localização:* ${data.location}\n`;
-            }
-            
-            message += `🏭 *Tipo de Produto:* ${data.productType}\n`;
-            message += `📝 *Descrição:* ${data.products}\n`;
-            
-            if (data.production) {
-                message += `🏭 *Volume Produção:* ${data.production}\n`;
-            }
-            
-            if (data.timeline) {
-                message += `⏰ *Prazo Desejado:* ${data.timeline}\n`;
-            }
-            
-            if (data.message) {
-                message += `💬 *Informações Adicionais:* ${data.message}\n`;
-            }
-            
-            // Send email via EmailJS
-            const btn = event.target.querySelector('button[type="submit"]');
-            btn.disabled = true;
-            btn.textContent = '⏳ Enviando...';
-            
-            // Send to company
-            emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
-                company: data.company,
-                contact: data.contact,
-                email: data.email,
-                phone: data.phone,
-                location: data.location || 'Não especificado',
-                productType: data.productType,
-                products: data.products,
-                production: data.production || 'Não especificado',
-                timeline: data.timeline || 'Não especificado',
-                message: data.message || 'Nenhuma informação adicional',
-                to_email: 'portugal@w-kosher.com' // Your company email
-            })
-            .then(function(response) {
-                console.log('Email sent successfully!', response);
-                
-                // Send auto-reply to customer with PDF attachment
-                return emailjs.send('YOUR_SERVICE_ID', 'YOUR_AUTOREPLY_TEMPLATE_ID', {
-                    to_email: data.email,
-                    to_name: data.contact,
-                    company: data.company
-                });
-            })
-            .then(function(response) {
-                console.log('Auto-reply sent!', response);
-                
-                // Also open WhatsApp as backup
-                const encodedMessage = encodeURIComponent(message);
-                const whatsappURL = `https://wa.me/972543080390?text=${encodedMessage}`;
+            // Prepare email data
+            // (WhatsApp sending was removed; use site 'Contact' page for WhatsApp)
+             // Send email via EmailJS
+             const btn = event.target.querySelector('button[type="submit"]');
+             btn.disabled = true;
+             btn.textContent = '⏳ Enviando...';
+             
+             // Send to company
+             emailjs.send('YOUR_SERVICE_ID', 'kosher_certification_pt', {
+                 company: data.company,
+                 contact: data.contact,
+                 email: data.email,
+                 phone: data.phone,
+                 location: data.location || 'Não especificado',
+                 productType: data.productType,
+                 products: data.products,
+                 production: data.production || 'Não especificado',
+                 timeline: data.timeline || 'Não especificado',
+                 message: data.message || 'Nenhuma informação adicional',
+                 to_email: 'portugal@w-kosher.com', // Your company email
+                 language: 'Portuguese'
+             })
+             .then(function(response) {
+                 console.log('Email sent successfully!', response);
+                 
+                 // Send auto-reply to customer in Portuguese
+                 const questionnaireURL = `${location.origin}/documents/questionnaire.pdf`;
+                 return emailjs.send('YOUR_SERVICE_ID', 'kosher_autoreply_pt', {
+                     to_email: data.email,
+                     to_name: data.contact,
+                     company: data.company,
+                     questionnaire_link: questionnaireURL
+                 });
+             })
+             .then(function(response) {
+                 console.log('Auto-reply sent!', response);
                 
                 // Show success and reset form
-                alert('✅ Solicitação enviada com sucesso! Receberá um e-mail de confirmação em breve.\n\nTambém pode contactar-nos via WhatsApp.');
-                event.target.reset();
+                alert('✅ Solicitação enviada com sucesso! Receberá um e-mail de confirmação em breve.');
+                 event.target.reset();
+                 btn.disabled = false;
+                 btn.textContent = '🚀 Enviar Solicitação';
+             })
+             .catch(function(error) {
+                 console.error('Error sending email:', error);
+                
+                alert('⚠️ Erro ao enviar e-mail. Por favor tente novamente mais tarde.');
                 btn.disabled = false;
                 btn.textContent = '🚀 Enviar Solicitação';
-                
-                // Optional: Open WhatsApp
-                if (confirm('Deseja também enviar via WhatsApp?')) {
-                    window.open(whatsappURL, '_blank');
-                }
-            })
-            .catch(function(error) {
-                console.error('Error sending email:', error);
-                
-                // Fallback to WhatsApp if email fails
-                const encodedMessage = encodeURIComponent(message);
-                const whatsappURL = `https://wa.me/972543080390?text=${encodedMessage}`;
-                
-                alert('⚠️ Erro ao enviar e-mail. Será redirecionado para o WhatsApp.');
-                window.open(whatsappURL, '_blank');
-                
-                btn.disabled = false;
-                btn.textContent = '🚀 Enviar Solicitação';
-            });
-        }
-    </script>
+             });
+         }
+     </script>
 </body>
 </html>

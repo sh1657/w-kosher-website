@@ -116,14 +116,32 @@
             </ol>
         </div>
         
-        <p><strong>מצורף למייל זה מסמך PDF</strong> עם כל המידע והדרישות לתהליך הסרטיפיקציה.</p>
+        <p style="color: #374151; font-size: 15px; line-height: 1.8; margin: 0 0 20px 0;">
+            כדי להעריך אם המתקן שלכם עומד בסטנדרטים שלנו, אנא <strong>השלימו את השאלון</strong> — ניתן להוריד אותו בקישור למטה.
+        </p>
+        
+        <div style="text-align:center; margin:20px 0;">
+            <a href="{{questionnaire_link}}" target="_blank"
+               style="display:inline-block;background:#06b6d4;color:#fff;padding:14px 28px;border-radius:10px;text-decoration:none;font-weight:700;font-size:16px;">
+               📝 הורד שאלון לקוח (PDF)
+            </a>
+            <p style="font-size:12px;color:#6b7280;margin-top:10px;">
+                לחץ על הכפתור להורדת השאלון. מלאו אותו ושלחו חזרה למייל זה.
+            </p>
+        </div>
+        
+        <div style="background: #dbeafe; padding: 20px; border-radius: 8px; margin: 20px 0;">
+            <p style="margin: 0; color: #1e40af; font-size: 14px;">
+                <strong>📎 חשוב:</strong> אנא ענו על כל השאלות <strong>בכנות ובפירוט</strong>. זה עוזר לנו לספק לכם הערכה והצעת מחיר מדויקת ביותר.
+            </p>
+        </div>
         
         <div style="background: #dbeafe; padding: 20px; border-radius: 8px; margin: 20px 0;">
             <h3 style="color: #1e3a8a; margin-top: 0;">📞 צריך עזרה מיידית?</h3>
-            <p><strong>WhatsApp:</strong> <a href="https://wa.me/972543080390">+972 54 308 0390</a></p>
             <p><strong>Portugal Office:</strong> <a href="tel:+351969176830">+351 969 176 830</a></p>
             <p><strong>Israel Office:</strong> <a href="tel:+97226310336">+972 2 631 0336</a></p>
             <p><strong>Email:</strong> <a href="mailto:portugal@w-kosher.com">portugal@w-kosher.com</a></p>
+            <p style="font-size:13px;color:#6b7280;margin-top:8px;">להודעות WhatsApp השתמשו בדף 'צור קשר' באתר.</p>
         </div>
         
         <p style="margin-top: 30px;">בברכה,<br>
@@ -143,21 +161,35 @@
 
 ## שלב 5️⃣: הוספת קובץ PDF מצורף
 
-### אפשרות א': הורדה אוטומטית מה-Server
+### אפשרות א': קישור להורדה אוטומטית (מומלץ - חינם)
 
-1. העלה את קובץ ה-PDF (`kosher-requirements.pdf`) לתיקייה:
+1. העלו את קובץ השאלון (`questionnaire.pdf`) לתיקייה:
    ```
-   netlify-deploy/documents/kosher-requirements.pdf
+   netlify-deploy/documents/questionnaire.pdf
    ```
 
-2. בתבנית המייל, הוסף קישור להורדה:
+2. בתבנית המייל (בשלב 4 למעלה), **כבר מוכן הכפתור** שמשתמש במשתנה `{{questionnaire_link}}`:
+
 ```html
-<a href="https://your-website.com/documents/kosher-requirements.pdf" 
-   style="display: inline-block; background: #f59e0b; color: white; padding: 12px 24px; 
-   text-decoration: none; border-radius: 8px; font-weight: bold; margin: 20px 0;">
-   📥 הורד מסמך דרישות (PDF)
-</a>
+<div style="text-align:center; margin:20px 0;">
+    <a href="{{questionnaire_link}}" target="_blank"
+       style="display:inline-block;background:#06b6d4;color:#fff;padding:14px 28px;border-radius:10px;text-decoration:none;font-weight:700;font-size:16px;">
+       📝 הורד שאלון לקוח (PDF)
+    </a>
+    <p style="font-size:12px;color:#6b7280;margin-top:10px;">
+        לחץ על הכפתור להורדת השאלון. מלאו אותו ושלחו חזרה למייל זה.
+    </p>
+</div>
 ```
+
+**הכפתור הזה כבר נמצא בתבנית למעלה (שלב 4)** — ודא שהעתקת את כל קוד ה־HTML מהתבנית ל-EmailJS Dashboard.
+
+3. הטופס (`solicitar-certificacao-pt.html`) כבר שולח את המשתנה `questionnaire_link` ל-EmailJS אוטומטית:
+   ```javascript
+   const questionnaireURL = `${location.origin}/documents/questionnaire.pdf`;
+   // ...
+   questionnaire_link: questionnaireURL
+   ```
 
 ### אפשרות ב': שליחת PDF כקובץ מצורף (דורש EmailJS Pro)
 
@@ -232,16 +264,3 @@ Template ID #2 (מענה אוטומטי): ___________________ (kosher_auto_reply
 - ✅ **לא צריך Backend/Server**
 - ✅ עובד ישירות מה-HTML
 - ⚠️ לקבצים מצורפים: צריך EmailJS Pro ($15/חודש) או השתמש בקישור להורדה
-- 🔄 גם שומר WhatsApp כגיבוי אם EmailJS נכשל
-
----
-
-## צריך עזרה?
-
-אם יש בעיות:
-1. בדוק את ה-Console (F12) לשגיאות
-2. ודא שהמפתחות הוזנו נכון
-3. בדוק ש-Service מחובר למייל
-4. ב-EmailJS Dashboard - לחץ על **Test** לבדיקת התבנית
-
-בהצלחה! 🚀

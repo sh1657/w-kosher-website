@@ -1,6 +1,22 @@
-# World Kosher Portugal
+# 🕊️ World Kosher Website
 
 🏆 **A principal autoridade em certificação kosher em Portugal**
+
+## 🚀 Deploy to Vercel
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/YOUR_USERNAME/w-kosher-website)
+
+## ✨ Features
+- ✅ Multi-language support (6 languages)
+- ✅ Mobile responsive design  
+- ✅ SSL-ready with modern security
+- ✅ Professional certification system
+- ✅ 100+ certified companies showcase
+
+## 📊 Statistics
+- **100+** Certified Companies
+- **1000+** Certified Products  
+- **25+** Countries Served
+- **100%** Approval Rate
 
 ## 🌐 Páginas Disponíveis
 

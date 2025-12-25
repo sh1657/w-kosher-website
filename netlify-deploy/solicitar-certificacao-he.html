@@ -271,7 +271,16 @@
         </div>
     </div>
 
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script>
+        // Initialize EmailJS - REPLACE WITH YOUR PUBLIC KEY
+        (function() {
+            emailjs.init({
+                publicKey: 'YOUR_PUBLIC_KEY_HERE', // Replace with your EmailJS public key
+            });
+        })();
+
         function submitForm(event) {
             event.preventDefault();
             
@@ -279,41 +288,53 @@
             const formData = new FormData(event.target);
             const data = Object.fromEntries(formData);
             
-            // Create WhatsApp message
-            let message = `🚀 *בקשת הכשר כשרות*\n\n`;
-            message += `🏢 *חברה:* ${data.company}\n`;
-            message += `👤 *איש קשר:* ${data.contact}\n`;
-            message += `📧 *דוא"ל:* ${data.email}\n`;
-            message += `📞 *טלפון:* ${data.phone}\n`;
+            // Send email via EmailJS
+            const btn = event.target.querySelector('button[type="submit"]');
+            btn.disabled = true;
+            btn.textContent = '⏳ שולח...';
             
-            if (data.location) {
-                message += `📍 *מיקום:* ${data.location}\n`;
-            }
-            
-            message += `🏭 *סוג מוצר:* ${data.productType}\n`;
-            message += `📝 *תיאור:* ${data.products}\n`;
-            
-            if (data.production) {
-                message += `🏭 *נפח ייצור:* ${data.production}\n`;
-            }
-            
-            if (data.timeline) {
-                message += `⏰ *לוח זמנים רצוי:* ${data.timeline}\n`;
-            }
-            
-            if (data.message) {
-                message += `💬 *מידע נוסף:* ${data.message}\n`;
-            }
-            
-            // Encode for WhatsApp
-            const encodedMessage = encodeURIComponent(message);
-            const whatsappURL = `https://wa.me/972543080390?text=${encodedMessage}`;
-            
-            // Open WhatsApp
-            window.open(whatsappURL, '_blank');
-            
-            // Show success message
-            alert('✅ הטופס הוכן! תועברו ל-WhatsApp לשליחת הבקשה.');
+            // Send to company in Hebrew
+            emailjs.send('YOUR_SERVICE_ID', 'kosher_certification_he', {
+                company: data.company,
+                contact: data.contact,
+                email: data.email,
+                phone: data.phone,
+                location: data.location || 'לא צוין',
+                productType: data.productType,
+                products: data.products,
+                production: data.production || 'לא צוין',
+                timeline: data.timeline || 'לא צוין',
+                message: data.message || 'אין מידע נוסף',
+                to_email: 'portugal@w-kosher.com', // Your company email
+                language: 'Hebrew'
+            })
+            .then(function(response) {
+                console.log('Email sent successfully!', response);
+                
+                // Send auto-reply to customer in Hebrew
+                const questionnaireURL = `${location.origin}/documents/questionnaire.pdf`;
+                return emailjs.send('YOUR_SERVICE_ID', 'kosher_autoreply_he', {
+                    to_email: data.email,
+                    to_name: data.contact,
+                    company: data.company,
+                    questionnaire_link: questionnaireURL
+                });
+            })
+            .then(function(response) {
+                console.log('Auto-reply sent!', response);
+                
+                // Show success and reset form
+                alert('✅ הבקשה נשלחה בהצלחה! תקבלו דוא"ל אישור בקרוב.');
+                event.target.reset();
+                btn.disabled = false;
+                btn.textContent = '🚀 שלח בקשה';
+            })
+            .catch(function(error) {
+                console.error('Error:', error);
+                alert('⚠️ שגיאה בשליחת הדוא"ל. אנא צרו קשר ישירות דרך דף "צור קשר".');
+                btn.disabled = false;
+                btn.textContent = '🚀 שלח בקשה';
+            });
         }
     </script>
 </body>
