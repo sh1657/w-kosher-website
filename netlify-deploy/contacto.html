@@ -100,6 +100,39 @@
             background: #eff6ff;
         }
         
+        /* RTL Support for Hebrew */
+        [dir="rtl"] {
+            text-align: right;
+        }
+        
+        [dir="rtl"] .top-bar-content,
+        [dir="rtl"] .header-content,
+        [dir="rtl"] .nav {
+            flex-direction: row-reverse;
+        }
+        
+        /* Fix numbers direction in RTL - numbers should always be LTR */
+        [dir="rtl"] a[href^="tel:"],
+        [dir="rtl"] a[href^="mailto:"],
+        [dir="rtl"] .method-card a,
+        [dir="rtl"] time,
+        [dir="rtl"] .phone-number {
+            direction: ltr !important;
+            display: inline-block !important;
+            unicode-bidi: embed !important;
+            text-align: center !important;
+        }
+        
+        /* Ensure card content centers numbers properly in RTL */
+        [dir="rtl"] .method-card {
+            text-align: center !important;
+        }
+        
+        [dir="rtl"] .method-card h3,
+        [dir="rtl"] .method-card p {
+            text-align: center !important;
+        }
+        
         /* Header */
         .header {
             background: white;
@@ -678,7 +711,8 @@
         <div class="container">
             <div class="top-bar-content">
                 <div>
-                    <span style="margin-right: 20px;">📞 LINHA KOSHER: <a href="tel:+972543080390">(+972) 54 308 0390</a></span>
+                    <span style="margin-right: 20px;">📞 PORTUGAL: <a href="tel:+351969176830">(+351) 969-176-830</a></span>
+                    <span style="margin-right: 20px;">📞 ISRAEL: <a href="tel:+97226310336">(+972) 2-631-0336</a></span>
                     📧 <a href="mailto:portugal@w-kosher.com">portugal@w-kosher.com</a>
                 </div>
                 <div class="top-bar-right">
@@ -732,8 +766,8 @@
     <!-- Page Header -->
     <section class="page-header">
         <div class="container">
-            <h1>📞 Entre em Contacto</h1>
-            <p>Estamos aqui para ajudar com todas as suas necessidades de certificação kosher</p>
+            <h1 data-translate="page-title">📞 Entre em Contacto</h1>
+            <p data-translate="page-subtitle">Estamos aqui para ajudar com todas as suas necessidades de certificação kosher</p>
         </div>
     </section>
 
@@ -745,24 +779,32 @@
                 <!-- WhatsApp -->
                 <div class="method-card whatsapp">
                     <div class="icon">📱</div>
-                    <h3>WhatsApp 24/6</h3>
-                    <p>Atendimento imediato para suas dúvidas</p>
+                    <h3 data-translate="contact-whatsapp-title">WhatsApp 24/6</h3>
+                    <p data-translate="contact-whatsapp-desc">Atendimento imediato para suas dúvidas</p>
                     <a href="https://wa.me/972543080390" target="_blank">(+972) 54 308 0390</a>
                 </div>
 
-                <!-- Phone -->
+                <!-- Phone Portugal -->
                 <div class="method-card phone">
                     <div class="icon">📞</div>
-                    <h3>Linha Kosher</h3>
-                    <p>Suporte telefónico direto</p>
-                    <a href="tel:+972543080390">(+972) 54 308 0390</a>
+                    <h3 data-translate="contact-portugal-title">Portugal</h3>
+                    <p data-translate="contact-portugal-desc">Escritório em Portugal</p>
+                    <a href="tel:+351969176830">(+351) 969-176-830</a>
+                </div>
+
+                <!-- Phone Israel -->
+                <div class="method-card phone">
+                    <div class="icon">📞</div>
+                    <h3 data-translate="contact-israel-title">Israel</h3>
+                    <p data-translate="contact-israel-desc">Escritório em Israel</p>
+                    <a href="tel:+97226310336">(+972) 2-631-0336</a>
                 </div>
 
                 <!-- Email -->
                 <div class="method-card email">
                     <div class="icon">📧</div>
-                    <h3>Email Oficial</h3>
-                    <p>Para consultas detalhadas</p>
+                    <h3 data-translate="contact-email-title">Email Oficial</h3>
+                    <p data-translate="contact-email-desc">Para consultas detalhadas</p>
                     <a href="mailto:portugal@w-kosher.com">portugal@w-kosher.com</a>
                 </div>
             </div>
@@ -779,9 +821,9 @@
                     <h2 style="font-size: 2.5rem; color: #1f2937; margin-bottom: 30px;">🏢 Informações de Contacto</h2>
                     
                     <div class="info-card">
-                        <h3>📍 Escritório Principal</h3>
-                        <p><strong>Endereço:</strong><br>Portugal - Serviços Internacionais</p>
-                        <p><strong>Telefone:</strong> <a href="tel:+972543080390">(+972) 54 308 0390</a></p>
+                        <h3>📍 Escritórios</h3>
+                        <p><strong>Portugal:</strong> <a href="tel:+351969176830">(+351) 969-176-830</a></p>
+                        <p><strong>Israel:</strong> <a href="tel:+97226310336">(+972) 2-631-0336</a></p>
                         <p><strong>Email:</strong> <a href="mailto:portugal@w-kosher.com">portugal@w-kosher.com</a></p>
                         <p><strong>Website:</strong> www.w-kosher.com</p>
                     </div>
@@ -994,8 +1036,8 @@
                 
                 <div>
                     <h4>📞 Contacto Direto</h4>
-                    <p><strong>📱 Linha Kosher 24/6:</strong><br>
-                    <a href="tel:+972543080390">(+972) 54 308 0390</a></p>
+                    <p><strong>📞 Portugal:</strong> <a href="tel:+351969176830">(+351) 969-176-830</a></p>
+                    <p><strong>📞 Israel:</strong> <a href="tel:+97226310336">(+972) 2-631-0336</a></p>
                     <p><strong>📧 Email Oficial:</strong><br>
                     <a href="mailto:portugal@w-kosher.com">portugal@w-kosher.com</a></p>
                     <p><strong>🌐 Website:</strong><br>www.w-kosher.com</p>
@@ -1027,7 +1069,19 @@
                 'nav-certification': '📋 Certificação',
                 'nav-companies': '🏢 Empresas',
                 'nav-about': 'ℹ️ Sobre Nós',
-                'nav-contact': '📞 Contacto'
+                'nav-contact': '📞 Contacto',
+                // Page Header
+                'page-title': '📞 Entre em Contacto',
+                'page-subtitle': 'Estamos aqui para ajudar com todas as suas necessidades de certificação kosher',
+                // Contact Cards
+                'contact-whatsapp-title': 'WhatsApp 24/6',
+                'contact-whatsapp-desc': 'Atendimento imediato para suas dúvidas',
+                'contact-portugal-title': 'Portugal',
+                'contact-portugal-desc': 'Escritório em Portugal',
+                'contact-israel-title': 'Israel',
+                'contact-israel-desc': 'Escritório em Israel',
+                'contact-email-title': 'Email Oficial',
+                'contact-email-desc': 'Para consultas detalhadas'
             },
             'en': {
                 // Navigation
@@ -1035,7 +1089,19 @@
                 'nav-certification': '📋 Certification',
                 'nav-companies': '🏢 Companies',
                 'nav-about': 'ℹ️ About Us',
-                'nav-contact': '📞 Contact'
+                'nav-contact': '📞 Contact',
+                // Page Header
+                'page-title': '📞 Contact Us',
+                'page-subtitle': 'We are here to help with all your kosher certification needs',
+                // Contact Cards
+                'contact-whatsapp-title': 'WhatsApp 24/6',
+                'contact-whatsapp-desc': 'Immediate assistance for your questions',
+                'contact-portugal-title': 'Portugal',
+                'contact-portugal-desc': 'Office in Portugal',
+                'contact-israel-title': 'Israel',
+                'contact-israel-desc': 'Office in Israel',
+                'contact-email-title': 'Official Email',
+                'contact-email-desc': 'For detailed inquiries'
             },
             'he': {
                 // Navigation
@@ -1043,7 +1109,39 @@
                 'nav-certification': '📋 הכשרה',
                 'nav-companies': '🏢 חברות',
                 'nav-about': 'ℹ️ אודות',
-                'nav-contact': '📞 צור קשר'
+                'nav-contact': '📞 צור קשר',
+                // Page Header
+                'page-title': '📞 צור קשר',
+                'page-subtitle': 'אנחנו כאן לעזור עם כל צרכי הסמכת הכשרות שלך',
+                // Contact Cards
+                'contact-whatsapp-title': 'WhatsApp 24/6',
+                'contact-whatsapp-desc': 'מענה מיידי לשאלות שלך',
+                'contact-portugal-title': 'פורטוגל',
+                'contact-portugal-desc': 'משרד בפורטוגל',
+                'contact-israel-title': 'ישראל',
+                'contact-israel-desc': 'משרד בישראל',
+                'contact-email-title': 'אימייל רשמי',
+                'contact-email-desc': 'לפניות מפורטות'
+            },
+            'es': {
+                // Navigation
+                'nav-home': '🏠 Inicio',
+                'nav-certification': '📋 Certificación',
+                'nav-companies': '🏢 Empresas',
+                'nav-about': 'ℹ️ Sobre Nosotros',
+                'nav-contact': '📞 Contacto',
+                // Page Header
+                'page-title': '📞 Contáctenos',
+                'page-subtitle': 'Estamos aquí para ayudar con todas sus necesidades de certificación kosher',
+                // Contact Cards
+                'contact-whatsapp-title': 'WhatsApp 24/6',
+                'contact-whatsapp-desc': 'Atención inmediata para sus preguntas',
+                'contact-portugal-title': 'Portugal',
+                'contact-portugal-desc': 'Oficina en Portugal',
+                'contact-israel-title': 'Israel',
+                'contact-israel-desc': 'Oficina en Israel',
+                'contact-email-title': 'Email Oficial',
+                'contact-email-desc': 'Para consultas detalladas'
             }
         };
         
