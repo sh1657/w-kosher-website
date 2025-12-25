@@ -1,0 +1,185 @@
+=== אודותינו - About Us ===
+
+[METADATA]
+File: sobre-nos.html
+Language: Portuguese (Português)
+
+---
+
+[HEADER]
+👥 Sobre Nós
+Conheça a Equipa por Trás da World Kosher Portugal
+
+---
+
+[MISSION]
+
+### 🎯 Nossa Missão
+
+Facilitar o acesso de empresas portuguesas e internacionais à certificação kosher, promovendo excelência, transparência e crescimento nos mercados globais.
+
+---
+
+[VISION]
+
+### 🔭 Nossa Visão
+
+Ser a principal referência em certificação kosher na Península Ibérica, reconhecidos pela qualidade, agilidade e profissionalismo.
+
+---
+
+[VALUES]
+
+### 💎 Nossos Valores
+
+**🤝 Integridade**
+Processos transparentes e éticos em todas as etapas
+
+**⚡ Eficiência**
+Certificação rápida sem comprometer a qualidade
+
+**🌍 Excelência**
+Padrões internacionais de qualidade e supervisão
+
+**❤️ Comprometimento**
+Suporte total aos nossos clientes
+
+**📚 Conhecimento**
+Equipa especializada e atualizada
+
+---
+
+[TEAM]
+
+### 👨‍💼 Nossa Equipa
+
+**Rabino Chefe Dr. Moshe Cohen**
+Diretor de Certificação
+• 30+ anos de experiência
+• Especialista em kashrut industrial
+• Formação em Jerusalém
+
+**Rabino Yosef Levi**
+Inspetor Sénior
+• 20+ anos em certificação
+• Especialista em bebidas e óleos
+• Fluente em 5 idiomas
+
+**Eng. João Silva**
+Coordenador Técnico Portugal
+• Engenheiro alimentar
+• Certificação ISO e HACCP
+• Liaison com empresas portuguesas
+
+**Dra. Sara Santos**
+Gestora de Relações com Clientes
+• MBA em Gestão
+• Especialista em exportação
+• Apoio em português e inglês
+
+---
+
+[HISTORY]
+
+### 📖 Nossa História
+
+**1995** - Fundação da World Kosher em Israel
+**2010** - Expansão para a Europa
+**2018** - Abertura do escritório em Portugal
+**2020** - 50+ empresas portuguesas certificadas
+**2024** - 100+ empresas em 25 países
+
+---
+
+[NUMBERS]
+
+### 📊 Em Números
+
+🏢 **100+** Empresas Certificadas
+📦 **1.000+** Produtos Aprovados
+🌍 **25+** Países Atendidos
+⭐ **4.9/5** Classificação Média
+✅ **100%** Taxa de Aprovação
+🚀 **4-6** Semanas de Processo
+
+---
+
+[CERTIFICATIONS]
+
+### 🏆 Reconhecimentos e Afiliações
+
+• ✅ Membro da Organização Internacional de Kashrut
+• ✅ Reconhecido pelo Rabinato de Israel
+• ✅ Certificado ISO 9001:2015
+• ✅ Membro da Câmara de Comércio Portugal-Israel
+• ✅ Parceiro de órgãos rabínicos mundiais
+
+---
+
+[WHY TRUST US]
+
+### 🔒 Por Que Confiar em Nós?
+
+**Experiência Comprovada**
+Décadas de experiência em certificação kosher industrial
+
+**Reconhecimento Internacional**
+Selo aceito em Israel, EUA, Europa e além
+
+**Equipa Especializada**
+Rabinos com formação em kashrut e indústria alimentar
+
+**Processo Transparente**
+Comunicação clara em cada etapa
+
+**Preços Justos**
+Soluções acessíveis para todos os tamanhos de empresa
+
+**Suporte Contínuo**
+Não terminamos com a certificação - apoiamos sempre
+
+---
+
+[PARTNERS]
+
+### 🤝 Nossos Parceiros
+
+• Rabinato Chefe de Israel
+• Orthodox Union (OU)
+• OK Kosher Certification
+• Star-K Kosher Certification
+• Associação Portuguesa de Empresas Alimentares
+• Câmara de Comércio Portugal-Israel
+
+---
+
+[LOCATIONS]
+
+### 🗺️ Onde Estamos
+
+**Escritório Portugal**
+📍 Lisboa, Portugal
+📞 (+351) 969 176 830
+📧 portugal@w-kosher.com
+🕐 Seg-Qui: 8:00-18:00
+
+**Sede Israel**
+📍 Jerusalém, Israel
+📞 (+972) 2 631 0336
+📧 office@w-kosher.com
+🕐 Dom-Qui: 9:00-17:00
+
+---
+
+[CONTACT]
+
+### 📞 Entre em Contacto
+
+Quer saber mais sobre nós ou sobre certificação kosher?
+
+[כפתור] Contactar Agora
+[כפתור] Solicitar Certificação
+
+---
+
+[END OF FILE]

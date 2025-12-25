@@ -1,0 +1,41 @@
+=== solicitar-certificacao-pt.html ===
+
+Solicitar Certificação Kosher - World Kosher Portugal
+🚀 Solicitar Certificação Kosher
+Preencha o formulário e receba um orçamento personalizado em 24 horas
+📝 הורד שאלון לקוח (PDF)
+מילוי השאלון יעזור לנו להכין הצעת מחיר מדויקת לפני שליחת הבקשה
+📢 Nome da Empresa *
+👤 Pessoa de Contacto *
+📧 E-mail *
+📞 Telefone *
+📍 Localização da Empresa
+🏭 Tipo de Produto *
+Selecione o tipo de produto
+🫒 Azeites e Óleos
+🥫 Conservas e Enlatados
+🍷 Bebidas (Vinhos, Cervejas, Sumos)
+🍎 Frutas e Concentrados
+🐟 Produtos Congelados
+🧂 Sal e Condimentos
+🍞 Fermentos e Ingredientes
+📦 Outros
+📝 Descrição Detalhada dos Produtos *
+🏭 Volume de Produção Mensal
+Selecione o volume aproximado
+🔹 Pequeno (até 1.000 unidades)
+🔹 Médio (1.000 - 10.000 unidades)
+🔹 Grande (10.000 - 100.000 unidades)
+🔹 Industrial (mais de 100.000 unidades)
+⏰ Prazo Desejado para Certificação
+Selecione o prazo
+🚨 Urgente (2-3 semanas)
+📅 Normal (4-6 semanas)
+⏳ Flexível (6-8 semanas)
+💬 Informações Adicionais
+🚀 Enviar Solicitação
+📞 Contacto Direto
+E-mail:
+portugal@w-kosher.com
+Horário:
+Segunda a Quinta-feira, 8:00 - 18:00

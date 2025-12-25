@@ -1,0 +1,144 @@
+=== דף צור קשר - Contact ===
+
+[METADATA]
+File: contacto.html
+Language: Portuguese (Português)
+Last Updated: 2024-12-25
+
+---
+
+[HEADER]
+📞 Entre em Contacto
+Estamos prontos para ajudar a certificar os seus produtos
+
+---
+
+[INTRO TEXT]
+Tem dúvidas sobre certificação kosher? Quer discutir o seu projeto? A nossa equipa está disponível para ajudá-lo em qualquer fase do processo.
+
+---
+
+[CONTACT METHODS - אמצעי יצירת קשר]
+
+### 📧 Email
+portugal@w-kosher.com
+Resposta em 24 horas
+
+### 📞 Telefone Portugal
+(+351) 969 176 830
+Segunda a Quinta-feira, 8:00-18:00
+
+### 📞 Telefone Israel
+(+972) 2 631 0336
+Domingo a Quinta-feira, 9:00-17:00
+
+### 💬 WhatsApp
+(+972) 54 308 0390
+Mensagens e chamadas
+
+### 📘 Facebook
+World Kosher Portugal
+Acompanhe as novidades
+
+---
+
+[OFFICE LOCATIONS - משרדים]
+
+### 🏢 Escritório Portugal
+📍 Endereço: Rua Principal, Lisboa, Portugal
+📧 Email: portugal@w-kosher.com
+📞 Telefone: (+351) 969 176 830
+
+### 🏢 Escritório Israel
+📍 Endereço: Jerusalém, Israel
+📧 Email: office@w-kosher.com
+📞 Telefone: (+972) 2 631 0336
+
+---
+
+[WORKING HOURS - שעות פעילות]
+
+### 🕐 Horário de Atendimento
+
+**Portugal**
+Segunda a Quinta-feira: 8:00 - 18:00
+Sexta-feira: 8:00 - 14:00
+
+**Israel**
+Domingo a Quinta-feira: 9:00 - 17:00
+Sexta-feira: 9:00 - 13:00
+
+*Encerrado em feriados judaicos e portugueses
+
+---
+
+[CONTACT FORM - טופס יצירת קשר]
+
+### 📝 Envie-nos uma Mensagem
+
+Nome Completo *
+(שדה חובה)
+
+Email *
+(שדה חובה)
+
+Telefone
+(אופציונלי)
+
+Assunto *
+(תפריט נפתח - חובה)
+Opções:
+- Selecione o assunto
+- Pedido de Orçamento
+- Dúvidas sobre Certificação
+- Renovação de Certificado
+- Suporte Técnico
+- Outro
+
+Mensagem *
+Como podemos ajudá-lo?
+(טקסט רב-שורות - חובה)
+
+[כפתור שליחה]
+📤 Enviar Mensagem
+
+---
+
+[FAQ QUICK LINKS - קישורים לשאלות נפוצות]
+
+### ❓ Perguntas Frequentes
+
+Antes de nos contactar, talvez encontre a resposta nas nossas perguntas frequentes:
+
+• Quanto tempo demora a certificação?
+• Quanto custa?
+• Que documentos preciso?
+• O certificado é válido internacionalmente?
+
+[Link] Ver Todas as Perguntas Frequentes
+
+---
+
+[CTA SECTION]
+
+### 🚀 Pronto para Começar?
+
+Não espere mais! Solicite a sua certificação kosher hoje mesmo.
+
+[כפתור]
+📝 Solicitar Certificação Agora
+
+---
+
+[SOCIAL MEDIA - רשתות חברתיות]
+
+### 🌐 Siga-nos nas Redes Sociais
+
+📘 Facebook: /worldkosherportugal
+📷 Instagram: @worldkosherportugal
+💼 LinkedIn: World Kosher Portugal
+🐦 Twitter: @worldkosherpt
+
+---
+
+[END OF FILE]

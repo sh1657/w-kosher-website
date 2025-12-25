@@ -1,0 +1,167 @@
+=== מדיניות פרטיות - Privacy Policy ===
+
+[METADATA]
+File: politica-privacidade.html
+Language: Portuguese (Português)
+
+---
+
+[HEADER]
+🔒 Política de Privacidade
+Última atualização: Dezembro 2024
+
+---
+
+[INTRO]
+
+A World Kosher B.M. Mashgichim ("nós", "nosso" ou "World Kosher") está comprometida em proteger a sua privacidade. Esta Política de Privacidade explica como recolhemos, usamos, divulgamos e protegemos as suas informações quando visita o nosso website.
+
+---
+
+[SECTION 1]
+
+### 1. Informações que Recolhemos
+
+**1.1 Informações Fornecidas Voluntariamente**
+Quando contacta-nos ou solicita certificação, podemos recolher:
+• Nome completo
+• Endereço de email
+• Número de telefone
+• Nome da empresa
+• Endereço da empresa
+• Tipo de produtos
+• Informações sobre instalações de produção
+
+**1.2 Informações Recolhidas Automaticamente**
+• Endereço IP
+• Tipo de navegador
+• Páginas visitadas
+• Data e hora de acesso
+• Dados de cookies
+
+---
+
+[SECTION 2]
+
+### 2. Como Usamos as Suas Informações
+
+Usamos as informações recolhidas para:
+• Processar pedidos de certificação
+• Comunicar sobre o status da certificação
+• Fornecer suporte técnico
+• Melhorar os nossos serviços
+• Enviar informações relevantes sobre certificação kosher
+• Cumprir obrigações legais
+
+---
+
+[SECTION 3]
+
+### 3. Partilha de Informações
+
+**Não Vendemos as Suas Informações**
+
+Podemos partilhar informações com:
+• Rabinos certificadores (apenas informações necessárias para certificação)
+• Autoridades rabínicas internacionais (para validação)
+• Prestadores de serviços (email, hosting)
+• Autoridades legais (quando legalmente obrigatório)
+
+---
+
+[SECTION 4]
+
+### 4. Proteção de Dados
+
+Implementamos medidas de segurança para proteger as suas informações:
+• Encriptação SSL
+• Acesso restrito a dados pessoais
+• Servidores seguros
+• Backups regulares
+• Políticas de senha fortes
+
+---
+
+[SECTION 5]
+
+### 5. Cookies
+
+Usamos cookies para:
+• Melhorar a experiência do utilizador
+• Analisar tráfego do website
+• Personalizar conteúdo
+
+Pode desativar cookies nas configurações do navegador.
+
+---
+
+[SECTION 6]
+
+### 6. Os Seus Direitos
+
+Tem o direito de:
+• Aceder às suas informações pessoais
+• Corrigir informações incorretas
+• Solicitar eliminação de dados
+• Retirar consentimento
+• Opor-se ao processamento de dados
+• Portabilidade de dados
+
+Para exercer estes direitos, contacte: portugal@w-kosher.com
+
+---
+
+[SECTION 7]
+
+### 7. Retenção de Dados
+
+Mantemos as suas informações enquanto:
+• A sua certificação estiver ativa
+• For necessário para fins legais
+• For necessário para prestação de serviços
+
+Após este período, os dados são eliminados de forma segura.
+
+---
+
+[SECTION 8]
+
+### 8. Links Externos
+
+O nosso website pode conter links para sites externos. Não somos responsáveis pelas práticas de privacidade desses sites.
+
+---
+
+[SECTION 9]
+
+### 9. Alterações a Esta Política
+
+Podemos atualizar esta política periodicamente. A data da última atualização será sempre indicada no topo da página.
+
+---
+
+[SECTION 10]
+
+### 10. Contacto
+
+Para questões sobre privacidade:
+
+📧 Email: privacy@w-kosher.com
+📞 Telefone: (+351) 969 176 830
+📍 Endereço: World Kosher Portugal, Lisboa
+
+---
+
+[GDPR COMPLIANCE]
+
+### 🇪🇺 Conformidade com RGPD
+
+Cumprimos o Regulamento Geral sobre a Proteção de Dados (RGPD) da União Europeia.
+
+Controlador de Dados:
+World Kosher B.M. Mashgichim
+Lisboa, Portugal
+
+---
+
+[END OF FILE]

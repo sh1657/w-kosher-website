@@ -1,0 +1,41 @@
+=== solicitar-certificacao-en.html ===
+
+Request Kosher Certification - World Kosher Portugal
+🚀 Request Kosher Certification
+Fill out the form and receive a personalized quote within 24 hours
+📢 Company Name *
+👤 Contact Person *
+📧 E-mail *
+📞 Phone *
+📍 Company Location
+🏭 Product Type *
+Select product type
+🫒 Olive Oils & Oils
+🥫 Preserves & Canned Foods
+🍷 Beverages (Wines, Beers, Juices)
+🍎 Fruits & Concentrates
+🐟 Frozen Products
+🧂 Salt & Condiments
+🍞 Yeast & Ingredients
+📦 Others
+📝 Detailed Product Description *
+🏭 Monthly Production Volume
+Select approximate volume
+🔹 Small (up to 1,000 units)
+🔹 Medium (1,000 - 10,000 units)
+🔹 Large (10,000 - 100,000 units)
+🔹 Industrial (over 100,000 units)
+⏰ Desired Certification Timeline
+Select timeline
+🚨 Urgent (2-3 weeks)
+📅 Normal (4-6 weeks)
+⏳ Flexible (6-8 weeks)
+💬 Additional Information
+🚀 Send Request
+📞 Direct Contact
+WhatsApp:
+(+972) 54 308 0390
+E-mail:
+portugal@w-kosher.com
+Hours:
+Monday to Thursday, 8:00 AM - 6:00 PM

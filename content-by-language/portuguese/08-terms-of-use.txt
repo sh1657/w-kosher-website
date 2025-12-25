@@ -1,0 +1,193 @@
+=== תנאי שימוש - Terms of Use ===
+
+[METADATA]
+File: termos-uso.html
+Language: Portuguese (Português)
+
+---
+
+[HEADER]
+📜 Termos de Uso
+Última atualização: Dezembro 2024
+
+---
+
+[INTRO]
+
+Bem-vindo ao website da World Kosher Portugal. Ao aceder e usar este website, concorda com os seguintes termos e condições.
+
+---
+
+[SECTION 1]
+
+### 1. Aceitação dos Termos
+
+Ao utilizar este website, confirma que:
+• Leu e compreendeu estes termos
+• Concorda em cumprir todos os termos
+• Tem capacidade legal para aceitar estes termos
+
+Se não concorda, não use este website.
+
+---
+
+[SECTION 2]
+
+### 2. Uso do Website
+
+**Uso Permitido:**
+• Consultar informações sobre certificação kosher
+• Solicitar orçamentos
+• Contactar-nos para informações
+• Descarregar materiais disponibilizados
+
+**Uso Proibido:**
+• Uso ilegal ou não autorizado
+• Violação de direitos de propriedade intelectual
+• Transmissão de malware ou vírus
+• Interferência com o funcionamento do site
+• Extração automatizada de dados (scraping)
+
+---
+
+[SECTION 3]
+
+### 3. Propriedade Intelectual
+
+Todo o conteúdo deste website é propriedade da World Kosher:
+• Textos
+• Imagens
+• Logotipos
+• Designs
+• Códigos
+
+Uso não autorizado é proibido sem permissão escrita.
+
+---
+
+[SECTION 4]
+
+### 4. Certificação Kosher
+
+**Processo de Certificação:**
+• A certificação está sujeita a aprovação rabínica
+• Não garantimos certificação automática
+• Requisitos devem ser cumpridos integralmente
+• Temos o direito de recusar certificação
+
+**Validade do Certificado:**
+• Certificados são válidos por 12 meses
+• Renovação está sujeita a re-inspeção
+• Podemos revogar certificados por não-conformidade
+
+---
+
+[SECTION 5]
+
+### 5. Pagamentos e Reembolsos
+
+**Pagamentos:**
+• Taxas de certificação são devidas após aprovação de orçamento
+• Métodos de pagamento aceitos serão indicados
+• Preços estão sujeitos a alterações
+
+**Reembolsos:**
+• Taxas pagas não são reembolsáveis após início do processo
+• Reembolsos parciais podem ser considerados caso a caso
+• Cancelamentos devem ser comunicados por escrito
+
+---
+
+[SECTION 6]
+
+### 6. Responsabilidades
+
+**Nossa Responsabilidade:**
+• Fornecer certificação de acordo com padrões kosher
+• Manter confidencialidade de informações
+• Processar pedidos de forma profissional
+
+**Sua Responsabilidade:**
+• Fornecer informações precisas e completas
+• Manter conformidade com requisitos kosher
+• Notificar-nos de mudanças na produção
+• Pagar taxas acordadas
+
+---
+
+[SECTION 7]
+
+### 7. Limitação de Responsabilidade
+
+A World Kosher não se responsabiliza por:
+• Perdas comerciais indiretas
+• Lucros cessantes
+• Danos consequenciais
+• Uso indevido de certificados
+• Informações incorretas fornecidas por terceiros
+
+---
+
+[SECTION 8]
+
+### 8. Confidencialidade
+
+Informações comerciais confidenciais serão protegidas, exceto:
+• Quando exigido por lei
+• Para fins de certificação rabínica
+• Com seu consentimento expresso
+
+---
+
+[SECTION 9]
+
+### 9. Rescisão
+
+Reservamos o direito de:
+• Suspender acesso ao website
+• Cancelar certificações por não-conformidade
+• Rescindir relações comerciais
+• Remover conteúdo inadequado
+
+---
+
+[SECTION 10]
+
+### 10. Lei Aplicável
+
+Estes termos são regidos pelas leis de Portugal.
+Disputas serão resolvidas nos tribunais de Lisboa.
+
+---
+
+[SECTION 11]
+
+### 11. Alterações aos Termos
+
+Podemos modificar estes termos a qualquer momento.
+Alterações serão publicadas nesta página.
+Uso contínuo após alterações constitui aceitação.
+
+---
+
+[SECTION 12]
+
+### 12. Contacto
+
+Para questões sobre estes termos:
+
+📧 Email: legal@w-kosher.com
+📞 Telefone: (+351) 969 176 830
+📍 Endereço: World Kosher Portugal, Lisboa
+
+---
+
+[ACCEPTANCE]
+
+### ✅ Aceitação
+
+Ao usar este website, confirma que leu, compreendeu e concorda com estes Termos de Uso e com a nossa Política de Privacidade.
+
+---
+
+[END OF FILE]

@@ -1,0 +1,105 @@
+=== דף בקשת הסמכה - Request Certification ===
+
+[METADATA]
+File: solicitar-certificacao-pt.html
+Language: Portuguese (Português)
+Last Updated: 2024-12-25
+
+---
+
+[HEADER]
+🚀 Solicitar Certificação Kosher
+Preencha o formulário e receba um orçamento personalizado em 24 horas
+
+---
+
+[DOWNLOAD SECTION]
+📝 הורד שאלון לקוח (PDF)
+[הערה: זה בעברית - צריך לתרגם]
+
+מילוי השאלון יעזור לנו להכין הצעת מחיר מדויקת לפני שליחת הבקשה
+[הערה: גם זה בעברית - צריך לתרגם לפורטוגזית]
+
+---
+
+[FORM FIELDS - שדות טופס]
+
+📢 Nome da Empresa *
+(שדה חובה)
+
+👤 Pessoa de Contacto *
+(שדה חובה)
+
+📧 E-mail *
+(שדה חובה)
+
+📞 Telefone *
+(שדה חובה)
+
+📍 Localização da Empresa
+Cidade, País
+(שדה אופציונלי)
+
+🏭 Tipo de Produto *
+(תפריט נפתח - שדה חובה)
+Opções:
+- Selecione o tipo de produto
+- 🫒 Azeites e Óleos
+- 🥫 Conservas e Enlatados
+- 🍷 Bebidas (Vinhos, Cervejas, Sumos)
+- 🍎 Frutas e Concentrados
+- 🐟 Produtos Congelados
+- 🧂 Sal e Condimentos
+- 🍞 Fermentos e Ingredientes
+- 📦 Outros
+
+📝 Descrição Detalhada dos Produtos *
+Descreva os produtos que deseja certificar, ingredientes principais, processos de produção...
+(שדה טקסט רב-שורות - חובה)
+
+🏭 Volume de Produção Mensal
+(תפריט נפתח - אופציונלי)
+Opções:
+- Selecione o volume aproximado
+- 🔹 Pequeno (até 1.000 unidades)
+- 🔹 Médio (1.000 - 10.000 unidades)
+- 🔹 Grande (10.000 - 100.000 unidades)
+- 🔹 Industrial (mais de 100.000 unidades)
+
+⏰ Prazo Desejado para Certificação
+(תפריט נפתח - אופציונלי)
+Opções:
+- Selecione o prazo
+- 🚨 Urgente (2-3 semanas)
+- 📅 Normal (4-6 semanas)
+- ⏳ Flexível (6-8 semanas)
+
+💬 Informações Adicionais
+Outras informações relevantes, experiência com certificações, mercados de destino...
+(שדה טקסט רב-שורות - אופציונלי)
+
+[כפתור שליחה]
+🚀 Enviar Solicitação
+
+---
+
+[CONTACT INFO BOX]
+📞 Contacto Direto
+
+📧 E-mail: portugal@w-kosher.com
+
+🕐 Horário: Segunda a Quinta-feira, 8:00 - 18:00
+
+---
+
+[CONFIRMATION MESSAGES - הודעות אישור]
+
+הודעת הצלחה:
+"✅ Solicitação enviada com sucesso! Receberá um e-mail de confirmação em breve."
+
+הודעת שגיאה:
+"⚠️ Erro ao enviar e-mail. Por favor tente novamente mais tarde."
+
+---
+
+[END OF FILE]

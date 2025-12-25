@@ -1,0 +1,195 @@
+=== דף חברות מוסמכות - Certified Companies ===
+
+[METADATA]
+File: empresas.html
+Language: Portuguese (Português)
+
+---
+
+[HEADER]
+🏢 Empresas Certificadas
+Conheça as Marcas que Confiam na World Kosher
+
+---
+
+[INTRO]
+Mais de 100 empresas em Portugal e no mundo escolheram a World Kosher para a sua certificação kosher. Veja quem já faz parte desta família.
+
+---
+
+[STATS BAR]
+📊 100+ Empresas Certificadas | 🌍 25+ Países | 📦 1.000+ Produtos
+
+---
+
+[FEATURED COMPANIES]
+
+### ⭐ Empresas em Destaque
+
+**Azeites Premium Portugal**
+🫒 Azeites Extra Virgem
+📍 Alentejo, Portugal
+✅ Certificado desde 2020
+
+**Conservas Atlântico**
+🥫 Conservas de Peixe
+📍 Porto, Portugal
+✅ Certificado desde 2019
+
+**Vinhos do Douro**
+🍷 Vinhos e Espumantes
+📍 Douro, Portugal
+✅ Certificado desde 2021
+
+**Fruti Portugal**
+🍎 Concentrados de Fruta
+📍 Coimbra, Portugal
+✅ Certificado desde 2022
+
+---
+
+[CATEGORIES]
+
+### 📦 Por Categoria de Produto
+
+**🫒 Óleos e Azeites (15 empresas)**
+- Azeites Premium Portugal
+- Olival do Sul
+- Ouro Verde
+- [+ 12 empresas]
+
+**🥫 Conservas (25 empresas)**
+- Conservas Atlântico
+- Mar Português
+- Oceano Azul
+- [+ 22 empresas]
+
+**🍷 Bebidas (20 empresas)**
+- Vinhos do Douro
+- Cervejas Lusitanas
+- Sumos Naturais PT
+- [+ 17 empresas]
+
+**🍎 Frutas e Vegetais (18 empresas)**
+- Fruti Portugal
+- Concentrados do Norte
+- Polpa Tropical
+- [+ 15 empresas]
+
+**🐟 Produtos Congelados (12 empresas)**
+- FrioPesca Norte
+- Mariscos Premium
+- Peixe Fresco Lda
+- [+ 9 empresas]
+
+**🧂 Condimentos (10 empresas)**
+- Sal de Portugal
+- Temperos Tradicionais
+- Especiarias do Mundo
+- [+ 7 empresas]
+
+---
+
+[BY COUNTRY]
+
+### 🌍 Por País
+
+**🇵🇹 Portugal** - 65 empresas
+**🇪🇸 Espanha** - 15 empresas
+**🇮🇹 Itália** - 8 empresas
+**🇫🇷 França** - 5 empresas
+**🇧🇷 Brasil** - 4 empresas
+**🇺🇸 Estados Unidos** - 3 empresas
+
+---
+
+[TESTIMONIALS]
+
+### 💬 O Que Dizem as Empresas
+
+"A certificação kosher triplicou as nossas exportações para Israel."
+— Carlos Mendes, CEO Azeites Premium
+
+"Processo profissional e rápido. Recomendamos!"
+— Ana Silva, Conservas Atlântico
+
+"O mercado kosher abriu-nos portas que nem imaginávamos."
+— João Santos, Vinhos do Douro
+
+---
+
+[CERTIFICATES GALLERY]
+
+### 📜 Galeria de Certificados
+
+[Aqui aparecem certificados de exemplo em formato de galeria]
+
+Ver Certificados de Exemplo:
+• Certificado Azeite - Atlantic Dacasa
+• Certificado Cerveja - Superbock
+• Certificado Frutas - Frutissima
+• Certificado Sal - SAOV Aceites
+• Certificado Fermento - Simply East
+• [+ ver todos]
+
+---
+
+[JOIN US]
+
+### 🤝 Junte-se às Empresas Certificadas
+
+Quer ver a sua empresa nesta lista?
+O processo é mais simples do que pensa!
+
+**Benefícios de Ser Certificado:**
+• ✅ Listagem no nosso diretório internacional
+• ✅ Selo de qualidade reconhecido
+• ✅ Acesso a novos mercados
+• ✅ Marketing e divulgação
+• ✅ Networking com outras empresas certificadas
+
+[כפתור]
+🚀 Solicitar Certificação
+
+---
+
+[SEARCH AND FILTER]
+
+### 🔍 Encontrar Empresas Certificadas
+
+Pesquisar por:
+□ Nome da Empresa
+□ Tipo de Produto
+□ País/Região
+□ Ano de Certificação
+
+[Campo de pesquisa]
+
+---
+
+[CERTIFICATE VERIFICATION]
+
+### ✅ Verificar Certificado
+
+Tem um produto com selo kosher e quer verificar a autenticidade?
+
+Introduza o código do certificado:
+[Campo de entrada]
+
+[כפתור] Verificar Agora
+
+---
+
+[PARTNERSHIP]
+
+### 🤝 Parcerias Comerciais
+
+Interessado em distribuir produtos kosher certificados?
+Contacte-nos para oportunidades de negócio.
+
+📧 business@w-kosher.com
+📞 (+351) 969 176 830
+
+---
+
+[END OF FILE]
