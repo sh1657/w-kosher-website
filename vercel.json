@@ -1,7 +1,15 @@
 {
   "version": 2,
-  "buildCommand": "echo 'No build needed - static files'",
-  "outputDirectory": "netlify-deploy",
-  "cleanUrls": true,
-  "trailingSlash": false
+  "builds": [
+    {
+      "src": "netlify-deploy/**",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/netlify-deploy/$1"
+    }
+  ]
 }

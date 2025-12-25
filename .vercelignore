@@ -1,0 +1,23 @@
+# Ignore everything except netlify-deploy folder
+*
+!netlify-deploy
+!netlify-deploy/**
+
+# Ignore build artifacts
+node_modules
+dist
+.cache
+.webpack
+reports
+
+# Ignore source files (not needed for deployment)
+src
+גיבוי
+docs
+tests
+
+# Ignore config files
+webpack.config.js
+jest.config.js
+package.json
+package-lock.json

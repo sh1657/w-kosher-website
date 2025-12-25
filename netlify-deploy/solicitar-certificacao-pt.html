@@ -269,7 +269,16 @@
         </div>
     </div>
 
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script>
+        // Initialize EmailJS - REPLACE WITH YOUR PUBLIC KEY
+        (function() {
+            emailjs.init({
+                publicKey: 'YOUR_PUBLIC_KEY_HERE', // Replace with your EmailJS public key
+            });
+        })();
+
         function submitForm(event) {
             event.preventDefault();
             
@@ -303,15 +312,66 @@
                 message += `💬 *Informações Adicionais:* ${data.message}\n`;
             }
             
-            // Encode for WhatsApp
-            const encodedMessage = encodeURIComponent(message);
-            const whatsappURL = `https://wa.me/972543080390?text=${encodedMessage}`;
+            // Send email via EmailJS
+            const btn = event.target.querySelector('button[type="submit"]');
+            btn.disabled = true;
+            btn.textContent = '⏳ Enviando...';
             
-            // Open WhatsApp
-            window.open(whatsappURL, '_blank');
-            
-            // Show success message
-            alert('✅ Formulário preparado! Será redirecionado para o WhatsApp para enviar a sua solicitação.');
+            // Send to company
+            emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
+                company: data.company,
+                contact: data.contact,
+                email: data.email,
+                phone: data.phone,
+                location: data.location || 'Não especificado',
+                productType: data.productType,
+                products: data.products,
+                production: data.production || 'Não especificado',
+                timeline: data.timeline || 'Não especificado',
+                message: data.message || 'Nenhuma informação adicional',
+                to_email: 'portugal@w-kosher.com' // Your company email
+            })
+            .then(function(response) {
+                console.log('Email sent successfully!', response);
+                
+                // Send auto-reply to customer with PDF attachment
+                return emailjs.send('YOUR_SERVICE_ID', 'YOUR_AUTOREPLY_TEMPLATE_ID', {
+                    to_email: data.email,
+                    to_name: data.contact,
+                    company: data.company
+                });
+            })
+            .then(function(response) {
+                console.log('Auto-reply sent!', response);
+                
+                // Also open WhatsApp as backup
+                const encodedMessage = encodeURIComponent(message);
+                const whatsappURL = `https://wa.me/972543080390?text=${encodedMessage}`;
+                
+                // Show success and reset form
+                alert('✅ Solicitação enviada com sucesso! Receberá um e-mail de confirmação em breve.\n\nTambém pode contactar-nos via WhatsApp.');
+                event.target.reset();
+                btn.disabled = false;
+                btn.textContent = '🚀 Enviar Solicitação';
+                
+                // Optional: Open WhatsApp
+                if (confirm('Deseja também enviar via WhatsApp?')) {
+                    window.open(whatsappURL, '_blank');
+                }
+            })
+            .catch(function(error) {
+                console.error('Error sending email:', error);
+                
+                // Fallback to WhatsApp if email fails
+                const encodedMessage = encodeURIComponent(message);
+                const whatsappURL = `https://wa.me/972543080390?text=${encodedMessage}`;
+                
+                alert('⚠️ Erro ao enviar e-mail. Será redirecionado para o WhatsApp.');
+                window.open(whatsappURL, '_blank');
+                
+                btn.disabled = false;
+                btn.textContent = '🚀 Enviar Solicitação';
+            });
         }
     </script>
 </body>
