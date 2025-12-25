@@ -253,6 +253,91 @@ const translations = {
         footer_copyright: "© 2024 World Kosher B.M.MASHGICHIM. Todos los derechos reservados.",
         footer_privacy: "Política de Privacidad",
         footer_terms: "Términos de Uso"
+    },
+    
+    he: {
+        // Top Bar
+        phone_label: "📞 קו כשרות:",
+        
+        // Navigation
+        nav_home: "🏠 דף הבית",
+        nav_certification: "📋 הסמכה",
+        nav_companies: "🏢 חברות",
+        nav_about: "ℹ️ אודות",
+        nav_contact: "📞 צור קשר",
+        cta_request: "🚀 בקשת הסמכה",
+        
+        // Hero Section
+        hero_title: "הסמכת כשרות",
+        hero_subtitle: "רשמית בפורטוגל",
+        hero_description: "הרשות המובילה בהסמכת כשרות עם למעלה מ-1,000 מוצרים מוסמכים ב-15+ מדינות",
+        stats_companies: "חברות מוסמכות",
+        stats_countries: "מדינות מוסמכות",
+        stats_approval: "אחוז אישור",
+        btn_request_cert: "🚀 בקשת הסמכה",
+        btn_view_companies: "🔍 צפה בחברות",
+        
+        // Why Choose Section
+        why_title: "למה לבחור ב-World Kosher?",
+        why_subtitle: "אנחנו הרשות המובילה בהסמכת כשרות בפורטוגל ואירופה",
+        feature_international_title: "הכרה בינלאומית",
+        feature_international_desc: "הסמכה מוכרת ביותר מ-15 מדינות ברחבי העולם, כולל ארצות הברית, קנדה וכל אירופה.",
+        feature_quality_title: "קפדנות ואיכות",
+        feature_quality_desc: "תהליך הסמכה קפדני עם 100% אחוז אישור ועמידה בסטנדרטים הבינלאומיים הגבוהים ביותר.",
+        feature_team_title: "צוות מומחים",
+        feature_team_desc: "משגיחים מוסמכים ומנוסים בכל התחומים: שמנים, תרכיזים, דגים, משקאות ועוד.",
+        feature_support_title: "תמיכה 24/7",
+        feature_support_desc: "שירות מתמיד דרך WhatsApp וטלפון לכל צרכי הסמכת הכשרות שלכם.",
+        
+        // Quick Links
+        quick_title: "🚀 גישה מהירה",
+        quick_subtitle: "נווט במהירות בין הסעיפים המרכזיים באתר",
+        quick_companies_title: "חברות מוסמכות",
+        quick_companies_desc: "צפה בכל החברות הפורטוגליות בעלות הסמכת כשרות רשמית",
+        quick_process_title: "תהליך ההסמכה",
+        quick_process_desc: "למד על 6 השלבים הפשוטים להסמכת המוצרים שלך",
+        quick_contact_title: "צור קשר",
+        quick_contact_desc: "צור איתנו קשר דרך WhatsApp, טלפון או אימייל למידע נוסף",
+        btn_view_companies_text: "צפה בחברות",
+        btn_view_process: "צפה בתהליך",
+        btn_contact: "צור קשר",
+        
+        // Companies Section
+        companies_title: "🏢 חברות מוסמכות",
+        companies_subtitle: "הכר כמה מהחברות הפורטוגליות עם הסמכת כשרות רשמית",
+        company_atlantic: "שימורים ומוצרי ים",
+        company_frutissima: "פירות ותרכיזים",
+        company_superbock: "משקאות ובירות",
+        company_innoliva: "שמני זית פרמיום",
+        btn_view_all_companies: "צפה בכל החברות →",
+        
+        // CTA Section
+        cta_title: "מוכנים להסמיך את המוצרים שלכם?",
+        cta_subtitle: "צור איתנו קשר היום והתחל בתהליך הסמכת הכשרות",
+        whatsapp_24_7: "💬 WhatsApp 24/7",
+        email_official: "📧 אימייל רשמי",
+        btn_request_now: "🚀 בקש הסמכה עכשיו",
+        
+        // Footer
+        footer_description: "הרשות המובילה בהסמכת כשרות בפורטוגל, מציעה שירותי איכות בינלאומיים עם הכרה ביותר מ-15 מדינות.",
+        footer_consumer_resources: "🛒 משאבים לצרכן",
+        footer_product_search: "🔍 חיפוש מוצרים",
+        footer_faq: "❓ שאלות נפוצות",
+        footer_recipes: "🍳 מתכונים כשרים",
+        footer_restaurants: "🍽️ מסעדות כשרות",
+        footer_industrial_resources: "🏭 משאבים תעשייתיים",
+        footer_cert_process: "תהליך ההסמכה",
+        footer_request_cert: "בקשת הסמכה",
+        footer_kosher_requirements: "דרישות כשרות",
+        footer_mashgiach_services: "שירותי משגיח",
+        footer_contact: "צור קשר",
+        footer_kosher_line: "קו כשרות 24/7:",
+        footer_official_email: "אימייל רשמי:",
+        footer_website: "אתר:",
+        footer_whatsapp_direct: "WhatsApp ישיר",
+        footer_copyright: "© 2024 World Kosher B.M.MASHGICHIM. כל הזכויות שמורות.",
+        footer_privacy: "מדיניות פרטיות",
+        footer_terms: "תנאי שימוש"
     }
 };
 
@@ -260,7 +345,8 @@ const translations = {
 const languageConfig = {
     pt: { name: 'Português', flag: '🇵🇹' },
     en: { name: 'English', flag: '🇬🇧' },
-    es: { name: 'Español', flag: '🇪🇸' }
+    es: { name: 'Español', flag: '🇪🇸' },
+    he: { name: 'עברית', flag: '🇮🇱' }
 };
 
 // Default language

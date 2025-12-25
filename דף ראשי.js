@@ -2,7 +2,7 @@
     <div style="background: #1e3a8a;color: white;padding: 10px 0;font-size: 0.9rem;position: sticky;top: 0;z-index: 1001">
         <div style="max-width: 1200px;margin: 0 auto;padding: 0 20px;display: flex;justify-content: space-between;align-items: center;flex-wrap: wrap;gap: 10px">
             <div>
-                <span style="margin-right: 20px">📞 LINHA KOSHER: <a href="tel:+972543080390" style="color: white;text-decoration: none">(+972) 54 308 0390</a></span>
+                <span style="margin-right: 20px">📞 LINHA KOSHER: <a href="tel:+97226310336" style="color: white;text-decoration: none">(+972) 2-631-0336</a></span>
                 <span>📧 <a href="mailto:Portugal@w-kosher.com" style="color: white;text-decoration: none">Portugal@w-kosher.com</a></span>
             </div>
             <div style="display: flex;align-items: center;gap: 15px">
@@ -282,7 +282,7 @@
                 <div>
                     <h4 style="margin-bottom: 20px"> Contacto</h4>
                     <div>
-                        <p style="color: rgba(255,255,255,0.8);margin-bottom: 10px"><strong> Linha Kosher 24/6:</strong><br><a href="tel:+972543080390" style="color: white;text-decoration: none">(+972) 54 308 0390</a></p>
+                        <p style="color: rgba(255,255,255,0.8);margin-bottom: 10px"><strong> Linha Kosher 24/6:</strong><br><a href="tel:+97226310336" style="color: white;text-decoration: none">(+972) 2-631-0336</a></p>
                         <p style="color: rgba(255,255,255,0.8);margin-bottom: 10px"><strong> Email Oficial:</strong><br><a href="mailto:Portugal@w-kosher.com" style="color: white;text-decoration: none">Portugal@w-kosher.com</a></p>
                         <p style="color: rgba(255,255,255,0.8);margin-bottom: 20px"><strong> Website:</strong><br>www.w-kosher.com</p>
                         <a href="https://wa.me/972543080390" target="_blank" style="background: #25d366;color: white;padding: 12px 20px;border-radius: 8px;text-decoration: none;font-weight: 600;display: inline-block"> WhatsApp Direto</a>

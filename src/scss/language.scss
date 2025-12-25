@@ -44,6 +44,28 @@ body.lang-he .language-buttons {
     direction: ltr !important;
 }
 
+/* תיקון כיוון מספרים בעברית - מספרים תמיד LTR */
+body.lang-he [class*="stats"],
+body.lang-he .stat-number,
+body.lang-he [class*="number"],
+body.lang-he .phone,
+body.lang-he .phone-number,
+body.lang-he a[href^="tel:"],
+body.lang-he a[href^="mailto:"],
+body.lang-he time,
+body.lang-he .year,
+body.lang-he .count {
+    direction: ltr !important;
+    unicode-bidi: embed;
+    display: inline-block !important;
+}
+
+/* תיקון נוסף למספרי טלפון בתוך ספאן */
+body.lang-he span:has(a[href^="tel:"]) {
+    direction: ltr !important;
+    display: inline-block !important;
+}
+
 /* כאשר הספרדית פעילה */
 body.lang-es .text-es {
     display: inline !important;
