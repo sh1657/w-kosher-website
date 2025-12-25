@@ -105,10 +105,9 @@
             text-align: right;
         }
         
-        [dir="rtl"] .top-bar-content,
-        [dir="rtl"] .header-content,
+        /* Don't reverse navigation order in RTL - keep logical order */
         [dir="rtl"] .nav {
-            flex-direction: row-reverse;
+            direction: rtl;
         }
         
         /* Fix numbers direction in RTL - numbers should always be LTR */
