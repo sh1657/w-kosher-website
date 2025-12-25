@@ -7,7 +7,7 @@
     "start": "npm run dev",
     "dev": "live-server --port=3000 --entry-file=index.html",
     "build": "npm run build:css && npm run build:js",
-    "build:css": "sass src/scss:dist/css --watch",
+    "build:css": "sass src/scss:dist/css --no-source-map",
     "build:js": "webpack --mode=production",
     "lint": "eslint src/js/**/*.js",
     "test": "jest",
