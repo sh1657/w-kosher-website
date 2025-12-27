@@ -1,0 +1,85 @@
+=== Certification Request Page - English ===
+
+Main Title:
+🚀 Request Kosher Certification
+
+Subtitle:
+Fill out the form and receive a personalized quote within 24 hours
+
+=== Form Fields ===
+
+Company Name *
+📢 Company Name *
+
+Contact Person *
+👤 Contact Person *
+
+E-mail *
+📧 E-mail *
+
+Phone *
+📞 Phone *
+
+Company Location
+📍 Company Location
+Placeholder: City, Country
+
+Product Type *
+🏭 Product Type *
+Options:
+- Select product type
+- 🫒 Olive Oils & Oils
+- 🥫 Preserves & Canned Foods
+- 🍷 Beverages (Wines, Beers, Juices)
+- 🍎 Fruits & Concentrates
+- 🐟 Frozen Products
+- 🧂 Salt & Condiments
+- 🍞 Yeast & Ingredients
+- 📦 Others
+
+Detailed Product Description *
+📝 Detailed Product Description *
+Placeholder: Describe the products you want to certify, main ingredients, production processes...
+
+Monthly Production Volume
+🏭 Monthly Production Volume
+Options:
+- Select approximate volume
+- 🔹 Small (up to 1,000 units)
+- 🔹 Medium (1,000 - 10,000 units)
+- 🔹 Large (10,000 - 100,000 units)
+- 🔹 Industrial (over 100,000 units)
+
+Desired Certification Timeline
+⏰ Desired Certification Timeline
+Options:
+- Select timeline
+- 🚨 Urgent (2-3 weeks)
+- 📅 Normal (4-6 weeks)
+- ⏳ Flexible (6-8 weeks)
+
+Additional Information
+💬 Additional Information
+Placeholder: Other relevant information, certification experience, target markets...
+
+Submit Button:
+🚀 Send Request
+
+=== Contact Section ===
+
+Title:
+📞 Direct Contact
+
+WhatsApp:
+WhatsApp: (+972) 54 308 0390
+
+E-mail:
+E-mail: portugal@w-kosher.com
+
+Hours:
+Hours: Monday to Thursday, 8:00 AM - 6:00 PM
+
+=== Proofreading Notes ===
+- All fields marked with * are required
+- Please verify all text is clear and accurate
+- Check that placeholder texts are helpful
