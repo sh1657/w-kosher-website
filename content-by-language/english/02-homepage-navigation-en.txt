@@ -1,0 +1,25 @@
+=== Navigation Menu ===
+
+🏠 Home
+📋 Certification
+🏢 Companies
+ℹ️ About Us
+📞 Contact
+🚀 Request Certification
+
+=== Hero Section ===
+
+🏆 Official Kosher Certification in Portugal
+
+The leading authority in kosher certification with over 1,000 certified products in 25+ countries worldwide
+
+=== Statistics ===
+
+Certified Companies
+Countries Served
+Approved Products
+
+=== Buttons ===
+
+🚀 Request Certification
+📋 Learn More
