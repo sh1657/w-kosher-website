@@ -147,8 +147,8 @@
         }
 
         .logo {
-            width: 80px;
-            height: 80px;
+            width: 50px;
+            height: 50px;
             background: white;
             border-radius: 12px;
             display: flex;
@@ -161,10 +161,9 @@
         .logo img {
             width: 100%;
             height: 100%;
-            max-width: 80px;
-            max-height: 80px;
+            max-width: 50px;
+            max-height: 50px;
             object-fit: contain;
-            background: transparent;
         }
 
         .logo-text h1 {
@@ -284,7 +283,6 @@
             overflow: hidden;
             box-shadow: 0 5px 20px rgba(0,0,0,0.1);
             transition: transform 0.3s, box-shadow 0.3s;
-            cursor: pointer;
         }
 
         .company-card:hover {
@@ -297,7 +295,6 @@
             background-size: cover;
             background-position: center;
             position: relative;
-            cursor: pointer;
         }
 
         .certified-badge {
@@ -310,230 +307,6 @@
             border-radius: 15px;
             font-size: 0.8rem;
             font-weight: bold;
-        }
-
-        .gallery-badge {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            background: #1e3a8a;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 15px;
-            font-size: 0.8rem;
-            font-weight: bold;
-        }
-
-        /* Gallery Modal */
-        .gallery-modal {
-            display: none;
-            position: fixed;
-            z-index: 9999;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.9);
-        }
-
-        .modal-content {
-            position: relative;
-            background-color: #fefefe;
-            margin: 2% auto;
-            padding: 0;
-            width: 90%;
-            max-width: 1000px;
-            border-radius: 16px;
-            overflow: hidden;
-        }
-
-        .modal-header {
-            background: #1e3a8a;
-            color: white;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .close {
-            color: white;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        .close:hover {
-            opacity: 0.7;
-        }
-
-        .gallery-container {
-            position: relative;
-            background: #000;
-        }
-
-        .gallery-image {
-            width: 100%;
-            height: 400px;
-            object-fit: contain;
-            background: #000;
-        }
-
-        .gallery-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(0,0,0,0.7);
-            color: white;
-            border: none;
-            padding: 15px 20px;
-            cursor: pointer;
-            font-size: 24px;
-            transition: background 0.3s;
-        }
-
-        .gallery-nav:hover {
-            background: rgba(0,0,0,0.9);
-        }
-
-        .gallery-prev {
-            left: 10px;
-        }
-
-        .gallery-next {
-            right: 10px;
-        }
-
-        .gallery-thumbnails {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            padding: 20px;
-            background: #f8f9fa;
-            overflow-x: auto;
-        }
-
-        .thumbnail {
-            width: 60px;
-            height: 60px;
-            object-fit: cover;
-            border-radius: 8px;
-            cursor: pointer;
-            opacity: 0.6;
-            transition: opacity 0.3s;
-        }
-
-        .thumbnail.active {
-            opacity: 1;
-            border: 2px solid #1e3a8a;
-        }
-
-        .thumbnail:hover {
-            opacity: 1;
-        }
-
-        /* Certificate Search */
-        .certificate-search {
-            background: linear-gradient(135deg, #1e3a8a 0%, #059669 100%);
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
-        }
-
-        .search-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .search-container h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-
-        .search-container p {
-            font-size: 1.2rem;
-            margin-bottom: 40px;
-            opacity: 0.9;
-        }
-
-        .search-form {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .search-input {
-            flex: 1;
-            min-width: 300px;
-            padding: 15px 20px;
-            border: none;
-            border-radius: 8px;
-            font-size: 1rem;
-            outline: none;
-        }
-
-        .search-btn {
-            background: #f59e0b;
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .search-btn:hover {
-            background: #d97706;
-        }
-
-        .search-results {
-            display: none;
-            background: white;
-            border-radius: 8px;
-            padding: 20px;
-            margin-top: 20px;
-            text-align: left;
-            color: #333;
-        }
-
-        .search-result-item {
-            padding: 15px;
-            border-bottom: 1px solid #e5e7eb;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .search-result-item:last-child {
-            border-bottom: none;
-        }
-
-        .result-info h4 {
-            color: #1e3a8a;
-            margin-bottom: 5px;
-        }
-
-        .result-info p {
-            color: #6b7280;
-            margin: 0;
-        }
-
-        .view-certificate {
-            background: #1e3a8a;
-            color: white;
-            padding: 8px 16px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background 0.3s;
-        }
-
-        .view-certificate:hover {
-            background: #1e40af;
         }
 
         .company-content {
@@ -651,129 +424,48 @@
             color: white;
             padding: 60px 20px 30px;
         }
-        
-        .footer-grid {
+
+        .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 40px;
             margin-bottom: 40px;
         }
-        
+
         .footer-section h3 {
             color: #f59e0b;
             margin-bottom: 20px;
-            font-size: 1.4rem;
         }
-        
+
         .footer-section h4 {
-            color: #e5e7eb;
-            margin-bottom: 15px;
-            font-size: 1.1rem;
+            margin-bottom: 20px;
         }
-        
+
         .footer-section p {
             color: rgba(255,255,255,0.8);
-            margin-bottom: 20px;
             line-height: 1.6;
+            margin-bottom: 10px;
         }
-        
-        .footer-nav {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .footer-nav li {
-            margin-bottom: 8px;
-        }
-        
-        .footer-nav a {
-            color: rgba(255,255,255,0.7);
+
+        .footer-section a {
+            color: white;
             text-decoration: none;
-            transition: color 0.3s ease;
-            font-size: 0.9rem;
+            margin-right: 15px;
         }
-        
-        .footer-nav a:hover {
-            color: #f59e0b;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .social-links a {
-            font-size: 1.5rem;
-            transition: transform 0.3s ease;
-        }
-        
-        .social-links a:hover {
-            transform: scale(1.2);
-        }
-        
-        .contact-info p {
-            margin-bottom: 15px;
-        }
-        
-        .contact-info a {
-            color: #f59e0b;
-            text-decoration: none;
-        }
-        
-        .contact-info a:hover {
+
+        .footer-section a:hover {
             text-decoration: underline;
         }
-        
+
         .footer-bottom {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
             border-top: 1px solid rgba(255,255,255,0.1);
             padding-top: 30px;
-            margin-top: 40px;
-            flex-wrap: wrap;
-            gap: 20px;
+            text-align: center;
         }
-        
-        .footer-bottom-left p {
+
+        .footer-bottom p {
             color: rgba(255,255,255,0.6);
-            font-size: 0.9rem;
             margin: 0;
-        }
-        
-        .footer-bottom-right {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .footer-bottom-right a {
-            color: rgba(255,255,255,0.7);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.3s ease;
-        }
-        
-        .footer-bottom-right a:hover {
-            color: #f59e0b;
-        }
-        
-        @media (max-width: 768px) {
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-            
-            .footer-bottom {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .social-links {
-                justify-content: center;
-            }
-        }
         }
 
         .whatsapp-btn {
@@ -794,19 +486,6 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            .top-bar {
-                position: relative;
-            }
-            
-            .header {
-                position: relative;
-            }
-            
-            .language-dropdown {
-                right: -20px;
-                min-width: 180px;
-            }
-            
             .page-header h1 {
                 font-size: 2rem;
             }
@@ -849,235 +528,18 @@
             }
         }
 
-        /* Gallery Modal */
-        .gallery-modal {
-            position: fixed;
-            top: 0;
+        /* RTL Support */
+        [dir="rtl"] {
+            text-align: right;
+        }
+
+        [dir="rtl"] .logo-section {
+            flex-direction: row-reverse;
+        }
+
+        [dir="rtl"] .language-dropdown {
             left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.95);
-            z-index: 9999;
-            display: none;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .gallery-modal.active {
-            display: flex;
-        }
-
-        .gallery-container {
-            position: relative;
-            max-width: 90%;
-            max-height: 90%;
-            background: white;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-        }
-
-        .gallery-header {
-            background: #1e3a8a;
-            color: white;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .gallery-title {
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin: 0;
-        }
-
-        .gallery-close {
-            background: none;
-            border: none;
-            color: white;
-            font-size: 2rem;
-            cursor: pointer;
-            padding: 0;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            transition: background-color 0.3s;
-        }
-
-        .gallery-close:hover {
-            background: rgba(255,255,255,0.2);
-        }
-
-        .gallery-main {
-            position: relative;
-            background: #f8f9fa;
-            height: 60vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .gallery-image {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-            border-radius: 8px;
-        }
-
-        .gallery-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(255,255,255,0.9);
-            border: none;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            font-size: 1.5rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s;
-            color: #1e3a8a;
-        }
-
-        .gallery-nav:hover {
-            background: white;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-
-        .gallery-prev {
-            left: 20px;
-        }
-
-        .gallery-next {
-            right: 20px;
-        }
-
-        .gallery-counter {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(0,0,0,0.7);
-            color: white;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-        }
-
-        .gallery-thumbnails {
-            padding: 20px;
-            background: white;
-            max-height: 120px;
-            overflow-x: auto;
-            display: flex;
-            gap: 10px;
-            scrollbar-width: thin;
-        }
-
-        .gallery-thumbnail {
-            flex-shrink: 0;
-            width: 80px;
-            height: 80px;
-            border-radius: 8px;
-            object-fit: cover;
-            cursor: pointer;
-            border: 3px solid transparent;
-            transition: all 0.3s;
-        }
-
-        .gallery-thumbnail:hover {
-            border-color: #f59e0b;
-        }
-
-        .gallery-thumbnail.active {
-            border-color: #1e3a8a;
-        }
-
-        /* Company card clickable */
-        .company-card {
-            background: white;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-            cursor: pointer;
-        }
-
-        .company-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-        }
-
-        .company-image {
-            height: 150px;
-            background-size: cover;
-            background-position: center;
-            position: relative;
-        }
-
-        .certified-badge {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: #059669;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 15px;
-            font-size: 0.8rem;
-            font-weight: bold;
-        }
-
-        /* Loading state */
-        .gallery-loading {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 200px;
-            color: #6b7280;
-            font-size: 1.1rem;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .gallery-container {
-                max-width: 95%;
-                max-height: 95%;
-            }
-
-            .gallery-main {
-                height: 50vh;
-            }
-
-            .gallery-nav {
-                width: 40px;
-                height: 40px;
-                font-size: 1.2rem;
-            }
-
-            .gallery-prev {
-                left: 10px;
-            }
-
-            .gallery-next {
-                right: 10px;
-            }
-
-            .gallery-thumbnails {
-                padding: 15px;
-                max-height: 100px;
-            }
-
-            .gallery-thumbnail {
-                width: 60px;
-                height: 60px;
-            }
+            right: auto;
         }
     </style>
 </head>
@@ -1087,7 +549,7 @@
         <div class="container">
             <div class="top-bar-left">
                 <span>📞 LINHA KOSHER: <a href="tel:+972543080390">(+972) 54 308 0390</a></span>
-                <span>📧 <a href="mailto:portugal@w-kosher.com">portugal@w-kosher.com</a></span>
+                <span>📧 <a href="mailto:Portugal@w-kosher.com">Portugal@w-kosher.com</a></span>
             </div>
             <div class="top-bar-right">
                 <!-- Language Selector -->
@@ -1098,12 +560,12 @@
                         <span>▼</span>
                     </div>
                     <div id="languageDropdown" class="language-dropdown">
-                        <div class="language-option active" onclick="selectLanguage('🇵🇹', 'Português')">🇵🇹 <span>Português</span></div>
-                        <div class="language-option" onclick="selectLanguage('🇬🇧', 'English')">🇬🇧 <span>English</span></div>
-                        <div class="language-option" onclick="selectLanguage('🇮🇱', 'עברית')">🇮🇱 <span>עברית</span></div>
-                        <div class="language-option" onclick="selectLanguage('🇪🇸', 'Español')">🇪🇸 <span>Español</span></div>
-                        <div class="language-option" onclick="selectLanguage('🇷🇺', 'Русский')">🇷🇺 <span>Русский</span></div>
-                        <div class="language-option" onclick="selectLanguage('🇮🇹', 'Italiano')">🇮🇹 <span>Italiano</span></div>
+                        <div class="language-option active" onclick="changeLanguage('pt')">🇵🇹 Português</div>
+                        <div class="language-option" onclick="changeLanguage('en')">🇬🇧 English</div>
+                        <div class="language-option" onclick="changeLanguage('he')">🇮🇱 עברית</div>
+                        <div class="language-option" onclick="changeLanguage('es')">🇪🇸 Español</div>
+                        <div class="language-option" onclick="changeLanguage('ru')">🇷🇺 Русский</div>
+                        <div class="language-option" onclick="changeLanguage('it')">🇮🇹 Italiano</div>
                     </div>
                 </div>
                 <div>
@@ -1120,7 +582,7 @@
             <!-- Logo Section -->
             <div class="logo-section">
                 <div class="logo">
-                    <img src="images/logo.png" alt="World Kosher Logo" onerror="this.src='images/logo.jpg'">
+                    <img src="https://wkoshercom.wordpress.com/wp-content/uploads/2024/06/4-removebg-preview.png" alt="World Kosher Logo">
                 </div>
                 <div class="logo-text">
                     <h1>World Kosher</h1>
@@ -1136,6 +598,9 @@
                 <a href="sobre-nos.html" data-translate="nav-about">ℹ️ Sobre Nós</a>
                 <a href="contacto.html" data-translate="nav-contact">📞 Contacto</a>
             </nav>
+            
+            <!-- CTA Button -->
+            <a href="#" onclick="redirectToCertificationForm()" class="cta-button" data-translate="cta-button" style="padding: 12px 20px; font-size: 1rem;">🚀 Solicitar Certificação</a>
         </div>
     </header>
 
@@ -1157,33 +622,13 @@
         </div>
     </section>
 
-    <!-- Certificate Search Section -->
-    <section class="certificate-search">
-        <div class="container">
-            <div class="search-container">
-                <h2 data-translate="cert-search-title">🔍 חיפוש תעודת כשרות</h2>
-                <p data-translate="cert-search-subtitle">חפש תעודת כשרות לפי שם חברה או מוצר</p>
-                
-                <div class="search-form">
-                    <input type="text" class="search-input" id="certificateSearch" placeholder="הקלד שם חברה או מוצר..." data-translate="cert-search-placeholder">
-                    <button class="search-btn" onclick="searchCertificates()" data-translate="cert-search-btn">🔍 חפש</button>
-                </div>
-                
-                <div class="search-results" id="searchResults">
-                    <h3 data-translate="search-results-title">תוצאות חיפוש:</h3>
-                    <div id="resultsContainer"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Companies Grid -->
     <section class="companies-section">
         <div class="container">
             <div class="companies-grid" id="companiesGrid">
                 <!-- Atlantic -->
-                <div class="company-card" data-company="atlantic conservas mar" onclick="openGallery('atlantic', 'Atlantic - Conservas e Produtos do Mar')">
-                    <div class="company-image" style="background-image: url('images/company-logos/dacasa logo webp.webp'), url('images/companies/atlantic.jpg')">
+                <div class="company-card" data-company="atlantic conservas mar">
+                    <div class="company-image" style="background-image: url('https://worldkosher.pt/wp-content/uploads/2024/08/ImagemWhatsApp2024-08-05s13.09.12_62c91e2f1.jpg')">
                         <div class="certified-badge" data-translate="certified-badge">✓ CERTIFICADO</div>
                     </div>
                     <div class="company-content">
@@ -1192,18 +637,18 @@
                         <div class="company-details">
                             <p>📍 <strong data-translate="location-label">Localização:</strong> Peniche, Portugal</p>
                             <p>📞 <strong data-translate="phone-label">Telefone:</strong> +351 262 780 100</p>
-                            <p>🌐 <strong data-translate="website-label">Website:</strong> <a href="http://www.dacsaatlantic.com/" target="_blank">www.dacsaatlantic.com</a></p>
+                            <p>🌐 <strong data-translate="website-label">Website:</strong> <a href="http://www.atlanticportugal.pt" target="_blank">www.atlanticportugal.pt</a></p>
                         </div>
                         <div class="company-actions">
-                            <a href="certificates/certificate  Atlantic dacasa.pdf" target="_blank" class="btn-certificate" data-translate="btn-certificate">📋 Certificado</a>
+                            <a href="https://worldkosher.pt/wp-content/uploads/2024/08/certificateATLANTIC.pdf" target="_blank" class="btn-certificate" data-translate="btn-certificate">📋 Certificado</a>
                             <a href="https://wa.me/972543080390" target="_blank" class="btn-contact" data-translate="btn-contact">💬 Contacto</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Frutíssima -->
-                <div class="company-card" data-company="frutissima frutas concentrados" onclick="openGallery('frutissima', 'Frutíssima - Frutas e Concentrados')">
-                    <div class="company-image" style="background-image: url('images/company-logos/frutissima logo.png'), url('images/companies/frutissima.jpg')">
+                <div class="company-card" data-company="frutissima frutas concentrados">
+                    <div class="company-image" style="background-image: url('https://worldkosher.pt/wp-content/uploads/2024/08/Frutissima9.jpg')">
                         <div class="certified-badge" data-translate="certified-badge">✓ CERTIFICADO</div>
                     </div>
                     <div class="company-content">
@@ -1215,15 +660,15 @@
                             <p>🌐 <strong data-translate="website-label">Website:</strong> <a href="http://www.frutissima.com.pt" target="_blank">www.frutissima.com.pt</a></p>
                         </div>
                         <div class="company-actions">
-                            <a href="certificates/certificate  FRUTISSIMA.pdf" target="_blank" class="btn-certificate" data-translate="btn-certificate">📋 Certificado</a>
+                            <a href="https://worldkosher.pt/wp-content/uploads/2024/08/certificateFRUTISSIMA.pdf" target="_blank" class="btn-certificate" data-translate="btn-certificate">📋 Certificado</a>
                             <a href="https://wa.me/972543080390" target="_blank" class="btn-contact" data-translate="btn-contact">💬 Contacto</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Friopesca -->
-                <div class="company-card" data-company="friopesca produtos congelados mar" onclick="openGallery('friopesca', 'Friopesca - Produtos Congelados do Mar')">
-                    <div class="company-image" style="background-image: url('images/company-logos/friopesca logo.png'), url('images/companies/friopesca.jpg')">
+                <div class="company-card" data-company="friopesca produtos congelados mar">
+                    <div class="company-image" style="background-image: url('https://worldkosher.pt/wp-content/uploads/2024/08/IMG-20240805-WA0023.jpg')">
                         <div class="certified-badge" data-translate="certified-badge">✓ CERTIFICADO</div>
                     </div>
                     <div class="company-content">
@@ -1235,16 +680,15 @@
                             <p>🌐 <strong data-translate="website-label">Website:</strong> <a href="http://www.frip.pt" target="_blank">www.frip.pt</a></p>
                         </div>
                         <div class="company-actions">
-                            <a href="certificates/certificate  Friopesca Sul (2025).pdf" target="_blank" class="btn-certificate" data-translate="btn-certificate">📋 Certificado Sul</a>
-                            <a href="certificates/certificate  FriopescaNorte.pdf" target="_blank" class="btn-certificate" data-translate="btn-certificate">📋 Certificado Norte</a>
+                            <a href="https://worldkosher.pt/wp-content/uploads/2024/08/certificateFRIOPESCA.pdf" target="_blank" class="btn-certificate" data-translate="btn-certificate">📋 Certificado</a>
                             <a href="https://wa.me/972543080390" target="_blank" class="btn-contact" data-translate="btn-contact">💬 Contacto</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Innoliva -->
-                <div class="company-card" data-company="innoliva azeites extra virgem premium" onclick="openGallery('innoliva', 'Innoliva - Azeites Extra Virgem Premium')">
-                    <div class="company-image" style="background-image: url('images/company-logos/INNOLIVA logo png.png'), url('images/companies/innoliva.jpg')">
+                <div class="company-card" data-company="innoliva azeites extra virgem premium">
+                    <div class="company-image" style="background-image: url('https://worldkosher.pt/wp-content/uploads/2024/08/Innoliva3.jpg')">
                         <div class="certified-badge" data-translate="certified-badge">✓ CERTIFICADO</div>
                     </div>
                     <div class="company-content">
@@ -1253,18 +697,18 @@
                         <div class="company-details">
                             <p>📍 <strong data-translate="location-label">Localização:</strong> Évora, Portugal</p>
                             <p>📞 <strong data-translate="phone-label">Telefone:</strong> +351 266 760 470</p>
-                            <p>🌐 <strong data-translate="website-label">Website:</strong> <a href="https://innoliva.com/" target="_blank">innoliva.com</a></p>
+                            <p>🌐 <strong data-translate="website-label">Website:</strong> <a href="http://www.innoliva.pt" target="_blank">www.innoliva.pt</a></p>
                         </div>
                         <div class="company-actions">
-                            <a href="certificates/certificate INNOLIVA.pdf" target="_blank" class="btn-certificate" data-translate="btn-certificate">📋 Certificado</a>
+                            <a href="https://worldkosher.pt/wp-content/uploads/2024/08/certificateINNOLIVA.pdf" target="_blank" class="btn-certificate" data-translate="btn-certificate">📋 Certificado</a>
                             <a href="https://wa.me/972543080390" target="_blank" class="btn-contact" data-translate="btn-contact">💬 Contacto</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Soguima -->
-                <div class="company-card" data-company="soguima sal marinho condimentos" onclick="openGallery('soguima', 'Soguima - Sal Marinho e Condimentos')">
-                    <div class="company-image" style="background-image: url('images/company-logos/Soguima logo.png'), url('images/companies/soguima.jpg')">
+                <div class="company-card" data-company="soguima sal marinho condimentos">
+                    <div class="company-image" style="background-image: url('https://worldkosher.pt/wp-content/uploads/2024/08/Soguima1.jpg')">
                         <div class="certified-badge" data-translate="certified-badge">✓ CERTIFICADO</div>
                     </div>
                     <div class="company-content">
@@ -1273,18 +717,18 @@
                         <div class="company-details">
                             <p>📍 <strong data-translate="location-label">Localização:</strong> Aveiro, Portugal</p>
                             <p>📞 <strong data-translate="phone-label">Telefone:</strong> +351 234 329 620</p>
-                            <p>🌐 <strong data-translate="website-label">Website:</strong> <a href="https://www.soguima.com/" target="_blank">www.soguima.com</a></p>
+                            <p>🌐 <strong data-translate="website-label">Website:</strong> <a href="http://www.soguima.pt" target="_blank">www.soguima.pt</a></p>
                         </div>
                         <div class="company-actions">
-                            <a href="certificates/certificate  SOGUIMA SA.pdf" target="_blank" class="btn-certificate" data-translate="btn-certificate">📋 Certificado</a>
+                            <a href="https://worldkosher.pt/wp-content/uploads/2024/08/certificateSOGUIMA.pdf" target="_blank" class="btn-certificate" data-translate="btn-certificate">📋 Certificado</a>
                             <a href="https://wa.me/972543080390" target="_blank" class="btn-contact" data-translate="btn-contact">💬 Contacto</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Super Bock Group -->
-                <div class="company-card" data-company="super bock group bebidas cervejas" onclick="openGallery('superbock', 'Super Bock Group - Bebidas e Cervejas')">
-                    <div class="company-image" style="background-image: url('images/company-logos/Superbock logo.png'), url('images/companies/superbock.jpg')">
+                <div class="company-card" data-company="super bock group bebidas cervejas">
+                    <div class="company-image" style="background-image: url('https://worldkosher.pt/wp-content/uploads/2024/08/Super5.jpg')">
                         <div class="certified-badge" data-translate="certified-badge">✓ CERTIFICADO</div>
                     </div>
                     <div class="company-content">
@@ -1296,16 +740,15 @@
                             <p>🌐 <strong data-translate="website-label">Website:</strong> <a href="http://www.superbockgroup.com" target="_blank">www.superbockgroup.com</a></p>
                         </div>
                         <div class="company-actions">
-                            <a href="certificates/certificate  SUPERBOCK CERVEZA (2).pdf" target="_blank" class="btn-certificate" data-translate="btn-certificate">📋 Certificado</a>
+                            <a href="https://worldkosher.pt/wp-content/uploads/2024/08/certificateSUPERBOCK.pdf" target="_blank" class="btn-certificate" data-translate="btn-certificate">📋 Certificado</a>
                             <a href="https://wa.me/972543080390" target="_blank" class="btn-contact" data-translate="btn-contact">💬 Contacto</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Simplyeast -->
-                <div class="company-card" data-company="simplyeast fermentos ingredientes" onclick="openGallery('simplyeast', 'Simplyeast - Fermentos e Ingredientes')">
-                    <div class="company-image" style="background: linear-gradient(135deg, #1e3a8a, #059669); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-weight: bold;">
-                        SIMPLYEAST>
+                <div class="company-card" data-company="simplyeast fermentos ingredientes">
+                    <div class="company-image" style="background-image: url('https://worldkosher.pt/wp-content/uploads/2024/08/Simplyeast.jpeg')">
                         <div class="certified-badge" data-translate="certified-badge">✓ CERTIFICADO</div>
                     </div>
                     <div class="company-content">
@@ -1317,15 +760,16 @@
                             <p>🌐 <strong data-translate="website-label">Website:</strong> <a href="http://www.simplyeast.pt" target="_blank">www.simplyeast.pt</a></p>
                         </div>
                         <div class="company-actions">
-                            <a href="certificates/certificate  Simplyeast (2025).pdf" target="_blank" class="btn-certificate" data-translate="btn-certificate">📋 Certificado</a>
+                            <a href="https://worldkosher.pt/wp-content/uploads/2024/08/certificateSIMPLYEAST.pdf" target="_blank" class="btn-certificate" data-translate="btn-certificate">📋 Certificado</a>
                             <a href="https://wa.me/972543080390" target="_blank" class="btn-contact" data-translate="btn-contact">💬 Contacto</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- SAOV -->
-                <div class="company-card" data-company="saov azeites oleos vegetais" onclick="openGallery('saov', 'SAOV - Azeites e Óleos Vegetais')">
-                    <div class="company-image" style="background-image: url('images/company-logos/SAOV logo.jpg'), url('images/companies/saov.jpg')">
+                <div class="company-card" data-company="saov azeites oleos vegetais">
+                    <div class="company-image" style="background: linear-gradient(135deg, #1e3a8a, #059669); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; font-weight: bold;">
+                        SAOV
                         <div class="certified-badge" data-translate="certified-badge">✓ CERTIFICADO</div>
                     </div>
                     <div class="company-content">
@@ -1337,7 +781,7 @@
                             <p>🌐 <strong data-translate="website-label">Website:</strong> <a href="http://www.saov.pt" target="_blank">www.saov.pt</a></p>
                         </div>
                         <div class="company-actions">
-                            <a href="certificates/certificate  SAOV ACEITES (2).pdf" target="_blank" class="btn-certificate" data-translate="btn-certificate">📋 Certificado</a>
+                            <a href="https://worldkosher.pt/wp-content/uploads/2024/08/certificateSAOV.pdf" target="_blank" class="btn-certificate" data-translate="btn-certificate">📋 Certificado</a>
                             <a href="https://wa.me/972543080390" target="_blank" class="btn-contact" data-translate="btn-contact">💬 Contacto</a>
                         </div>
                     </div>
@@ -1350,115 +794,40 @@
     <section class="cta-section">
         <div class="container">
             <h2 data-translate="cta-title">Sua Empresa Aqui!</h2>
-            <p data-translate="cta-subtitle">Junte-se às empresas certificadas e expanda seu mercado para mais de 25 países</p>
-            <a href="#" onclick="redirectToCertificationForm()" class="cta-button" data-translate="cta-button">🚀 Solicitar Certificação</a>
+            <p data-translate="cta-subtitle">Junte-se às empresas certificadas e expanda seu mercado para mais de 15 países</p>
+            <a href="https://wa.me/972543080390" target="_blank" class="cta-button" data-translate="cta-button">🚀 Solicitar Certificação</a>
         </div>
     </section>
-
-    <!-- Gallery Modal -->
-    <div id="galleryModal" class="gallery-modal">
-        <div class="gallery-container">
-            <div class="gallery-header">
-                <h3 id="galleryTitle" class="gallery-title">Gallery</h3>
-                <button class="gallery-close" onclick="closeGallery()">&times;</button>
-            </div>
-            <div class="gallery-main">
-                <img id="galleryImage" src="" alt="" class="gallery-image">
-                <button class="gallery-nav gallery-prev" onclick="prevImage()">‹</button>
-                <button class="gallery-nav gallery-next" onclick="nextImage()">›</button>
-                <div id="galleryCounter" class="gallery-counter">1 / 1</div>
-                <div id="galleryLoading" class="gallery-loading" style="display: none;">
-                    📸 Loading gallery...
-                </div>
-            </div>
-            <div id="galleryThumbnails" class="gallery-thumbnails"></div>
-        </div>
-    </div>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-grid">
-                <!-- Company Info -->
+            <div class="footer-content">
                 <div class="footer-section">
-                    <h3 data-translate="footer-company-title">World Kosher Portugal</h3>
-                    <p data-translate="footer-company-desc">A principal autoridade em certificação kosher em Portugal, oferecendo serviços de qualidade internacional com reconhecimento mundial.</p>
-                    <div class="social-links">
-                        <a href="https://www.facebook.com/profile.php?id=61575501917315" target="_blank" aria-label="Facebook">📘</a>
-                        <a href="https://wa.me/972543080390" target="_blank" aria-label="WhatsApp">📱</a>
-                        <a href="mailto:portugal@w-kosher.com" aria-label="Email">📧</a>
+                    <h3 data-translate="footer-title">🏆 World Kosher B.M.MASHGICHIM</h3>
+                    <p data-translate="footer-desc">A principal autoridade em certificação kosher em Portugal, oferecendo serviços de qualidade internacional com reconhecimento em mais de 15 países ao redor do mundo.</p>
+                    <div>
+                        <a href="https://www.facebook.com/profile.php?id=61575501917315" target="_blank">📘 Facebook</a>
+                        <a href="https://wa.me/972543080390" target="_blank">📱 WhatsApp</a>
+                        <a href="mailto:Portugal@w-kosher.com">📧 Email</a>
                     </div>
                 </div>
-
-                <!-- Consumer Resources -->
+                
                 <div class="footer-section">
-                    <h4 data-translate="footer-consumer-title">Recursos do Consumidor</h4>
-                    <ul class="footer-nav">
-                        <li><a href="index.html" data-translate="footer-home">🏠 Página Inicial</a></li>
-                        <li><a href="empresas.html" data-translate="footer-companies">🏢 Empresas Certificadas</a></li>
-                        <li><a href="sobre-nos.html" data-translate="footer-about">ℹ️ Sobre Nós</a></li>
-                        <li><a href="certificacao.html" data-translate="footer-certification-info">📋 Informações de Certificação</a></li>
-                    </ul>
-                </div>
-
-                <!-- Industrial Resources -->
-                <div class="footer-section">
-                    <h4 data-translate="footer-industrial-title">Recursos Industriais</h4>
-                    <ul class="footer-nav">
-                        <li><a href="javascript:void(0)" onclick="redirectToCertificationForm()" data-translate="footer-request-cert">📝 Solicitar Certificação</a></li>
-                        <li><a href="contacto.html" data-translate="footer-contact">📞 Contacto</a></li>
-                        <li><a href="empresas.html" data-translate="footer-gallery">🖼️ Galeria de Empresas</a></li>
-                        <li><a href="certificacao.html" data-translate="footer-process">⚙️ Processo de Certificação</a></li>
-                    </ul>
-                </div>
-
-                <!-- Direct Contact -->
-                <div class="footer-section">
-                    <h4 data-translate="footer-contact-title">Contacto Direto</h4>
-                    <div class="contact-info">
-                        <p><strong data-translate="footer-whatsapp-label">📱 WhatsApp:</strong><br>
-                        <a href="https://wa.me/972543080390" target="_blank">(+972) 54 308 0390</a></p>
-                        
-                        <p><strong data-translate="footer-email-label">📧 Email:</strong><br>
-                        <a href="mailto:portugal@w-kosher.com">portugal@w-kosher.com</a></p>
-                        
-                        <p><strong data-translate="footer-website-label">🌐 Website:</strong><br>
-                        <a href="https://w-kosher.com" target="_blank">w-kosher.com</a></p>
-                    </div>
+                    <h4 data-translate="footer-contact">Contacto</h4>
+                    <p><strong data-translate="footer-hotline">Linha Kosher 24/7:</strong><br>
+                    <a href="tel:+972543080390">(+972) 54 308 0390</a></p>
+                    <p><strong>Email:</strong><br>
+                    <a href="mailto:Portugal@w-kosher.com">Portugal@w-kosher.com</a></p>
+                    <a href="https://wa.me/972543080390" target="_blank" class="whatsapp-btn" data-translate="footer-whatsapp">💬 WhatsApp</a>
                 </div>
             </div>
-
-            <!-- Footer Bottom -->
+            
             <div class="footer-bottom">
-                <div class="footer-bottom-left">
-                    <p data-translate="footer-copyright">© 2024 World Kosher B.M.MASHGICHIM. Todos os direitos reservados.</p>
-                </div>
-                <div class="footer-bottom-right">
-                    <a href="politica-privacidade.html" data-translate="footer-privacy">🔒 Política de Privacidade</a>
-                    <span> | </span>
-                    <a href="termos-uso.html" data-translate="footer-terms">📄 Termos de Uso</a>
-                </div>
+                <p data-translate="footer-copyright">© 2024 World Kosher B.M.MASHGICHIM. Todos os direitos reservados</p>
             </div>
         </div>
     </footer>
-
-    <!-- Gallery Modal -->
-    <div id="galleryModal" class="gallery-modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 id="galleryTitle">Galeria de Fotos</h2>
-                <span class="close" onclick="closeGallery()">&times;</span>
-            </div>
-            <div class="gallery-container">
-                <img id="galleryImage" class="gallery-image" src="" alt="">
-                <button class="gallery-nav gallery-prev" onclick="prevImage()">&#10094;</button>
-                <button class="gallery-nav gallery-next" onclick="nextImage()">&#10095;</button>
-            </div>
-            <div class="gallery-thumbnails" id="galleryThumbnails">
-                <!-- Thumbnails will be generated here -->
-            </div>
-        </div>
-    </div>
 
     <script>
         // Multilingual Content
@@ -1494,40 +863,19 @@
                 'website-label': 'Website:',
                 'btn-certificate': '📋 Certificado',
                 'btn-contact': '💬 Contacto',
-                'gallery-badge': '📸 GALERIA',
-                
-                // Certificate Search
-                'cert-search-title': '🔍 חיפוש תעודת כשרות',
-                'cert-search-subtitle': 'חפש תעודת כשרות לפי שם חברה או מוצר',
-                'cert-search-placeholder': 'הקלד שם חברה או מוצר...',
-                'cert-search-btn': '🔍 חפש',
-                'search-results-title': 'תוצאות חיפוש:',
                 
                 // CTA Section
                 'cta-title': 'Sua Empresa Aqui!',
-                'cta-subtitle': 'Junte-se às empresas certificadas e expanda seu mercado para mais de 25 países',
+                'cta-subtitle': 'Junte-se às empresas certificadas e expanda seu mercado para mais de 15 países',
                 'cta-button': '🚀 Solicitar Certificação',
                 
                 // Footer
-                'footer-company-title': 'World Kosher Portugal',
-                'footer-company-desc': 'A principal autoridade em certificação kosher em Portugal, oferecendo serviços de qualidade internacional com reconhecimento mundial.',
-                'footer-consumer-title': 'Recursos do Consumidor',
-                'footer-home': '🏠 Página Inicial',
-                'footer-companies': '🏢 Empresas Certificadas',
-                'footer-about': 'ℹ️ Sobre Nós',
-                'footer-certification-info': '📋 Informações de Certificação',
-                'footer-industrial-title': 'Recursos Industriais',
-                'footer-request-cert': '📝 Solicitar Certificação',
-                'footer-contact': '📞 Contacto',
-                'footer-gallery': '🖼️ Galeria de Empresas',
-                'footer-process': '⚙️ Processo de Certificação',
-                'footer-contact-title': 'Contacto Direto',
-                'footer-whatsapp-label': '� WhatsApp:',
-                'footer-email-label': '📧 Email:',
-                'footer-website-label': '🌐 Website:',
-                'footer-copyright': '© 2024 World Kosher B.M.MASHGICHIM. Todos os direitos reservados.',
-                'footer-privacy': '🔒 Política de Privacidade',
-                'footer-terms': '📄 Termos de Uso'
+                'footer-title': '🏆 World Kosher B.M.MASHGICHIM',
+                'footer-desc': 'A principal autoridade em certificação kosher em Portugal, oferecendo serviços de qualidade internacional com reconhecimento em mais de 15 países ao redor do mundo.',
+                'footer-contact': 'Contacto',
+                'footer-hotline': 'Linha Kosher 24/7:',
+                'footer-whatsapp': '💬 WhatsApp',
+                'footer-copyright': '© 2024 World Kosher B.M.MASHGICHIM. Todos os direitos reservados'
             },
             'en': {
                 // Navigation
@@ -1567,25 +915,12 @@
                 'cta-button': '🚀 Request Certification',
                 
                 // Footer
-                'footer-company-title': 'World Kosher Portugal',
-                'footer-company-desc': 'The leading authority in kosher certification in Portugal, offering international quality services with worldwide recognition.',
-                'footer-consumer-title': 'Consumer Resources',
-                'footer-home': '🏠 Home Page',
-                'footer-companies': '🏢 Certified Companies',
-                'footer-about': 'ℹ️ About Us',
-                'footer-certification-info': '📋 Certification Information',
-                'footer-industrial-title': 'Industrial Resources',
-                'footer-request-cert': '📝 Request Certification',
-                'footer-contact': '📞 Contact',
-                'footer-gallery': '🖼️ Company Gallery',
-                'footer-process': '⚙️ Certification Process',
-                'footer-contact-title': 'Direct Contact',
-                'footer-whatsapp-label': '� WhatsApp:',
-                'footer-email-label': '📧 Email:',
-                'footer-website-label': '🌐 Website:',
-                'footer-copyright': '© 2024 World Kosher B.M.MASHGICHIM. All rights reserved.',
-                'footer-privacy': '🔒 Privacy Policy',
-                'footer-terms': '📄 Terms of Use'
+                'footer-title': '🏆 World Kosher B.M.MASHGICHIM',
+                'footer-desc': 'The leading authority in kosher certification in Portugal, offering international quality services with recognition in over 15 countries worldwide.',
+                'footer-contact': 'Contact',
+                'footer-hotline': 'Kosher Hotline 24/7:',
+                'footer-whatsapp': '💬 WhatsApp',
+                'footer-copyright': '© 2024 World Kosher B.M.MASHGICHIM. All rights reserved'
             },
             'he': {
                 // Navigation
@@ -1621,213 +956,25 @@
                 
                 // CTA Section
                 'cta-title': 'החברה שלכם כאן!',
-                'cta-subtitle': 'הצטרפו לחברות מוכשרות והרחיבו את השוק שלכם ליותר מ-15 מדינות',
-                'cta-button': '🚀 בקש הכשרה',
+                'cta-subtitle': 'הצטרפו לחברות מאושרות והרחיבו את השוק שלכם ליותר מ-25 מדינות',
+                'cta-button': '🚀 בקש תעודה',
                 
                 // Footer
-                'footer-company-title': 'World Kosher פורטוגל',
-                'footer-company-desc': 'הרשות המובילה בהכשר כשרות בפורטוגל, המציעה שירותי איכות בינלאומיים עם הכרה עולמית.',
-                'footer-consumer-title': 'משאבים לצרכנים',
-                'footer-home': '🏠 דף הבית',
-                'footer-companies': '🏢 חברות מוכשרות',
-                'footer-about': 'ℹ️ אודותינו',
-                'footer-certification-info': '📋 מידע על הכשרה',
-                'footer-industrial-title': 'משאבים תעשייתיים',
-                'footer-request-cert': '📝 בקש הכשרה',
-                'footer-contact': '📞 צור קשר',
-                'footer-gallery': '🖼️ גלריית חברות',
-                'footer-process': '⚙️ תהליך הכשרה',
-                'footer-contact-title': 'יצירת קשר ישירה',
-                'footer-whatsapp-label': '� WhatsApp:',
-                'footer-email-label': '📧 אימייל:',
-                'footer-website-label': '🌐 אתר:',
-                'footer-copyright': '© 2024 World Kosher B.M.MASHGICHIM. כל הזכויות שמורות.',
-                'footer-privacy': '🔒 מדיניות פרטיות',
-                'footer-terms': '📄 תנאי שימוש'
+                'footer-title': '🏆 World Kosher B.M.MASHGICHIM',
+                'footer-desc': 'הרשות המובילה בהכשר כשרות בפורטוגל, המציעה שירותי איכות בינלאומיים עם הכרה בלמעלה מ-15 מדינות ברחבי העולם.',
+                'footer-contact': 'צור קשר',
+                'footer-hotline': 'קו כשרות 24/7:',
+                'footer-whatsapp': '💬 WhatsApp',
+                'footer-copyright': '© 2024 World Kosher B.M.MASHGICHIM. כל הזכויות שמורות'
             }
         };
 
         let currentLanguage = 'pt';
 
-        // Gallery functionality
-        async function openGallery(companyName, companyTitle) {
-            const modal = document.getElementById('galleryModal');
-            const title = document.getElementById('galleryTitle');
-            const loading = document.getElementById('galleryLoading');
-            const mainImage = document.getElementById('galleryImage');
-            const thumbnails = document.getElementById('galleryThumbnails');
-            
-            // Show modal and loading
-            modal.classList.add('active');
-            title.textContent = companyTitle;
-            loading.style.display = 'flex';
-            mainImage.style.display = 'none';
-            thumbnails.innerHTML = '';
-            
-            try {
-                // Load gallery images
-                currentGallery = await loadGalleryImages(companyName);
-                
-                if (currentGallery.length === 0) {
-                    loading.innerHTML = '📷 Nenhuma imagem encontrada para esta empresa';
-                    return;
-                }
-                
-                // Hide loading and show gallery
-                loading.style.display = 'none';
-                mainImage.style.display = 'block';
-                currentImageIndex = 0;
-                
-                // Display first image
-                displayImage(0);
-                
-                // Create thumbnails
-                createThumbnails();
-                
-            } catch (error) {
-                loading.innerHTML = '❌ Erro ao carregar galeria';
-                console.error('Error loading gallery:', error);
-            }
-        }
-
-        async function loadGalleryImages(companyName) {
-            const images = [];
-            const maxImages = 20; // Maximum number to check
-            
-            for (let i = 1; i <= maxImages; i++) {
-                const imagePath = `images/galleries/${companyName}/${i}.jpg`;
-                
-                if (await imageExists(imagePath)) {
-                    images.push({
-                        src: imagePath,
-                        alt: `${companyName} factory visit ${i}`
-                    });
-                }
-            }
-            
-            return images;
-        }
-
-        function imageExists(src) {
-            return new Promise((resolve) => {
-                const img = new Image();
-                img.onload = () => resolve(true);
-                img.onerror = () => resolve(false);
-                img.src = src;
-            });
-        }
-
-        function displayImage(index) {
-            if (index < 0 || index >= currentGallery.length) return;
-            
-            const mainImage = document.getElementById('galleryImage');
-            const counter = document.getElementById('galleryCounter');
-            
-            currentImageIndex = index;
-            mainImage.src = currentGallery[index].src;
-            mainImage.alt = currentGallery[index].alt;
-            counter.textContent = `${index + 1} / ${currentGallery.length}`;
-            
-            // Update thumbnail active state
-            updateThumbnailsActive();
-        }
-
-        function createThumbnails() {
-            const thumbnails = document.getElementById('galleryThumbnails');
-            thumbnails.innerHTML = '';
-            
-            currentGallery.forEach((image, index) => {
-                const thumb = document.createElement('img');
-                thumb.src = image.src;
-                thumb.alt = image.alt;
-                thumb.className = 'gallery-thumbnail';
-                if (index === 0) thumb.classList.add('active');
-                thumb.onclick = () => displayImage(index);
-                thumbnails.appendChild(thumb);
-            });
-        }
-
-        function updateThumbnailsActive() {
-            const thumbnails = document.querySelectorAll('.gallery-thumbnail');
-            thumbnails.forEach((thumb, index) => {
-                thumb.classList.toggle('active', index === currentImageIndex);
-            });
-        }
-
-        function nextImage() {
-            if (currentImageIndex < currentGallery.length - 1) {
-                displayImage(currentImageIndex + 1);
-            }
-        }
-
-        function prevImage() {
-            if (currentImageIndex > 0) {
-                displayImage(currentImageIndex - 1);
-            }
-        }
-
-        function closeGallery() {
-            const modal = document.getElementById('galleryModal');
-            modal.classList.remove('active');
-            currentGallery = [];
-            currentImageIndex = 0;
-        }
-
-        // Keyboard navigation
-        document.addEventListener('keydown', function(e) {
-            const modal = document.getElementById('galleryModal');
-            if (!modal.classList.contains('active')) return;
-            
-            switch(e.key) {
-                case 'ArrowLeft':
-                    prevImage();
-                    break;
-                case 'ArrowRight':
-                    nextImage();
-                    break;
-                case 'Escape':
-                    closeGallery();
-                    break;
-            }
-        });
-
-        // Close modal when clicking outside
-        document.getElementById('galleryModal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeGallery();
-            }
-        });
-
         // Language functionality
         function toggleLanguageDropdown() {
             const dropdown = document.getElementById('languageDropdown');
             dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
-        }
-
-        function selectLanguage(flag, lang) {
-            // Update flag and language display
-            document.getElementById('current-flag').textContent = flag;
-            document.getElementById('current-lang').textContent = lang;
-            document.getElementById('languageDropdown').style.display = 'none';
-            
-            // Update active state
-            document.querySelectorAll('.language-option').forEach(opt => opt.classList.remove('active'));
-            event.target.closest('.language-option').classList.add('active');
-            
-            // Map language names to codes
-            const languageMap = {
-                'Português': 'pt',
-                'English': 'en',
-                'עברית': 'he',
-                'Español': 'es',
-                'Русский': 'ru',
-                'Italiano': 'it'
-            };
-            
-            const langCode = languageMap[lang] || 'pt';
-            
-            // Change page content
-            changeLanguage(langCode);
         }
 
         function changeLanguage(lang) {
@@ -1855,17 +1002,11 @@
             // Update all translatable elements
             updateContent();
             
-            // Store language preference globally
-            localStorage.setItem('preferred-language', lang);
-            localStorage.setItem('world-kosher-language', lang);
-            
             // Update active language option
             document.querySelectorAll('.language-option').forEach(option => {
                 option.classList.remove('active');
             });
-            if (event && event.target) {
-                event.target.classList.add('active');
-            }
+            event.target.classList.add('active');
             
             // Hide dropdown
             document.getElementById('languageDropdown').style.display = 'none';
@@ -1921,186 +1062,12 @@
             }
         });
 
-        // Gallery functionality
-        let currentGallery = '';
-        let currentImageIndex = 0;
-        let galleryImages = [];
-
-        // Company gallery data
-        const companyGalleries = {
-            'atlantic': {
-                name: 'Atlantic - Conservas e Produtos do Mar',
-                images: [] // Will be populated dynamically
-            },
-            'frutissima': {
-                name: 'Frutíssima - Frutas e Concentrados',
-                images: []
-            },
-            'friopesca': {
-                name: 'Friopesca - Produtos Congelados do Mar',
-                images: []
-            },
-            'innoliva': {
-                name: 'Innoliva - Azeites Extra Virgem Premium',
-                images: []
-            },
-            'soguima': {
-                name: 'Soguima - Sal Marinho e Condimentos',
-                images: []
-            },
-            'superbock': {
-                name: 'Super Bock Group - Bebidas e Cervejas',
-                images: []
-            },
-            'simplyeast': {
-                name: 'Simplyeast - Fermentos e Ingredientes',
-                images: []
-            },
-            'saov': {
-                name: 'SAOV - Azeites e Óleos Vegetais',
-                images: []
-            }
-        };
-
-        // Certificate search functionality
-        const certificateDatabase = {
-            'atlantic': {
-                company: 'Atlantic',
-                category: 'Conservas e Produtos do Mar',
-                products: ['atum', 'sardinha', 'conservas', 'produtos do mar'],
-                certificate: 'certificates/atlantic.pdf'
-            },
-            'frutissima': {
-                company: 'Frutíssima',
-                category: 'Frutas e Concentrados',
-                products: ['concentrados de fruta', 'sumos', 'frutas'],
-                certificate: 'certificates/frutissima.pdf'
-            },
-            'friopesca': {
-                company: 'Friopesca',
-                category: 'Produtos Congelados do Mar',
-                products: ['peixe congelado', 'mariscos', 'produtos do mar'],
-                certificate: 'certificates/friopesca.pdf'
-            },
-            'innoliva': {
-                company: 'Innoliva',
-                category: 'Azeites Extra Virgem Premium',
-                products: ['azeite', 'azeite extra virgem', 'óleos'],
-                certificate: 'certificates/innoliva.pdf'
-            },
-            'soguima': {
-                company: 'Soguima',
-                category: 'Sal Marinho e Condimentos',
-                products: ['sal marinho', 'sal', 'condimentos'],
-                certificate: 'certificates/soguima.pdf'
-            },
-            'superbock': {
-                company: 'Super Bock Group',
-                category: 'Bebidas e Cervejas',
-                products: ['cerveja', 'bebidas', 'super bock'],
-                certificate: 'certificates/superbock.pdf'
-            },
-            'simplyeast': {
-                company: 'Simplyeast',
-                category: 'Fermentos e Ingredientes',
-                products: ['fermentos', 'ingredientes', 'leveduras'],
-                certificate: 'certificates/simplyeast.pdf'
-            },
-            'saov': {
-                company: 'SAOV',
-                category: 'Azeites e Óleos Vegetais',
-                products: ['azeite', 'óleos vegetais', 'azeite virgem'],
-                certificate: 'certificates/saov.pdf'
-            }
-        };
-
-        function searchCertificates() {
-            const searchTerm = document.getElementById('certificateSearch').value.toLowerCase().trim();
-            const resultsContainer = document.getElementById('resultsContainer');
-            const searchResults = document.getElementById('searchResults');
-            
-            if (!searchTerm) {
-                searchResults.style.display = 'none';
-                return;
-            }
-            
-            const results = [];
-            
-            Object.keys(certificateDatabase).forEach(key => {
-                const cert = certificateDatabase[key];
-                const searchInCompany = cert.company.toLowerCase().includes(searchTerm);
-                const searchInCategory = cert.category.toLowerCase().includes(searchTerm);
-                const searchInProducts = cert.products.some(product => 
-                    product.toLowerCase().includes(searchTerm)
-                );
-                
-                if (searchInCompany || searchInCategory || searchInProducts) {
-                    results.push(cert);
-                }
-            });
-            
-            resultsContainer.innerHTML = '';
-            
-            if (results.length === 0) {
-                resultsContainer.innerHTML = '<p style="text-align: center; color: #6b7280;">Nenhuma certificação encontrada para "' + searchTerm + '"</p>';
-            } else {
-                results.forEach(cert => {
-                    const resultItem = document.createElement('div');
-                    resultItem.className = 'search-result-item';
-                    resultItem.innerHTML = `
-                        <div class="result-info">
-                            <h4>${cert.company}</h4>
-                            <p>${cert.category}</p>
-                        </div>
-                        <a href="${cert.certificate}" target="_blank" class="view-certificate">Ver Certificado</a>
-                    `;
-                    resultsContainer.appendChild(resultItem);
-                });
-            }
-            
-            searchResults.style.display = 'block';
-        }
-
-        // Allow Enter key to search certificates
-        document.addEventListener('DOMContentLoaded', function() {
-            const searchInput = document.getElementById('certificateSearch');
-            if (searchInput) {
-                searchInput.addEventListener('keypress', function(e) {
-                    if (e.key === 'Enter') {
-                        searchCertificates();
-                    }
-                });
-            }
-        });
-
-        // Close gallery with Escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeGallery();
-            }
-        });
-
         // Initialize page
         document.addEventListener('DOMContentLoaded', function() {
             // Load saved language preference
-            const savedLanguage = localStorage.getItem('preferred-language') || localStorage.getItem('world-kosher-language');
+            const savedLanguage = localStorage.getItem('preferred-language');
             if (savedLanguage && translations[savedLanguage]) {
                 changeLanguage(savedLanguage);
-                
-                // Update language selector display
-                const langNames = {
-                    'en': { flag: '🇬🇧', name: 'English' },
-                    'he': { flag: '🇮🇱', name: 'עברית' },
-                    'es': { flag: '🇪🇸', name: 'Español' },
-                    'ru': { flag: '🇷🇺', name: 'Русский' },
-                    'it': { flag: '🇮🇹', name: 'Italiano' },
-                    'pt': { flag: '🇵🇹', name: 'Português' }
-                };
-                
-                if (langNames[savedLanguage]) {
-                    document.getElementById('current-flag').textContent = langNames[savedLanguage].flag;
-                    document.getElementById('current-lang').textContent = langNames[savedLanguage].name;
-                }
             }
             
             // Setup search functionality
@@ -2109,21 +1076,6 @@
             // Update content with current language
             updateContent();
         });
-
-        // Redirect to certification form based on language
-        function redirectToCertificationForm() {
-            const languageMap = {
-                'pt': 'solicitar-certificacao-pt.html',
-                'en': 'solicitar-certificacao-en.html', 
-                'he': 'solicitar-certificacao-he.html',
-                'es': 'solicitar-certificacao-pt.html',
-                'ru': 'solicitar-certificacao-en.html',
-                'it': 'solicitar-certificacao-en.html'
-            };
-            
-            const targetPage = languageMap[currentLanguage] || 'solicitar-certificacao-pt.html';
-            window.open(targetPage, '_blank');
-        }
     </script>
 </body>
 </html>
