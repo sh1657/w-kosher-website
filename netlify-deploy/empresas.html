@@ -30,19 +30,27 @@
         .top-bar {
             background: #1e3a8a;
             color: white;
-            padding: 10px 0;
-            font-size: 0.9rem;
+            padding: 8px 0;
+            font-size: 0.85rem;
             position: sticky;
             top: 0;
             z-index: 1001;
+            white-space: nowrap;
+            overflow: hidden;
         }
 
         .top-bar .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
-            gap: 10px;
+            gap: 15px;
+            min-height: 28px;
+        }
+
+        .top-bar .container > div:first-child {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            flex-shrink: 1;
         }
 
         .top-bar a {
@@ -63,7 +71,9 @@
         .top-bar-right {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 12px;
+            flex-shrink: 0;
+            white-space: nowrap;
         }
 
         /* Language Selector */
@@ -174,7 +184,7 @@
         }
 
         .logo-text p {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: #6b7280;
             font-weight: 500;
             margin: 0;
@@ -330,7 +340,7 @@
 
         .company-details p {
             color: #6b7280;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             margin: 5px 0;
         }
 
@@ -359,7 +369,7 @@
             padding: 8px 15px;
             border-radius: 6px;
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 600;
             transition: background-color 0.3s;
         }
@@ -374,7 +384,7 @@
             padding: 8px 15px;
             border-radius: 6px;
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 600;
             transition: background-color 0.3s;
         }
@@ -486,6 +496,15 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
+            .top-bar {
+                font-size: 0.75rem;
+                padding: 6px 0;
+            }
+            
+            .top-bar-left .phone {
+                display: none;
+            }
+            
             .page-header h1 {
                 font-size: 2rem;
             }
@@ -524,7 +543,7 @@
 
             .nav a {
                 padding: 8px 12px;
-                font-size: 0.9rem;
+                font-size: 0.85rem;
             }
         }
 

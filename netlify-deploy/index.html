@@ -29,19 +29,33 @@
         .top-bar {
             background: #1e3a8a;
             color: white;
-            padding: 10px 0;
-            font-size: 0.9rem;
+            padding: 8px 0;
+            font-size: 0.85rem;
             position: sticky;
             top: 0;
             z-index: 1001;
+            white-space: nowrap;
+            overflow: hidden;
         }
         
         .top-bar-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
-            gap: 10px;
+            gap: 15px;
+            min-height: 28px;
+        }
+        
+        .top-bar-content > div:first-child {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            overflow: hidden;
+            flex-shrink: 1;
+        }
+        
+        .top-bar-content > div:first-child span {
+            white-space: nowrap;
         }
         
         .top-bar a {
@@ -52,7 +66,15 @@
         .top-bar-right {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 12px;
+            flex-shrink: 0;
+            white-space: nowrap;
+        }
+        
+        .top-bar-right a {
+            display: inline-flex;
+            align-items: center;
+            white-space: nowrap;
         }
         
         /* Language Selector */
@@ -79,6 +101,31 @@
             .language-dropdown {
                 right: -20px;
                 min-width: 180px;
+            }
+            
+            .top-bar {
+                font-size: 0.75rem;
+                padding: 6px 0;
+            }
+            
+            .top-bar-content {
+                gap: 8px;
+            }
+            
+            .top-bar-content > div:first-child span {
+                font-size: 0.75rem;
+            }
+            
+            .top-bar-content > div:first-child span:first-child {
+                display: none; /* Hide phone on mobile */
+            }
+            
+            .top-bar-right {
+                gap: 8px;
+            }
+            
+            .top-bar-right a {
+                font-size: 0.75rem;
             }
         }
         

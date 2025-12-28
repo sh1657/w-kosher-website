@@ -29,19 +29,27 @@
         .top-bar {
             background: #1e3a8a;
             color: white;
-            padding: 10px 0;
-            font-size: 0.9rem;
+            padding: 8px 0;
+            font-size: 0.85rem;
             position: sticky;
             top: 0;
             z-index: 1001;
+            white-space: nowrap;
+            overflow: hidden;
         }
         
         .top-bar-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
-            gap: 10px;
+            gap: 15px;
+            min-height: 28px;
+        }
+        
+        .top-bar-content > div:first-child {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            flex-shrink: 1;
         }
         
         .top-bar a {
@@ -52,7 +60,9 @@
         .top-bar-right {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 12px;
+            flex-shrink: 0;
+            white-space: nowrap;
         }
         
         /* Language Selector */
@@ -76,6 +86,15 @@
         }
         
         @media (max-width: 768px) {
+            .top-bar {
+                font-size: 0.75rem;
+                padding: 6px 0;
+            }
+            
+            .top-bar-content > div:first-child .phone {
+                display: none;
+            }
+            
             .language-dropdown {
                 right: -20px;
                 min-width: 180px;
@@ -132,7 +151,7 @@
         }
         
         .logo-text span {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: #6b7280;
             font-weight: 500;
         }
@@ -434,7 +453,7 @@
         
         .form-note {
             color: #6b7280;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             margin-top: 15px;
         }
         
@@ -1008,9 +1027,9 @@
             <div class="footer-bottom">
                 <p>© 2024 World Kosher B.M.MASHGICHIM. Todos os direitos reservados.</p>
                 <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; margin-top: 15px;">
-                    <a href="politica-privacidade.html" style="color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.9rem;">🔒 Política de Privacidade</a>
-                    <a href="termos-uso.html" style="color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.9rem;">📄 Termos de Uso</a>
-                    <a href="contacto.html" style="color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.9rem;">📞 Suporte</a>
+                    <a href="politica-privacidade.html" style="color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.85rem;">🔒 Política de Privacidade</a>
+                    <a href="termos-uso.html" style="color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.85rem;">📄 Termos de Uso</a>
+                    <a href="contacto.html" style="color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.85rem;">📞 Suporte</a>
                 </div>
             </div>
         </div>
