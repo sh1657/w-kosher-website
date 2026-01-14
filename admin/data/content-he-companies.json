@@ -1,77 +1,96 @@
 {
-  "language": "he",
-  "languageName": "עברית",
-  "direction": "rtl",
-  "page": "companies",
-  "navigation": {
-    "home": "דף הבית",
-    "certification": "תעודת כשרות",
-    "companies": "חברות",
-    "about": "אודות",
-    "contact": "צור קשר"
-  },
   "hero": {
-    "title": "חברות מוכשרות",
-    "subtitle": "הכירו את כל החברות הפורטוגזיות עם תעודת כשרות רשמית מWorld Kosher"
+    "title": "🏢 חברות מוכשרות",
+    "subtitle": "הכירו את כל החברות הפורטוגזיות עם הכשר כשרות רשמי מWorld Kosher"
   },
   "search": {
-    "placeholder": "חפש חברות..."
+    "placeholder": "🔍 חפש חברות..."
   },
-  "certificationBadge": "מוכשר",
   "companies": [
     {
-      "name": "Atlantic Dacasa",
+      "name": "Atlantic",
+      "emoji": "🐟",
       "category": "שימורים ומוצרי ים",
-      "certified": true
+      "location": "Peniche, Portugal",
+      "phone": "+351 262 780 100",
+      "website": "www.atlanticportugal.pt",
+      "certificate_url": "https://worldkosher.pt/wp-content/uploads/2024/08/certificateATLANTIC.pdf"
     },
     {
-      "name": "Frutissima",
+      "name": "Frutíssima",
+      "emoji": "🍎",
       "category": "פירות ותרכיזים",
-      "certified": true
+      "location": "Alcochete, Portugal",
+      "phone": "+351 212 348 300",
+      "website": "www.frutissima.com.pt",
+      "certificate_url": "https://worldkosher.pt/wp-content/uploads/2024/08/certificateFRUTISSIMA.pdf"
     },
     {
       "name": "Friopesca",
+      "emoji": "🐟",
       "category": "מוצרי ים קפואים",
-      "certified": true
+      "location": "Matosinhos, Portugal",
+      "phone": "+351 229 398 450",
+      "website": "www.frip.pt",
+      "certificate_url": "https://worldkosher.pt/wp-content/uploads/2024/08/certificateFRIOPESCA.pdf"
     },
     {
       "name": "Innoliva",
+      "emoji": "🫒",
       "category": "שמני זית בתולי איכות",
-      "certified": true
+      "location": "Évora, Portugal",
+      "phone": "+351 266 760 470",
+      "website": "www.innoliva.pt",
+      "certificate_url": "https://worldkosher.pt/wp-content/uploads/2024/08/certificateINNOLIVA.pdf"
     },
     {
       "name": "Soguima",
+      "emoji": "🧂",
       "category": "מלח ים ותבלינים",
-      "certified": true
+      "location": "Aveiro, Portugal",
+      "phone": "+351 234 329 620",
+      "website": "www.soguima.pt",
+      "certificate_url": "https://worldkosher.pt/wp-content/uploads/2024/08/certificateSOGUIMA.pdf"
     },
     {
-      "name": "Superbock",
+      "name": "Super Bock Group",
+      "emoji": "🍺",
       "category": "משקאות ובירות",
-      "certified": true
+      "location": "Matosinhos, Portugal",
+      "phone": "+351 229 066 600",
+      "website": "www.superbockgroup.com",
+      "certificate_url": "https://worldkosher.pt/wp-content/uploads/2024/08/certificateSUPERBOCK.pdf"
     },
     {
       "name": "Simplyeast",
+      "emoji": "🍞",
       "category": "שמרים ורכיבים",
-      "certified": true
+      "location": "Porto, Portugal",
+      "phone": "+351 243 618 346",
+      "website": "www.simplyeast.pt",
+      "certificate_url": "https://worldkosher.pt/wp-content/uploads/2024/08/certificateSIMPLYEAST.pdf"
     },
     {
       "name": "SAOV",
+      "emoji": "🫒",
       "category": "שמני זית ושמנים צמחיים",
-      "certified": true
+      "location": "Oliveira do Hospital, Portugal",
+      "phone": "+351 238 600 220",
+      "website": "www.saov.pt",
+      "certificate_url": "https://worldkosher.pt/wp-content/uploads/2024/08/certificateSAOV.pdf"
     }
   ],
-  "companyLabels": {
-    "location": "מיקום:",
-    "phone": "טלפון:",
-    "website": "אתר:"
-  },
-  "buttons": {
-    "certificate": "תעודה",
-    "contact": "צור קשר"
+  "labels": {
+    "location": "📍 מיקום:",
+    "phone": "📞 טלפון:",
+    "website": "🌐 אתר:",
+    "btnCertificate": "📋 צפה בתעודה",
+    "btnContact": "💬 צור קשר"
   },
   "cta": {
-    "title": "החברה שלכם כאן!",
-    "description": "הצטרפו לחברות מוכשרות והרחיבו את השוק שלכם ליותר מ-25 מדינות",
-    "button": "בקש תעודה"
+    "title": "החברה שלכם כאן! 🎯",
+    "subtitle": "הצטרפו לחברות מאושרות והרחיבו את השוק שלכם ליותר מ-25 מדינות",
+    "button": "🚀 בקש תעודה עכשיו",
+    "whatsapp": "(+972) 54 308 0390"
   }
 }
