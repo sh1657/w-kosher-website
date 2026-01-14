@@ -8,7 +8,14 @@
         * {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+            box-sizing: bo                 // Send auto-reply to customer in English
+                 const questionnaireURL = `${location.origin}/documents/questionnaire.pdf`;
+                 return emailjs.send('service_4g2vstc', 'kosher_autoreply_en', {
+                     to_email: data.email,
+                     to_name: data.contact,
+                     company: data.company,
+                     questionnaire_link: questionnaireURL
+                 });;
         }
 
         body {
@@ -152,15 +159,97 @@
             }
             
             .container {
-                padding: 15px;
+                padding: 10px;
+                max-width: 100%;
             }
             
-            .form-section {
-                padding: 25px;
+            .header {
+                padding: 25px 20px;
+                margin-bottom: 20px;
+            }
+            
+            .logo {
+                max-width: 120px;
+                margin-bottom: 15px;
             }
             
             h1 {
-                font-size: 1.8rem;
+                font-size: 1.6rem;
+                line-height: 1.3;
+            }
+            
+            .subtitle {
+                font-size: 0.95rem;
+            }
+            
+            .form-section {
+                padding: 20px 15px;
+                margin-bottom: 20px;
+            }
+            
+            .form-group {
+                margin-bottom: 20px;
+            }
+            
+            label {
+                font-size: 0.95rem;
+                margin-bottom: 6px;
+            }
+            
+            input[type="text"],
+            input[type="email"],
+            input[type="tel"],
+            textarea,
+            select {
+                padding: 12px;
+                font-size: 16px;
+            }
+            
+            textarea {
+                min-height: 100px;
+            }
+            
+            .btn-submit {
+                padding: 14px 30px;
+                font-size: 1rem;
+            }
+            
+            .contact-info {
+                padding: 20px 15px;
+            }
+            
+            .contact-info h3 {
+                font-size: 1.3rem;
+                margin-bottom: 15px;
+            }
+            
+            .contact-method {
+                font-size: 0.95rem;
+                margin: 12px 0;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 5px;
+            }
+            
+            .header {
+                padding: 20px 15px;
+                border-radius: 8px;
+            }
+            
+            h1 {
+                font-size: 1.4rem;
+            }
+            
+            .subtitle {
+                font-size: 0.9rem;
+            }
+            
+            .form-section {
+                padding: 15px 12px;
+                border-radius: 8px;
             }
         }
     </style>
@@ -269,7 +358,16 @@
         </div>
     </div>
 
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script>
+        // Initialize EmailJS - REPLACE WITH YOUR PUBLIC KEY
+        (function() {
+            emailjs.init({
+                publicKey: 'YOUR_PUBLIC_KEY_HERE', // Replace with your EmailJS public key
+            });
+        })();
+
         function submitForm(event) {
             event.preventDefault();
             
@@ -277,41 +375,53 @@
             const formData = new FormData(event.target);
             const data = Object.fromEntries(formData);
             
-            // Create WhatsApp message
-            let message = `🚀 *KOSHER CERTIFICATION REQUEST*\n\n`;
-            message += `🏢 *Company:* ${data.company}\n`;
-            message += `👤 *Contact:* ${data.contact}\n`;
-            message += `📧 *E-mail:* ${data.email}\n`;
-            message += `📞 *Phone:* ${data.phone}\n`;
+            // Send email via EmailJS
+            const btn = event.target.querySelector('button[type="submit"]');
+            btn.disabled = true;
+            btn.textContent = '⏳ Sending...';
             
-            if (data.location) {
-                message += `📍 *Location:* ${data.location}\n`;
-            }
-            
-            message += `🏭 *Product Type:* ${data.productType}\n`;
-            message += `📝 *Description:* ${data.products}\n`;
-            
-            if (data.production) {
-                message += `🏭 *Production Volume:* ${data.production}\n`;
-            }
-            
-            if (data.timeline) {
-                message += `⏰ *Desired Timeline:* ${data.timeline}\n`;
-            }
-            
-            if (data.message) {
-                message += `💬 *Additional Information:* ${data.message}\n`;
-            }
-            
-            // Encode for WhatsApp
-            const encodedMessage = encodeURIComponent(message);
-            const whatsappURL = `https://wa.me/972543080390?text=${encodedMessage}`;
-            
-            // Open WhatsApp
-            window.open(whatsappURL, '_blank');
-            
-            // Show success message
-            alert('✅ Form prepared! You will be redirected to WhatsApp to send your request.');
+            // Send to company in English
+            emailjs.send('service_4g2vstc', 'template_7gzctyd', {
+                company: data.company,
+                contact: data.contact,
+                email: data.email,
+                phone: data.phone,
+                location: data.location || 'Not specified',
+                productType: data.productType,
+                products: data.products,
+                production: data.production || 'Not specified',
+                timeline: data.timeline || 'Not specified',
+                message: data.message || 'No additional information',
+                to_email: 'portugal@w-kosher.com', // Your company email
+                language: 'English'
+            })
+            .then(function(response) {
+                console.log('Email sent successfully!', response);
+                
+                // Send auto-reply to customer in English
+                const questionnaireURL = `${location.origin}/documents/questionnaire.pdf`;
+                return emailjs.send('service_4g2vstc', 'template_as2wj6o', {
+                    to_email: data.email,
+                    to_name: data.contact,
+                    company: data.company,
+                    questionnaire_link: questionnaireURL
+                });
+            })
+            .then(function(response) {
+                console.log('Auto-reply sent!', response);
+                
+                // Show success and reset form
+                alert('✅ Request sent successfully! You will receive a confirmation email shortly.');
+                event.target.reset();
+                btn.disabled = false;
+                btn.textContent = '🚀 Submit Request';
+            })
+            .catch(function(error) {
+                console.error('Error:', error);
+                alert('⚠️ Error sending email. Please contact us directly through the "Contact" page.');
+                btn.disabled = false;
+                btn.textContent = '🚀 Submit Request';
+            });
         }
     </script>
 </body>

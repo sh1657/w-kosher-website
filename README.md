@@ -1,87 +1,42 @@
-# World Kosher Portugal - Netlify Deploy
+# 🕊️ World Kosher Website
 
-A principal autoridade em certificação kosher em Portugal com reconhecimento internacional em mais de 15 países.
+🏆 **A principal autoridade em certificação kosher em Portugal**
 
-## 🚀 Site Online
+## 🚀 Deploy to Vercel
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/YOUR_USERNAME/w-kosher-website)
 
-**Deploy Status**: [![Netlify Status](https://api.netlify.com/api/v1/badges/your-site-id/deploy-status)](https://app.netlify.com/sites/worldkosher-portugal/deploys)
+## ✨ Features
+- ✅ Multi-language support (6 languages)
+- ✅ Mobile responsive design  
+- ✅ SSL-ready with modern security
+- ✅ Professional certification system
+- ✅ 100+ certified companies showcase
 
-**Live Site**: [worldkosher-portugal.netlify.app](https://worldkosher-portugal.netlify.app)
+## 📊 Statistics
+- **100+** Certified Companies
+- **1000+** Certified Products  
+- **25+** Countries Served
+- **100%** Approval Rate
 
-## � Páginas Disponíveis
+## 🌐 Páginas Disponíveis
 
-- **Homepage** (`homepage.html`) - Página principal com informações da empresa
-- **Certificação** (`webflow-ready-certificacao.html`) - Detalhes sobre o processo de certificação kosher
-
-## 🌍 Recursos
-
-- ✅ Design responsivo para todos os dispositivos
-- ✅ Seletor de idiomas (6 idiomas disponíveis: PT, EN, ES, HE, RU, IT)
-- ✅ Integração com WhatsApp e email
-- ✅ SEO otimizado
-- ✅ Performance otimizada
-- ✅ Deploy automático via Git
-- ✅ SSL/HTTPS incluso
-
-## 🛠️ Tecnologias
-
-- HTML5 semântico
-- CSS3 com Grid e Flexbox
-- JavaScript vanilla (sem dependências)
-- Netlify para hosting e deploy
-- Git para controle de versão
-
-## 🚀 Como Fazer Deploy
-
-### 1. Conectar ao GitHub
-```bash
-git add .
-git commit -m "Deploy inicial World Kosher Portugal"
-git push origin main
-```
-
-### 2. Deploy via Netlify
-1. Acesse [netlify.com](https://netlify.com)
-2. Conecte com GitHub
-3. Selecione este repositório
-4. Configure:
-   - Build command: (deixe vazio)
-   - Publish directory: `.`
-   - Branch: `main`
-
-### 3. Domínio Personalizado (Opcional)
-1. No painel Netlify > Domain settings
-2. Add custom domain: `w-kosher.com`
-3. Configure DNS no seu provedor
+- **[Página Inicial](index.html)** - Informações gerais sobre a World Kosher
+- **[Certificação](certificacao.html)** - Processo completo de certificação kosher
 
 ## 📞 Contato
 
 - **WhatsApp**: [+972 54 308 0390](https://wa.me/972543080390)
-- **Email**: [Portugal@w-kosher.com](mailto:Portugal@w-kosher.com)
+- **Email**: [portugal@w-kosher.com](mailto:portugal@w-kosher.com)
 - **Facebook**: [World Kosher Facebook](https://www.facebook.com/profile.php?id=61575501917315)
 
-## 🔧 Atualizações
+## 🌍 Idiomas Suportados
 
-Para fazer alterações no site:
-
-1. **Edite os arquivos HTML**
-2. **Commit e push**:
-   ```bash
-   git add .
-   git commit -m "Atualização: [descreva a mudança]"
-   git push origin main
-   ```
-3. **Netlify faz deploy automático** em 1-2 minutos
-
-## 📊 Vantagens vs WordPress
-
-| WordPress.com | Netlify |
-|---|---|
-| ❌ Limitações CSS/JS | ✅ Controle total |
-| ❌ Planos pagos para customização | ✅ Grátis até 100GB |
-| ❌ Lento | ✅ Ultra rápido |
-| ❌ Layout quebrado em blocos | ✅ Design perfeito |
-| ❌ Dependências complexas | ✅ HTML puro |
+- 🇵🇹 Português (Padrão)
+- 🇬🇧 English
+- 🇮🇱 עברית (Hebrew)
+- 🇪🇸 Español
+- 🇷🇺 Русский (Russian)
+- 🇮🇹 Italiano
 
 ---
 

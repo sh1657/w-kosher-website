@@ -152,15 +152,97 @@
             }
             
             .container {
-                padding: 15px;
+                padding: 10px;
+                max-width: 100%;
             }
             
-            .form-section {
-                padding: 25px;
+            .header {
+                padding: 25px 20px;
+                margin-bottom: 20px;
+            }
+            
+            .logo {
+                max-width: 120px;
+                margin-bottom: 15px;
             }
             
             h1 {
-                font-size: 1.8rem;
+                font-size: 1.6rem;
+                line-height: 1.3;
+            }
+            
+            .subtitle {
+                font-size: 0.95rem;
+            }
+            
+            .form-section {
+                padding: 20px 15px;
+                margin-bottom: 20px;
+            }
+            
+            .form-group {
+                margin-bottom: 20px;
+            }
+            
+            label {
+                font-size: 0.95rem;
+                margin-bottom: 6px;
+            }
+            
+            input[type="text"],
+            input[type="email"],
+            input[type="tel"],
+            textarea,
+            select {
+                padding: 12px;
+                font-size: 16px;
+            }
+            
+            textarea {
+                min-height: 100px;
+            }
+            
+            .btn-submit {
+                padding: 14px 30px;
+                font-size: 1rem;
+            }
+            
+            .contact-info {
+                padding: 20px 15px;
+            }
+            
+            .contact-info h3 {
+                font-size: 1.3rem;
+                margin-bottom: 15px;
+            }
+            
+            .contact-method {
+                font-size: 0.95rem;
+                margin: 12px 0;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 5px;
+            }
+            
+            .header {
+                padding: 20px 15px;
+                border-radius: 8px;
+            }
+            
+            h1 {
+                font-size: 1.4rem;
+            }
+            
+            .subtitle {
+                font-size: 0.9rem;
+            }
+            
+            .form-section {
+                padding: 15px 12px;
+                border-radius: 8px;
             }
         }
     </style>
@@ -172,6 +254,12 @@
             <img src="images/logo.png" alt="World Kosher Logo" class="logo" onerror="this.src='images/logo.jpg'">
             <h1>🚀 Solicitar Certificação Kosher</h1>
             <p class="subtitle">Preencha o formulário e receba um orçamento personalizado em 24 horas</p>
+        </div>
+
+        <!-- Questionnaire download callout -->
+        <div style="margin-bottom:16px; text-align:center;">
+            <a href="/documents/questionnaire.pdf" target="_blank" class="btn-submit" style="display:inline-block; max-width:320px; padding:12px 20px; text-decoration:none;">📝 Descarregar Questionário (PDF)</a>
+            <p style="font-size:0.9rem;color:#6b7280; margin-top:8px;">Preencher o questionário ajudará-nos a preparar um orçamento preciso antes de enviar o pedido</p>
         </div>
 
         <!-- Form Section -->
@@ -258,9 +346,6 @@
         <div class="contact-info">
             <h3>📞 Contacto Direto</h3>
             <div class="contact-method">
-                <strong>WhatsApp:</strong> <a href="https://wa.me/972543080390" target="_blank">(+972) 54 308 0390</a>
-            </div>
-            <div class="contact-method">
                 <strong>E-mail:</strong> <a href="mailto:portugal@w-kosher.com">portugal@w-kosher.com</a>
             </div>
             <div class="contact-method">
@@ -269,7 +354,16 @@
         </div>
     </div>
 
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script>
+        // Initialize EmailJS
+        (function() {
+            emailjs.init({
+                publicKey: 'PJtOaU_p90apZ-wdy',
+            });
+        })();
+
         function submitForm(event) {
             event.preventDefault();
             
@@ -277,42 +371,57 @@
             const formData = new FormData(event.target);
             const data = Object.fromEntries(formData);
             
-            // Create WhatsApp message
-            let message = `🚀 *SOLICITAÇÃO DE CERTIFICAÇÃO KOSHER*\n\n`;
-            message += `🏢 *Empresa:* ${data.company}\n`;
-            message += `👤 *Contacto:* ${data.contact}\n`;
-            message += `📧 *E-mail:* ${data.email}\n`;
-            message += `📞 *Telefone:* ${data.phone}\n`;
-            
-            if (data.location) {
-                message += `📍 *Localização:* ${data.location}\n`;
-            }
-            
-            message += `🏭 *Tipo de Produto:* ${data.productType}\n`;
-            message += `📝 *Descrição:* ${data.products}\n`;
-            
-            if (data.production) {
-                message += `🏭 *Volume Produção:* ${data.production}\n`;
-            }
-            
-            if (data.timeline) {
-                message += `⏰ *Prazo Desejado:* ${data.timeline}\n`;
-            }
-            
-            if (data.message) {
-                message += `💬 *Informações Adicionais:* ${data.message}\n`;
-            }
-            
-            // Encode for WhatsApp
-            const encodedMessage = encodeURIComponent(message);
-            const whatsappURL = `https://wa.me/972543080390?text=${encodedMessage}`;
-            
-            // Open WhatsApp
-            window.open(whatsappURL, '_blank');
-            
-            // Show success message
-            alert('✅ Formulário preparado! Será redirecionado para o WhatsApp para enviar a sua solicitação.');
-        }
-    </script>
+            // Prepare email data
+            // (WhatsApp sending was removed; use site 'Contact' page for WhatsApp)
+             // Send email via EmailJS
+             const btn = event.target.querySelector('button[type="submit"]');
+             btn.disabled = true;
+             btn.textContent = '⏳ Enviando...';
+             
+             // Send to company
+             emailjs.send('service_4g2vstc', 'template_7gzctyd', {
+                 company: data.company,
+                 contact: data.contact,
+                 email: data.email,
+                 phone: data.phone,
+                 location: data.location || 'Não especificado',
+                 productType: data.productType,
+                 products: data.products,
+                 production: data.production || 'Não especificado',
+                 timeline: data.timeline || 'Não especificado',
+                 message: data.message || 'Nenhuma informação adicional',
+                 to_email: 'portugal@w-kosher.com', // Your company email
+                 language: 'Portuguese'
+             })
+             .then(function(response) {
+                 console.log('Email sent successfully!', response);
+                 
+                 // Send auto-reply to customer in Portuguese
+                 const questionnaireURL = `${location.origin}/documents/questionnaire.pdf`;
+                 return emailjs.send('service_4g2vstc', 'template_as2wj6o', {
+                     to_email: data.email,
+                     to_name: data.contact,
+                     company: data.company,
+                     questionnaire_link: questionnaireURL
+                 });
+             })
+             .then(function(response) {
+                 console.log('Auto-reply sent!', response);
+                
+                // Show success and reset form
+                alert('✅ Solicitação enviada com sucesso! Receberá um e-mail de confirmação em breve.');
+                 event.target.reset();
+                 btn.disabled = false;
+                 btn.textContent = '🚀 Enviar Solicitação';
+             })
+             .catch(function(error) {
+                 console.error('Error sending email:', error);
+                
+                alert('⚠️ Erro ao enviar e-mail. Por favor tente novamente mais tarde.');
+                btn.disabled = false;
+                btn.textContent = '🚀 Enviar Solicitação';
+             });
+         }
+     </script>
 </body>
 </html>
