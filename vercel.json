@@ -4,9 +4,17 @@
     {
       "src": "netlify-deploy/**",
       "use": "@vercel/static"
+    },
+    {
+      "src": "admin/**",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
+    {
+      "src": "/admin/(.*)",
+      "dest": "/admin/$1"
+    },
     {
       "src": "/(.*)",
       "dest": "/netlify-deploy/$1"
