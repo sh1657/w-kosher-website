@@ -1,0 +1,77 @@
+{
+  "language": "he",
+  "languageName": "עברית",
+  "direction": "rtl",
+  "page": "companies",
+  "navigation": {
+    "home": "דף הבית",
+    "certification": "תעודת כשרות",
+    "companies": "חברות",
+    "about": "אודות",
+    "contact": "צור קשר"
+  },
+  "hero": {
+    "title": "חברות מוכשרות",
+    "subtitle": "הכירו את כל החברות הפורטוגזיות עם תעודת כשרות רשמית מWorld Kosher"
+  },
+  "search": {
+    "placeholder": "חפש חברות..."
+  },
+  "certificationBadge": "מוכשר",
+  "companies": [
+    {
+      "name": "Atlantic Dacasa",
+      "category": "שימורים ומוצרי ים",
+      "certified": true
+    },
+    {
+      "name": "Frutissima",
+      "category": "פירות ותרכיזים",
+      "certified": true
+    },
+    {
+      "name": "Friopesca",
+      "category": "מוצרי ים קפואים",
+      "certified": true
+    },
+    {
+      "name": "Innoliva",
+      "category": "שמני זית בתולי איכות",
+      "certified": true
+    },
+    {
+      "name": "Soguima",
+      "category": "מלח ים ותבלינים",
+      "certified": true
+    },
+    {
+      "name": "Superbock",
+      "category": "משקאות ובירות",
+      "certified": true
+    },
+    {
+      "name": "Simplyeast",
+      "category": "שמרים ורכיבים",
+      "certified": true
+    },
+    {
+      "name": "SAOV",
+      "category": "שמני זית ושמנים צמחיים",
+      "certified": true
+    }
+  ],
+  "companyLabels": {
+    "location": "מיקום:",
+    "phone": "טלפון:",
+    "website": "אתר:"
+  },
+  "buttons": {
+    "certificate": "תעודה",
+    "contact": "צור קשר"
+  },
+  "cta": {
+    "title": "החברה שלכם כאן!",
+    "description": "הצטרפו לחברות מוכשרות והרחיבו את השוק שלכם ליותר מ-25 מדינות",
+    "button": "בקש תעודה"
+  }
+}
