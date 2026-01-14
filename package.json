@@ -6,6 +6,8 @@
   "scripts": {
     "start": "npm run dev",
     "dev": "live-server --port=3000 --entry-file=index.html",
+    "admin": "live-server admin --port=3003",
+    "deploy": "bash admin/deploy.sh",
     "build": "npm run build:css && npm run build:js",
     "build:css": "sass src/scss:dist/css --no-source-map",
     "build:js": "webpack --mode=production",
