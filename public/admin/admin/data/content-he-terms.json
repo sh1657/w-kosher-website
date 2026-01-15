@@ -1,0 +1,50 @@
+{
+  "language": "he",
+  "languageName": "עברית",
+  "direction": "rtl",
+  "page": "terms",
+  "title": "תנאי שימוש - World Kosher",
+  "lastUpdated": "ינואר 2026",
+  "intro": {
+    "title": "תנאי שימוש",
+    "description": "תנאים אלה מסדירים את השימוש שלך באתר ובשירותים של World Kosher."
+  },
+  "acceptance": {
+    "title": "קבלת התנאים",
+    "description": "על ידי גישה לאתר או שימוש בשירותים שלנו, אתה מסכים לתנאים אלה."
+  },
+  "services": {
+    "title": "השירותים שלנו",
+    "description": "World Kosher מספקת שירותי תעודת כשרות למוצרי מזון. אנו שומרים את הזכות לשנות או להפסיק שירותים בכל עת."
+  },
+  "certificationValidity": {
+    "title": "תוקף תעודות",
+    "description": "תעודות כשרות תקפות לתקופה מוגדרת ודורשות חידוש תקופתי. הלקוח אחראי לוודא את תוקף התעודה."
+  },
+  "responsibilities": {
+    "title": "אחריות הלקוח",
+    "list": [
+      "מתן מידע מדויק ומלא",
+      "עמידה בתקני כשרות",
+      "אפשור פיקוח וביקורת",
+      "הודעה על שינויים בתהליכי ייצור"
+    ]
+  },
+  "liability": {
+    "title": "הגבלת אחריות",
+    "description": "World Kosher לא תהיה אחראית לנזקים עקיפים הנובעים משימוש בשירותים."
+  },
+  "intellectualProperty": {
+    "title": "קניין רוחני",
+    "description": "כל התוכן באתר, כולל סמלים ותעודות, הוא קניינה של World Kosher."
+  },
+  "modifications": {
+    "title": "שינויים בתנאים",
+    "description": "אנו שומרים את הזכות לשנות תנאים אלה. שינויים יפורסמו באתר."
+  },
+  "contact": {
+    "title": "יצירת קשר",
+    "description": "לשאלות על תנאי השימוש:",
+    "email": "portugal@w-kosher.com"
+  }
+}
