@@ -1,0 +1,196 @@
+{
+  "language": "en",
+  "languageName": "English",
+  "direction": "ltr",
+  "navigation": {
+    "home": "Home",
+    "certification": "Certification",
+    "companies": "Companies",
+    "about": "About Us",
+    "contact": "Contact",
+    "requestCertification": "Request Certification"
+  },
+  "hero": {
+    "badge": "Official Kosher Certification",
+    "location": "in Portugal",
+    "title": "WK – Supervises and certifies kosher products",
+    "description": "Over 1,000 products in 25+ countries worldwide",
+    "stats": {
+      "companies": "Companies",
+      "countries": "Countries Served",
+      "products": "Approved Products"
+    },
+    "buttons": {
+      "primary": "Request Certification",
+      "secondary": "Learn More"
+    }
+  },
+  "companies": {
+    "title": "Factories with WK certification",
+    "subtitle": "Join the supervised brands approved by our certification",
+    "viewAll": "View All Companies"
+  },
+  "whyChooseUs": {
+    "title": "Why Choose World Kosher?",
+    "subtitle": "We are a leading kosher certification system with international recognition and rigorous supervision processes",
+    "features": [
+      {
+        "title": "International Recognition",
+        "description": "Certification accepted in over 25 countries, including Israel, United States, Europe and Latin America"
+      },
+      {
+        "title": "Fast Process",
+        "description": "Kosher certificate in 4-8 weeks with 24/6 tracking and specialized support in Portuguese"
+      },
+      {
+        "title": "Maximum Reliability",
+        "description": "Certified supervisors with rigorous oversight and detailed compliance reports"
+      },
+      {
+        "title": "Proven Expertise",
+        "description": "Over 1,000 kosher products in various sectors: olive oils, preserves, beverages and much more"
+      },
+      {
+        "title": "Personalized Support",
+        "description": "Direct service via WhatsApp and email with specialized consulting for your product type"
+      },
+      {
+        "title": "Accessible Investment",
+        "description": "Competitive prices with guaranteed return through access to the global kosher market"
+      }
+    ]
+  },
+  "team": {
+    "title": "Our Specialized Team",
+    "subtitle": "Certified professionals with years of experience in kashrut matters and halachic supervision",
+    "members": [
+      {
+        "role": "Rabbinic Coordinator",
+        "position": "Chief Technical Officer",
+        "description": "Specialist in kashrut laws with over 15 years of experience. Responsible for final approval of all certifications and general supervision of processes."
+      },
+      {
+        "role": "Senior Supervisor",
+        "position": "Certified Field Inspector",
+        "description": "Responsible for on-site inspections, ingredient validation and monitoring production processes at certified companies."
+      },
+      {
+        "role": "Technical Consultant",
+        "position": "Process Specialist",
+        "description": "Specialist in ingredient analysis and industrial processes. Offers personalized technical consulting for necessary adaptations."
+      }
+    ]
+  },
+  "rabbis": {
+    "title": "Our Leading Rabbis",
+    "subtitle": "Internationally recognized rabbinic authorities who supervise and ensure the highest quality of kosher certification",
+    "list": [
+      {
+        "name": "Rabbi Israel Golman",
+        "title": "President of World Kosher",
+        "position": "President",
+        "certification": "International Rabbinic Authority",
+        "experience": "40+ years of experience",
+        "description": "President and supreme rabbinic authority of World Kosher. Leads the organization with extensive experience in international kosher supervision and establishing certification standards worldwide.",
+        "expertise": ["Organizational Leadership", "International Certification", "Kosher Standards"]
+      },
+      {
+        "name": "Rabbi Tzvi Bringer",
+        "title": "Chief Executive Officer",
+        "position": "CEO",
+        "certification": "Executive Rabbinic Management",
+        "experience": "35+ years of experience",
+        "description": "CEO responsible for operational and strategic management of World Kosher. Coordinates all certification activities and oversees implementation of global kosher standards.",
+        "expertise": ["Operational Management", "Business Strategy", "Global Coordination"]
+      },
+      {
+        "name": "Rabbi Shmuel Zalman",
+        "title": "Alcoholic Beverages Specialist",
+        "position": "Specialist",
+        "certification": "Beverage Kashrut Specialist",
+        "experience": "50+ years of experience",
+        "description": "Internationally recognized specialist in kosher certification of alcoholic beverages. Responsible for supervising wines, beers, spirits and other alcoholic beverages according to kosher laws.",
+        "expertise": ["Kosher Wines", "Beers", "Spirits"]
+      },
+      {
+        "name": "Rabbi Michael Moshe Greenberg",
+        "title": "Raw Materials Manager",
+        "position": "Manager",
+        "certification": "Kosher Ingredients Specialist",
+        "experience": "40+ years of experience",
+        "description": "Responsible for analyzing and approving all raw materials used in certified products. Specialist in identifying kosher and non-kosher ingredients, ensuring full compliance of inputs.",
+        "expertise": ["Ingredient Analysis", "Raw Materials", "Food Additives"]
+      },
+      {
+        "name": "Rabbi Eliyahu Bails",
+        "title": "Customer Service Manager",
+        "position": "Manager",
+        "certification": "Kosher Customer Service Specialist",
+        "experience": "28+ years of experience",
+        "description": "Manager responsible for customer service and support at World Kosher. Specialist in feasibility analysis, raw material adaptation and kosher solutions.",
+        "expertise": ["Feasibility Analysis", "Raw Material Adaptation", "Kosher Solutions"]
+      },
+      {
+        "name": "Rabbi Elisha Salas",
+        "title": "Rabbinic Consultant",
+        "position": "Consultant",
+        "certification": "Specialized Kashrut Consultant",
+        "experience": "45+ years of experience",
+        "description": "Rabbinic consultant specializing in complex cases and special certification processes. Offers personalized guidance for companies with specific needs to comply with kosher standards.",
+        "expertise": ["Specialized Consulting", "Complex Cases", "Process Adaptation"]
+      }
+    ]
+  },
+  "certifications": {
+    "title": "Credentials and Recognition",
+    "list": [
+      "Beit Din Jerusalem",
+      "Beit Din London",
+      "OU Kosher Recognition",
+      "Star-K Partnership"
+    ]
+  },
+  "cta": {
+    "title": "Get Your Kosher Certification",
+    "description": "Contact us today and discover how kosher certification can expand your market and increase your sales",
+    "buttons": {
+      "whatsapp": "Direct WhatsApp",
+      "email": "Send Email"
+    }
+  },
+  "footer": {
+    "about": {
+      "title": "World Kosher Portugal",
+      "description": "The leading kosher certification system in Portugal, offering kashrut services with worldwide recognition."
+    },
+    "consumerResources": {
+      "title": "Consumer Resources",
+      "links": {
+        "home": "Home",
+        "companies": "Certified Companies",
+        "about": "About Us",
+        "certificationInfo": "Certification Information"
+      }
+    },
+    "industryResources": {
+      "title": "Industry Resources",
+      "links": {
+        "request": "Request Certification",
+        "contact": "Contact",
+        "gallery": "Company Gallery",
+        "process": "Certification Process"
+      }
+    },
+    "contact": {
+      "title": "Direct Contact",
+      "whatsapp": "WhatsApp:",
+      "email": "Email:",
+      "website": "Website:"
+    },
+    "copyright": {
+      "text": "© 2024 World Kosher B.M.MASHGICHIM. All rights reserved.",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Use"
+    }
+  }
+}

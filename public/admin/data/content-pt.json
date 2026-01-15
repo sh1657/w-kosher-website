@@ -1,0 +1,196 @@
+{
+  "language": "pt",
+  "languageName": "Português",
+  "direction": "ltr",
+  "navigation": {
+    "home": "Início",
+    "certification": "Certificação",
+    "companies": "Empresas",
+    "about": "Sobre Nós",
+    "contact": "Contato",
+    "requestCertification": "Solicitar Certificação"
+  },
+  "hero": {
+    "badge": "Certificação Kosher Oficial",
+    "location": "em Portugal",
+    "title": "WK – Supervisiona e certifica produtos kosher",
+    "description": "Mais de 1.000 produtos em 25+ países ao redor do mundo",
+    "stats": {
+      "companies": "Empresas",
+      "countries": "Países Servidos",
+      "products": "Produtos Aprovados"
+    },
+    "buttons": {
+      "primary": "Solicitar Certificação",
+      "secondary": "Saiba Mais"
+    }
+  },
+  "companies": {
+    "title": "Fábricas com certificação WK",
+    "subtitle": "Junte-se às marcas supervisionadas aprovadas pela nossa certificação",
+    "viewAll": "Ver Todas as Empresas"
+  },
+  "whyChooseUs": {
+    "title": "Por que escolher a World Kosher?",
+    "subtitle": "Somos um sistema de certificação kosher líder com reconhecimento internacional e processos de supervisão rigorosos",
+    "features": [
+      {
+        "title": "Reconhecimento Internacional",
+        "description": "Certificação aceita em mais de 25 países, incluindo Israel, Estados Unidos, Europa e América Latina"
+      },
+      {
+        "title": "Processo Ágil",
+        "description": "Certificado kosher em 4-8 semanas com acompanhamento 24/6 e suporte especializado em português"
+      },
+      {
+        "title": "Máxima Confiabilidade",
+        "description": "Supervisores certificados com supervisão rigorosa e relatórios detalhados de conformidade"
+      },
+      {
+        "title": "Experiência Comprovada",
+        "description": "Mais de 1.000 produtos kosher em diversos setores: azeites, conservas, bebidas e muito mais"
+      },
+      {
+        "title": "Suporte Personalizado",
+        "description": "Atendimento direto via WhatsApp e e-mail com consultoria especializada para o seu tipo de produto"
+      },
+      {
+        "title": "Investimento Acessível",
+        "description": "Preços competitivos com retorno garantido através do acesso ao mercado kosher global"
+      }
+    ]
+  },
+  "team": {
+    "title": "Nossa Equipe Especializada",
+    "subtitle": "Profissionais certificados com anos de experiência em assuntos de kashrut e supervisão halakhica",
+    "members": [
+      {
+        "role": "Coordenador Rabínico",
+        "position": "Responsável Técnico Principal",
+        "description": "Especialista em leis de kashrut com mais de 15 anos de experiência. Responsável pela aprovação final de todas as certificações e supervisão geral dos processos."
+      },
+      {
+        "role": "Supervisor Sênior",
+        "position": "Inspetor de Campo Certificado",
+        "description": "Responsável por inspeções no local, validação de ingredientes e acompanhamento dos processos de produção em empresas certificadas."
+      },
+      {
+        "role": "Consultor Técnico",
+        "position": "Especialista em Processos",
+        "description": "Especialista em análise de ingredientes e processos industriais. Oferece consultoria técnica personalizada para adaptações necessárias."
+      }
+    ]
+  },
+  "rabbis": {
+    "title": "Nossos Rabinos Líderes",
+    "subtitle": "Autoridades rabínicas reconhecidas internacionalmente que supervisionam e garantem a mais alta qualidade da certificação kosher",
+    "list": [
+      {
+        "name": "Rabino Israel Golman",
+        "title": "Presidente da World Kosher",
+        "position": "Presidente",
+        "certification": "Autoridade Rabínica Internacional",
+        "experience": "40+ anos de experiência",
+        "description": "Presidente e autoridade rabínica suprema da World Kosher. Lidera a organização com vasta experiência em supervisão kosher internacional e estabelecimento de padrões de certificação em todo o mundo.",
+        "expertise": ["Liderança Organizacional", "Certificação Internacional", "Padrões Kosher"]
+      },
+      {
+        "name": "Rabino Tzvi Bringer",
+        "title": "Diretor Executivo",
+        "position": "CEO",
+        "certification": "Gestão Rabínica Executiva",
+        "experience": "35+ anos de experiência",
+        "description": "CEO responsável pela gestão operacional e estratégica da World Kosher. Coordena todas as atividades de certificação e supervisiona a implementação dos padrões kosher globais.",
+        "expertise": ["Gestão Operacional", "Estratégia Empresarial", "Coordenação Global"]
+      },
+      {
+        "name": "Rabino Shmuel Zalman",
+        "title": "Especialista em Bebidas Alcoólicas",
+        "position": "Especialista",
+        "certification": "Especialista em Kashrut de Bebidas",
+        "experience": "50+ anos de experiência",
+        "description": "Especialista reconhecido internacionalmente na certificação kosher de bebidas alcoólicas. Responsável pela supervisão de vinhos, cervejas, destilados e outras bebidas alcoólicas de acordo com as leis kosher.",
+        "expertise": ["Vinhos Kosher", "Cervejas", "Destilados"]
+      },
+      {
+        "name": "Rabino Michael Moshe Greenberg",
+        "title": "Responsável por Matérias-Primas",
+        "position": "Responsável",
+        "certification": "Especialista em Ingredientes Kosher",
+        "experience": "40+ anos de experiência",
+        "description": "Responsável pela análise e aprovação de todas as matérias-primas utilizadas em produtos certificados. Especialista em identificação de ingredientes kosher e não-kosher, garantindo total conformidade dos insumos.",
+        "expertise": ["Análise de Ingredientes", "Matérias-Primas", "Aditivos Alimentares"]
+      },
+      {
+        "name": "Rabino Eliyahu Bails",
+        "title": "Gerente de Atendimento ao Cliente",
+        "position": "Gerente",
+        "certification": "Especialista em Atendimento Kosher",
+        "experience": "28+ anos de experiência",
+        "description": "Gerente responsável pelo atendimento e suporte aos clientes da World Kosher. Especialista em análise de viabilidade, adequação de matérias-primas e soluções kosher.",
+        "expertise": ["Análise de Viabilidade", "Adequação de Matérias-Primas", "Soluções Kosher"]
+      },
+      {
+        "name": "Rabino Elisha Salas",
+        "title": "Consultor Rabínico",
+        "position": "Consultor",
+        "certification": "Consultor Especializado em Kashrut",
+        "experience": "45+ anos de experiência",
+        "description": "Consultor rabínico especializado em casos complexos e processos de certificação especiais. Oferece orientação personalizada para empresas com necessidades específicas de adequação aos padrões kosher.",
+        "expertise": ["Consultoria Especializada", "Casos Complexos", "Adequação de Processos"]
+      }
+    ]
+  },
+  "certifications": {
+    "title": "Credenciais e Reconhecimentos",
+    "list": [
+      "Beit Din Jerusalém",
+      "Beit Din Londres",
+      "Reconhecimento OU Kosher",
+      "Parceria Star-K"
+    ]
+  },
+  "cta": {
+    "title": "Obtenha sua Certificação Kosher",
+    "description": "Entre em contato conosco hoje e descubra como a certificação kosher pode expandir seu mercado e aumentar suas vendas",
+    "buttons": {
+      "whatsapp": "WhatsApp Direto",
+      "email": "Enviar E-mail"
+    }
+  },
+  "footer": {
+    "about": {
+      "title": "World Kosher Portugal",
+      "description": "O principal sistema de certificação kosher em Portugal, oferecendo serviços de kashrut com reconhecimento mundial."
+    },
+    "consumerResources": {
+      "title": "Recursos para Consumidores",
+      "links": {
+        "home": "Início",
+        "companies": "Empresas Certificadas",
+        "about": "Sobre Nós",
+        "certificationInfo": "Informações sobre Certificação"
+      }
+    },
+    "industryResources": {
+      "title": "Recursos Industriais",
+      "links": {
+        "request": "Solicitar Certificação",
+        "contact": "Contato",
+        "gallery": "Galeria de Empresas",
+        "process": "Processo de Certificação"
+      }
+    },
+    "contact": {
+      "title": "Contato Direto",
+      "whatsapp": "WhatsApp:",
+      "email": "E-mail:",
+      "website": "Website:"
+    },
+    "copyright": {
+      "text": "© 2024 World Kosher B.M.MASHGICHIM. Todos os direitos reservados.",
+      "privacy": "Política de Privacidade",
+      "terms": "Termos de Uso"
+    }
+  }
+}

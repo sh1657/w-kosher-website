@@ -1,0 +1,41 @@
+{
+  "language": "he",
+  "languageName": "עברית",
+  "direction": "rtl",
+  "page": "request",
+  "title": "בקשת תעודת כשרות",
+  "hero": {
+    "title": "בקש תעודת כשרות",
+    "subtitle": "מלא את הטופס ונחזור אליך תוך 24 שעות"
+  },
+  "form": {
+    "title": "טופס בקשה",
+    "fields": {
+      "companyName": "שם החברה",
+      "contactName": "שם איש קשר",
+      "email": "דוא\"ל",
+      "phone": "טלפון",
+      "address": "כתובת המפעל",
+      "productType": "סוג המוצר",
+      "productionVolume": "נפח ייצור שנתי",
+      "currentCertifications": "תעודות קיימות",
+      "additionalInfo": "מידע נוסף"
+    },
+    "submitButton": "שלח בקשה",
+    "privacyNote": "המידע שלך מאובטח ולא יועבר לצד שלישי"
+  },
+  "whatToExpect": {
+    "title": "מה לצפות?",
+    "steps": [
+      "נחזור אליך תוך 24 שעות",
+      "נקבע פגישת ייעוץ ראשונית",
+      "נכין הצעת מחיר מותאמת",
+      "נתחיל בתהליך ההסמכה"
+    ]
+  },
+  "contact": {
+    "title": "מעדיפים לדבר?",
+    "whatsapp": "(+972) 54 308 0390",
+    "email": "portugal@w-kosher.com"
+  }
+}

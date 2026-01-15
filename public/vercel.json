@@ -1,8 +1,5 @@
 {
   "version": 2,
-  "cleanUrls": true,
-  "buildCommand": "echo 'Static site'",
-  "outputDirectory": "public",
   "headers": [
     {
       "source": "/(.*)",
