@@ -39,6 +39,77 @@
     <link rel="alternate" hreflang="he" href="https://w-kosher.com/index.html">
     <link rel="alternate" hreflang="x-default" href="https://w-kosher.com/index.html">
     
+    <!-- Schema.org Structured Data - Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "World Kosher Portugal",
+      "legalName": "World Kosher B.M.MASHGICHIM",
+      "url": "https://w-kosher.com",
+      "logo": "https://w-kosher.com/images/logo.png",
+      "description": "A principal autoridade em certificação kosher em Portugal. Mais de 100 empresas certificadas, 1.000+ produtos aprovados em 25 países.",
+      "foundingDate": "2000",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+972-54-308-0390",
+        "contactType": "customer service",
+        "email": "portugal@w-kosher.com",
+        "availableLanguage": ["Portuguese", "English", "Hebrew"],
+        "areaServed": ["PT", "IL", "US", "EU"]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "PT"
+      },
+      "sameAs": [
+        "https://www.facebook.com/profile.php?id=61575501917315",
+        "https://wa.me/972543080390"
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "100"
+      },
+      "offers": {
+        "@type": "Offer",
+        "name": "Certificação Kosher",
+        "description": "Processo de certificação kosher em 4-8 semanas",
+        "url": "https://w-kosher.com/certificacao.html"
+      }
+    }
+    </script>
+    
+    <!-- Schema.org Structured Data - Service -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Kosher Certification",
+      "provider": {
+        "@type": "Organization",
+        "name": "World Kosher Portugal"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Portugal"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Kosher Certification Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Certificação Kosher para Empresas"
+            }
+          }
+        ]
+      }
+    }
+    </script>
+    
     <style>
         * {
             margin: 0;
