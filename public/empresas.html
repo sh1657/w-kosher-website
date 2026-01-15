@@ -996,7 +996,7 @@
             dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
         }
 
-        function changeLanguage(lang) {
+        function changeLanguage(lang, event) {
             currentLanguage = lang;
             
             // Update flag and language display
@@ -1006,7 +1006,7 @@
                 'he': '🇮🇱',
                 'es': '🇪🇸',
                 'ru': '🇷🇺',
-                'it': '🇮🇹'
+                'it': '🇮🇱'
             };
             
             document.getElementById('current-flag').textContent = flags[lang];
@@ -1025,7 +1025,10 @@
             document.querySelectorAll('.language-option').forEach(option => {
                 option.classList.remove('active');
             });
-            event.target.classList.add('active');
+            
+            if (event && event.target) {
+                event.target.classList.add('active');
+            }
             
             // Hide dropdown
             document.getElementById('languageDropdown').style.display = 'none';
