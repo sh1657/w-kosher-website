@@ -1,0 +1,30 @@
+# Robots.txt for w-kosher.com
+# Allow all search engines to crawl the entire site
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://w-kosher.com/sitemap.xml
+
+# Crawl-delay (optional, helps prevent server overload)
+Crawl-delay: 1
+
+# Disallow crawling of these directories (if they exist)
+Disallow: /netlify-deploy/
+Disallow: /docs/
+Disallow: /tests/
+
+# Allow important pages
+Allow: /index.html
+Allow: /empresas.html
+Allow: /certificacao.html
+Allow: /sobre-nos.html
+Allow: /contacto.html
+Allow: /solicitar-certificacao-pt.html
+Allow: /solicitar-certificacao-en.html
+Allow: /solicitar-certificacao-he.html
+
+# Allow images and certificates
+Allow: /images/
+Allow: /certificates/
