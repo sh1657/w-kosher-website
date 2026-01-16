@@ -40,10 +40,8 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://w-kosher.com/">
     
-    <!-- Preload Hero Images for Smooth Transitions -->
+    <!-- Preload only the first hero image for immediate display -->
     <link rel="preload" as="image" href="images/hero/418f46f5-29d1-4da8-b13f-3c6cdba636b2.png">
-    <link rel="preload" as="image" href="images/hero/53abdfaa-2fb2-4cf4-84b2-6c075413f7df.png">
-    <link rel="preload" as="image" href="images/hero/6beb0281-1c0f-428e-b86e-3dd5f0296412.png">
     
     <!-- Alternate Languages -->
     <link rel="alternate" hreflang="pt" href="https://w-kosher.com/index.html">
@@ -2085,7 +2083,7 @@
                 'rabbis-title': 'הרבנים המובילים שלנו',
                 'rabbis-subtitle': 'רשויות רבניות מוכרות בינלאומית המפקחות ומבטיחות את האיכות הגבוהה ביותר של הכשר כשרות',
                 'rabbi-president-status': 'נשיא',
-                'rabbi-president-name': 'הרב ישראל גאולמן',
+                'rabbi-president-name': 'הרב ישראל גואלמן',
                 'rabbi-president-title': 'נשיא World Kosher',
                 'rabbi-president-certification': 'סמכות רבנית בינלאומית',
                 'rabbi-president-experience': '40+ שנות ניסיון',
@@ -2284,7 +2282,7 @@
             const slides = document.querySelectorAll('.hero-slide');
             let currentSlide = 0;
             
-            // Preload all images first
+            // Preload only existing images for smooth transitions
             const imageUrls = [
                 'images/hero/418f46f5-29d1-4da8-b13f-3c6cdba636b2.png',
                 'images/hero/53abdfaa-2fb2-4cf4-84b2-6c075413f7df.png',
@@ -2293,22 +2291,16 @@
                 'images/hero/ad5f297c-1f9e-4285-bb75-ac5a02af102d.png',
                 'images/hero/d9b9d93d-3e26-4fb8-9b27-1d2f2cab42f4.png',
                 'images/hero/e776bd8a-6656-4871-9d82-5fa8c9b757f5.png',
-                'images/hero/hero4.jpg',
-                'images/hero-generic/hero1.jpg',
-                'images/hero-generic/hero2.jpg',
-                'images/hero-generic/hero3.jpg',
-                'images/hero-generic/hero4.jpg',
-                'images/hero-generic/hero5.jpg',
-                'images/hero-generic/hero6.jpg',
-                'images/hero-generic/hero7.jpg',
-                'images/hero-generic/hero8.jpg'
+                'images/hero/hero4.jpg'
             ];
             
-            // Preload images silently in background
-            imageUrls.forEach(url => {
-                const img = new Image();
-                img.src = url;
-            });
+            // Preload images for smooth transitions (only after page load)
+            setTimeout(() => {
+                imageUrls.forEach(url => {
+                    const img = new Image();
+                    img.src = url;
+                });
+            }, 1000);
             
             function nextSlide() {
                 slides[currentSlide].classList.remove('active');
