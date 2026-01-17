@@ -779,13 +779,13 @@
                 </div>
 
                 <!-- Friopesca -->
-                <div class="company-card" data-company="friopesca legumes congelados vegetables">
+                <div class="company-card" data-company="friopesca legumes congelados vegetables frozen ירקות קפואים">
                     <a href="certificates/certificate-Friopesca-Sul-2025.pdf" target="_blank" class="company-image" style="background-image: url('images/certifications/certificate-Friopesca-Sul-2025_page-0001.jpg'); background-size: cover; background-position: center; display: block; text-decoration: none; cursor: pointer; min-height: 300px;">
                         <div class="certified-badge" data-translate="certified-badge">✓ CERTIFICADO</div>
                     </a>
                     <div class="company-content">
-                        <h3 class="company-title">🐟 Friopesca - Refrigeração de Aveiro. S.A.</h3>
-                        <p class="company-category" data-translate="friopesca-category">Produtos Congelados do Mar</p>
+                        <h3 class="company-title">🥦 Friopesca - Refrigeração de Aveiro. S.A.</h3>
+                        <p class="company-category" data-translate="friopesca-category">Legumes Congelados</p>
                         <div class="company-details">
                             <p>📍 <strong data-translate="location-label">Localização:</strong> Avenida Pedro Alvares Cabral Aptd. 9, 3830-908 Gafanha da Nazaré, Portugal</p>
                             <p>📞 <strong data-translate="phone-label">Telefone:</strong> +351 229 398 450</p>
@@ -961,7 +961,7 @@
                 // Company Categories
                 'atlantic-category': 'Arroz e Milho',
                 'frutissima-category': 'Concentrados de Frutas',
-                'friopesca-category': 'Produtos Congelados do Mar',
+                'friopesca-category': 'Legumes Congelados',
                 'innoliva-category': 'Azeites Extra Virgem Premium',
                 'soguima-category': 'Fabricante de Alimentos Congelados',
                 'superbock-category': 'Bebidas e Cervejas',
@@ -1006,7 +1006,7 @@
                 // Company Categories
                 'atlantic-category': 'Rice and Corn',
                 'frutissima-category': 'Fruit Concentrates',
-                'friopesca-category': 'Frozen Seafood Products',
+                'friopesca-category': 'Frozen Vegetables',
                 'innoliva-category': 'Premium Extra Virgin Olive Oils',
                 'soguima-category': 'Frozen Food Manufacturer',
                 'superbock-category': 'Beverages and Beers',
@@ -1051,7 +1051,7 @@
                 // Company Categories
                 'atlantic-category': 'אורז ותירס',
                 'frutissima-category': 'תרכיזי פירות',
-                'friopesca-category': 'מוצרי ים קפואים',
+                'friopesca-category': 'ירקות קפואים',
                 'innoliva-category': 'שמני זית בתולי איכות',
                 'soguima-category': 'יצרן מזון קפוא',
                 'superbock-category': 'משקאות ובירות',
@@ -1190,6 +1190,18 @@
             // Update content with current language
             updateContent();
         });
+        
+        // Redirect to certification form based on language
+        function redirectToCertificationForm() {
+            const lang = localStorage.getItem('preferred-language') || 'pt';
+            const urls = {
+                'pt': 'solicitar-certificacao-pt.html',
+                'en': 'solicitar-certificacao-en.html',
+                'he': 'solicitar-certificacao-he.html'
+            };
+            window.location.href = urls[lang] || urls['pt'];
+            return false;
+        }
     </script>
 </body>
 </html>
