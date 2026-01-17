@@ -258,7 +258,7 @@
 
         <!-- Questionnaire download callout -->
         <div style="margin-bottom:16px; text-align:center;">
-            <a href="/documents/questionnaire.pdf" target="_blank" class="btn-submit" style="display:inline-block; max-width:320px; padding:12px 20px; text-decoration:none;">📝 Descarregar Questionário (PDF)</a>
+            <a href="/documents/questionnaire.doc" target="_blank" class="btn-submit" style="display:inline-block; max-width:320px; padding:12px 20px; text-decoration:none;">📝 Descarregar Questionário (Word)</a>
             <p style="font-size:0.9rem;color:#6b7280; margin-top:8px;">Preencher o questionário ajudará-nos a preparar um orçamento preciso antes de enviar o pedido</p>
         </div>
 
@@ -397,7 +397,7 @@
                  console.log('Email sent successfully!', response);
                  
                  // Send auto-reply to customer in Portuguese
-                 const questionnaireURL = `${location.origin}/documents/questionnaire.pdf`;
+                 const questionnaireURL = `${location.origin}/documents/questionnaire.doc`;
                  return emailjs.send('service_4g2vstc', 'template_as2wj6o', {
                      to_email: data.email,
                      to_name: data.contact,
