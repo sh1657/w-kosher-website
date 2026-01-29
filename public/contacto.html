@@ -28,6 +28,55 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://w-kosher.com/contacto.html">
     
+    <!-- Schema.org Structured Data - Organization with Logo -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://w-kosher.com/#organization",
+      "name": "World Kosher B.M.MASHGICHIM",
+      "url": "https://w-kosher.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://w-kosher.com/images/logo.png",
+        "width": 512,
+        "height": 512
+      },
+      "image": "https://w-kosher.com/images/logo.png",
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+972-2-631-0336",
+          "contactType": "customer service",
+          "areaServed": "IL",
+          "availableLanguage": ["Hebrew", "English"]
+        },
+        {
+          "@type": "ContactPoint",
+          "telephone": "+351-963-201-226",
+          "contactType": "customer service",
+          "areaServed": "PT",
+          "availableLanguage": ["Portuguese", "English"]
+        }
+      ]
+    }
+    </script>
+    
+    <!-- Schema.org - ContactPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "name": "Contacto World Kosher",
+      "description": "Entre em contacto com a World Kosher para certificação kosher",
+      "url": "https://w-kosher.com/contacto.html",
+      "mainEntity": {
+        "@type": "Organization",
+        "@id": "https://w-kosher.com/#organization"
+      }
+    }
+    </script>
+
     <style>
         * {
             margin: 0;
@@ -911,7 +960,7 @@
                     <div class="icon">📱</div>
                     <h3 data-translate="whatsapp-title">WhatsApp 24/6</h3>
                     <p data-translate="whatsapp-desc">Atendimento imediato para suas dúvidas</p>
-                    <a href="https://wa.me/351963201226" target="_blank">(+351) 963-201-226</a>
+                    <a href="https://wa.me/351969176830" target="_blank">(+351) 969-176-830</a>
                 </div>
 
                 <!-- Phone -->
@@ -949,13 +998,6 @@
                         <div class="office-card israel">
                             <div class="country-flag">🇮🇱</div>
                             <h3 data-translate="office-israel-title">Escritório Israel</h3>
-                            <div class="manager">
-                                <span>👤</span>
-                                <div>
-                                    <small data-translate="office-manager">Diretor</small>
-                                    <div class="manager-name">Rabi Zvi Biton</div>
-                                </div>
-                            </div>
                             <div class="contact-item">
                                 <div class="icon">📞</div>
                                 <div>

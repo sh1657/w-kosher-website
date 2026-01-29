@@ -54,25 +54,54 @@
     {
       "@context": "https://schema.org",
       "@type": "Organization",
+      "@id": "https://w-kosher.com/#organization",
       "name": "World Kosher Portugal - Kashrut",
       "legalName": "World Kosher B.M.MASHGICHIM",
-      "alternateName": ["Kashrut Portugal", "Certificação Kosher Portugal"],
+      "alternateName": ["Kashrut Portugal", "Certificação Kosher Portugal", "W-Kosher"],
       "url": "https://w-kosher.com",
-      "logo": "https://w-kosher.com/images/logo.png",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://w-kosher.com/images/logo.png",
+        "width": 512,
+        "height": 512,
+        "caption": "World Kosher Logo"
+      },
+      "image": [
+        "https://w-kosher.com/images/logo.png",
+        "https://w-kosher.com/images/hero/418f46f5-29d1-4da8-b13f-3c6cdba636b2.webp"
+      ],
       "description": "Kashrut Portugal - A principal autoridade em certificação kosher. Mais de 100 empresas certificadas, 1.000+ produtos aprovados em 25 países. Especialistas em kashrut e certificação kosher.",
       "foundingDate": "2000",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+972-54-308-0390",
-        "contactType": "customer service",
-        "email": "portugal@w-kosher.com",
-        "availableLanguage": ["Portuguese", "English", "Hebrew"],
-        "areaServed": ["PT", "IL", "US", "EU"]
-      },
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "PT"
-      },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+972-2-631-0336",
+          "contactType": "customer service",
+          "email": "zvi@w-kosher.com",
+          "availableLanguage": ["Hebrew", "English"],
+          "areaServed": "IL"
+        },
+        {
+          "@type": "ContactPoint",
+          "telephone": "+351-963-201-226",
+          "contactType": "customer service",
+          "email": "portugal@w-kosher.com",
+          "availableLanguage": ["Portuguese", "English"],
+          "areaServed": "PT"
+        }
+      ],
+      "address": [
+        {
+          "@type": "PostalAddress",
+          "addressCountry": "PT",
+          "name": "Escritório Portugal"
+        },
+        {
+          "@type": "PostalAddress",
+          "addressCountry": "IL",
+          "name": "Escritório Israel"
+        }
+      ],
       "sameAs": [
         "https://www.facebook.com/profile.php?id=61575501917315",
         "https://wa.me/972543080390"
