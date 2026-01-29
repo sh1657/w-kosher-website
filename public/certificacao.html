@@ -1165,6 +1165,23 @@
             dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
         }
 
+        // Close dropdown on ESC key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                const dropdown = document.getElementById('languageDropdown');
+                if (dropdown) dropdown.style.display = 'none';
+            }
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(e) {
+            const dropdown = document.getElementById('languageDropdown');
+            const selector = document.querySelector('.language-selector');
+            if (dropdown && selector && !selector.contains(e.target)) {
+                dropdown.style.display = 'none';
+            }
+        });
+
         function selectLanguage(flag, lang) {
             document.getElementById('current-flag').textContent = flag;
             document.getElementById('current-lang').textContent = lang;
@@ -1178,10 +1195,7 @@
             const languageMap = {
                 'Português': 'pt',
                 'English': 'en',
-                'עברית': 'he',
-                'Español': 'es',
-                'Русский': 'ru',
-                'Italiano': 'it'
+                'עברית': 'he'
             };
             
             const langCode = languageMap[lang] || 'pt';
@@ -1246,10 +1260,7 @@
                 // Find the language option and update display
                 const langNames = {
                     'en': { flag: '🇬🇧', name: 'English' },
-                    'he': { flag: '🇮🇱', name: 'עברית' },
-                    'es': { flag: '🇪🇸', name: 'Español' },
-                    'ru': { flag: '🇷🇺', name: 'Русский' },
-                    'it': { flag: '🇮🇹', name: 'Italiano' }
+                    'he': { flag: '🇮🇱', name: 'עברית' }
                 };
                 
                 if (langNames[savedLang]) {

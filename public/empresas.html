@@ -1139,17 +1139,31 @@
             dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
         }
 
+        // Close dropdown on ESC key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                const dropdown = document.getElementById('languageDropdown');
+                if (dropdown) dropdown.style.display = 'none';
+            }
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(e) {
+            const dropdown = document.getElementById('languageDropdown');
+            const selector = document.querySelector('.language-selector');
+            if (dropdown && selector && !selector.contains(e.target)) {
+                dropdown.style.display = 'none';
+            }
+        });
+
         function changeLanguage(lang, event) {
             currentLanguage = lang;
             
             // Update flag and language display
             const flags = {
-                'pt': '🇵🇹',
-                'en': '🇬🇧', 
-                'he': '🇮🇱',
-                'es': '🇪🇸',
-                'ru': '🇷🇺',
-                'it': '🇮🇱'
+                'pt': '��',
+                'en': '��', 
+                'he': '🇮🇱'
             };
             
             document.getElementById('current-flag').textContent = flags[lang];
