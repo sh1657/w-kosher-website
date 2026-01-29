@@ -41,7 +41,7 @@
     <link rel="canonical" href="https://w-kosher.com/">
     
     <!-- Preload only the first hero image for immediate display -->
-    <link rel="preload" as="image" href="images/hero/418f46f5-29d1-4da8-b13f-3c6cdba636b2.png">
+    <link rel="preload" as="image" href="images/hero/418f46f5-29d1-4da8-b13f-3c6cdba636b2.webp">
     
     <!-- Alternate Languages -->
     <link rel="alternate" hreflang="pt" href="https://w-kosher.com/index.html">
@@ -226,1083 +226,19 @@
     }
     </script>
     
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-            color: #6b7280;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Top Bar */
-        .top-bar {
-            background: #1e3a8a;
-            color: white;
-            padding: 8px 0;
-            font-size: 0.85rem;
-            position: sticky;
-            top: 0;
-            z-index: 1001;
-            white-space: nowrap;
-            overflow: visible;
-        }
-        
-        .top-bar-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 15px;
-            min-height: 28px;
-        }
-        
-        .top-bar-content > div:first-child {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            overflow: hidden;
-            flex-shrink: 1;
-        }
-        
-        .top-bar-content > div:first-child span {
-            white-space: nowrap;
-        }
-        
-        .top-bar a {
-            color: white;
-            text-decoration: none;
-        }
-        
-        .top-bar-right {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            flex-shrink: 0;
-            white-space: nowrap;
-        }
-        
-        .top-bar-right a {
-            display: inline-flex;
-            align-items: center;
-            white-space: nowrap;
-        }
-        
-        /* Language Selector */
-        .language-selector {
-            position: relative;
-            display: inline-block;
-            cursor: pointer;
-        }
-        
-        .language-dropdown {
-            position: absolute;
-            top: 100%;
-            right: 0;
-            background: white;
-            border: 1px solid #e5e7eb;
-            border-radius: 8px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-            min-width: 200px;
-            z-index: 99999;
-            display: none;
-        }
-        
-        @media (max-width: 768px) {
-            .language-dropdown {
-                right: -20px;
-                min-width: 180px;
-            }
-            
-            .top-bar {
-                font-size: 0.75rem;
-                padding: 6px 0;
-            }
-            
-            .top-bar-content {
-                gap: 8px;
-            }
-            
-            .top-bar-content > div:first-child span {
-                font-size: 0.75rem;
-            }
-            
-            .top-bar-content > div:first-child span:first-child {
-                display: none; /* Hide phone on mobile */
-            }
-            
-            .top-bar-right {
-                gap: 8px;
-            }
-            
-            .top-bar-right a {
-                font-size: 0.75rem;
-            }
-        }
-        
-        .language-option {
-            padding: 12px 16px;
-            cursor: pointer;
-            border-bottom: 1px solid #f3f4f6;
-            color: #1f2937;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .language-option:hover {
-            background: #f3f4f6;
-        }
-        
-        .language-option.active {
-            background: #eff6ff;
-        }
-        
-        /* Main Header */
-        .main-header {
-            background: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 44px;
-            z-index: 1000;
-        }
-        
-        @media (max-width: 768px) {
-            .main-header {
-                position: relative;
-                top: 0;
-            }
-        }
-        
-        .header-content {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: nowrap;
-            gap: 20px;
-            padding: 15px 0;
-        }
-        
-        .logo-section {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            flex-shrink: 0;
-            min-width: 0;
-        }
-        
-        .logo-section img {
-            width: 120px;
-            height: 120px;
-            border-radius: 12px;
-            object-fit: contain;
-            background: transparent;
-        }
-        
-        .logo-text h1 {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #1e3a8a;
-            margin: 0;
-        }
-        
-        .logo-text span {
-            font-size: 0.9rem;
-            color: #6b7280;
-            font-weight: 500;
-        }
-        
-        /* Navigation */
-        .nav {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-            flex-shrink: 1;
-            min-width: 0;
-        }
-        
-        .nav a {
-            padding: 10px 15px;
-            text-decoration: none;
-            font-weight: 500;
-            border-radius: 8px;
-            color: #1e3a8a;
-            transition: all 0.3s ease;
-            white-space: nowrap;
-        }
-        
-        .nav a:hover {
-            background: #f3f4f6;
-            transform: translateY(-1px);
-        }
-        
-        .nav a.active {
-            color: #f59e0b;
-            font-weight: 600;
-            background: #f9fafb;
-        }
-        
-        .cta-button {
-            background: #f59e0b;
-            color: white;
-            padding: 12px 20px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-block;
-            transition: all 0.3s ease;
-            flex-shrink: 0;
-            white-space: nowrap;
-        }
-        
-        .cta-button:hover {
-            background: #d97706;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(245, 158, 11, 0.3);
-        }
-        
-        /* Hero Section */
-        .hero {
-            position: relative;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            color: white;
-            overflow: hidden;
-        }
-
-        .hero-background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -2;
-        }
-
-        .hero-image-slider {
-            position: relative;
-            width: 100%;
-            height: 100%;
-        }
-
-        .hero-slide {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            opacity: 0;
-            transition: opacity 2s ease-in-out;
-            will-change: opacity;
-            pointer-events: none;
-        }
-
-        .hero-slide.active {
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(30, 58, 138, 0.8) 0%, rgba(59, 130, 246, 0.6) 100%);
-            z-index: -1;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            text-align: center;
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        /* Companies Showcase */
-        .companies-showcase {
-            background: #f8fafc;
-            padding: 80px 20px;
-            text-align: center;
-        }
-
-        .companies-showcase h2 {
-            font-size: 2.5rem;
-            color: #1f2937;
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-
-        .companies-showcase p {
-            font-size: 1.2rem;
-            color: #6b7280;
-            margin-bottom: 50px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .companies-slider {
-            margin-bottom: 40px;
-        }
-
-        .company-logos {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 40px;
-            flex-wrap: wrap;
-        }
-
-        .company-logo {
-            background: white;
-            padding: 20px;
-            border-radius: 16px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-            text-align: center;
-            min-width: 150px;
-        }
-
-        .company-logo:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-        }
-
-        .company-logo img {
-            width: 100px;
-            height: 60px;
-            object-fit: cover;
-            margin-bottom: 10px;
-        }
-
-        .company-logo h4 {
-            color: #1f2937;
-            font-size: 0.9rem;
-            margin: 0;
-            font-weight: 600;
-        }
-
-        .companies-cta {
-            margin-top: 40px;
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: #1e3a8a;
-            border: 2px solid #1e3a8a;
-            padding: 15px 30px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-            display: inline-block;
-        }
-
-        .btn-outline:hover {
-            background: #1e3a8a;
-            color: white;
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 1;
-        }
-        
-        .hero h1 {
-            font-size: 4rem;
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 25px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        
-        .hero .orange-text {
-            color: #f59e0b;
-        }
-        
-        .hero p {
-            font-size: 1.4rem;
-            opacity: 0.95;
-            margin-bottom: 50px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        /* Stats */
-        .stats {
-            display: flex;
-            gap: 50px;
-            margin-bottom: 60px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .stat-item {
-            text-align: center;
-            padding: 20px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 16px;
-            backdrop-filter: blur(10px);
-            min-width: 150px;
-        }
-        
-        .stat-number {
-            display: block;
-            font-size: 3rem;
-            font-weight: 800;
-            color: #f59e0b;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        
-        .stat-label {
-            font-size: 1rem;
-            opacity: 0.9;
-            margin-top: 5px;
-        }
-        
-        /* Hero Buttons */
-        .hero-buttons {
-            display: flex;
-            gap: 25px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .btn-primary {
-            background: #f59e0b;
-            color: white;
-            padding: 18px 35px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
-        }
-        
-        .btn-primary:hover {
-            background: #d97706;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(245, 158, 11, 0.4);
-        }
-        
-        .btn-secondary {
-            background: transparent;
-            color: white;
-            padding: 18px 35px;
-            border: 2px solid white;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-secondary:hover {
-            background: white;
-            color: #1e3a8a;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(255,255,255,0.2);
-        }
-        
-        /* Features Section */
-        .features {
-            padding: 100px 20px;
-            background: #f9fafb;
-        }
-        
-        .features h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            color: #1e3a8a;
-            margin-bottom: 20px;
-        }
-        
-        .features-subtitle {
-            text-align: center;
-            font-size: 1.2rem;
-            color: #6b7280;
-            margin-bottom: 60px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-bottom: 60px;
-        }
-        
-        .feature-card {
-            background: white;
-            padding: 40px 30px;
-            border-radius: 16px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            text-align: center;
-            transition: all 0.3s ease;
-            border: 1px solid #f1f5f9;
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-        }
-        
-        .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            display: block;
-        }
-        
-        .feature-card h3 {
-            color: #1e3a8a;
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-        }
-        
-        .feature-card p {
-            line-height: 1.6;
-        }
-        
-        /* CTA Section */
-        .cta-section {
-            background: linear-gradient(135deg, #059669, #065f46);
-            color: white;
-            padding: 80px 20px;
-            text-align: center;
-        }
-        
-        .cta-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: white;
-        }
-        
-        .cta-section p {
-            font-size: 1.2rem;
-            margin-bottom: 40px;
-            opacity: 0.9;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .cta-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        /* Team Section */
-        .team-section {
-            background: #f8fafc;
-            padding: 80px 20px;
-            text-align: center;
-        }
-        
-        .team-section h2 {
-            font-size: 2.5rem;
-            color: #1e3a8a;
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-        
-        .team-subtitle {
-            font-size: 1.2rem;
-            color: #6b7280;
-            margin-bottom: 60px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        
-        .team-card {
-            background: white;
-            padding: 40px 30px;
-            border-radius: 16px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            text-align: center;
-            transition: all 0.3s ease;
-            border: 1px solid #f1f5f9;
-        }
-        
-        .team-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-        }
-        
-        .team-icon {
-            font-size: 4rem;
-            margin-bottom: 20px;
-            display: block;
-        }
-        
-        .team-card h3 {
-            color: #1e3a8a;
-            font-size: 1.4rem;
-            margin-bottom: 10px;
-            font-weight: 600;
-        }
-        
-        .team-card .role {
-            color: #f59e0b;
-            font-size: 1rem;
-            font-weight: 500;
-            margin-bottom: 15px;
-        }
-        
-        .team-card p {
-            line-height: 1.6;
-            color: #6b7280;
-        }
-
-        /* Leading Rabbis Section */
-        .leading-rabbis-section {
-            background: white;
-            padding: 80px 20px;
-        }
-
-        .leading-rabbis-section h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            color: #1e3a8a;
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-
-        .rabbis-subtitle {
-            text-align: center;
-            font-size: 1.2rem;
-            color: #6b7280;
-            margin-bottom: 60px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .rabbis-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            margin-bottom: 60px;
-        }
-
-        .rabbi-card {
-            background: #f8fafc;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            border: 1px solid #e5e7eb;
-        }
-
-        .rabbi-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-        }
-
-        .rabbi-image {
-            position: relative;
-            height: 280px;
-            overflow: hidden;
-        }
-
-        .rabbi-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .rabbi-card:hover .rabbi-image img {
-            transform: scale(1.05);
-        }
-
-        .rabbi-overlay {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: rgba(30, 58, 138, 0.9);
-            color: white;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-
-        .rabbi-info {
-            padding: 30px;
-        }
-
-        .rabbi-info h3 {
-            color: #1e3a8a;
-            font-size: 1.5rem;
-            margin-bottom: 8px;
-            font-weight: 700;
-        }
-
-        .rabbi-title {
-            color: #f59e0b;
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-
-        .rabbi-credentials {
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-            margin-bottom: 15px;
-        }
-
-        .rabbi-credentials span {
-            color: #6b7280;
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-
-        .rabbi-info p {
-            color: #374151;
-            line-height: 1.6;
-            margin-bottom: 20px;
-            text-align: left;
-        }
-
-        .rabbi-specialties {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        .specialty {
-            background: #eff6ff;
-            color: #1e3a8a;
-            padding: 6px 12px;
-            border-radius: 16px;
-            font-size: 0.8rem;
-            font-weight: 500;
-            border: 1px solid #dbeafe;
-        }
-
-        .rabbis-certification {
-            background: #f9fafb;
-            padding: 40px;
-            border-radius: 16px;
-            text-align: center;
-            border: 1px solid #f1f5f9;
-        }
-
-        .rabbis-certification h3 {
-            color: #1e3a8a;
-            font-size: 1.8rem;
-            margin-bottom: 30px;
-            font-weight: 600;
-        }
-
-        .certification-logos {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 40px;
-            flex-wrap: wrap;
-        }
-
-        .cert-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-            padding: 20px;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            min-width: 150px;
-        }
-
-        .cert-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-        }
-
-        .cert-item img {
-            width: 60px;
-            height: 60px;
-            object-fit: contain;
-        }
-
-        .cert-item span {
-            color: #374151;
-            font-size: 0.9rem;
-            font-weight: 500;
-            text-align: center;
-        }
-        
-        /* Footer */
-        .footer {
-            background: #1f2937;
-            color: white;
-            padding: 60px 20px 30px;
-        }
-        
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-        
-        .footer-section h3 {
-            color: #f59e0b;
-            margin-bottom: 20px;
-            font-size: 1.4rem;
-        }
-        
-        .footer-section h4 {
-            color: #e5e7eb;
-            margin-bottom: 15px;
-            font-size: 1.1rem;
-        }
-        
-        .footer-section p {
-            color: rgba(255,255,255,0.8);
-            margin-bottom: 20px;
-            line-height: 1.6;
-        }
-        
-        .footer-nav {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .footer-nav li {
-            margin-bottom: 8px;
-        }
-        
-        .footer-nav a {
-            color: rgba(255,255,255,0.7);
-            text-decoration: none;
-            transition: color 0.3s ease;
-            font-size: 0.9rem;
-        }
-        
-        .footer-nav a:hover {
-            color: #f59e0b;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .social-links a {
-            font-size: 1.5rem;
-            transition: transform 0.3s ease;
-        }
-        
-        .social-links a:hover {
-            transform: scale(1.2);
-        }
-        
-        .contact-info p {
-            margin-bottom: 15px;
-        }
-        
-        .contact-info a {
-            color: #f59e0b;
-            text-decoration: none;
-        }
-        
-        .contact-info a:hover {
-            text-decoration: underline;
-        }
-        
-        .footer-bottom {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 30px;
-            margin-top: 40px;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        
-        .footer-bottom-left p {
-            color: rgba(255,255,255,0.6);
-            font-size: 0.9rem;
-            margin: 0;
-        }
-        
-        .footer-bottom-right {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .footer-bottom-right a {
-            color: rgba(255,255,255,0.7);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.3s ease;
-        }
-        
-        .footer-bottom-right a:hover {
-            color: #f59e0b;
-        }
-        
-        @media (max-width: 768px) {
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-            
-            .footer-bottom {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .social-links {
-                justify-content: center;
-            }
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .main-header {
-                position: relative;
-                top: 0;
-            }
-            
-            .language-dropdown {
-                right: -20px;
-                min-width: 180px;
-            }
-            
-            .hero h1 {
-                font-size: 2.8rem;
-            }
-            
-            .hero p {
-                font-size: 1.1rem;
-            }
-            
-            .companies-showcase h2 {
-                font-size: 2rem;
-            }
-            
-            .company-logos {
-                gap: 20px;
-            }
-            
-            .company-logo {
-                min-width: 120px;
-            }
-            
-            .company-logo img {
-                width: 80px;
-                height: 50px;
-            }
-            
-            .stats {
-                gap: 20px;
-            }
-            
-            .stat-item {
-                min-width: 120px;
-                padding: 15px;
-            }
-            
-            .stat-number {
-                font-size: 2.2rem;
-            }
-            
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .header-content {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .nav {
-                order: 3;
-                width: 100%;
-                justify-content: center;
-            }
-            
-            .top-bar-content {
-                flex-direction: column;
-                text-align: center;
-                gap: 5px;
-            }
-            
-            .rabbis-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-            
-            .rabbi-image {
-                height: 200px;
-            }
-            
-            .certification-logos {
-                gap: 20px;
-            }
-            
-            .cert-item {
-                min-width: 120px;
-                padding: 15px;
-            }
-            
-            .cert-item img {
-                width: 40px;
-                height: 40px;
-            }
-            
-            .rabbi-specialties {
-                justify-content: center;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link">דלג לתוכן הראשי / Skip to main content</a>
+    
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MKW89BV9"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
+    
+    <!-- Header -->
+    <header>
     <!-- Top Bar -->
     <div class="top-bar">
         <div class="container">
@@ -1330,7 +266,11 @@
             </div>
         </div>
     </div>
+    </header>
 
+    <!-- Main Content -->
+    <main id="main-content">
+    
     <!-- Main Header -->
     <header class="main-header">
         <div class="container">
@@ -1363,13 +303,13 @@
     <section id="home" class="hero">
         <div class="hero-background">
             <div class="hero-image-slider">
-                <div class="hero-slide active" style="background-image: url('images/hero/418f46f5-29d1-4da8-b13f-3c6cdba636b2.png')"></div>
-                <div class="hero-slide" style="background-image: url('images/hero/53abdfaa-2fb2-4cf4-84b2-6c075413f7df.png')"></div>
-                <div class="hero-slide" style="background-image: url('images/hero/6beb0281-1c0f-428e-b86e-3dd5f0296412.png')"></div>
-                <div class="hero-slide" style="background-image: url('images/hero/82b870fe-72df-4cf5-8dd4-6e992ccb753d.png')"></div>
-                <div class="hero-slide" style="background-image: url('images/hero/ad5f297c-1f9e-4285-bb75-ac5a02af102d.png')"></div>
-                <div class="hero-slide" style="background-image: url('images/hero/d9b9d93d-3e26-4fb8-9b27-1d2f2cab42f4.png')"></div>
-                <div class="hero-slide" style="background-image: url('images/hero/e776bd8a-6656-4871-9d82-5fa8c9b757f5.png')"></div>
+                <div class="hero-slide active" style="background-image: url('images/hero/418f46f5-29d1-4da8-b13f-3c6cdba636b2.webp')"></div>
+                <div class="hero-slide" style="background-image: url('images/hero/53abdfaa-2fb2-4cf4-84b2-6c075413f7df.webp')"></div>
+                <div class="hero-slide" style="background-image: url('images/hero/6beb0281-1c0f-428e-b86e-3dd5f0296412.webp')"></div>
+                <div class="hero-slide" style="background-image: url('images/hero/82b870fe-72df-4cf5-8dd4-6e992ccb753d.webp')"></div>
+                <div class="hero-slide" style="background-image: url('images/hero/ad5f297c-1f9e-4285-bb75-ac5a02af102d.webp')"></div>
+                <div class="hero-slide" style="background-image: url('images/hero/d9b9d93d-3e26-4fb8-9b27-1d2f2cab42f4.webp')"></div>
+                <div class="hero-slide" style="background-image: url('images/hero/e776bd8a-6656-4871-9d82-5fa8c9b757f5.webp')"></div>
                 <div class="hero-slide" style="background-image: url('images/hero/hero4.jpg')"></div>
             </div>
             <div class="hero-overlay"></div>
@@ -1411,31 +351,31 @@
             <div class="companies-slider">
                 <div class="company-logos">
                     <div class="company-logo">
-                        <img src="images/company-logos/dacasa logo webp.webp" alt="Dacsa Atlantic" style="border-radius: 8px;" onerror="this.src='images/company-logos/dacasa logo webp.webp'">
+                        <img loading="lazy" decoding="async" src="images/company-logos/dacasa logo webp.webp" alt="Dacsa Atlantic" style="border-radius: 8px;" onerror="this.src='images/company-logos/dacasa logo webp.webp'">
                         <h4>Dacsa Atlantic, S.A.</h4>
                     </div>
                     <div class="company-logo">
-                        <img src="images/company-logos/frutissima logo.png" alt="Indumape" style="border-radius: 8px;" onerror="this.src='images/company-logos/frutissima logo.png'">
+                        <img loading="lazy" decoding="async" src="images/company-logos/frutissima logo.png" alt="Indumape" style="border-radius: 8px;" onerror="this.src='images/company-logos/frutissima logo.png'">
                         <h4>Indumape</h4>
                     </div>
                     <div class="company-logo">
-                        <img src="images/company-logos/INNOLIVA logo png.png" alt="Sociedad Agrícola" style="border-radius: 8px;" onerror="this.src='images/company-logos/INNOLIVA logo png.png'">
+                        <img loading="lazy" decoding="async" src="images/company-logos/INNOLIVA logo png.png" alt="Sociedad Agrícola" style="border-radius: 8px;" onerror="this.src='images/company-logos/INNOLIVA logo png.png'">
                         <h4>Sociedad Agrícola do Vale Umbría</h4>
                     </div>
                     <div class="company-logo">
-                        <img src="images/company-logos/Superbock logo.png" alt="Super Bock Bebidas" style="border-radius: 8px;" onerror="this.src='images/company-logos/Superbock logo.png'">
+                        <img loading="lazy" decoding="async" src="images/company-logos/Superbock logo.png" alt="Super Bock Bebidas" style="border-radius: 8px;" onerror="this.src='images/company-logos/Superbock logo.png'">
                         <h4>SUPER BOCK BEBIDAS, S.A.</h4>
                     </div>
                     <div class="company-logo">
-                        <img src="images/company-logos/friopesca logo.png" alt="Friopesca" style="border-radius: 8px;" onerror="this.src='images/company-logos/friopesca logo.png'">
+                        <img loading="lazy" decoding="async" src="images/company-logos/friopesca logo.png" alt="Friopesca" style="border-radius: 8px;" onerror="this.src='images/company-logos/friopesca logo.png'">
                         <h4>Friopesca</h4>
                     </div>
                     <div class="company-logo">
-                        <img src="images/company-logos/Soguima logo.png" alt="Soguima" style="border-radius: 8px;" onerror="this.src='images/company-logos/Soguima logo.png'">
+                        <img loading="lazy" decoding="async" src="images/company-logos/Soguima logo.png" alt="Soguima" style="border-radius: 8px;" onerror="this.src='images/company-logos/Soguima logo.png'">
                         <h4>Soguima</h4>
                     </div>
                     <div class="company-logo">
-                        <img src="images/company-logos/SAOV logo.jpg" alt="Saov" style="border-radius: 8px;" onerror="this.src='images/company-logos/SAOV logo.jpg'">
+                        <img loading="lazy" decoding="async" src="images/company-logos/SAOV logo.jpg" alt="Saov" style="border-radius: 8px;" onerror="this.src='images/company-logos/SAOV logo.jpg'">
                         <h4>Saov - Sociedade Agrícola Ouro Vegetal</h4>
                     </div>
                 </div>
@@ -1533,7 +473,7 @@
             <div class="rabbis-grid">
                 <div class="rabbi-card">
                     <div class="rabbi-image">
-                        <img src="images/rabbis/Goelman.jpg" alt="Rabbi Israel Goelman" onerror="this.src='images/rabbis/default-rabbi.jpg'">
+                        <img loading="lazy" decoding="async" src="images/rabbis/Goelman.jpg" alt="Rabbi Israel Goelman" onerror="this.src='images/rabbis/default-rabbi.jpg'">
                         <div class="rabbi-overlay">
                             <span class="rabbi-status" data-translate="rabbi-president-status">Presidente</span>
                         </div>
@@ -1556,7 +496,7 @@
 
                 <div class="rabbi-card">
                     <div class="rabbi-image">
-                        <img src="images/rabbis/zvi1.jpg" alt="Rabbi Zvi Bringer" onerror="this.src='images/rabbis/default-rabbi.jpg'">
+                        <img loading="lazy" decoding="async" src="images/rabbis/zvi1.jpg" alt="Rabbi Zvi Bringer" onerror="this.src='images/rabbis/default-rabbi.jpg'">
                         <div class="rabbi-overlay">
                             <span class="rabbi-status" data-translate="rabbi-ceo-status">Diretor Geral</span>
                         </div>
@@ -1579,7 +519,7 @@
 
                 <div class="rabbi-card">
                     <div class="rabbi-image">
-                        <img src="images/rabbis/ShemuelZalman.png" alt="Rabbi Shemuel Zalman" onerror="this.src='images/rabbis/default-rabbi.jpg'">
+                        <img loading="lazy" decoding="async" src="images/rabbis/ShemuelZalman.png" alt="Rabbi Shemuel Zalman" onerror="this.src='images/rabbis/default-rabbi.jpg'">
                         <div class="rabbi-overlay">
                             <span class="rabbi-status" data-translate="rabbi-beverages-status">Especialista</span>
                         </div>
@@ -1602,7 +542,7 @@
 
                 <div class="rabbi-card">
                     <div class="rabbi-image">
-                        <img src="images/rabbis/Michael.png" alt="Rabbi Michael Moshe Grinberg" onerror="this.src='images/rabbis/default-rabbi.jpg'">
+                        <img loading="lazy" decoding="async" src="images/rabbis/Michael.png" alt="Rabbi Michael Moshe Grinberg" onerror="this.src='images/rabbis/default-rabbi.jpg'">
                         <div class="rabbi-overlay">
                             <span class="rabbi-status" data-translate="rabbi-materials-status">Responsável</span>
                         </div>
@@ -1625,7 +565,7 @@
 
                 <div class="rabbi-card">
                     <div class="rabbi-image">
-                        <img src="images/rabbis/EliahuBilis.png" alt="Rabbi Eliahu Bayles" onerror="this.src='images/rabbis/default-rabbi.jpg'">
+                        <img loading="lazy" decoding="async" src="images/rabbis/EliahuBilis.png" alt="Rabbi Eliahu Bayles" onerror="this.src='images/rabbis/default-rabbi.jpg'">
                         <div class="rabbi-overlay">
                             <span class="rabbi-status" data-translate="rabbi-services-status">Diretor</span>
                         </div>
@@ -1648,7 +588,7 @@
 
                 <div class="rabbi-card">
                     <div class="rabbi-image">
-                        <img src="images/rabbis/ElishaSallas.jpg" alt="Rabbi Elisha Salas" onerror="this.src='images/rabbis/default-rabbi.jpg'">
+                        <img loading="lazy" decoding="async" src="images/rabbis/ElishaSallas.jpg" alt="Rabbi Elisha Salas" onerror="this.src='images/rabbis/default-rabbi.jpg'">
                         <div class="rabbi-overlay">
                             <span class="rabbi-status" data-translate="rabbi-consultant-status">Consultor</span>
                         </div>
@@ -1702,6 +642,8 @@
             </div>
         </div>
     </section>
+    
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
@@ -2317,13 +1259,13 @@
             
             // Preload only existing images for smooth transitions
             const imageUrls = [
-                'images/hero/418f46f5-29d1-4da8-b13f-3c6cdba636b2.png',
-                'images/hero/53abdfaa-2fb2-4cf4-84b2-6c075413f7df.png',
-                'images/hero/6beb0281-1c0f-428e-b86e-3dd5f0296412.png',
-                'images/hero/82b870fe-72df-4cf5-8dd4-6e992ccb753d.png',
-                'images/hero/ad5f297c-1f9e-4285-bb75-ac5a02af102d.png',
-                'images/hero/d9b9d93d-3e26-4fb8-9b27-1d2f2cab42f4.png',
-                'images/hero/e776bd8a-6656-4871-9d82-5fa8c9b757f5.png',
+                'images/hero/418f46f5-29d1-4da8-b13f-3c6cdba636b2.webp',
+                'images/hero/53abdfaa-2fb2-4cf4-84b2-6c075413f7df.webp',
+                'images/hero/6beb0281-1c0f-428e-b86e-3dd5f0296412.webp',
+                'images/hero/82b870fe-72df-4cf5-8dd4-6e992ccb753d.webp',
+                'images/hero/ad5f297c-1f9e-4285-bb75-ac5a02af102d.webp',
+                'images/hero/d9b9d93d-3e26-4fb8-9b27-1d2f2cab42f4.webp',
+                'images/hero/e776bd8a-6656-4871-9d82-5fa8c9b757f5.webp',
                 'images/hero/hero4.jpg'
             ];
             

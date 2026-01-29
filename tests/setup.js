@@ -1,5 +1,5 @@
 // Jest setup file
-import 'jest-environment-jsdom';
+// jest-environment-jsdom is configured in jest.config.js
 
 // Mock localStorage
 const localStorageMock = {
