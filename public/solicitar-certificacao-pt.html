@@ -270,16 +270,24 @@
         <!-- Header -->
         <div class="header" style="position: relative;">
             <!-- Language Selector -->
-            <div style="position: absolute; top: 15px; right: 15px; background: rgba(245, 158, 11, 0.1); padding: 8px 15px; border-radius: 8px; border: 2px solid #f59e0b; cursor: pointer; z-index: 100;">
-                <div style="position: relative;" onmouseover="this.querySelector('.lang-dropdown').style.display='block'" onmouseout="this.querySelector('.lang-dropdown').style.display='none'">
+            <div id="langSelector" style="position: absolute; top: 15px; right: 15px; background: rgba(245, 158, 11, 0.1); padding: 8px 15px; border-radius: 8px; border: 2px solid #f59e0b; cursor: pointer; z-index: 100;">
+                <div style="position: relative;">
                     🌍 Português ▼
-                    <div class="lang-dropdown" style="display: none; position: absolute; top: 100%; right: 0; margin-top: 5px; background: white; border: 2px solid #f59e0b; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); min-width: 140px; z-index: 101;">
+                    <div id="langDropdown" style="display: none; position: absolute; top: 100%; right: 0; margin-top: 5px; background: white; border: 2px solid #f59e0b; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); min-width: 140px; z-index: 101;">
                         <span style="display: block; padding: 10px 15px; background: #f59e0b; color: white; font-weight: 600; border-radius: 6px 6px 0 0;">🇵🇹 Português</span>
                         <a href="solicitar-certificacao-en.html" style="display: block; padding: 10px 15px; text-decoration: none; color: #333; border-bottom: 1px solid #f3f4f6;">🇬🇧 English</a>
                         <a href="solicitar-certificacao-he.html" style="display: block; padding: 10px 15px; text-decoration: none; color: #333;">🇮🇱 עברית</a>
                     </div>
                 </div>
             </div>
+            <script>
+                document.getElementById('langSelector').addEventListener('mouseenter', function() {
+                    document.getElementById('langDropdown').style.display = 'block';
+                });
+                document.getElementById('langSelector').addEventListener('mouseleave', function() {
+                    document.getElementById('langDropdown').style.display = 'none';
+                });
+            </script>
             
             <!-- Home Link -->
             <a href="index.html" style="position: absolute; top: 15px; left: 15px; background: rgba(30, 58, 138, 0.1); padding: 8px 15px; border-radius: 8px; border: 2px solid #1e3a8a; color: #1e3a8a; text-decoration: none; font-weight: 600;">🏠 Início</a>
