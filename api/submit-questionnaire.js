@@ -1,7 +1,9 @@
 // Vercel Serverless Function - Monday.com Integration for W-Kosher Questionnaire
 // Boards: Companies (5091352636), Products (5091352664), Ingredients (5091352669)
 
-export default async function handler(req, res) {
+const MONDAY_TOKEN = 'eyJhbGciOiJIUzI1NiJ9.eyJ0aWQiOjU3MTQxNTA4MSwiYWFpIjoxMSwidWlkIjo0MjgzMDM3NywiaWFkIjoiMjAyNS0xMC0wOFQwOToxOTo1MS4wMDBaIiwicGVyIjoibWU6d3JpdGUiLCJhY3RpZCI6MTY3NTgyNzEsInJnbiI6ImV1YzEifQ.EMr7yqc38Nd0iwuB0WgooRamRr5vHfpG7zpwG6cZ584';
+
+module.exports = async function handler(req, res) {
     // CORS headers
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
@@ -10,10 +12,7 @@ export default async function handler(req, res) {
     if (req.method === 'OPTIONS') return res.status(200).end();
     if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
 
-    const MONDAY_API_KEY = process.env.MONDAY_API_KEY;
-    if (!MONDAY_API_KEY) {
-        return res.status(500).json({ error: 'Monday.com API key not configured' });
-    }
+    const MONDAY_API_KEY = process.env.MONDAY_API_KEY || MONDAY_TOKEN;
 
     // Board IDs (created via API)
     const COMPANIES_BOARD = '5091352636';
