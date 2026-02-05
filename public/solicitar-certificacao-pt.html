@@ -381,7 +381,7 @@
              btn.textContent = '⏳ Enviando...';
              
              // Send to company
-             emailjs.send('service_4g2vstc', 'template_7gzctyd', {
+             emailjs.send('service_4g2vstc', 'template_nb16d6j', {
                  company: data.company,
                  contact: data.contact,
                  email: data.email,
@@ -396,7 +396,7 @@
                  
                  // Send auto-reply to customer in Portuguese
                  const questionnaireURL = 'https://w-kosher.com/documents/questionnaire-pt.xlsx';
-                 return emailjs.send('service_4g2vstc', 'template_as2wj6o', {
+                 return emailjs.send('service_4g2vstc', 'template_7gzctyd', {
                      to_email: data.email,
                      to_name: data.contact,
                      company: data.company,

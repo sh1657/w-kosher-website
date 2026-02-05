@@ -390,7 +390,7 @@
             btn.textContent = '⏳ שולח...';
             
             // Send to company in Hebrew
-            emailjs.send('service_4g2vstc', 'template_7gzctyd', {
+            emailjs.send('service_4g2vstc', 'template_nb16d6j', {
                 company: data.company,
                 contact: data.contact,
                 email: data.email,
@@ -404,8 +404,8 @@
                 console.log('Email sent successfully!', response);
                 
                 // Send auto-reply to customer in Hebrew
-                const questionnaireURL = `${location.origin}/documents/questionnaire-he.xlsx`;
-                return emailjs.send('service_4g2vstc', 'template_as2wj6o', {
+                const questionnaireURL = `${location.origin}/documents/questionnaire-en.xlsx`;
+                return emailjs.send('service_4g2vstc', 'template_7gzctyd', {
                     to_email: data.email,
                     to_name: data.contact,
                     company: data.company,

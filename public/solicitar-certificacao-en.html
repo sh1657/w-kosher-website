@@ -389,7 +389,7 @@
             btn.textContent = '⏳ Sending...';
             
             // Send to company in English
-            emailjs.send('service_4g2vstc', 'template_7gzctyd', {
+            emailjs.send('service_4g2vstc', 'template_nb16d6j', {
                 company: data.company,
                 contact: data.contact,
                 email: data.email,
@@ -404,7 +404,7 @@
                 
                 // Send auto-reply to customer in English
                 const questionnaireURL = `${location.origin}/documents/questionnaire-en.xlsx`;
-                return emailjs.send('service_4g2vstc', 'template_as2wj6o', {
+                return emailjs.send('service_4g2vstc', 'template_7gzctyd', {
                     to_email: data.email,
                     to_name: data.contact,
                     company: data.company,
