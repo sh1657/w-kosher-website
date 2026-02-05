@@ -936,7 +936,9 @@
             upload: "Upload",
             fillRequired: "Please fill in all required fields (marked with *)",
             addOneProduct: "Please add at least one product",
-            confirmClear: "Are you sure you want to clear all data?"
+            confirmClear: "Are you sure you want to clear all data?",
+            filesUploaded: "files",
+            submitError: "An error occurred while submitting. Your data has been saved locally."
         },
         pt: {
             headerBadge: "FORMULÁRIO DE CERTIFICAÇÃO KOSHER",
@@ -1051,7 +1053,9 @@
             upload: "Enviar",
             fillRequired: "Por favor preencha todos os campos obrigatórios (marcados com *)",
             addOneProduct: "Por favor adicione pelo menos um produto",
-            confirmClear: "Tem a certeza que deseja limpar todos os dados?"
+            confirmClear: "Tem a certeza que deseja limpar todos os dados?",
+            filesUploaded: "ficheiros",
+            submitError: "Ocorreu um erro ao enviar. Os seus dados foram guardados localmente."
         },
         he: {
             headerBadge: "טופס הגשת בקשה לכשרות",
@@ -1166,7 +1170,9 @@
             upload: "העלה",
             fillRequired: "נא למלא את כל השדות החובה (מסומנים ב-*)",
             addOneProduct: "נא להוסיף לפחות מוצר אחד",
-            confirmClear: "האם אתה בטוח שברצונך למחוק את כל הנתונים?"
+            confirmClear: "האם אתה בטוח שברצונך למחוק את כל הנתונים?",
+            filesUploaded: "קבצים",
+            submitError: "אירעה שגיאה בשליחה. הנתונים נשמרו מקומית."
         }
     };
 
@@ -1267,7 +1273,7 @@
     function handleFiles(input, btnId, nameId) {
         if (input.files.length) {
             document.getElementById(btnId).classList.add('has-file');
-            document.getElementById(nameId).textContent = input.files.length + ' files';
+            document.getElementById(nameId).textContent = input.files.length + ' ' + t('filesUploaded');
             collectedFiles[btnId] = Array.from(input.files);
         }
     }
