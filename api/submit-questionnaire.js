@@ -129,6 +129,7 @@ module.exports = async function handler(req, res) {
 
         // ========== 3. Create Ingredient Items ==========
         let ingredientsCreated = 0;
+        const ingredientItems = []; // { itemId, productCodes }
 
         if (data.ingredients && data.ingredients.length > 0) {
             for (const ingredient of data.ingredients) {
@@ -153,7 +154,7 @@ module.exports = async function handler(req, res) {
                 }
 
                 try {
-                    await mondayQuery(MONDAY_API_KEY, `
+                    const ingResult = await mondayQuery(MONDAY_API_KEY, `
                         mutation ($boardId: ID!, $itemName: String!, $columnValues: JSON!) {
                             create_item(board_id: $boardId, item_name: $itemName, column_values: $columnValues) {
                                 id
@@ -164,14 +165,28 @@ module.exports = async function handler(req, res) {
                         itemName: ingredient.name || 'Unnamed Ingredient',
                         columnValues: JSON.stringify(ingredientValues)
                     });
-                    ingredientsCreated++;
+                    const ingItemId = ingResult.data?.create_item?.id;
+                    if (ingItemId) {
+                        ingredientsCreated++;
+                        ingredientItems.push({ itemId: ingItemId, productCodes: ingredient.productCodes || [] });
+                    }
                 } catch (e) {
                     console.error('Ingredient error:', e.message);
                 }
             }
         }
 
-        // ========== 4. Log summary ==========
+        // ========== 4. Auto-link items via Connect Boards columns ==========
+        await autoLinkItems(MONDAY_API_KEY, {
+            companyItemId,
+            productItemIds,      // { productCode: mondayItemId }
+            ingredientItems,     // [{ itemId, productCodes }]
+            COMPANIES_BOARD,
+            PRODUCTS_BOARD,
+            INGREDIENTS_BOARD
+        });
+
+        // ========== 5. Log summary ==========
         console.log(`✅ Questionnaire submitted: ${data.company?.name} | Ref: ${refNumber} | Products: ${productsCreated} | Ingredients: ${ingredientsCreated}`);
 
         return res.status(200).json({
@@ -219,4 +234,96 @@ function getCategoryIndex(category) {
 function getFunctionIndex(func) {
     const map = { main: 0, additive: 1, preservative: 2, flavoring: 3, coloring: 4, emulsifier: 5, other: 6 };
     return func in map ? { index: map[func] } : {};
+}
+
+// Auto-link items via Connect Boards columns (if they exist)
+// User must manually create Connect Boards columns in Monday.com UI:
+//   Products board: "Company" → connects to W-Kosher Companies board
+//   Ingredients board: "Company" → connects to W-Kosher Companies board
+//   Ingredients board: "Products" → connects to W-Kosher Products board
+async function autoLinkItems(apiKey, { companyItemId, productItemIds, ingredientItems, COMPANIES_BOARD, PRODUCTS_BOARD, INGREDIENTS_BOARD }) {
+    try {
+        // Query board columns to find any board_relation (Connect Boards) columns
+        const boardsResult = await mondayQuery(apiKey, `{
+            boards(ids: [${PRODUCTS_BOARD}, ${INGREDIENTS_BOARD}]) {
+                id
+                columns { id type settings_str }
+            }
+        }`);
+
+        const boards = boardsResult.data?.boards || [];
+        if (boards.length === 0) return;
+
+        for (const board of boards) {
+            const connectCols = (board.columns || []).filter(c => c.type === 'board_relation');
+            if (connectCols.length === 0) continue;
+
+            for (const col of connectCols) {
+                let settings = {};
+                try { settings = JSON.parse(col.settings_str || '{}'); } catch(e) {}
+                const connectedBoardIds = (settings.boardIds || []).map(String);
+
+                // ---- Products board: link to Company ----
+                if (board.id === PRODUCTS_BOARD && connectedBoardIds.includes(COMPANIES_BOARD)) {
+                    const allProductItemIds = Object.values(productItemIds);
+                    for (const prodItemId of allProductItemIds) {
+                        try {
+                            await mondayQuery(apiKey, `
+                                mutation ($boardId: ID!, $itemId: ID!, $colValues: JSON!) {
+                                    change_multiple_column_values(board_id: $boardId, item_id: $itemId, column_values: $colValues) { id }
+                                }
+                            `, {
+                                boardId: PRODUCTS_BOARD,
+                                itemId: prodItemId,
+                                colValues: JSON.stringify({ [col.id]: { item_ids: [companyItemId] } })
+                            });
+                        } catch(e) { console.error('Link product→company error:', e.message); }
+                    }
+                }
+
+                // ---- Ingredients board: link to Company ----
+                if (board.id === INGREDIENTS_BOARD && connectedBoardIds.includes(COMPANIES_BOARD)) {
+                    for (const ing of ingredientItems) {
+                        try {
+                            await mondayQuery(apiKey, `
+                                mutation ($boardId: ID!, $itemId: ID!, $colValues: JSON!) {
+                                    change_multiple_column_values(board_id: $boardId, item_id: $itemId, column_values: $colValues) { id }
+                                }
+                            `, {
+                                boardId: INGREDIENTS_BOARD,
+                                itemId: ing.itemId,
+                                colValues: JSON.stringify({ [col.id]: { item_ids: [companyItemId] } })
+                            });
+                        } catch(e) { console.error('Link ingredient→company error:', e.message); }
+                    }
+                }
+
+                // ---- Ingredients board: link to Products ----
+                if (board.id === INGREDIENTS_BOARD && connectedBoardIds.includes(PRODUCTS_BOARD)) {
+                    for (const ing of ingredientItems) {
+                        // Map ingredient's productCodes to Monday item IDs
+                        const linkedProdIds = (ing.productCodes || [])
+                            .map(code => productItemIds[code])
+                            .filter(Boolean);
+                        if (linkedProdIds.length > 0) {
+                            try {
+                                await mondayQuery(apiKey, `
+                                    mutation ($boardId: ID!, $itemId: ID!, $colValues: JSON!) {
+                                        change_multiple_column_values(board_id: $boardId, item_id: $itemId, column_values: $colValues) { id }
+                                    }
+                                `, {
+                                    boardId: INGREDIENTS_BOARD,
+                                    itemId: ing.itemId,
+                                    colValues: JSON.stringify({ [col.id]: { item_ids: linkedProdIds } })
+                                });
+                            } catch(e) { console.error('Link ingredient→products error:', e.message); }
+                        }
+                    }
+                }
+            }
+        }
+        console.log('✅ Auto-link completed');
+    } catch(e) {
+        console.error('Auto-link skipped (no Connect Boards columns?):', e.message);
+    }
 }
