@@ -11,6 +11,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>בקשת הכשר כשרות - World Kosher Portugal</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
     <style>
         * {
             margin: 0;
@@ -269,8 +276,25 @@
     <!-- End Google Tag Manager (noscript) -->
     <div class="container">
         <!-- Header -->
-        <div class="header">
-            <img src="images/logo.png" alt="World Kosher Logo" class="logo" onerror="this.src='images/logo.jpg'">
+        <div class="header" style="position: relative;">
+            <!-- Language Selector -->
+            <div style="position: absolute; top: 15px; left: 15px; background: rgba(245, 158, 11, 0.1); padding: 8px 15px; border-radius: 8px; border: 2px solid #f59e0b; cursor: pointer; z-index: 100;">
+                <div style="position: relative;" onmouseover="this.querySelector('.lang-dropdown').style.display='block'" onmouseout="this.querySelector('.lang-dropdown').style.display='none'">
+                    🌍 עברית ▼
+                    <div class="lang-dropdown" style="display: none; position: absolute; top: 100%; left: 0; margin-top: 5px; background: white; border: 2px solid #f59e0b; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); min-width: 140px; z-index: 101;">
+                        <a href="solicitar-certificacao-pt.html" style="display: block; padding: 10px 15px; text-decoration: none; color: #333; border-bottom: 1px solid #f3f4f6;">🇵🇹 Português</a>
+                        <a href="solicitar-certificacao-en.html" style="display: block; padding: 10px 15px; text-decoration: none; color: #333; border-bottom: 1px solid #f3f4f6;">🇬🇧 English</a>
+                        <span style="display: block; padding: 10px 15px; background: #f59e0b; color: white; font-weight: 600; border-radius: 0 0 6px 6px;">🇮🇱 עברית</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Home Link -->
+            <a href="index.html" style="position: absolute; top: 15px; right: 15px; background: rgba(30, 58, 138, 0.1); padding: 8px 15px; border-radius: 8px; border: 2px solid #1e3a8a; color: #1e3a8a; text-decoration: none; font-weight: 600;">🏠 דף הבית</a>
+            
+            <a href="index.html" style="text-decoration: none;">
+                <img src="images/logo.png" alt="World Kosher Logo" class="logo" onerror="this.src='images/logo.jpg'" style="cursor: pointer;">
+            </a>
             <h1>🚀 בקשת תעודת כשרות</h1>
             <p class="subtitle">מלאו את הטופס וקבלו הצעת מחיר מותאמת תוך 72 שעות</p>
         </div>
@@ -303,47 +327,6 @@
                 <div class="form-group">
                     <label for="location">📍 מיקום החברה</label>
                     <input type="text" id="location" name="location" placeholder="עיר, מדינה">
-                </div>
-
-                <div class="form-group">
-                    <label for="productType">🏭 סוג המוצר *</label>
-                    <select id="productType" name="productType" required>
-                        <option value="">בחרו סוג מוצר</option>
-                        <option value="oils">🫒 שמן זית שמנים</option>
-                        <option value="preserves">🥫 שימורים ומזון משומר</option>
-                        <option value="beverages">🍷 משקאות (יינות, בירות, מיצים)</option>
-                        <option value="fruits">🍎 פירות ותרכיזים</option>
-                        <option value="frozen">🐟 מוצרים קפואים</option>
-                        <option value="condiments">🧂 מלח ותבלינים</option>
-                        <option value="yeast">🍞 חו״ג ורכיבים</option>
-                        <option value="others">📦 אחר</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="products">📝 תיאור מפורט של המוצרים *</label>
-                    <textarea id="products" name="products" placeholder="תארו את המוצרים שאתם רוצים לקבל תעודת כשרות, רכיבים עיקריים, תהליכי יצור..." required></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label for="production">🏭 נפח ייצור חודשי</label>
-                    <select id="production" name="production">
-                        <option value="">בחרו נפח משוער</option>
-                        <option value="small">🔹 קטן (עד 1,000 יחידות)</option>
-                        <option value="medium">🔹 בינוני (1,000 - 10,000 יחידות)</option>
-                        <option value="large">🔹 גדול (10,000 - 100,000 יחידות)</option>
-                        <option value="industrial">🔹 תעשייתי (מעל 100,000 יחידות)</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="timeline">⏰ לוח זמנים רצוי להכשרה</label>
-                    <select id="timeline" name="timeline">
-                        <option value="">בחרו לוח זמנים</option>
-                        <option value="urgent">🚨 דחוף (2-3 שבועות)</option>
-                        <option value="normal">📅 רגיל (4-6 שבועות)</option>
-                        <option value="flexible">⏳ גמיש (6-8 שבועות)</option>
-                    </select>
                 </div>
 
                 <div class="form-group">
