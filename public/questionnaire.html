@@ -1,0 +1,1644 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W-KOSHER - Kosher Production Questionnaire</title>
+    <link rel="icon" type="image/png" href="/images/logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a5f2a;
+            --primary-light: #2d8a3e;
+            --primary-dark: #0d3d18;
+            --accent: #c9a227;
+            --accent-light: #e0be4f;
+            --text: #333;
+            --text-light: #6b7280;
+            --border: #ddd;
+            --bg: #f5f7fa;
+            --white: #fff;
+            --gray-light: #f8f9fa;
+            --success: #28a745;
+            --warning: #ffc107;
+            --danger: #dc3545;
+            --info: #2563eb;
+            --shadow: 0 4px 20px rgba(0,0,0,0.08);
+            --shadow-lg: 0 10px 40px rgba(0,0,0,0.12);
+            --radius: 12px;
+            --radius-sm: 8px;
+            --transition: all 0.3s ease;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            background: linear-gradient(135deg, var(--bg) 0%, #e4e8eb 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: var(--text);
+        }
+
+        body[dir="rtl"] { font-family: 'Heebo', Arial, sans-serif; }
+
+        .container { max-width: 1200px; margin: 0 auto; }
+
+        /* Language Selector */
+        .lang-bar {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+        .lang-btn {
+            padding: 8px 18px;
+            border: 2px solid var(--border);
+            border-radius: 25px;
+            background: var(--white);
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .lang-btn:hover { border-color: var(--primary); color: var(--primary); }
+        .lang-btn.active {
+            background: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            padding: 35px 40px;
+            border-radius: var(--radius) var(--radius) 0 0;
+            text-align: center;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+        .header-logo {
+            width: 80px;
+            height: 80px;
+            background: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            padding: 5px;
+        }
+        .header-logo img { width: 100%; height: 100%; object-fit: contain; }
+        .header h1 { font-size: 2rem; font-weight: 700; margin-bottom: 8px; }
+        .header .subtitle { font-size: 1.1rem; opacity: 0.9; }
+        .header .badge {
+            display: inline-block;
+            background: var(--accent);
+            padding: 6px 20px;
+            border-radius: 25px;
+            margin-top: 12px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        /* Form Container */
+        .form-container {
+            background: var(--white);
+            border-radius: 0 0 var(--radius) var(--radius);
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+        }
+
+        /* Progress */
+        .progress-wrap { padding: 20px 40px; background: var(--gray-light); border-bottom: 1px solid var(--border); }
+        .progress-bar { height: 8px; background: var(--border); border-radius: 4px; overflow: hidden; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, var(--primary), var(--accent)); border-radius: 4px; transition: width 0.5s ease; width: 0%; }
+        .progress-info { display: flex; justify-content: space-between; margin-top: 8px; font-size: 0.85rem; color: var(--text-light); }
+
+        /* Navigation Tabs */
+        .nav-tabs {
+            display: flex;
+            background: var(--gray-light);
+            border-bottom: 2px solid var(--border);
+            overflow-x: auto;
+        }
+        .nav-tab {
+            flex: 1;
+            padding: 16px 20px;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+            background: transparent;
+            font-family: inherit;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-light);
+            transition: var(--transition);
+            white-space: nowrap;
+            position: relative;
+        }
+        .nav-tab:hover { background: rgba(26,95,42,0.08); color: var(--primary); }
+        .nav-tab.active { background: var(--white); color: var(--primary); font-weight: 600; }
+        .nav-tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--primary);
+        }
+        .tab-icon { margin-right: 6px; font-size: 1.1rem; }
+        [dir="rtl"] .tab-icon { margin-right: 0; margin-left: 6px; }
+
+        /* Tab Content */
+        .tab-content { display: none; padding: 35px 40px; animation: fadeIn 0.3s ease; }
+        .tab-content.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Section */
+        .section { margin-bottom: 30px; }
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-light);
+        }
+        .section-title .icon {
+            width: 32px;
+            height: 32px;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        /* Form Grid */
+        .form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
+        .form-group { margin-bottom: 4px; }
+        .form-group.full-width { grid-column: 1 / -1; }
+        .form-group label { display: block; font-weight: 500; margin-bottom: 6px; color: var(--text); font-size: 0.95rem; }
+        .form-group .required { color: var(--danger); margin-right: 2px; }
+        [dir="rtl"] .form-group .required { margin-right: 0; margin-left: 2px; }
+
+        .form-control {
+            width: 100%;
+            padding: 11px 14px;
+            border: 2px solid var(--border);
+            border-radius: var(--radius-sm);
+            font-family: inherit;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            background: var(--white);
+        }
+        .form-control:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(26,95,42,0.12); }
+        .form-control::placeholder { color: #aaa; }
+        select.form-control { cursor: pointer; }
+        textarea.form-control { min-height: 90px; resize: vertical; }
+
+        /* Info Box */
+        .info-box {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            padding: 16px 20px;
+            border-radius: var(--radius-sm);
+            margin-bottom: 20px;
+        }
+        [dir="rtl"] .info-box { border-right: 4px solid var(--primary); border-left: none; }
+        [dir="ltr"] .info-box { border-left: 4px solid var(--primary); }
+        .info-box h4 { color: var(--primary); margin-bottom: 6px; font-size: 1rem; }
+        .info-box p { color: #2e7d32; font-size: 0.9rem; line-height: 1.6; }
+
+        /* Table */
+        .table-wrap { overflow-x: auto; border-radius: var(--radius-sm); border: 1px solid var(--border); margin-top: 15px; }
+        .data-table { width: 100%; border-collapse: collapse; min-width: 800px; }
+        .data-table th {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            padding: 13px 10px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            white-space: nowrap;
+        }
+        [dir="ltr"] .data-table th { text-align: left; }
+        [dir="rtl"] .data-table th { text-align: right; }
+        .data-table td { padding: 8px 6px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+        .data-table tbody tr:hover { background: rgba(26,95,42,0.04); }
+        .data-table tbody tr:nth-child(even) { background: var(--gray-light); }
+        .data-table tbody tr:nth-child(even):hover { background: rgba(26,95,42,0.06); }
+        .table-input {
+            width: 100%;
+            padding: 7px 9px;
+            border: 1px solid var(--border);
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 0.85rem;
+            transition: border-color 0.3s;
+        }
+        .table-input:focus { outline: none; border-color: var(--primary); }
+        select.table-input { cursor: pointer; background: var(--white); }
+
+        /* Product Selector for Ingredients */
+        .selector-wrapper { position: relative; }
+        .product-selector-btn {
+            padding: 7px 10px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.82rem;
+            min-width: 130px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 4px;
+        }
+        .product-selector-btn:hover { border-color: var(--primary); }
+        .product-dropdown {
+            position: absolute;
+            top: 100%;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            box-shadow: var(--shadow-lg);
+            z-index: 100;
+            min-width: 200px;
+            max-height: 220px;
+            overflow-y: auto;
+            display: none;
+        }
+        [dir="ltr"] .product-dropdown { left: 0; }
+        [dir="rtl"] .product-dropdown { right: 0; }
+        .product-dropdown.show { display: block; }
+        .product-dropdown-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 9px 12px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .product-dropdown-item:hover { background: var(--gray-light); }
+        .product-dropdown-item input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--primary); }
+        .product-dropdown-item label { cursor: pointer; flex: 1; font-size: 0.85rem; }
+        .selected-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px; }
+        .tag {
+            background: var(--primary);
+            color: var(--white);
+            padding: 2px 7px;
+            border-radius: 10px;
+            font-size: 0.72rem;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .tag .remove-tag { cursor: pointer; font-weight: bold; }
+
+        /* File Upload */
+        .file-btn {
+            padding: 5px 8px;
+            background: var(--gray-light);
+            border: 1px dashed var(--border);
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.78rem;
+            text-align: center;
+            transition: var(--transition);
+            display: inline-block;
+        }
+        .file-btn:hover { background: #e9ecef; border-color: var(--primary); }
+        .file-btn.has-file { background: #d4edda; border-color: var(--success); border-style: solid; }
+        .file-btn input { display: none; }
+        .file-name { font-size: 0.72rem; color: var(--text-light); margin-top: 2px; word-break: break-all; }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 11px 22px;
+            border: none;
+            border-radius: var(--radius-sm);
+            font-family: inherit;
+            font-size: 0.95rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .btn-primary { background: linear-gradient(135deg, var(--primary), var(--primary-light)); color: var(--white); }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 5px 18px rgba(26,95,42,0.3); }
+        .btn-secondary { background: var(--gray-light); color: var(--text); border: 2px solid var(--border); }
+        .btn-secondary:hover { background: var(--border); }
+        .btn-success { background: linear-gradient(135deg, var(--success), #218838); color: var(--white); }
+        .btn-success:hover { transform: translateY(-2px); box-shadow: 0 5px 18px rgba(40,167,69,0.3); }
+        .btn-danger { background: var(--danger); color: var(--white); padding: 5px 10px; font-size: 0.82rem; }
+        .btn-danger:hover { background: #c82333; }
+        .btn-add { background: var(--accent); color: var(--white); margin-bottom: 12px; }
+        .btn-add:hover { background: #b8911f; }
+        .btn-group { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 25px; }
+
+        /* Empty State */
+        .empty-state { text-align: center; padding: 30px; color: var(--text-light); }
+        .empty-state .icon { font-size: 3rem; margin-bottom: 10px; }
+        .empty-state p { font-size: 1rem; margin-bottom: 15px; }
+
+        /* Footer Actions */
+        .footer-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 20px 40px;
+            background: var(--gray-light);
+            border-top: 1px solid var(--border);
+            gap: 15px;
+        }
+        .auto-save { display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--text-light); }
+        .auto-save .dot { width: 8px; height: 8px; background: var(--success); border-radius: 50%; animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+        /* Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            padding: 20px;
+        }
+        .modal-overlay.active { display: flex; }
+        .modal {
+            background: var(--white);
+            border-radius: var(--radius);
+            max-width: 500px;
+            width: 100%;
+            box-shadow: var(--shadow-lg);
+            animation: modalIn 0.3s ease;
+        }
+        @keyframes modalIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+        .modal-header { padding: 25px; text-align: center; }
+        .modal-header h3 { font-size: 1.3rem; color: var(--primary); }
+        .modal-body { padding: 0 25px 20px; text-align: center; line-height: 1.7; }
+        .modal-footer { padding: 15px 25px; text-align: center; border-top: 1px solid var(--border); }
+
+        /* Loading Overlay */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255,255,255,0.85);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .loading-overlay.active { display: flex; }
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid var(--border);
+            border-top-color: var(--primary);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .loading-text { font-size: 1.1rem; color: var(--primary); font-weight: 500; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            body { padding: 10px; }
+            .header { padding: 25px 15px; }
+            .header h1 { font-size: 1.5rem; }
+            .tab-content, .footer-actions, .progress-wrap { padding: 20px 15px; }
+            .form-grid { grid-template-columns: 1fr; }
+            .nav-tab { padding: 12px 10px; font-size: 0.82rem; }
+            .btn-group { flex-direction: column; }
+            .btn { width: 100%; justify-content: center; }
+            .footer-actions { flex-direction: column; }
+        }
+
+        @media print {
+            .lang-bar, .nav-tabs, .footer-actions, .btn-group, .btn { display: none; }
+            .tab-content { display: block !important; padding: 15px; }
+            .header { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Language Bar -->
+        <div class="lang-bar">
+            <button class="lang-btn active" onclick="setLanguage('en')">🇬🇧 English</button>
+            <button class="lang-btn" onclick="setLanguage('pt')">🇵🇹 Português</button>
+            <button class="lang-btn" onclick="setLanguage('he')">🇮🇱 עברית</button>
+        </div>
+
+        <!-- Header -->
+        <header class="header">
+            <div class="header-logo">
+                <img src="/images/logo.png" alt="W-Kosher Logo" onerror="this.src='/images/logo.jpg'">
+            </div>
+            <h1>🕎 W-KOSHER</h1>
+            <p class="subtitle" data-i18n="headerSubtitle">Kosher Production Questionnaire</p>
+            <span class="badge">KOSHER CERTIFICATION FORM</span>
+        </header>
+
+        <div class="form-container">
+            <!-- Progress -->
+            <div class="progress-wrap">
+                <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+                <div class="progress-info">
+                    <span id="progressText" data-i18n="progressCompleted">0% completed</span>
+                    <span id="sectionProgress" data-i18n-template="sectionOf">Section 1 of 3</span>
+                </div>
+            </div>
+
+            <!-- Tabs -->
+            <div class="nav-tabs">
+                <button class="nav-tab active" data-tab="general">
+                    <span class="tab-icon">🏢</span>
+                    <span data-i18n="tabGeneral">General Information</span>
+                </button>
+                <button class="nav-tab" data-tab="products">
+                    <span class="tab-icon">📦</span>
+                    <span data-i18n="tabProducts">Products</span>
+                </button>
+                <button class="nav-tab" data-tab="ingredients">
+                    <span class="tab-icon">🧪</span>
+                    <span data-i18n="tabIngredients">Raw Materials</span>
+                </button>
+            </div>
+
+            <!-- ======= TAB 1: GENERAL ======= -->
+            <div class="tab-content active" id="general">
+                <!-- Company Details -->
+                <div class="section">
+                    <h2 class="section-title">
+                        <span class="icon">🏭</span>
+                        <span data-i18n="sectionCompany">Company Details</span>
+                    </h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label><span class="required">*</span> <span data-i18n="companyName">Company Name</span></label>
+                            <input type="text" class="form-control" id="companyName" required>
+                        </div>
+                        <div class="form-group">
+                            <label><span data-i18n="companyId">Company Registration No.</span></label>
+                            <input type="text" class="form-control" id="companyId">
+                        </div>
+                        <div class="form-group full-width">
+                            <label><span class="required">*</span> <span data-i18n="address">Address</span></label>
+                            <input type="text" class="form-control" id="address" required>
+                        </div>
+                        <div class="form-group">
+                            <label><span class="required">*</span> <span data-i18n="city">City</span></label>
+                            <input type="text" class="form-control" id="city" required>
+                        </div>
+                        <div class="form-group">
+                            <label><span class="required">*</span> <span data-i18n="country">Country</span></label>
+                            <input type="text" class="form-control" id="country" required>
+                        </div>
+                        <div class="form-group">
+                            <label><span data-i18n="postalCode">Postal Code</span></label>
+                            <input type="text" class="form-control" id="postalCode">
+                        </div>
+                        <div class="form-group">
+                            <label><span data-i18n="phone">Phone</span></label>
+                            <input type="tel" class="form-control" id="phone">
+                        </div>
+                        <div class="form-group">
+                            <label><span data-i18n="website">Website</span></label>
+                            <input type="url" class="form-control" id="website" placeholder="https://">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Person Filling Form -->
+                <div class="section">
+                    <h2 class="section-title">
+                        <span class="icon">👤</span>
+                        <span data-i18n="sectionFiller">Person Completing This Form</span>
+                    </h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label><span class="required">*</span> <span data-i18n="fullName">Full Name</span></label>
+                            <input type="text" class="form-control" id="fillerName" required>
+                        </div>
+                        <div class="form-group">
+                            <label><span class="required">*</span> <span data-i18n="position">Position</span></label>
+                            <input type="text" class="form-control" id="fillerPosition" required>
+                        </div>
+                        <div class="form-group">
+                            <label><span class="required">*</span> <span data-i18n="email">Email</span></label>
+                            <input type="email" class="form-control" id="fillerEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label><span class="required">*</span> <span data-i18n="phoneDirect">Phone</span></label>
+                            <input type="tel" class="form-control" id="fillerPhone" required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Responsible Person -->
+                <div class="section">
+                    <h2 class="section-title">
+                        <span class="icon">📋</span>
+                        <span data-i18n="sectionResponsible">Person Responsible for Updates</span>
+                    </h2>
+                    <div class="info-box">
+                        <h4>ℹ️ <span data-i18n="responsibleInfo">Important</span></h4>
+                        <p data-i18n="responsibleInfoText">The person responsible for updates is the main contact for all matters related to product kashrut and raw material updates.</p>
+                    </div>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label><span class="required">*</span> <span data-i18n="fullName">Full Name</span></label>
+                            <input type="text" class="form-control" id="responsibleName" required>
+                        </div>
+                        <div class="form-group">
+                            <label><span class="required">*</span> <span data-i18n="position">Position</span></label>
+                            <input type="text" class="form-control" id="responsiblePosition" required>
+                        </div>
+                        <div class="form-group">
+                            <label><span class="required">*</span> <span data-i18n="email">Email</span></label>
+                            <input type="email" class="form-control" id="responsibleEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label><span class="required">*</span> <span data-i18n="phoneDirect">Phone</span></label>
+                            <input type="tel" class="form-control" id="responsiblePhone" required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Background Questions -->
+                <div class="section">
+                    <h2 class="section-title">
+                        <span class="icon">❓</span>
+                        <span data-i18n="sectionBackground">Background Questions</span>
+                    </h2>
+                    <div class="form-grid">
+                        <div class="form-group full-width">
+                            <label><span class="required">*</span> <span data-i18n="whyKosher">Why are you interested in kosher certification?</span></label>
+                            <textarea class="form-control" id="kosherReason" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label><span class="required">*</span> <span data-i18n="hadPrevious">Has the facility had kosher certification before?</span></label>
+                            <select class="form-control" id="hadPreviousKosher" onchange="toggleField('previousAgencyGroup', this.value === 'yes')">
+                                <option value="" data-i18n-option="select">Select...</option>
+                                <option value="yes" data-i18n-option="yes">Yes</option>
+                                <option value="no" data-i18n-option="no">No</option>
+                            </select>
+                        </div>
+                        <div class="form-group" id="previousAgencyGroup" style="display:none">
+                            <label><span data-i18n="whichAgency">Which certifying agency?</span></label>
+                            <input type="text" class="form-control" id="previousAgency">
+                        </div>
+                        <div class="form-group">
+                            <label><span class="required">*</span> <span data-i18n="producesNonKosher">Does the facility produce non-kosher products?</span></label>
+                            <select class="form-control" id="producesNonKosher" onchange="toggleNonKosher()">
+                                <option value="" data-i18n-option="select">Select...</option>
+                                <option value="yes" data-i18n-option="yes">Yes</option>
+                                <option value="no" data-i18n-option="no">No</option>
+                            </select>
+                        </div>
+                        <div class="form-group" id="nonKosherGroup" style="display:none">
+                            <label><span data-i18n="whichNonKosher">Which non-kosher products?</span></label>
+                            <textarea class="form-control" id="nonKosherProducts" rows="2"></textarea>
+                        </div>
+                        <div class="form-group" id="sameBuildingGroup" style="display:none">
+                            <label><span data-i18n="sameBuilding">Same building?</span></label>
+                            <select class="form-control" id="sameBuilding">
+                                <option value="" data-i18n-option="select">Select...</option>
+                                <option value="yes" data-i18n-option="yesSameBuilding">Yes - same building</option>
+                                <option value="no" data-i18n-option="noSeparate">No - separate building</option>
+                            </select>
+                        </div>
+                        <div class="form-group" id="sameLineGroup" style="display:none">
+                            <label><span data-i18n="sameLine">Same production line?</span></label>
+                            <select class="form-control" id="sameLine">
+                                <option value="" data-i18n-option="select">Select...</option>
+                                <option value="yes" data-i18n-option="yesSameLine">Yes - same line</option>
+                                <option value="no" data-i18n-option="noSeparateLine">No - separate line</option>
+                                <option value="dedicated" data-i18n-option="dedicatedLine">Dedicated kosher line</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Documents -->
+                <div class="section">
+                    <h2 class="section-title">
+                        <span class="icon">📎</span>
+                        <span data-i18n="sectionDocuments">Documents</span>
+                    </h2>
+                    <div class="info-box">
+                        <h4>📄 <span data-i18n="documentsTitle">Document Upload</span></h4>
+                        <p data-i18n="documentsText">Upload production flowcharts and any other relevant documents (permits, facility plans, etc.)</p>
+                    </div>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label data-i18n="flowchart">Production Flowchart</label>
+                            <label class="file-btn" id="flowchartBtn">
+                                📊 <span data-i18n="uploadFlowchart">Upload Flowchart</span>
+                                <input type="file" accept=".pdf,.png,.jpg,.jpeg,.doc,.docx" onchange="handleFile(this, 'flowchartBtn', 'flowchartName')">
+                            </label>
+                            <div class="file-name" id="flowchartName"></div>
+                        </div>
+                        <div class="form-group">
+                            <label data-i18n="additionalDocs">Additional Documents</label>
+                            <label class="file-btn" id="addDocsBtn">
+                                📁 <span data-i18n="uploadDocs">Upload Documents</span>
+                                <input type="file" accept=".pdf,.png,.jpg,.jpeg,.doc,.docx,.zip" multiple onchange="handleFiles(this, 'addDocsBtn', 'addDocsName')">
+                            </label>
+                            <div class="file-name" id="addDocsName"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="btn-group">
+                    <button class="btn btn-primary" onclick="nextTab('products')">
+                        <span data-i18n="continueProducts">Continue to Products</span> →
+                    </button>
+                </div>
+            </div>
+
+            <!-- ======= TAB 2: PRODUCTS ======= -->
+            <div class="tab-content" id="products">
+                <div class="section">
+                    <h2 class="section-title">
+                        <span class="icon">📦</span>
+                        <span data-i18n="sectionProducts">Products for Kosher Certification</span>
+                    </h2>
+                    <div class="info-box">
+                        <h4>📝 <span data-i18n="productInstructions">Instructions</span></h4>
+                        <p data-i18n="productInstructionsText">Enter all products manufactured at the facility that require kosher certification. Each product needs a unique code for linking raw materials.</p>
+                    </div>
+
+                    <button class="btn btn-add" onclick="addProduct()">
+                        ➕ <span data-i18n="addProduct">Add Product</span>
+                    </button>
+
+                    <div class="table-wrap" id="productsTableWrap" style="display:none">
+                        <table class="data-table" id="productsTable">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th data-i18n="thCode">Code</th>
+                                    <th data-i18n="thProductName">Product Name</th>
+                                    <th data-i18n="thDescription">Description</th>
+                                    <th data-i18n="thCategory">Category</th>
+                                    <th data-i18n="thLine">Line</th>
+                                    <th data-i18n="thLabel">Label</th>
+                                    <th data-i18n="thRemarks">Remarks</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody id="productsBody"></tbody>
+                        </table>
+                    </div>
+
+                    <div id="productsEmpty" class="empty-state">
+                        <div class="icon">📦</div>
+                        <p data-i18n="noProducts">No products added yet</p>
+                        <button class="btn btn-add" onclick="addProduct()">➕ <span data-i18n="addFirstProduct">Add First Product</span></button>
+                    </div>
+                </div>
+
+                <div class="btn-group">
+                    <button class="btn btn-secondary" onclick="prevTab('general')">
+                        ← <span data-i18n="backGeneral">Back to General Info</span>
+                    </button>
+                    <button class="btn btn-primary" onclick="nextTab('ingredients')">
+                        <span data-i18n="continueIngredients">Continue to Raw Materials</span> →
+                    </button>
+                </div>
+            </div>
+
+            <!-- ======= TAB 3: INGREDIENTS ======= -->
+            <div class="tab-content" id="ingredients">
+                <div class="section">
+                    <h2 class="section-title">
+                        <span class="icon">🧪</span>
+                        <span data-i18n="sectionIngredients">Raw Materials</span>
+                    </h2>
+                    <div class="info-box">
+                        <h4>🔗 <span data-i18n="ingredientInstructions">Product Linking</span></h4>
+                        <p data-i18n="ingredientInstructionsText">Each raw material should be linked to one or more products. You can select multiple products for each raw material using the "Linked Products" field.</p>
+                    </div>
+
+                    <button class="btn btn-add" onclick="addIngredient()">
+                        ➕ <span data-i18n="addIngredient">Add Raw Material</span>
+                    </button>
+
+                    <div class="table-wrap" id="ingredientsTableWrap" style="display:none">
+                        <table class="data-table" id="ingredientsTable">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th data-i18n="thLinkedProducts">Linked Products</th>
+                                    <th data-i18n="thIngredientName">Name</th>
+                                    <th data-i18n="thFunction">Function</th>
+                                    <th data-i18n="thSupplier">Supplier</th>
+                                    <th data-i18n="thOrigin">Origin</th>
+                                    <th data-i18n="thCertType">Certificate</th>
+                                    <th data-i18n="thCertExpiry">Expiry</th>
+                                    <th data-i18n="thCertFile">Cert. File</th>
+                                    <th data-i18n="thSpecFile">Spec</th>
+                                    <th data-i18n="thAnimal">Animal?</th>
+                                    <th data-i18n="thRemarks">Remarks</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody id="ingredientsBody"></tbody>
+                        </table>
+                    </div>
+
+                    <div id="ingredientsEmpty" class="empty-state">
+                        <div class="icon">🧪</div>
+                        <p data-i18n="noIngredients">No raw materials added yet</p>
+                        <button class="btn btn-add" onclick="addIngredient()">➕ <span data-i18n="addFirstIngredient">Add First Raw Material</span></button>
+                    </div>
+                </div>
+
+                <div class="btn-group">
+                    <button class="btn btn-secondary" onclick="prevTab('products')">
+                        ← <span data-i18n="backProducts">Back to Products</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="footer-actions">
+                <div class="auto-save">
+                    <span class="dot"></span>
+                    <span data-i18n="autoSaved">Auto-saved</span>
+                    <span id="lastSaved"></span>
+                </div>
+                <div class="btn-group" style="margin-top:0">
+                    <button class="btn btn-secondary" onclick="clearForm()">🗑️ <span data-i18n="clearForm">Clear Form</span></button>
+                    <button class="btn btn-secondary" onclick="exportJSON()">📥 <span data-i18n="exportJSON">Export JSON</span></button>
+                    <button class="btn btn-success" onclick="submitForm()" id="submitBtn">✅ <span data-i18n="submitForm">Submit Questionnaire</span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal-overlay" id="successModal">
+        <div class="modal">
+            <div class="modal-header"><h3>✅ <span data-i18n="successTitle">Questionnaire Submitted Successfully!</span></h3></div>
+            <div class="modal-body">
+                <p data-i18n="successMessage">The questionnaire has been saved and submitted. Our kashrut team will review and contact you shortly.</p>
+                <p style="margin-top:12px"><strong data-i18n="referenceLabel">Reference:</strong> <span id="refNumber"></span></p>
+            </div>
+            <div class="modal-footer"><button class="btn btn-primary" onclick="closeModal('successModal')" data-i18n="close">Close</button></div>
+        </div>
+    </div>
+
+    <!-- Loading -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="spinner"></div>
+        <div class="loading-text" data-i18n="submitting">Submitting questionnaire...</div>
+    </div>
+
+    <script>
+    // ============ TRANSLATIONS ============
+    const T = {
+        en: {
+            headerSubtitle: "Kosher Production Questionnaire",
+            progressCompleted: "{n}% completed",
+            sectionOf: "Section {current} of {total}",
+            tabGeneral: "General Information",
+            tabProducts: "Products",
+            tabIngredients: "Raw Materials",
+            sectionCompany: "Company Details",
+            companyName: "Company Name",
+            companyId: "Company Registration No.",
+            address: "Address",
+            city: "City",
+            country: "Country",
+            postalCode: "Postal Code",
+            phone: "Phone",
+            website: "Website",
+            sectionFiller: "Person Completing This Form",
+            fullName: "Full Name",
+            position: "Position",
+            email: "Email",
+            phoneDirect: "Phone",
+            sectionResponsible: "Person Responsible for Updates",
+            responsibleInfo: "Important",
+            responsibleInfoText: "The person responsible for updates is the main contact for all matters related to product kashrut and raw material updates.",
+            sectionBackground: "Background Questions",
+            whyKosher: "Why are you interested in kosher certification?",
+            hadPrevious: "Has the facility had kosher certification before?",
+            select: "Select...",
+            yes: "Yes",
+            no: "No",
+            whichAgency: "Which certifying agency?",
+            producesNonKosher: "Does the facility produce non-kosher products?",
+            whichNonKosher: "Which non-kosher products?",
+            sameBuilding: "Same building?",
+            yesSameBuilding: "Yes - same building",
+            noSeparate: "No - separate building",
+            sameLine: "Same production line?",
+            yesSameLine: "Yes - same line",
+            noSeparateLine: "No - separate line",
+            dedicatedLine: "Dedicated kosher line",
+            sectionDocuments: "Documents",
+            documentsTitle: "Document Upload",
+            documentsText: "Upload production flowcharts and any other relevant documents (permits, facility plans, etc.)",
+            flowchart: "Production Flowchart",
+            uploadFlowchart: "Upload Flowchart",
+            additionalDocs: "Additional Documents",
+            uploadDocs: "Upload Documents",
+            continueProducts: "Continue to Products",
+            sectionProducts: "Products for Kosher Certification",
+            productInstructions: "Instructions",
+            productInstructionsText: "Enter all products manufactured at the facility that require kosher certification. Each product needs a unique code for linking raw materials.",
+            addProduct: "Add Product",
+            noProducts: "No products added yet",
+            addFirstProduct: "Add First Product",
+            backGeneral: "Back to General Info",
+            continueIngredients: "Continue to Raw Materials",
+            sectionIngredients: "Raw Materials",
+            ingredientInstructions: "Product Linking",
+            ingredientInstructionsText: "Each raw material should be linked to one or more products. You can select multiple products for each raw material.",
+            addIngredient: "Add Raw Material",
+            noIngredients: "No raw materials added yet",
+            addFirstIngredient: "Add First Raw Material",
+            backProducts: "Back to Products",
+            autoSaved: "Auto-saved",
+            clearForm: "Clear Form",
+            exportJSON: "Export JSON",
+            submitForm: "Submit Questionnaire",
+            successTitle: "Questionnaire Submitted Successfully!",
+            successMessage: "The questionnaire has been saved and submitted. Our kashrut team will review and contact you shortly.",
+            referenceLabel: "Reference:",
+            close: "Close",
+            submitting: "Submitting questionnaire...",
+            thCode: "Code",
+            thProductName: "Product Name",
+            thDescription: "Description",
+            thCategory: "Category",
+            thLine: "Line",
+            thLabel: "Label",
+            thRemarks: "Remarks",
+            thLinkedProducts: "Linked Products",
+            thIngredientName: "Name",
+            thFunction: "Function",
+            thSupplier: "Supplier",
+            thOrigin: "Origin",
+            thCertType: "Certificate",
+            thCertExpiry: "Expiry",
+            thCertFile: "Cert. File",
+            thSpecFile: "Spec",
+            thAnimal: "Animal?",
+            selectProducts: "Select products",
+            selected: "selected",
+            noProductsYet: "Add products first",
+            catDairy: "Dairy",
+            catMeat: "Meat",
+            catPareve: "Pareve",
+            catPassover: "Passover",
+            funcMain: "Main",
+            funcAdditive: "Additive",
+            funcPreservative: "Preservative",
+            funcFlavoring: "Flavoring",
+            funcColoring: "Coloring",
+            funcEmulsifier: "Emulsifier",
+            funcOther: "Other",
+            certKosher: "Kosher Cert.",
+            certHalal: "Halal",
+            certNone: "No Certificate",
+            animalYes: "Yes",
+            animalNo: "No",
+            animalUnknown: "Unknown",
+            upload: "Upload",
+            fillRequired: "Please fill in all required fields (marked with *)",
+            addOneProduct: "Please add at least one product",
+            confirmClear: "Are you sure you want to clear all data?"
+        },
+        pt: {
+            headerSubtitle: "Questionário de Produção Kosher",
+            progressCompleted: "{n}% concluído",
+            sectionOf: "Secção {current} de {total}",
+            tabGeneral: "Informações Gerais",
+            tabProducts: "Produtos",
+            tabIngredients: "Matérias-Primas",
+            sectionCompany: "Dados da Empresa",
+            companyName: "Nome da Empresa",
+            companyId: "Nº de Registo (NIPC)",
+            address: "Morada",
+            city: "Cidade",
+            country: "País",
+            postalCode: "Código Postal",
+            phone: "Telefone",
+            website: "Website",
+            sectionFiller: "Pessoa que Preenche este Formulário",
+            fullName: "Nome Completo",
+            position: "Cargo",
+            email: "Email",
+            phoneDirect: "Telefone",
+            sectionResponsible: "Responsável por Atualizações",
+            responsibleInfo: "Importante",
+            responsibleInfoText: "O responsável por atualizações é o contacto principal para todos os assuntos relacionados com a kashrut dos produtos e atualizações de matérias-primas.",
+            sectionBackground: "Perguntas de Contexto",
+            whyKosher: "Porque está interessado na certificação kosher?",
+            hadPrevious: "A fábrica já teve certificação kosher anteriormente?",
+            select: "Selecione...",
+            yes: "Sim",
+            no: "Não",
+            whichAgency: "Qual entidade certificadora?",
+            producesNonKosher: "A fábrica produz produtos não-kosher?",
+            whichNonKosher: "Quais produtos não-kosher?",
+            sameBuilding: "Mesmo edifício?",
+            yesSameBuilding: "Sim - mesmo edifício",
+            noSeparate: "Não - edifício separado",
+            sameLine: "Mesma linha de produção?",
+            yesSameLine: "Sim - mesma linha",
+            noSeparateLine: "Não - linha separada",
+            dedicatedLine: "Linha dedicada ao kosher",
+            sectionDocuments: "Documentos",
+            documentsTitle: "Envio de Documentos",
+            documentsText: "Envie fluxogramas de produção e quaisquer outros documentos relevantes (licenças, plantas da fábrica, etc.)",
+            flowchart: "Fluxograma de Produção",
+            uploadFlowchart: "Enviar Fluxograma",
+            additionalDocs: "Documentos Adicionais",
+            uploadDocs: "Enviar Documentos",
+            continueProducts: "Continuar para Produtos",
+            sectionProducts: "Produtos para Certificação Kosher",
+            productInstructions: "Instruções",
+            productInstructionsText: "Introduza todos os produtos fabricados na unidade que necessitam de certificação kosher. Cada produto necessita de um código único para associar matérias-primas.",
+            addProduct: "Adicionar Produto",
+            noProducts: "Nenhum produto adicionado",
+            addFirstProduct: "Adicionar Primeiro Produto",
+            backGeneral: "Voltar a Informações Gerais",
+            continueIngredients: "Continuar para Matérias-Primas",
+            sectionIngredients: "Matérias-Primas",
+            ingredientInstructions: "Associação a Produtos",
+            ingredientInstructionsText: "Cada matéria-prima deve ser associada a um ou mais produtos. Pode selecionar múltiplos produtos para cada matéria-prima.",
+            addIngredient: "Adicionar Matéria-Prima",
+            noIngredients: "Nenhuma matéria-prima adicionada",
+            addFirstIngredient: "Adicionar Primeira Matéria-Prima",
+            backProducts: "Voltar a Produtos",
+            autoSaved: "Guardado automaticamente",
+            clearForm: "Limpar Formulário",
+            exportJSON: "Exportar JSON",
+            submitForm: "Enviar Questionário",
+            successTitle: "Questionário Enviado com Sucesso!",
+            successMessage: "O questionário foi guardado e enviado. A nossa equipa de kashrut irá analisar e contactá-lo em breve.",
+            referenceLabel: "Referência:",
+            close: "Fechar",
+            submitting: "A enviar questionário...",
+            thCode: "Código",
+            thProductName: "Nome do Produto",
+            thDescription: "Descrição",
+            thCategory: "Categoria",
+            thLine: "Linha",
+            thLabel: "Rótulo",
+            thRemarks: "Observações",
+            thLinkedProducts: "Produtos Associados",
+            thIngredientName: "Nome",
+            thFunction: "Função",
+            thSupplier: "Fornecedor",
+            thOrigin: "Origem",
+            thCertType: "Certificado",
+            thCertExpiry: "Validade",
+            thCertFile: "Fich. Cert.",
+            thSpecFile: "Espec.",
+            thAnimal: "Animal?",
+            selectProducts: "Selecionar produtos",
+            selected: "selecionados",
+            noProductsYet: "Adicione produtos primeiro",
+            catDairy: "Lacticínio",
+            catMeat: "Carne",
+            catPareve: "Pareve",
+            catPassover: "Páscoa",
+            funcMain: "Principal",
+            funcAdditive: "Aditivo",
+            funcPreservative: "Conservante",
+            funcFlavoring: "Aromatizante",
+            funcColoring: "Corante",
+            funcEmulsifier: "Emulsionante",
+            funcOther: "Outro",
+            certKosher: "Cert. Kosher",
+            certHalal: "Halal",
+            certNone: "Sem Certificado",
+            animalYes: "Sim",
+            animalNo: "Não",
+            animalUnknown: "Desconhecido",
+            upload: "Enviar",
+            fillRequired: "Por favor preencha todos os campos obrigatórios (marcados com *)",
+            addOneProduct: "Por favor adicione pelo menos um produto",
+            confirmClear: "Tem a certeza que deseja limpar todos os dados?"
+        },
+        he: {
+            headerSubtitle: "שאלון ייצור כשר למפעלים",
+            progressCompleted: "{n}% הושלם",
+            sectionOf: "סעיף {current} מתוך {total}",
+            tabGeneral: "פרטים כלליים",
+            tabProducts: "מוצרים",
+            tabIngredients: "חומרי גלם",
+            sectionCompany: "פרטי החברה",
+            companyName: "שם החברה",
+            companyId: "מספר ח.פ. / עוסק",
+            address: "כתובת",
+            city: "עיר",
+            country: "מדינה",
+            postalCode: "מיקוד",
+            phone: "טלפון",
+            website: "אתר אינטרנט",
+            sectionFiller: "ממלא הטופס",
+            fullName: "שם מלא",
+            position: "תפקיד",
+            email: 'דוא"ל',
+            phoneDirect: "טלפון",
+            sectionResponsible: "אחראי עדכונים",
+            responsibleInfo: "מידע חשוב",
+            responsibleInfoText: "אחראי העדכונים הוא איש הקשר העיקרי לכל נושא הקשור לכשרות המוצרים ועדכוני חומרי גלם.",
+            sectionBackground: "שאלות רקע",
+            whyKosher: "מדוע אתם מעוניינים בהשגת כשרות?",
+            hadPrevious: "האם היה למפעל בעבר תעודת כשרות?",
+            select: "בחר...",
+            yes: "כן",
+            no: "לא",
+            whichAgency: "מאיזה גוף היה ההכשר?",
+            producesNonKosher: "האם המפעל מייצר מוצרים שאינם כשרים?",
+            whichNonKosher: "אילו מוצרים לא כשרים?",
+            sameBuilding: "באותו מבנה?",
+            yesSameBuilding: "כן - באותו מבנה",
+            noSeparate: "לא - במבנה נפרד",
+            sameLine: "באותו קו ייצור?",
+            yesSameLine: "כן - באותו קו",
+            noSeparateLine: "לא - בקו נפרד",
+            dedicatedLine: "קו ייעודי לכשר",
+            sectionDocuments: "מסמכים נלווים",
+            documentsTitle: "העלאת מסמכים",
+            documentsText: "העלו תרשים זרימה של תהליך הייצור ומסמכים רלוונטיים נוספים.",
+            flowchart: "תרשים זרימה",
+            uploadFlowchart: "העלאת תרשים זרימה",
+            additionalDocs: "מסמכים נוספים",
+            uploadDocs: "העלאת מסמכים",
+            continueProducts: "המשך למוצרים",
+            sectionProducts: "מוצרים לאישור כשרות",
+            productInstructions: "הנחיות למילוי",
+            productInstructionsText: "הזינו את כל המוצרים שמיוצרים במפעל ומבוקש עבורם אישור כשרות. לכל מוצר יש להזין קוד ייחודי.",
+            addProduct: "הוסף מוצר",
+            noProducts: "טרם הוזנו מוצרים",
+            addFirstProduct: "הוסף מוצר ראשון",
+            backGeneral: "חזור לפרטים כלליים",
+            continueIngredients: "המשך לחומרי גלם",
+            sectionIngredients: "חומרי גלם",
+            ingredientInstructions: "קישור למוצרים",
+            ingredientInstructionsText: "כל חומר גלם צריך להיות מקושר למוצר אחד או יותר. ניתן לבחור מספר מוצרים עבור כל חומר גלם.",
+            addIngredient: "הוסף חומר גלם",
+            noIngredients: "טרם הוזנו חומרי גלם",
+            addFirstIngredient: "הוסף חומר גלם ראשון",
+            backProducts: "חזור למוצרים",
+            autoSaved: "נשמר אוטומטית",
+            clearForm: "נקה טופס",
+            exportJSON: "ייצא ל-JSON",
+            submitForm: "שלח שאלון",
+            successTitle: "השאלון נשלח בהצלחה!",
+            successMessage: "השאלון נשמר ונשלח. צוות הכשרות יבחן את הבקשה ויצור קשר בהקדם.",
+            referenceLabel: "מספר אסמכתא:",
+            close: "סגור",
+            submitting: "שולח שאלון...",
+            thCode: "קוד",
+            thProductName: "שם המוצר",
+            thDescription: "תיאור",
+            thCategory: "קטגוריה",
+            thLine: "קו",
+            thLabel: "תווית",
+            thRemarks: "הערות",
+            thLinkedProducts: "מוצרים משויכים",
+            thIngredientName: "שם",
+            thFunction: "פונקציה",
+            thSupplier: "ספק",
+            thOrigin: "ארץ מקור",
+            thCertType: "תעודה",
+            thCertExpiry: "תוקף",
+            thCertFile: "קובץ תעודה",
+            thSpecFile: "מפרט",
+            thAnimal: "מן החי?",
+            selectProducts: "בחר מוצרים",
+            selected: "נבחרו",
+            noProductsYet: "הוסף מוצרים קודם",
+            catDairy: "חלבי",
+            catMeat: "בשרי",
+            catPareve: "פרווה",
+            catPassover: "כשר לפסח",
+            funcMain: "עיקרי",
+            funcAdditive: "תוסף",
+            funcPreservative: "משמר",
+            funcFlavoring: "טעם",
+            funcColoring: "צבע",
+            funcEmulsifier: "מתחלב",
+            funcOther: "אחר",
+            certKosher: "תעודת כשרות",
+            certHalal: "חלאל",
+            certNone: "ללא תעודה",
+            animalYes: "כן",
+            animalNo: "לא",
+            animalUnknown: "לא ידוע",
+            upload: "העלה",
+            fillRequired: "נא למלא את כל השדות החובה (מסומנים ב-*)",
+            addOneProduct: "נא להוסיף לפחות מוצר אחד",
+            confirmClear: "האם אתה בטוח שברצונך למחוק את כל הנתונים?"
+        }
+    };
+
+    // ============ STATE ============
+    let currentLang = 'en';
+    let products = [];
+    let ingredients = [];
+    let productCounter = 0;
+    let ingredientCounter = 0;
+    let collectedFiles = {};
+
+    // ============ LANGUAGE ============
+    function setLanguage(lang) {
+        currentLang = lang;
+        const isRTL = lang === 'he';
+        document.documentElement.lang = lang;
+        document.documentElement.dir = isRTL ? 'rtl' : 'ltr';
+        document.body.dir = isRTL ? 'rtl' : 'ltr';
+        document.body.style.fontFamily = isRTL ? "'Heebo', Arial, sans-serif" : "'Inter', Arial, sans-serif";
+
+        document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+        document.querySelector(`.lang-btn[onclick="setLanguage('${lang}')"]`).classList.add('active');
+
+        // Translate all data-i18n elements
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (T[lang][key]) {
+                el.textContent = T[lang][key];
+            }
+        });
+
+        // Translate option elements
+        document.querySelectorAll('[data-i18n-option]').forEach(el => {
+            const key = el.getAttribute('data-i18n-option');
+            if (T[lang][key]) {
+                el.textContent = T[lang][key];
+            }
+        });
+
+        // Re-render dynamic tables
+        renderProducts();
+        renderIngredients();
+        updateProgress();
+
+        // Save language preference
+        localStorage.setItem('kosherFormLang', lang);
+    }
+
+    function t(key) { return T[currentLang][key] || key; }
+
+    // ============ TABS ============
+    document.querySelectorAll('.nav-tab').forEach(tab => {
+        tab.addEventListener('click', () => switchTab(tab.dataset.tab));
+    });
+
+    function switchTab(id) {
+        document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+        document.querySelector(`[data-tab="${id}"]`).classList.add('active');
+        document.getElementById(id).classList.add('active');
+        updateProgress();
+    }
+    function nextTab(id) { switchTab(id); }
+    function prevTab(id) { switchTab(id); }
+
+    // ============ PROGRESS ============
+    function updateProgress() {
+        const tabs = ['general', 'products', 'ingredients'];
+        const active = document.querySelector('.nav-tab.active').dataset.tab;
+        const idx = tabs.indexOf(active) + 1;
+        const pct = Math.round((idx / tabs.length) * 100);
+        document.getElementById('progressFill').style.width = pct + '%';
+        document.getElementById('progressText').textContent = t('progressCompleted').replace('{n}', pct);
+        document.getElementById('sectionProgress').textContent = t('sectionOf').replace('{current}', idx).replace('{total}', tabs.length);
+    }
+
+    // ============ CONDITIONAL FIELDS ============
+    function toggleField(id, show) { document.getElementById(id).style.display = show ? 'block' : 'none'; }
+    function toggleNonKosher() {
+        const v = document.getElementById('producesNonKosher').value;
+        const show = v === 'yes';
+        ['nonKosherGroup', 'sameBuildingGroup', 'sameLineGroup'].forEach(id => {
+            document.getElementById(id).style.display = show ? 'block' : 'none';
+        });
+    }
+
+    // ============ FILE HANDLING ============
+    function handleFile(input, btnId, nameId) {
+        if (input.files[0]) {
+            document.getElementById(btnId).classList.add('has-file');
+            document.getElementById(nameId).textContent = input.files[0].name;
+            collectedFiles[btnId] = input.files[0];
+        }
+    }
+    function handleFiles(input, btnId, nameId) {
+        if (input.files.length) {
+            document.getElementById(btnId).classList.add('has-file');
+            document.getElementById(nameId).textContent = input.files.length + ' files';
+            collectedFiles[btnId] = Array.from(input.files);
+        }
+    }
+
+    // ============ PRODUCTS ============
+    function addProduct() {
+        productCounter++;
+        products.push({ id: productCounter, code: '', name: '', description: '', category: '', line: '', labelFile: null, labelName: '', remarks: '' });
+        renderProducts();
+        updateEmptyStates();
+        autoSave();
+    }
+
+    function removeProduct(id) {
+        products = products.filter(p => p.id !== id);
+        renderProducts();
+        renderIngredients();
+        updateEmptyStates();
+        autoSave();
+    }
+
+    function updateProduct(id, field, value) {
+        const p = products.find(x => x.id === id);
+        if (p) { p[field] = value; if (field === 'code' || field === 'name') renderIngredients(); autoSave(); }
+    }
+
+    function renderProducts() {
+        const tbody = document.getElementById('productsBody');
+        tbody.innerHTML = products.map((p, i) => `
+            <tr>
+                <td>${i + 1}</td>
+                <td><input type="text" class="table-input" value="${p.code}" onchange="updateProduct(${p.id},'code',this.value)" placeholder="${t('thCode')}"></td>
+                <td><input type="text" class="table-input" value="${p.name}" onchange="updateProduct(${p.id},'name',this.value)" placeholder="${t('thProductName')}"></td>
+                <td><input type="text" class="table-input" value="${p.description}" onchange="updateProduct(${p.id},'description',this.value)"></td>
+                <td><select class="table-input" onchange="updateProduct(${p.id},'category',this.value)">
+                    <option value="">${t('select')}</option>
+                    <option value="dairy" ${p.category==='dairy'?'selected':''}>${t('catDairy')}</option>
+                    <option value="meat" ${p.category==='meat'?'selected':''}>${t('catMeat')}</option>
+                    <option value="pareve" ${p.category==='pareve'?'selected':''}>${t('catPareve')}</option>
+                    <option value="passover" ${p.category==='passover'?'selected':''}>${t('catPassover')}</option>
+                </select></td>
+                <td><input type="text" class="table-input" value="${p.line}" onchange="updateProduct(${p.id},'line',this.value)"></td>
+                <td><label class="file-btn ${p.labelName?'has-file':''}" id="lbl_${p.id}">
+                    ${p.labelName ? '✅' : '🏷️'}
+                    <input type="file" accept=".pdf,.png,.jpg,.jpeg" onchange="handleProductFile(this,${p.id})">
+                </label><div class="file-name">${p.labelName||''}</div></td>
+                <td><input type="text" class="table-input" value="${p.remarks}" onchange="updateProduct(${p.id},'remarks',this.value)"></td>
+                <td><button class="btn btn-danger" onclick="removeProduct(${p.id})">🗑️</button></td>
+            </tr>
+        `).join('');
+    }
+
+    function handleProductFile(input, id) {
+        const p = products.find(x => x.id === id);
+        if (p && input.files[0]) { p.labelFile = input.files[0]; p.labelName = input.files[0].name; renderProducts(); autoSave(); }
+    }
+
+    // ============ INGREDIENTS ============
+    function addIngredient() {
+        ingredientCounter++;
+        ingredients.push({ id: ingredientCounter, productCodes: [], name: '', function: '', supplier: '', origin: '', certType: '', certExpiry: '', certFile: null, certName: '', specFile: null, specName: '', animal: '', remarks: '' });
+        renderIngredients();
+        updateEmptyStates();
+        autoSave();
+    }
+
+    function removeIngredient(id) {
+        ingredients = ingredients.filter(x => x.id !== id);
+        renderIngredients();
+        updateEmptyStates();
+        autoSave();
+    }
+
+    function updateIngredient(id, field, value) {
+        const ing = ingredients.find(x => x.id === id);
+        if (ing) { ing[field] = value; autoSave(); }
+    }
+
+    function renderIngredients() {
+        const tbody = document.getElementById('ingredientsBody');
+        tbody.innerHTML = ingredients.map((ing, i) => `
+            <tr>
+                <td>${i + 1}</td>
+                <td><div class="selector-wrapper">
+                    <button type="button" class="product-selector-btn" onclick="toggleDropdown(${ing.id})">
+                        <span>${ing.productCodes.length > 0 ? ing.productCodes.length + ' ' + t('selected') : t('selectProducts')}</span> <span>▼</span>
+                    </button>
+                    <div class="product-dropdown" id="dd_${ing.id}">
+                        ${products.length === 0 ? `<div class="product-dropdown-item">${t('noProductsYet')}</div>` :
+                        products.map(p => {
+                            const val = p.code || String(p.id);
+                            const lbl = p.code ? `${p.code} - ${p.name||''}` : p.name || `#${p.id}`;
+                            return `<div class="product-dropdown-item">
+                                <input type="checkbox" value="${val}" ${ing.productCodes.includes(val)?'checked':''} onchange="toggleProdSel(${ing.id},'${val}')">
+                                <label>${lbl}</label>
+                            </div>`;
+                        }).join('')}
+                    </div>
+                    <div class="selected-tags">${ing.productCodes.map(c => {
+                        const p = products.find(x => (x.code||String(x.id)) === c);
+                        return `<span class="tag">${p ? (p.code||p.name||'#'+p.id) : c} <span class="remove-tag" onclick="removeProdSel(${ing.id},'${c}')">×</span></span>`;
+                    }).join('')}</div>
+                </div></td>
+                <td><input type="text" class="table-input" value="${ing.name}" onchange="updateIngredient(${ing.id},'name',this.value)"></td>
+                <td><select class="table-input" onchange="updateIngredient(${ing.id},'function',this.value)">
+                    <option value="">${t('select')}</option>
+                    <option value="main" ${ing.function==='main'?'selected':''}>${t('funcMain')}</option>
+                    <option value="additive" ${ing.function==='additive'?'selected':''}>${t('funcAdditive')}</option>
+                    <option value="preservative" ${ing.function==='preservative'?'selected':''}>${t('funcPreservative')}</option>
+                    <option value="flavoring" ${ing.function==='flavoring'?'selected':''}>${t('funcFlavoring')}</option>
+                    <option value="coloring" ${ing.function==='coloring'?'selected':''}>${t('funcColoring')}</option>
+                    <option value="emulsifier" ${ing.function==='emulsifier'?'selected':''}>${t('funcEmulsifier')}</option>
+                    <option value="other" ${ing.function==='other'?'selected':''}>${t('funcOther')}</option>
+                </select></td>
+                <td><input type="text" class="table-input" value="${ing.supplier}" onchange="updateIngredient(${ing.id},'supplier',this.value)"></td>
+                <td><input type="text" class="table-input" value="${ing.origin}" onchange="updateIngredient(${ing.id},'origin',this.value)"></td>
+                <td><select class="table-input" onchange="updateIngredient(${ing.id},'certType',this.value)">
+                    <option value="">${t('select')}</option>
+                    <option value="kosher" ${ing.certType==='kosher'?'selected':''}>${t('certKosher')}</option>
+                    <option value="halal" ${ing.certType==='halal'?'selected':''}>${t('certHalal')}</option>
+                    <option value="none" ${ing.certType==='none'?'selected':''}>${t('certNone')}</option>
+                </select></td>
+                <td><input type="date" class="table-input" value="${ing.certExpiry}" onchange="updateIngredient(${ing.id},'certExpiry',this.value)"></td>
+                <td><label class="file-btn ${ing.certName?'has-file':''}" id="cf_${ing.id}">
+                    ${ing.certName ? '✅' : '📄'}
+                    <input type="file" accept=".pdf,.png,.jpg,.jpeg" onchange="handleIngFile(this,${ing.id},'cert')">
+                </label></td>
+                <td><label class="file-btn ${ing.specName?'has-file':''}" id="sf_${ing.id}">
+                    ${ing.specName ? '✅' : '📋'}
+                    <input type="file" accept=".pdf,.png,.jpg,.jpeg,.doc,.docx" onchange="handleIngFile(this,${ing.id},'spec')">
+                </label></td>
+                <td><select class="table-input" onchange="updateIngredient(${ing.id},'animal',this.value)">
+                    <option value="">?</option>
+                    <option value="yes" ${ing.animal==='yes'?'selected':''}>${t('animalYes')}</option>
+                    <option value="no" ${ing.animal==='no'?'selected':''}>${t('animalNo')}</option>
+                    <option value="unknown" ${ing.animal==='unknown'?'selected':''}>${t('animalUnknown')}</option>
+                </select></td>
+                <td><input type="text" class="table-input" value="${ing.remarks}" onchange="updateIngredient(${ing.id},'remarks',this.value)"></td>
+                <td><button class="btn btn-danger" onclick="removeIngredient(${ing.id})">🗑️</button></td>
+            </tr>
+        `).join('');
+    }
+
+    function handleIngFile(input, id, type) {
+        const ing = ingredients.find(x => x.id === id);
+        if (ing && input.files[0]) {
+            if (type === 'cert') { ing.certFile = input.files[0]; ing.certName = input.files[0].name; }
+            else { ing.specFile = input.files[0]; ing.specName = input.files[0].name; }
+            renderIngredients();
+            autoSave();
+        }
+    }
+
+    function toggleDropdown(id) {
+        document.querySelectorAll('.product-dropdown').forEach(d => { if (d.id !== 'dd_' + id) d.classList.remove('show'); });
+        document.getElementById('dd_' + id).classList.toggle('show');
+    }
+
+    function toggleProdSel(ingId, code) {
+        const ing = ingredients.find(x => x.id === ingId);
+        if (ing) { const i = ing.productCodes.indexOf(code); i > -1 ? ing.productCodes.splice(i, 1) : ing.productCodes.push(code); renderIngredients(); autoSave(); }
+    }
+
+    function removeProdSel(ingId, code) {
+        const ing = ingredients.find(x => x.id === ingId);
+        if (ing) { ing.productCodes = ing.productCodes.filter(c => c !== code); renderIngredients(); autoSave(); }
+    }
+
+    document.addEventListener('click', e => { if (!e.target.closest('.selector-wrapper')) document.querySelectorAll('.product-dropdown').forEach(d => d.classList.remove('show')); });
+
+    // ============ EMPTY STATES ============
+    function updateEmptyStates() {
+        document.getElementById('productsEmpty').style.display = products.length === 0 ? 'block' : 'none';
+        document.getElementById('productsTableWrap').style.display = products.length > 0 ? 'block' : 'none';
+        document.getElementById('ingredientsEmpty').style.display = ingredients.length === 0 ? 'block' : 'none';
+        document.getElementById('ingredientsTableWrap').style.display = ingredients.length > 0 ? 'block' : 'none';
+    }
+
+    // ============ AUTO-SAVE ============
+    function autoSave() {
+        const data = collectFormData();
+        localStorage.setItem('kosherFormData', JSON.stringify(data));
+        document.getElementById('lastSaved').textContent = '(' + new Date().toLocaleTimeString() + ')';
+    }
+
+    function collectFormData() {
+        return {
+            language: currentLang,
+            submissionDate: new Date().toISOString(),
+            company: {
+                name: document.getElementById('companyName').value,
+                id: document.getElementById('companyId').value,
+                address: document.getElementById('address').value,
+                city: document.getElementById('city').value,
+                country: document.getElementById('country').value,
+                postalCode: document.getElementById('postalCode').value,
+                phone: document.getElementById('phone').value,
+                website: document.getElementById('website').value
+            },
+            filler: {
+                name: document.getElementById('fillerName').value,
+                position: document.getElementById('fillerPosition').value,
+                email: document.getElementById('fillerEmail').value,
+                phone: document.getElementById('fillerPhone').value
+            },
+            responsible: {
+                name: document.getElementById('responsibleName').value,
+                position: document.getElementById('responsiblePosition').value,
+                email: document.getElementById('responsibleEmail').value,
+                phone: document.getElementById('responsiblePhone').value
+            },
+            background: {
+                reason: document.getElementById('kosherReason').value,
+                hadPrevious: document.getElementById('hadPreviousKosher').value,
+                previousAgency: document.getElementById('previousAgency').value,
+                producesNonKosher: document.getElementById('producesNonKosher').value,
+                nonKosherProducts: document.getElementById('nonKosherProducts').value,
+                sameBuilding: document.getElementById('sameBuilding').value,
+                sameLine: document.getElementById('sameLine').value
+            },
+            products: products.map(p => ({ ...p, labelFile: undefined })),
+            ingredients: ingredients.map(i => ({ ...i, certFile: undefined, specFile: undefined }))
+        };
+    }
+
+    // ============ LOAD SAVED ============
+    function loadSaved() {
+        const lang = localStorage.getItem('kosherFormLang');
+        if (lang) setLanguage(lang);
+
+        const saved = localStorage.getItem('kosherFormData');
+        if (!saved) return;
+        try {
+            const d = JSON.parse(saved);
+            if (d.company) {
+                document.getElementById('companyName').value = d.company.name || '';
+                document.getElementById('companyId').value = d.company.id || '';
+                document.getElementById('address').value = d.company.address || '';
+                document.getElementById('city').value = d.company.city || '';
+                document.getElementById('country').value = d.company.country || '';
+                document.getElementById('postalCode').value = d.company.postalCode || '';
+                document.getElementById('phone').value = d.company.phone || '';
+                document.getElementById('website').value = d.company.website || '';
+            }
+            if (d.filler) {
+                document.getElementById('fillerName').value = d.filler.name || '';
+                document.getElementById('fillerPosition').value = d.filler.position || '';
+                document.getElementById('fillerEmail').value = d.filler.email || '';
+                document.getElementById('fillerPhone').value = d.filler.phone || '';
+            }
+            if (d.responsible) {
+                document.getElementById('responsibleName').value = d.responsible.name || '';
+                document.getElementById('responsiblePosition').value = d.responsible.position || '';
+                document.getElementById('responsibleEmail').value = d.responsible.email || '';
+                document.getElementById('responsiblePhone').value = d.responsible.phone || '';
+            }
+            if (d.background) {
+                document.getElementById('kosherReason').value = d.background.reason || '';
+                document.getElementById('hadPreviousKosher').value = d.background.hadPrevious || '';
+                document.getElementById('previousAgency').value = d.background.previousAgency || '';
+                document.getElementById('producesNonKosher').value = d.background.producesNonKosher || '';
+                document.getElementById('nonKosherProducts').value = d.background.nonKosherProducts || '';
+                document.getElementById('sameBuilding').value = d.background.sameBuilding || '';
+                document.getElementById('sameLine').value = d.background.sameLine || '';
+                if (d.background.hadPrevious === 'yes') toggleField('previousAgencyGroup', true);
+                if (d.background.producesNonKosher === 'yes') toggleNonKosher();
+            }
+            if (d.products && d.products.length) {
+                products = d.products;
+                productCounter = Math.max(...products.map(p => p.id));
+                renderProducts();
+            }
+            if (d.ingredients && d.ingredients.length) {
+                ingredients = d.ingredients;
+                ingredientCounter = Math.max(...ingredients.map(i => i.id));
+                renderIngredients();
+            }
+            updateEmptyStates();
+        } catch (e) { console.error('Load error:', e); }
+    }
+
+    // ============ EXPORT ============
+    function exportJSON() {
+        const data = collectFormData();
+        const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = `kosher-questionnaire-${data.company.name || 'export'}-${new Date().toISOString().split('T')[0]}.json`;
+        a.click();
+    }
+
+    // ============ SUBMIT ============
+    async function submitForm() {
+        // Validate required fields
+        const required = ['companyName', 'address', 'city', 'country', 'fillerName', 'fillerPosition', 'fillerEmail', 'fillerPhone', 'responsibleName', 'responsiblePosition', 'responsibleEmail', 'responsiblePhone'];
+        let valid = true;
+        required.forEach(id => {
+            const el = document.getElementById(id);
+            if (!el.value.trim()) { el.style.borderColor = 'var(--danger)'; valid = false; }
+            else { el.style.borderColor = 'var(--border)'; }
+        });
+        if (!valid) { alert(t('fillRequired')); switchTab('general'); return; }
+        if (products.length === 0) { alert(t('addOneProduct')); switchTab('products'); return; }
+
+        // Show loading
+        document.getElementById('loadingOverlay').classList.add('active');
+
+        try {
+            const formData = collectFormData();
+
+            // Send to API (Monday.com integration)
+            const response = await fetch('/api/submit-questionnaire', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData)
+            });
+
+            if (!response.ok) throw new Error('Server error: ' + response.status);
+            const result = await response.json();
+
+            // Show success with server-generated reference number
+            const refNum = result.referenceNumber || ('WK-' + Date.now().toString(36).toUpperCase());
+            document.getElementById('refNumber').textContent = refNum;
+            document.getElementById('successModal').classList.add('active');
+            localStorage.removeItem('kosherFormData');
+        } catch (err) {
+            console.error('Submit error:', err);
+            // Fallback: save locally and notify via EmailJS
+            const formData = collectFormData();
+            const refNum = 'WK-' + Date.now().toString(36).toUpperCase();
+            formData.referenceNumber = refNum;
+
+            try {
+                if (typeof emailjs !== 'undefined') {
+                    await emailjs.send('service_4g2vstc', 'template_nb16d6j', {
+                        company: formData.company.name,
+                        contact: formData.filler.name,
+                        email: formData.filler.email,
+                        phone: formData.filler.phone,
+                        location: `${formData.company.city}, ${formData.company.country}`,
+                        message: `Questionnaire submitted (Ref: ${refNum}). Products: ${products.length}, Ingredients: ${ingredients.length}. Full data saved in browser.`,
+                        to_email: 'portugal@w-kosher.com',
+                        language: currentLang === 'he' ? 'Hebrew' : currentLang === 'pt' ? 'Portuguese' : 'English'
+                    });
+                }
+            } catch (e) { console.error('EmailJS fallback error:', e); }
+
+            document.getElementById('refNumber').textContent = refNum;
+            document.getElementById('successModal').classList.add('active');
+        } finally {
+            document.getElementById('loadingOverlay').classList.remove('active');
+        }
+    }
+
+    function clearForm() {
+        if (confirm(t('confirmClear'))) {
+            localStorage.removeItem('kosherFormData');
+            location.reload();
+        }
+    }
+
+    function closeModal(id) { document.getElementById(id).classList.remove('active'); }
+
+    // ============ INIT ============
+    document.addEventListener('DOMContentLoaded', () => {
+        loadSaved();
+        updateEmptyStates();
+        updateProgress();
+        document.querySelectorAll('input, select, textarea').forEach(el => el.addEventListener('change', autoSave));
+    });
+    </script>
+
+    <!-- EmailJS SDK (fallback for when Monday API is not configured) -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>emailjs.init({ publicKey: 'YOUR_PUBLIC_KEY_HERE' });</script>
+</body>
+</html>
