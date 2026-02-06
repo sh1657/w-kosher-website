@@ -4,6 +4,11 @@
   "trailingSlash": false,
   "outputDirectory": "dist",
   "buildCommand": "npm run build",
+  "functions": {
+    "api/upload-file.js": {
+      "maxDuration": 30
+    }
+  },
   "redirects": [
     { "source": "/certificacao/", "destination": "/certificacao", "permanent": true },
     { "source": "/empresas/", "destination": "/empresas", "permanent": true },

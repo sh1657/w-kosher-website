@@ -194,7 +194,20 @@ module.exports = async function handler(req, res) {
             referenceNumber: refNumber,
             companyId: companyItemId,
             productsCreated,
-            ingredientsCreated
+            ingredientsCreated,
+            // Return item IDs for file uploads (frontend will upload files separately)
+            productItems: productItemIds,       // { productCode: mondayItemId }
+            ingredientItemIds: ingredientItems.map(i => ({
+                itemId: i.itemId,
+                productCodes: i.productCodes
+            })),
+            // File column IDs for uploads
+            fileColumns: {
+                companyDocs: 'file_mm0ac1g2',     // Companies board: Documents
+                productLabel: 'file_mm0aja07',     // Products board: Label File
+                ingredientCert: 'file_mm0aq0mk',   // Ingredients board: Kosher Certificate
+                ingredientSpec: 'file_mm0angtq'     // Ingredients board: Spec Sheet
+            }
         });
 
     } catch (error) {
@@ -278,6 +291,29 @@ async function autoLinkItems(apiKey, { companyItemId, productItemIds, ingredient
                                 colValues: JSON.stringify({ [col.id]: { item_ids: [companyItemId] } })
                             });
                         } catch(e) { console.error('Link product→company error:', e.message); }
+                    }
+                }
+
+                // ---- Products board: link to Ingredients ----
+                if (board.id === PRODUCTS_BOARD && connectedBoardIds.includes(INGREDIENTS_BOARD)) {
+                    // For each product, find which ingredients use it and link them
+                    for (const [productCode, prodItemId] of Object.entries(productItemIds)) {
+                        const linkedIngIds = ingredientItems
+                            .filter(ing => (ing.productCodes || []).includes(productCode))
+                            .map(ing => ing.itemId);
+                        if (linkedIngIds.length > 0) {
+                            try {
+                                await mondayQuery(apiKey, `
+                                    mutation ($boardId: ID!, $itemId: ID!, $colValues: JSON!) {
+                                        change_multiple_column_values(board_id: $boardId, item_id: $itemId, column_values: $colValues) { id }
+                                    }
+                                `, {
+                                    boardId: PRODUCTS_BOARD,
+                                    itemId: prodItemId,
+                                    colValues: JSON.stringify({ [col.id]: { item_ids: linkedIngIds } })
+                                });
+                            } catch(e) { console.error('Link product→ingredients error:', e.message); }
+                        }
                     }
                 }
 

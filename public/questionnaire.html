@@ -1664,7 +1664,7 @@
         try {
             const formData = collectFormData();
 
-            // Send to API (Monday.com integration)
+            // Step 1: Send data to API (creates items in Monday.com)
             const response = await fetch('/api/submit-questionnaire', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -1673,6 +1673,11 @@
 
             if (!response.ok) throw new Error('Server error: ' + response.status);
             const result = await response.json();
+
+            // Step 2: Upload files to Monday.com items
+            if (result.success) {
+                await uploadAllFiles(result);
+            }
 
             // Show success with server-generated reference number
             const refNum = result.referenceNumber || ('WK-' + Date.now().toString(36).toUpperCase());
@@ -1706,6 +1711,84 @@
         } finally {
             document.getElementById('loadingOverlay').classList.remove('active');
         }
+    }
+
+    // Upload all files to Monday.com after items are created
+    async function uploadAllFiles(result) {
+        const fc = result.fileColumns;
+        if (!fc) return;
+
+        // Helper: convert File to base64
+        function fileToBase64(file) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onload = () => resolve(reader.result.split(',')[1]); // strip data:...;base64,
+                reader.onerror = reject;
+                reader.readAsDataURL(file);
+            });
+        }
+
+        // Helper: upload a single file
+        async function uploadFile(itemId, columnId, file) {
+            try {
+                const base64 = await fileToBase64(file);
+                await fetch('/api/upload-file', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        itemId,
+                        columnId,
+                        fileName: file.name,
+                        fileBase64: base64,
+                        fileType: file.type || 'application/octet-stream'
+                    })
+                });
+            } catch (e) {
+                console.error('File upload failed:', file.name, e);
+            }
+        }
+
+        // 1. Company documents (flowchart + additional docs)
+        if (result.companyId) {
+            if (collectedFiles['flowchartBtn']) {
+                await uploadFile(result.companyId, fc.companyDocs, collectedFiles['flowchartBtn']);
+            }
+            if (collectedFiles['addDocsBtn']) {
+                const files = Array.isArray(collectedFiles['addDocsBtn']) ? collectedFiles['addDocsBtn'] : [collectedFiles['addDocsBtn']];
+                for (const file of files) {
+                    await uploadFile(result.companyId, fc.companyDocs, file);
+                }
+            }
+        }
+
+        // 2. Product label files
+        if (result.productItems) {
+            for (const product of products) {
+                if (product.labelFile) {
+                    const key = product.code || String(product.id);
+                    const mondayItemId = result.productItems[key];
+                    if (mondayItemId) {
+                        await uploadFile(mondayItemId, fc.productLabel, product.labelFile);
+                    }
+                }
+            }
+        }
+
+        // 3. Ingredient files (cert + spec)
+        if (result.ingredientItemIds) {
+            for (let i = 0; i < ingredients.length && i < result.ingredientItemIds.length; i++) {
+                const ing = ingredients[i];
+                const ingItem = result.ingredientItemIds[i];
+                if (ing.certFile && ingItem?.itemId) {
+                    await uploadFile(ingItem.itemId, fc.ingredientCert, ing.certFile);
+                }
+                if (ing.specFile && ingItem?.itemId) {
+                    await uploadFile(ingItem.itemId, fc.ingredientSpec, ing.specFile);
+                }
+            }
+        }
+
+        console.log('✅ All files uploaded');
     }
 
     function clearForm() {
